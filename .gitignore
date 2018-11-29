@@ -7,3 +7,4 @@ dist/theme/
 dist/.src/
 node_modules/
 public/
+dist/theme.zip
