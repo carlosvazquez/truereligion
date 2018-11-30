@@ -3415,14 +3415,14 @@ livereload-js@^2.2.0:
   resolved "https://registry.yarnpkg.com/livereload-js/-/livereload-js-2.4.0.tgz#447c31cf1ea9ab52fc20db615c5ddf678f78009c"
   integrity sha512-XPQH8Z2GDP/Hwz2PCDrh2mth4yFejwA1OZ/81Ti3LgKyhDcEjsSsqFWZojHG0va/duGd+WyosY7eXLDoOyqcPw==
 
-livereload@^0.6.2:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/livereload/-/livereload-0.6.3.tgz#d97f6b133db6c70eff575abc7460f10cd35f6f76"
-  integrity sha512-5SVeqHbKQWB69himud5GNRS8w1RgnMrYBnuIeZMiQ5ZctsIvhFfhKJclihxUS3NkOV7354rnA9rRz1IQBsgaNQ==
+livereload@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/livereload/-/livereload-0.7.0.tgz#38238dd155ffb251191697f737b6b13f471da115"
+  integrity sha512-PHnIGczQEvmCctDvRTWylA+1wSwE0/eFm+LkNhlmlAFus/aCRlVE97UOLOf6TUGLmZyfg7z7twG37ZiOgNJAyQ==
   dependencies:
     chokidar "^1.7.0"
     opts ">= 1.2.0"
-    ws "^1.1.1"
+    ws "^1.1.5"
 
 load-json-file@^1.0.0:
   version "1.1.0"
@@ -6484,7 +6484,7 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
-ws@^1.1.1:
+ws@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.5.tgz#cbd9e6e75e09fc5d2c90015f21f0c40875e0dd51"
   integrity sha512-o3KqipXNUdS7wpQzBHSe180lBGO60SoK0yVo3CYJgb2MkobuWuBX6dhkYP5ORCLd55y+SaflMOV5fqAB53ux4w==

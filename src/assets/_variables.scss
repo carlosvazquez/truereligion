@@ -49,6 +49,14 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
+$facebook:   #3b5998 !default;
+$twitter:    #55acee !default;
+$googleplus: #dd4b39 !default;
+$youtube:    #bb0000 !default;
+$instagram:  #e95950 !default;
+$whatsapp:   #4dc247 !default;
+$pinterest:  #cb2027 !default;
+
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
@@ -65,7 +73,13 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray-dark":  $gray-800,
+    "facebook":   $facebook,
+    "twitter":    $twitter,
+    "googleplus": $googleplus,
+    "instagram":  $instagram,
+    "whatsapp":   $whatsapp,
+    "pinterest":  $pinterest
   ),
   $colors
 );
