@@ -1,3 +1,5 @@
+@import 'fonts';
+
 // Avenir
 // AvenirNext
 // AvenirBlack
@@ -20,7 +22,11 @@
 // DIN Next W01 Regular
 
 body {
-
+  font-family: "Avenir Next Cyr W00 Regular", helvetica, arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: .3px;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {

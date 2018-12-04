@@ -12,12 +12,12 @@
 @import 'base/grid';
 @import 'base/typography';
 @import 'base/buttons';
+// Helpers
+@import 'base/bgcolors';
 
 // Components
+@import 'components/topbanner';
 @import 'components/footer';
 
 // Pages
 @import 'pages/home';
-body {
-  background-color: pink;
-}

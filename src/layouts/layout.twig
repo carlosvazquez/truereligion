@@ -45,26 +45,21 @@
 
 </head>
 <body class="{% block body_class %}{% endblock body_class %}" role="document">
-  <div id="wrapper">
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
+  <header>
+    {% include '_topbanner.twig' %}
+  </header>
+  <main role="main" class="content">
       {% block body %}{% endblock body %}
-    </div> <!-- /#page-content-wrapper -->
-  </div> <!-- /#wrapper -->
-<footer class="footer">
-{% include '_footer.twig' %}
-</footer>
-{% block body_js %}
+  </main> <!-- main.content -->
+  <footer class="footer">
+  {% include '_footer.twig' %}
+  </footer>
+  {% block body_js %}
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!-- Bootstrap -->
-
-  <!-- Bootstrap Select -->
-
-  <!-- Slick For Carousel Plugin -->
-
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!--  Plugin -->
 
   <!--  Uncomment for production -->

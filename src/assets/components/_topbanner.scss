@@ -1,0 +1,81 @@
+.topbanner {
+  color: $white;
+  max-height: 40px;
+  padding: 7px 0;
+  overflow: hidden;
+  .flags {}
+  .message {
+    &__text {
+      font-family: "FrankRuhlLibre";
+      font-size: 15px;
+      font-stretch: normal;
+      letter-spacing: .8px;
+      line-height: 1.73;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    &__link {
+      color: #dfdfdf;
+      display: inline-block;
+    }
+    &--first {}
+    &--second {}
+  }
+  .access {
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    @include media-breakpoint-up(sm) {
+      display: inline-block !important;
+    }
+    &__text {}
+    &__item {
+      display: table;
+      height: 100%;
+      text-transform: uppercase;
+    }
+    &__link {
+      color: #dfdfdf;
+    }
+    &--signin {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &--register {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &--separator {
+      display: table-cell;
+      padding: 0 3px;
+      vertical-align: middle;
+    }
+  }
+  .access::after {
+    content: '<';
+  }
+  .findstore {
+    color: #dfdfdf;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 14px;
+    @include media-breakpoint-up(sm) {
+      display: inline-block !important;
+    }
+    &__item {
+      display: table;
+      height: 100%;
+      text-transform: uppercase;
+    }
+    &__link {
+      color: #dfdfdf;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
