@@ -1,4 +1,7 @@
 .topbanner {
+  > .container {
+    height: 100%;
+  }
   color: $white;
   height: 40px;
   padding: 6px 0;
@@ -21,6 +24,7 @@
     &__currency {
       display: table-cell;
       height: 100%;
+      padding-top: 2px;
       vertical-align: middle;
     }
   }

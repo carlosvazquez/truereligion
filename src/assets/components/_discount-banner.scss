@@ -2,6 +2,14 @@
   color: $discount_text_color;
   background-color: $discount_bg_color;
   text-align: center;
+  .discount-banner-js {
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    z-index: 99;
+  }
   .first-step {
     display: none;
     div.two {
@@ -15,7 +23,7 @@
   }
   div.one, div.two {
     display: none;
-    padding: 8px 0;
+    padding: 10px 0;
   }
   div.one.active, div.two.active {
     display: block;
@@ -29,7 +37,6 @@
       display: block;
     }
   }
-
   .discount {
     &__title {
       font-family: "Avenir Next Cyr W00 Demi", helvetica, arial, sans-serif;
@@ -47,14 +54,16 @@
       font-size: 15px;
       font-weight: 400;
       letter-spacing: .05em;
-      margin: 0;
+      margin: 4px 0 10px;
       padding: 0;
       text-transform: uppercase;
     }
     &__email {
+      color: $black;
       display: inline-block;
       padding: 12px;
-      padding: 12px 20px;
+      font-size: 12px;
+      border: 1px solid $white;
     }
     &__title {}
   }
@@ -67,6 +76,7 @@
     letter-spacing: .1em;
     margin-left: 24px;
     padding: 12px 20px;
+    text-transform: initial;
   }
   .btn-get-discount:hover, .btn-get-discount:focus {
     color: #c3c3c3;

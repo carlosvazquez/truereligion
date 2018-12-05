@@ -1,13 +1,16 @@
 {% if settings.discount_enabled %}
 <div class="discount-banner">
-  <div class="first-step active">
+  <a class="discount-banner-js" href="#">
+    <img src="https://storage.kometia.test/store1/images/cross-discount.svg?v=1544039580" alt="">
+  </a>
+  <div class="first-step">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="one">
+          <div class="one active">
             <h4 class="discount__title"><span class="discount__intro">{{ settings.discount_intro }}</span> {{ settings.discount_title_step_1 }}<span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span></h4>
           </div>
-          <div class="two active">
+          <div class="two">
             <h4 class="discount__title">{{ settings.discount_title_step_2 }}<span class="btn btn-get-discount">{{ settings.discount_btn_step_2 }}</span></h4>
           </div>
         </div>
@@ -20,7 +23,7 @@
         <div class="col-12">
           <div class="one">
             <h4 class="discount__subtitle">{{ settings.discount_subtitle }}</h4>
-            <input class="discount__email" type="text" placeholder="Correo electrónico" required><span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span>
+            <input id="discount__email" class="discount__email" type="text" placeholder="Correo electrónico" aria-required="true" required><span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span>
           </div>
         </div>
       </div>
