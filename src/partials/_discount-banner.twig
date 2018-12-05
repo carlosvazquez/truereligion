@@ -1,0 +1,30 @@
+{% if settings.discount_enabled %}
+<div class="discount-banner">
+  <div class="first-step active">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="one">
+            <h4 class="discount__title"><span class="discount__intro">{{ settings.discount_intro }}</span> {{ settings.discount_title_step_1 }}<span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span></h4>
+          </div>
+          <div class="two active">
+            <h4 class="discount__title">{{ settings.discount_title_step_2 }}<span class="btn btn-get-discount">{{ settings.discount_btn_step_2 }}</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="second-step">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="one">
+            <h4 class="discount__subtitle">{{ settings.discount_subtitle }}</h4>
+            <input class="discount__email" type="text" placeholder="Correo electrónico" required><span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

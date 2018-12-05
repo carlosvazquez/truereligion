@@ -2,6 +2,15 @@
   "current": "Base",
   "presets": {
     "Base": {
+      "discount_enabled": true,
+      "discount_text_color": "#ffffff",
+      "discount_bg_color": "#003049",
+      "discount_intro": "Quick -",
+      "discount_title_step_1": "Extra 10% OFF Expires Soon",
+      "discount_btn_step_1": "Get My Discount",
+      "discount_title_step_2": "Want an Extra 10% OFF?",
+      "discount_btn_step_2": "Yes and Yes",
+      "discount_subtitle": "Great Choice. Enter your email below for an extra 10% off"
     }
   }
 }

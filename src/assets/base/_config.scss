@@ -4,3 +4,5 @@ $body_font_size: "{{ settings.body_font_size }}";
 $body_font: "{{ settings.body_font | remove('Google+') | replace({'+': ' '}) }}";
 $body_font_type: "{{ settings.body_font_type }}";
 $body_font_weight: "{{ settings.body_font_weight }}";
+$discount_text_color: "{{ settings.discount_text_color }}";
+$discount_bg_color: "{{ settings.discount_bg_color }}";

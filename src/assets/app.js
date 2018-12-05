@@ -5,6 +5,7 @@ $(function() {
     }
     var init = function() {
       _construct();
+      signInMenu();
     }
     var formatMoney = function(price){
       var formatPrice = price /= 100;
@@ -12,6 +13,14 @@ $(function() {
       formatPrice = formatPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return '$' + formatPrice + ' ' + currency;
     }
+    var signInMenu = function() {
+      $( ".access" ).hover(function() {
+        $( this ).find( ".login-window" ).stop( true, false ).fadeIn();
+      }, function() {
+        $( this ).find( ".login-window" ).stop( true, true ).fadeOut();
+      });
+    }
+
     var alertMe = function() {
       alert();
     }
