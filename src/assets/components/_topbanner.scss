@@ -40,7 +40,7 @@
       margin: 0;
       text-align: center;
       padding: 1px!important;
-      @include media-breakpoint-up(sm) {
+      @include media-breakpoint-up(xl) {
         padding: 0;
         font-size: 15px;
         letter-spacing: .8px;
@@ -54,8 +54,6 @@
     &__link:hover {
       text-decoration: none;
     }
-    &--first {}
-    &--second {}
   }
   .access {
     list-style: none;
@@ -63,10 +61,6 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    @include media-breakpoint-up(sm) {
-      display: inline-block !important;
-    }
-    &__text {}
     &__item {
       display: table;
       height: 28px;
@@ -114,12 +108,11 @@
       display: none;
       height: auto;
       margin-top: 15px;
+      max-width: 100%;
       padding: 10px;
       position: absolute;
       right: 72px;
-      // display: none;
       width: 235px;
-      max-width: 100%;
       z-index: 99;
       &__container {
         text-align: center;
@@ -136,9 +129,6 @@
       &__link:hover {
         text-decoration: none;
       }
-      &--my-account {}
-      &--wishlist {}
-      &--order-status {}
       &--btn {
         background: $black;
         border-radius: 0;
@@ -166,9 +156,6 @@
     margin-left: 30px;
     padding: 0;
     position: relative;
-    @include media-breakpoint-up(sm) {
-      display: inline-block !important;
-    }
     &__item {
       display: table;
       height: 28px;

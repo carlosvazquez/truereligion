@@ -23,10 +23,11 @@ $(function() {
       return true;
     }
     var _getHeaderheight = function() {
-      return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight();
+      return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
     }
     var _setNavigationPadding = function() {
-      $("nav.navigation").css({'top': _getHeaderheight()});
+      var _newHeight = _getHeaderheight();
+        $("nav.navigation").css({ 'top': _newHeight });
     }
     var _resetNavigationPadding = function() {
       $("nav.navigation").css({'top': ''});
@@ -37,6 +38,7 @@ $(function() {
       if (windowPos > $("nav.navigation").outerHeight()) {
         $("nav.navigation").addClass("stick");
         if($('.discount-banner').length){
+          header.css({'padding-top': _getHeaderheight() });
           _setNavigationPadding();
         }
       } else {
@@ -119,11 +121,11 @@ $(function() {
   })
   .resize(function() {
     // TODO resizeNavigation
-    TrueReligion.setNavigationPosition();
     console.log('on resize');
+    TrueReligion.setNavigationPosition();
   })
   .on("load", function () {
     console.log('on load');
   });
-  console.log(TrueReligion.formatMoney(210300), TrueReligion.win, TrueReligion, TrueReligion.newsletterDiscount());
+  // console.log(TrueReligion.formatMoney(210300), TrueReligion.win, TrueReligion, TrueReligion.newsletterDiscount());
 });
