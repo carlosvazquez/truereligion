@@ -48,11 +48,12 @@
 
 </head>
 <body class="{% block body_class %}{% endblock body_class %}" role="document">
-  <header>
+  <header class="header">
     {% include '_discount-banner.twig' %}
     {% include '_topbanner.twig' %}
+    {% include '_navigation.twig' %}
   </header>
-  <main role="main" class="content">
+  <main role="main" class="content" style="height: 1700px;">
       {% block body %}{% endblock body %}
   </main> <!-- main.content -->
   <footer class="footer">

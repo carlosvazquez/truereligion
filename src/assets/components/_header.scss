@@ -1,0 +1,29 @@
+header.header {
+  .discount-banner {
+    display: none;
+  }
+  &.hasNewsletterDiscount {
+    .discount-banner {
+      display: block;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0 !important;
+      width: 100%;
+      z-index: 999;
+    }
+    .discount-banner-js {
+      display: inline-block;
+    }
+    .first-step.active {
+      .block-one {
+        display: block;
+      }
+    }
+    .second-step.active {
+      .block-one {
+        display: block;
+      }
+    }
+  }
+}

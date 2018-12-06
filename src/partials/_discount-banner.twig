@@ -3,16 +3,18 @@
   <a class="discount-banner-js" href="#">
     <img src="https://storage.kometia.test/store1/images/cross-discount.svg?v=1544039580" alt="">
   </a>
-  <div class="first-step">
+  <div class="first-step active">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="one active">
+          <div class="block-one">
             <h4 class="discount__title"><span class="discount__intro">{{ settings.discount_intro }}</span> {{ settings.discount_title_step_1 }}<span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span></h4>
           </div>
-          <div class="two">
+          <!-- two -->
+          {# <div class="block-two">
             <h4 class="discount__title">{{ settings.discount_title_step_2 }}<span class="btn btn-get-discount">{{ settings.discount_btn_step_2 }}</span></h4>
-          </div>
+          </div> #}
+          <!-- .two -->
         </div>
       </div>
     </div>
@@ -21,9 +23,11 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="one">
+          <div class="block-one">
             <h4 class="discount__subtitle">{{ settings.discount_subtitle }}</h4>
-            <input id="discount__email" class="discount__email" type="text" placeholder="Correo electrónico" aria-required="true" required><span class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</span>
+            {% form 'newsletter' %}
+            <input id="discount__email" name="email" class="discount__email" type="email" placeholder="Correo electrónico" aria-required="true" required><button type="submit" class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</button>
+            {% endform %}
           </div>
         </div>
       </div>

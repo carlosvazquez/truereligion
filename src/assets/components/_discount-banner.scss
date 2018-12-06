@@ -3,6 +3,7 @@
   background-color: $discount_bg_color;
   text-align: center;
   .discount-banner-js {
+    display: none;
     height: 20px;
     position: absolute;
     right: 10px;
@@ -12,7 +13,7 @@
   }
   .first-step {
     display: none;
-    div.two {
+    div.block-two {
       .btn-get-discount {
         text-transform: initial;
       }
@@ -21,16 +22,16 @@
       display: block;
     }
   }
-  div.one, div.two {
+  div.block-one {
     display: none;
     padding: 10px 0;
   }
-  div.one.active, div.two.active {
+  div.block-one.active {
     display: block;
   }
   .second-step {
     display: none;
-    div.one, div.two {
+    div.block-one {
       display: block;
     }
     &.active {
@@ -57,15 +58,23 @@
       margin: 4px 0 10px;
       padding: 0;
       text-transform: uppercase;
+      @include media-breakpoint-down(sm) {
+        padding: 0 2em;
+      }
     }
     &__email {
       color: $black;
       display: inline-block;
+      height: 46px;
+      margin: 0;
+      min-width: 220px;
       padding: 12px;
       font-size: 12px;
-      border: 1px solid $white;
+      border: 0;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 12px;
+      }
     }
-    &__title {}
   }
   .btn-get-discount {
     background-color: transparent;
@@ -73,8 +82,9 @@
     border-radius: 0;
     font-weight: 400;
     font-size: 14px;
+    min-height: 45px;
     letter-spacing: .1em;
-    margin-left: 24px;
+    margin-left: 14px;
     padding: 12px 20px;
     text-transform: initial;
   }

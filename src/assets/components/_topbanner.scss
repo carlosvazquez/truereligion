@@ -7,19 +7,20 @@
   padding: 6px 0;
   .flags {
     &__img {
-      border: 1px solid #fff;
       display: table-cell;
       float: left;
-      height: auto;
+      height: 100%;
       margin-right: 12px !important;
       vertical-align: middle;
-      width: 45px;
+      width: auto;
+      padding: 1px;
     }
     img {
-      max-width: 100%;
-      width: 100%;
-      height: auto;
+      border: 1px solid #fff;
       display: block;
+      max-width: 100%;
+      height: auto;
+      width: 42px;
     }
     &__currency {
       display: table-cell;
