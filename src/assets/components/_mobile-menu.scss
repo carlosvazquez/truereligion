@@ -1,0 +1,46 @@
+body.has-mobile-menu {
+  .mobileMenu {
+    display: block;
+    right: 0;
+    -webkit-transition: right .3s ease-in-out;
+    -moz-transition: right .3s ease-in-out;
+    -o-transition: right .3s ease-in-out;
+    transition: right .3s ease-in-out;
+  }
+}
+body.has-mobile-menu::before {
+  content: '';
+  background-color: rgba(0,0,0,.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  -webkit-transition: background-color 3s ease-in-out;
+  -moz-transition: background-color 3s ease-in-out;
+  -o-transition: background-color 3s ease-in-out;
+  transition: background-color 3s ease-in-out;
+}
+body {
+  background-color: rgba(255,255,255,1);
+  -webkit-transition: background-color 3s ease-in-out;
+  -moz-transition: background-color 3s ease-in-out;
+  -o-transition: background-color 3s ease-in-out;
+  transition: background-color 3s ease-in-out;
+}
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  display: block;
+  background: $white;
+  padding: 12px;
+  z-index: 99;
+  min-width: 300px;
+  -webkit-transition: right .6s ease-in-out;
+  -moz-transition: right .6s ease-in-out;
+  -o-transition: right .6s ease-in-out;
+  transition: right .6s ease-in-out;
+}

@@ -113,6 +113,9 @@ $(function() {
   // Init App
   TrueReligion.init();
   TrueReligion.newsletterDiscount();
+  $('body').on('click', function(){
+    $(this).toggleClass('has-mobile-menu');
+  });
 
   // Windows events chained
   TrueReligion.win.on('scroll', function() {
