@@ -11,6 +11,7 @@
     width: 20px;
     z-index: 99;
   }
+  // First step
   .first-step {
     display: none;
     div.block-two {
@@ -22,13 +23,7 @@
       display: block;
     }
   }
-  div.block-one {
-    display: none;
-    padding: 10px 0;
-  }
-  div.block-one.active {
-    display: block;
-  }
+  // Second step
   .second-step {
     display: none;
     div.block-one {
@@ -38,8 +33,27 @@
       display: block;
     }
   }
+  // Third step
+  .third-step {
+    display: none;
+    &.active {
+      display: block;
+    }
+    div.block-one {
+      display: block;
+    }
+  }
+
+  div.block-one {
+    display: none;
+    padding: 10px 0;
+    &active {
+      display: block;
+    }
+  }
+
   .discount {
-    &__title {
+    &__title, &__code-title, &__code-tag {
       font-family: "Avenir Next Cyr W00 Demi", helvetica, arial, sans-serif;
       font-size: 18px;
       font-weight: 400;
@@ -49,7 +63,7 @@
     &__intro {
       font-size: 14px;
     }
-    &__subtitle {
+    &__subtitle, &__code-subtitle {
       color: $white;
       font-family: "Avenir Next Cyr W00 Demi", helvetica, arial, sans-serif;
       font-size: 15px;
@@ -61,6 +75,9 @@
       @include media-breakpoint-down(sm) {
         padding: 0 2em;
       }
+    }
+    &__code-subtitle {
+      padding: 0 .5em;
     }
     &__email {
       color: $black;

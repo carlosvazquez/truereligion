@@ -10,7 +10,10 @@
       "discount_btn_step_1": "Get My Discount",
       "discount_title_step_2": "Want an Extra 10% OFF?",
       "discount_btn_step_2": "Yes and Yes",
-      "discount_subtitle": "Great Choice. Enter your email below for an extra 10% off"
+      "discount_subtitle": "Great Choice. Enter your email below for an extra 10% off",
+      "discount_code_title": "Take 10% Off",
+      "discount_code_subtitle": "with code",
+      "discount_code_tag": "Take10"
     }
   }
 }

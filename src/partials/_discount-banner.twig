@@ -3,7 +3,8 @@
   <a class="discount-banner-js" href="#">
     <img src="https://storage.kometia.test/store1/images/cross-discount.svg?v=1544039580" alt="">
   </a>
-  <div class="first-step active">
+  <!-- First step -->
+  <div class="first-step">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -19,13 +20,15 @@
       </div>
     </div>
   </div>
+  <!-- .first-step -->
+  <!-- Second step -->
   <div class="second-step">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="block-one">
             <h4 class="discount__subtitle">{{ settings.discount_subtitle }}</h4>
-            {% form 'newsletter' %}
+            {% form 'newsletter' 'class=newsletter_form' %}
             <input id="discount__email" name="email" class="discount__email" type="email" placeholder="Correo electrónico" aria-required="true" required><button type="submit" class="btn btn-get-discount">{{ settings.discount_btn_step_1 }}</button>
             {% endform %}
           </div>
@@ -33,5 +36,20 @@
       </div>
     </div>
   </div>
+  <!-- .second-step -->
+  <!-- Third step -->
+  <div class="third-step">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="block-one">
+            <h4 class="discount__code-title">{{ settings.discount_code_title }} <span class="discount__code-subtitle">{{ settings.discount_code_subtitle }}</span> <span class="discount__code-tag">{{ settings.discount_code_tag}}</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .third-step -->
+
 </div>
 {% endif %}
