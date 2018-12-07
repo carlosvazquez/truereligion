@@ -1,13 +1,20 @@
 <div class="mobileMenu">
-  <ul>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
-    <li>AAAA</li>
+  <ul class="navigation">
+      <li class="navigation__item"><span class="mobile_nav_btn" href="{{ link.url }}">Close</span></li>
+    {% for link in menus.truereligion %}
+      {% if link.children | length > 0 %}
+      <li class="navigation__item navigation--has-children">
+        <a href="{{ link.url }}" class="navigation__link-title">{{ link.name }}</a>
+        <a href="#" class="navigation__link-toggle"></a>
+        <ul class="subnav{% if loop.last or loop.length - 1 == loop.index %} last{% endif %}">
+          {% for children in link.children %}
+            {% include '_nav-item.twig' with { 'link': children } %}
+          {% endfor %}
+        </ul>
+      </li>
+      {% else %}
+      <li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a></li>
+      {% endif %}
+    {% endfor %}
   </ul>
 </div>

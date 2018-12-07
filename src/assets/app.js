@@ -1,14 +1,32 @@
 $(function() {
   var TrueReligion = (function(window, $){
-    var header, currency;
+    var header, currency, menu_botton;
     var _construct = function(){
       currency = $('script#app').data("currency");
       header = $('header.header');
+      menu_botton = $('.mobile_nav_btn');
       _initLocalStorage();
     }
     var init = function() {
       _construct();
-      signInMenu();
+      _initMobileMenu();
+      _signInMenu();
+    }
+    var _initMobileMenu = function(){
+      $('.navigation__link-toggle').on('click', function(){
+        $(this).next('.subnav').slideToggle( "slow");
+      });
+      $('.navigation__link-toggle').on('click', function(){
+        $(this).toggleClass('on');
+      });
+      menu_botton.on('click', function(e){
+        e.stopPropagation();
+        $('body').toggleClass('has-mobile-menu');
+      });
+      $('.overlay').on('click', function(e){
+        e.preventDefault();
+        $('body.has-mobile-menu').removeClass('has-mobile-menu');
+      });
     }
     var _initLocalStorage = function() {
       if(window.localStorage.getItem("newsletter_discount") == null) {
@@ -20,7 +38,6 @@ $(function() {
     }
     var _disableNewsletterDiscountBanner = function() {
       window.localStorage.setItem('newsletter_discount', false);
-      return true;
     }
     var _getHeaderheight = function() {
       return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
@@ -52,7 +69,7 @@ $(function() {
       formatPrice = formatPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return '$' + formatPrice + ' ' + currency;
     }
-    var signInMenu = function() {
+    var _signInMenu = function() {
       $( ".access" ).hover(function() {
         $( this ).find(".login-window").stop( true, false ).fadeIn();
       }, function() {
@@ -113,9 +130,6 @@ $(function() {
   // Init App
   TrueReligion.init();
   TrueReligion.newsletterDiscount();
-  $('body').on('click', function(){
-    $(this).toggleClass('has-mobile-menu');
-  });
 
   // Windows events chained
   TrueReligion.win.on('scroll', function() {
