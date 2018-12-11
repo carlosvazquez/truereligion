@@ -1,131 +1,207 @@
-$(function() {
-  var TrueReligion = (function(window, $){
-    var header, currency;
-    var _construct = function(){
-      currency = $('script#app').data("currency");
-      header = $('header.header');
-      _initLocalStorage();
-    }
-    var init = function() {
-      _construct();
-      signInMenu();
-    }
-    var _initLocalStorage = function() {
-      if(window.localStorage.getItem("newsletter_discount") == null) {
-        window.localStorage.setItem('newsletter_discount', true);
-      }
-      if(window.localStorage.getItem("newsletter_succeed") == null) {
-        window.localStorage.setItem('newsletter_succeed', false);
-      }
-    }
-    var _disableNewsletterDiscountBanner = function() {
-      window.localStorage.setItem('newsletter_discount', false);
-      return true;
-    }
-    var _getHeaderheight = function() {
-      return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
-    }
-    var _setNavigationPadding = function() {
-      var _newHeight = _getHeaderheight();
-        $("nav.navigation").css({ 'top': _newHeight });
-    }
-    var _resetNavigationPadding = function() {
+(function($) {
+  "use strict";
+
+  var TrueReligion = {
+    // All pages
+    currency: $('script#app').data("currency"),
+    $header: $('header.header'),
+    formatMoney: function(price){
+      var _formatPrice = price /= 100;
+      _formatPrice = _formatPrice.toFixed(2);
+      _formatPrice = _formatPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      return '$' + _formatPrice + ' ' + this.currency;
+    },
+    resetNavigationPadding: function() {
+      $("nav.navigation").removeClass("stick");
       $("nav.navigation").css({'top': ''});
-    }
-    // Set Navigation
-    var setNavigationPosition = function() {
+    },
+    getHeaderheight: function() {
+      return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
+    },
+    common: {
+      init: function() {
+        this.LocalStorage();
+        this.signInMenu();
+        this.setNavigation();
+        this.newsletterDiscount();
+      },
+      LocalStorage: function() {
+        if(window.localStorage.getItem("newsletter_discount") == null) {
+        window.localStorage.setItem('newsletter_discount', true);
+        }
+        if(window.localStorage.getItem("newsletter_succeed") == null) {
+          window.localStorage.setItem('newsletter_succeed', false);
+        }
+      },
+      signInMenu: function() {
+        $( ".access" ).hover(function() {
+          $(this).find(".login-window").stop( true, false ).fadeIn();
+        }, function() {
+          $(this).find(".login-window").stop( true, true ).fadeOut();
+        });
+      },
+      setNavigation() {
+        window.clearInterval();
+        $("nav.navigation").css({ 'top': 0 });
+        var getHeaderheight = function() {
+          return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
+        }
+        var setNavigationPadding = function() {
+          var _newHeight = getHeaderheight();
+          $("nav.navigation").css({ 'top': _newHeight });
+        }
+        setTimeout(setNavigationPadding, 2000)
+      },
+      newsletterDiscount: function() {
+        var _status = window.localStorage.getItem("newsletter_discount") == 'true' ? true : false;
+        var _succeed = window.localStorage.getItem("newsletter_succeed") == 'true' ? true : false;
+        var _header = $('header.header');
+
+        var getHeaderheight = function() {
+          return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
+        }
+
+        if(_status && !_succeed ) {
+          _header.addClass('hasNewsletterDiscount');
+          $('.first-step').addClass('active');
+          setTimeout(function() {
+            var _newHeight = getHeaderheight();
+            $('header.header.hasNewsletterDiscount').css({'padding-top': _newHeight });
+          },600)
+        }
+
+        if(_status && _succeed ) {
+          _header.addClass('hasNewsletterDiscount');
+          $('.third-step').addClass('active');
+          setTimeout(function(){
+            var _newHeight = getHeaderheight();
+            $('header.header.hasNewsletterDiscount').css({'padding-top': _newHeight });
+          }, 1000);
+        }
+        var stopNewsletterDiscount = function() {
+          $('.discount-banner').remove();
+          $('header.header.hasNewsletterDiscount').css({'padding-top': 0 });
+          $("nav.navigation").removeClass("stick");
+          $("nav.navigation").css({'top': ''});
+          window.localStorage.setItem('newsletter_discount', false);
+        }
+        var toggleStep = function() {
+          $('.first-step').removeClass('active');
+          $('.second-step').addClass('active');
+          var getHeaderheight = function() {
+            return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
+          }
+          $('header.header').css({'padding-top': getHeaderheight() });
+        }
+
+        $('.first-step .btn-get-discount').on('click', toggleStep);
+
+        $('.discount-banner-js').on('click', stopNewsletterDiscount);
+
+        $("form.newsletter_form").on('submit', function () {
+          window.localStorage.setItem('newsletter_succeed', true);
+        });
+      }
+    },
+    // On Resize Events
+    resizeEvents: function() {
+      console.log('Fire resize events');
+    },
+    // On Load Events
+    onLoadEvents: function() {
+      console.log('Fire on load events');
+    },
+    onScrollEvents: function() {
       var windowPos = $(window).scrollTop();
-      if (windowPos > $("nav.navigation").outerHeight()) {
-        $("nav.navigation").addClass("stick");
-        if($('.discount-banner').length){
-          header.css({'padding-top': _getHeaderheight() });
-          _setNavigationPadding();
+      var newHeight = this.getHeaderheight();
+      var navigation = $("nav.navigation");
+      var discountBanner = $('.discount-banner');
+      var setNavigationPadding = function() {
+        navigation.css({ 'top': newHeight });
+      }
+      if (windowPos >= 200) {
+        navigation.addClass("stick");
+        if(discountBanner.length){
+          $(this.$header).css({'padding-top': newHeight });
+          this.getHeaderheight();
+          setNavigationPadding();
         }
       } else {
-        $("nav.navigation").removeClass("stick");
-        _resetNavigationPadding();
+        navigation.removeClass("stick");
+        this.resetNavigationPadding();
+      }
+    },
+    // Home page
+    home_page: {
+      init: function() {
+        console.log('estas en el home');
+      }
+    },
+    product_page: {
+      init: function() {
+      }
+    },
+    products_page: {
+      init: function() {
+      }
+    },
+    simple_page: {
+      init: function() {
+      }
+    },
+    collection_page: {
+      init: function() {
+      }
+    },
+    collections_page: {
+      init: function() {
+      }
+    },
+    category: {
+      init: function() {
       }
     }
-    var formatMoney = function(price){
-      var formatPrice = price /= 100;
-      formatPrice = formatPrice.toFixed(2);
-      formatPrice = formatPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      return '$' + formatPrice + ' ' + currency;
-    }
-    var signInMenu = function() {
-      $( ".access" ).hover(function() {
-        $( this ).find(".login-window").stop( true, false ).fadeIn();
-      }, function() {
-        $( this ).find(".login-window").stop( true, true ).fadeOut();
+  };
+
+  var STORE = {
+    fire: function(func, funcname, args) {
+      var namespace = TrueReligion;
+      funcname = (funcname === undefined) ? 'init' : funcname;
+      if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
+        namespace[func][funcname](args);
+      }
+    },
+    loadEvents: function() {
+      STORE.fire('common');
+      $.each(document.body.className.replace(/-/g, '_').split(/\s+/),function(i,classnm) {
+        STORE.fire(classnm);
       });
     }
-    // Newsletter Events
-    var newsletterDiscount = function() {
-      var _status = window.localStorage.getItem("newsletter_discount") == 'true' ? true : false ;
-      var _succeed = window.localStorage.getItem("newsletter_succeed") == 'true' ? true : false ;
-      if(_status && !_succeed ) {
-        setTimeout(function(){
-          header.addClass('hasNewsletterDiscount');
-          $('.first-step').addClass('active');
-          $('header.header.hasNewsletterDiscount').css({'padding-top': _getHeaderheight() });
-        }, 1000);
-      }
-      if(_status && _succeed ) {
-        setTimeout(function(){
-          header.addClass('hasNewsletterDiscount');
-          if(header.hasClass('hasNewsletterDiscount')){
-            header.css({'padding-top': _getHeaderheight() });
-          }
-          $('.third-step').addClass('active');
-        }, 3000);
-      }
-      var stopNewsletterDiscount = function() {
-        $('.discount-banner').remove();
-        $('header.header.hasNewsletterDiscount').css({'padding-top': 0 });
-        _resetNavigationPadding();
-        _disableNewsletterDiscountBanner();
-      }
-      var toggleStep = function() {
-        $('.first-step').removeClass('active');
-        $('.second-step').addClass('active');
-        header.css({'padding-top': _getHeaderheight() });
-      }
+  };
 
-      $('.first-step .btn-get-discount').on('click', toggleStep);
+  $(function() {
+    var currentTime;
+    // Init App
+    console.log('on ready');
+    STORE.loadEvents();
 
-      $('.discount-banner-js').on('click', stopNewsletterDiscount);
-
-      $("form.newsletter_form").on('submit', function () {
-          window.localStorage.setItem('newsletter_succeed', true);
-     });
-    }
-
-    // Public methods
-    return {
-      init: init,
-      win: $(window),
-      formatMoney: formatMoney,
-      newsletterDiscount: newsletterDiscount,
-      setNavigationPosition: setNavigationPosition
-    }
-  })(window, jQuery);
-
-  // Init App
-  TrueReligion.init();
-  TrueReligion.newsletterDiscount();
-
-  // Windows events chained
-  TrueReligion.win.on('scroll', function() {
-    TrueReligion.setNavigationPosition();
-    console.log('on scroll');
-  })
-  .resize(function() {
-    // TODO resizeNavigation
-    console.log('on resize');
-    TrueReligion.setNavigationPosition();
-  })
-  .on("load", function () {
-    console.log('on load');
+    // Windows events chained
+    $(window).on('scroll', function() {
+      console.log('on scroll');
+      TrueReligion.onScrollEvents()
+    })
+    .on("resize", function() {
+      // console.log('on resize');
+      clearTimeout(currentTime);
+      currentTime = setTimeout(TrueReligion.resizeEvents(), 100);
+    })
+    .on("load", function () {
+      console.log('on load');
+      TrueReligion.onLoadEvents()
+    });
   });
-  // console.log(TrueReligion.formatMoney(210300), TrueReligion.win, TrueReligion, TrueReligion.newsletterDiscount());
-});
+})(jQuery);
+
+
+

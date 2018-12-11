@@ -1,9 +1,76 @@
 nav.navigation {
   background-color: pink;
+  padding-top: 20px;
+  -webkit-transition: padding-top .2s ease-out;
+  -moz-transition: padding-top .2s ease-out;
+  -o-transition: padding-top .2s ease-out;
+  transition: padding-top .2s ease-out;
   &.stick {
+    padding-top: 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
+    -webkit-transition: padding-top .2s ease-out;
+    -moz-transition: padding-top .2s ease-out;
+    -o-transition: padding-top .2s ease-out;
+    transition: padding-top .2s ease-out;
+    .logo {
+      text-align: center;
+      &__link {
+        background-color: goldenrod;
+      }
+      &__img-mobile {
+        background-color: olivedrab;
+        display:  none;
+        height: 38px;
+        width: 50px;
+        margin-top: 0;
+        @include media-breakpoint-down(lg) {
+          display:  inline-block;
+        }
+      }
+      &__img-desktop {
+        background-color: olivedrab;
+        display:  none;
+      }
+    }
+    .subnav {
+      &__img-mobile {
+        display: none;
+        @include media-breakpoint-up(lg) {
+          display:  inline-block;
+        }
+      }
+    }
+  }
+  .logo {
+    text-align: center;
+    &__link {
+      background-color: yellow;
+    }
+    &__img-mobile {
+      background-color: olivedrab;
+      display:  none;
+      @include media-breakpoint-down(md) {
+        display:  inline-block;
+      }
+    }
+    &__img-desktop {
+      background-color: greenyellow;
+      display: none;
+      height: auto;
+      margin: 20px 0;
+      max-width: 220px;
+      width: 220px;
+      @include media-breakpoint-up(lg) {
+        display: inline-block;
+      }
+    }
+  }
+  .subnav {
+    &__img-mobile {
+      display:  none;
+    }
   }
 }
