@@ -20,11 +20,13 @@
       return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
     },
     common: {
+      $menu_botton: $('.mobile_nav_btn'),
       init: function() {
         this.LocalStorage();
         this.signInMenu();
         this.setNavigation();
         this.newsletterDiscount();
+        this.MobileMenu();
       },
       LocalStorage: function() {
         if(window.localStorage.getItem("newsletter_discount") == null) {
@@ -101,6 +103,22 @@
 
         $("form.newsletter_form").on('submit', function () {
           window.localStorage.setItem('newsletter_succeed', true);
+        });
+      },
+      MobileMenu: function() {
+        $('.navigation__link-toggle').on('click', function(){
+          $(this).next('.subnav').slideToggle( "slow");
+        });
+        $('.navigation__link-toggle').on('click', function(){
+          $(this).toggleClass('on');
+        });
+        this.$menu_botton.on('click', function(e){
+          e.stopPropagation();
+          $('body').toggleClass('has-mobile-menu');
+        });
+        $('.overlay').on('click', function(e){
+          e.preventDefault();
+          $('body.has-mobile-menu').removeClass('has-mobile-menu');
         });
       }
     },

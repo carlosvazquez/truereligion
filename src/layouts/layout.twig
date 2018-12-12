@@ -48,7 +48,9 @@
 
 </head>
 <body class="{% block body_class %}{% endblock body_class %}" role="document">
+  <div class="overlay"></div>
   <header class="header">
+    {% include '_mobileMenu.twig' %}
     {% include '_discount-banner.twig' %}
     {% include '_topbanner.twig' %}
     {% include '_navigation.twig' %}

@@ -1,0 +1,13 @@
+{% if link.children | length > 0 %}
+<li class="navigation__item navigation--has-children">
+  <a href="{{ link.url }}" class="navigation__link-title">{{ link.name }}</a>
+  <a href="#" class="navigation__link-toggle"></a>
+  <ul class="subnav">
+    {% for children in link.children %}
+      {% include '_nav-item.twig' with { 'link': children } %}
+    {% endfor %}
+  </ul>
+</li>
+{% else %}
+<li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a></li>
+{% endif %}
