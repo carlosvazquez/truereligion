@@ -9,6 +9,41 @@ nav.navigation {
     padding-top: 16px;
     padding-bottom: 16px;
   }
+  .left-module {
+    .logo {
+      text-align: center;
+      &__link {
+        background-color: goldenrod;
+      }
+      &__img-desktop {
+        display:  none;
+      }
+    }
+  }
+  .right-module {
+
+  }
+  .mega-container {
+    .logo {
+      text-align: center;
+      &__link {
+        background-color: purple;
+      }
+      &__img-mobile {
+        display: none;
+        @include media-breakpoint-down(md) {
+          display:  inline-block;
+        }
+      }
+      &__img-desktop {
+        display: none;
+        @include media-breakpoint-up(lg) {
+          display:  inline-block;
+        }
+      }
+    }
+  }
+  // Sticked
   &.stick {
     position: fixed;
     top: 0;
@@ -22,16 +57,34 @@ nav.navigation {
       padding-top: 0;
       padding-bottom: 0;
     }
-    .logo {
-      text-align: center;
-      &__link {
-        background-color: goldenrod;
+    .left-module {
+      .logo {
+        text-align: left;
+        &__img-desktop {
+          display:  none;
+          @include media-breakpoint-up(lg) {
+            display: inline-block;
+          }
+        }
       }
-      &__img-mobile {
+    }
+    .right-module {
 
-      }
-      &__img-desktop {
-        display:  none;
+    }
+    .mega-container {
+      .logo {
+        text-align: center;
+        &__link {
+        }
+        &__img-mobile {
+          display: none;
+          @include media-breakpoint-down(md) {
+            display: inline-block;
+          }
+        }
+        &__img-desktop {
+          display:  none;
+        }
       }
     }
     .left-module {
