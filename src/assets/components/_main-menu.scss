@@ -1,0 +1,23 @@
+.mega-container {
+  position: initial;
+}
+.main-menu {
+  background-color: rebeccapurple;
+  position: initial;
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+  .menu {
+    display: block;
+    clear: both;
+  }
+  .megamenu {
+    position: absolute;
+    top: auto;
+    left: 0;
+    width: 100%;
+    background-color: yellow;
+    min-height: 300px;
+    z-index: -1;
+  }
+}

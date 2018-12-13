@@ -28,28 +28,57 @@ nav.navigation {
         background-color: goldenrod;
       }
       &__img-mobile {
-
+        background-color: olivedrab;
+        display:  none;
+        height: 38px;
+        width: 50px;
+        margin-top: 0;
+        @include media-breakpoint-down(lg) {
+          display:  inline-block;
+        }
       }
       &__img-desktop {
         display:  none;
       }
     }
-    .left-module {
-      &__logo {
-        display:  inline-block;
-        height: 38px;
-        width: 50px;
-        margin-top: 0;
+    .main-nav {
+      display:  none;
+    }
+    .subnav {
+      display:  block;
+      padding: 16px 0;
+      &__img-mobile {
+        display: none;
+        @include media-breakpoint-up(lg) {
+          display:  block;
+          height: auto;
+          margin-top: 0;
+          width: 56px;
+        }
+      }
+      &__navigation {
+        display: block;
         @include media-breakpoint-down(lg) {
           display: none;
         }
       }
+      &__logo {
+        display: none;
+        @include media-breakpoint-down(lg) {
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+      }
+      &__image {
+        margin: 0;
+        height: auto;
+        width: 45px;
+      }
     }
   }
-  .left-module {
-    &__logo {
-      display:  none;
-    }
+  .main-nav {
+    display:  block;
   }
   .logo {
     text-align: center;
@@ -76,9 +105,12 @@ nav.navigation {
       }
     }
   }
-
-
-  // Cart
+  .subnav {
+    display:  none;
+  }
+  .search-mobile {
+    display: none;
+  }
   .cart-mobile {
     text-align: right;
     .icon-search {
