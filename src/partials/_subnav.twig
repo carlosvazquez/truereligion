@@ -1,0 +1,17 @@
+<li class="level-one level-{{ level }}">
+{% if link.children | length > 0 %}
+  {% set level = level + 1 %}
+  <ul class="{% if level == 2 %}row{% endif %} level-{{ level }} {% if counter != 0 %}counter-{{ counter }}{% endif %}">
+    {% for children in link.children %}
+      {% include '_subnav-items.twig' with {'link': children, 'level': level, 'counter': loop.index, 'total':loop.length } %}
+    {% endfor %}
+      {% if level == 2 %}
+        <div class="col">
+          <img src="https://fakeimg.pl/350x200/ff0000,128/000,255">
+        </div>
+      {% endif %}
+  </ul>
+{% else %}
+    <a href="{{ link.url }}">{{ link.name }}</a>
+{% endif %}
+</li>
