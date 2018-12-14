@@ -3,19 +3,22 @@
   <div class="main-nav">
     <div class="container">
 
-      <div class="row align-items-center">
+      <div class="row align-items-start">
         <div class="col-3 col-sm-3 col-md-2 col-lg-1 left-module">
           <div class="logo">
-            <img class="logo__img-desktop" src="https://fakeimg.pl/120x120/?text=TR">
+            <img class="logo__img-desktop" src="https://storage.kometia.test/store1/images/logo_truereligion_mobile.png?v=1544490314" alt="Logo True Religion">
+          </div>
+          <div class="icon-search">
+            <span class="icon-search__block">
+              <img src="https://storage.kometia.test/store1/images/search.svg?v=1544577586" alt="" class="icon-search__img">
+            </span>
           </div>
         </div>
 
         <div class="col-6 col-sm-6 col-md-8 col-lg-10 mega-container">
           <div class="logo">
-            <img class="logo__img-desktop" src="https://fakeimg.pl/450x200/?text=TrueReligion">
-            <img class="logo__img-mobile" src="https://fakeimg.pl/140x140/?text=TR">
-            {# <img class="logo__img-desktop" src="https://storage.kometia.test/store1/images/logo_truereligion.png?v=1544490315" alt="Logo True Religion"> #}
-            {# <img class="logo__img-mobile" src="https://storage.kometia.test/store1/images/logo_truereligion_mobile.png?v=1544490314" alt="Logo True Religion"> #}
+            <img class="logo__img-desktop" src="https://storage.kometia.test/store1/images/logo_truereligion.png?v=1544490315" alt="Logo True Religion">
+            <img class="logo__img-mobile" src="https://storage.kometia.test/store1/images/logo_truereligion_mobile.png?v=1544490314" alt="Logo True Religion">
           </div>
           {% include '_main-menu.twig' %}
         </div>
@@ -27,15 +30,25 @@
                 <img src="https://storage.kometia.test/store1/images/search.svg?v=1544577586" alt="" class="icon-search__img">
               </span>
             </div>
-            <div class="icon-shopping-bag active{% if cart.items > 0 %}active{% endif %}">
+
+            <div class="icon-shopping-bag {% if cart.total_items > 0 %}active{% endif %}">
               <span class="icon-shopping-bag__block">
-                {% if cart.items > 0 %}
-                <span class="cart-qty">{{ cart.items }}</span>
+                {% if cart.total_items > 0 %}
+                <span class="cart-qty">{{ cart.total_items }}</span>
                 {% endif %}
                 <img src="https://storage.kometia.test/store1/images/header-re-bag.png?v=1544577585" alt="" class="icon-shopping-bag__img empty">
                 <img src="https://storage.kometia.test/store1/images/header-re-filled-bag.png?v=1544581620" alt="" class="icon-shopping-bag__img filled">
               </span>
             </div>
+
+            <div class="icon-toggle-menu">
+              <span class="mobile_nav_btn">
+                <span class="line-one"></span>
+                <span class="line-one"></span>
+                <span class="line-one"></span>
+              </span>
+            </div>
+
           </div>
         </div>
       </div>

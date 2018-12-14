@@ -12,12 +12,16 @@
 
       return '$' + _formatPrice + ' ' + this.currency;
     },
+    getHeaderheight: function() {
+      return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
+    },
     resetNavigationPadding: function() {
       $("nav.navigation").removeClass("stick");
       $("nav.navigation").css({'top': ''});
     },
-    getHeaderheight: function() {
-      return $('.discount-banner').outerHeight() < 10 ? 0 : $('.discount-banner').outerHeight()+'px';
+    setMegaMenu: function() {
+      var _w = $(window).width();
+      $('.megamenu').css({ 'width': _w + 'px' });
     },
     common: {
       $menu_botton: $('.mobile_nav_btn'),
@@ -27,6 +31,7 @@
         this.setNavigation();
         this.newsletterDiscount();
         this.MobileMenu();
+        this.setMegaMenu();
       },
       LocalStorage: function() {
         if(window.localStorage.getItem("newsletter_discount") == null) {
@@ -35,6 +40,10 @@
         if(window.localStorage.getItem("newsletter_succeed") == null) {
           window.localStorage.setItem('newsletter_succeed', false);
         }
+      },
+      setMegaMenu: function() {
+        var _w = $(window).width();
+        $('.megamenu').css({ 'width': _w + 'px' });
       },
       signInMenu: function() {
         $( ".access" ).hover(function() {
@@ -107,7 +116,7 @@
       },
       MobileMenu: function() {
         $('.navigation__link-toggle').on('click', function(){
-          $(this).next('.subnav').slideToggle( "slow");
+          $(this).next('.subnav').slideToggle();
         });
         $('.navigation__link-toggle').on('click', function(){
           $(this).toggleClass('on');
@@ -125,6 +134,7 @@
     // On Resize Events
     resizeEvents: function() {
       console.log('Fire resize events');
+      this.setMegaMenu();
     },
     // On Load Events
     onLoadEvents: function() {

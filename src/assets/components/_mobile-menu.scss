@@ -54,11 +54,11 @@ body .overlay {
   -webkit-box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
   box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
-  -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  transition: all 1s ease-in;
+  -webkit-transition: all .6s ease-in;
+  -moz-transition: all .6s ease-in;
+  -o-transition: all .6s ease-in;
+  -ms-transition: all .6s ease-in;
+  transition: all .6s ease-in;
 }
 
 .mobileMenu {

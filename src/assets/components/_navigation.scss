@@ -1,11 +1,12 @@
 nav.navigation {
-  background-color: pink;
+  background-color: $white;
   padding-top: 20px;
   -webkit-transition: padding-top .2s ease-out;
   -moz-transition: padding-top .2s ease-out;
   -o-transition: padding-top .2s ease-out;
   transition: padding-top .2s ease-out;
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(md) {
+    border-bottom: 1px solid #eeeeee;
     padding-top: 16px;
     padding-bottom: 16px;
   }
@@ -19,15 +20,62 @@ nav.navigation {
         display:  none;
       }
     }
+    .icon-search {
+      display: none;
+      @include media-breakpoint-down(md) {
+        display: block;
+        padding: 6px 0;
+      }
+    }
+    .icon-search:hover {
+      cursor: pointer;
+    }
   }
   .right-module {
-
+    .cart-mobile {
+      margin-top: 20px;
+      @include media-breakpoint-down(md) {
+        margin-top: 0;
+      }
+      .icon-search {
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+      }
+      .icon-shopping-bag {
+        @include media-breakpoint-down(md) {
+          margin-left: 0;
+        }
+      }
+    }
+    .icon-toggle-menu {
+      display: none;
+      @include media-breakpoint-down(md) {
+        display: inline-block;
+        float: right;
+        margin-left: 14px;
+        margin-top: 2px;
+      }
+      .mobile_nav_btn {
+        cursor: pointer;
+        display: block;
+        width: 25px;
+        height: 25px;
+        .line-one {
+          background-color: #222222;
+          width: 100%;
+          height: 1px;
+          display: block;
+          padding: 0;
+          margin: 4px 0 8px;
+        }
+      }
+    }
   }
   .mega-container {
     .logo {
       text-align: center;
       &__link {
-        background-color: purple;
       }
       &__img-mobile {
         display: none;
@@ -48,7 +96,7 @@ nav.navigation {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 40;
+    z-index: 10;
     -webkit-transition: padding-top .2s ease-out;
     -moz-transition: padding-top .2s ease-out;
     -o-transition: padding-top .2s ease-out;
@@ -60,20 +108,44 @@ nav.navigation {
     .left-module {
       .logo {
         text-align: left;
+        margin-top: 0;
+        @include media-breakpoint-up(lg) {
+
+        }
         &__img-desktop {
           display:  none;
           @include media-breakpoint-up(lg) {
             display: inline-block;
+            height: 42px;
+            margin: 0;
+            max-width: 100%;
+            width: 58px;
           }
+        }
+      }
+      .icon-search {
+        display: none;
+        @include media-breakpoint-down(md) {
+          display: block;
+          padding: 20px 0;
         }
       }
     }
     .right-module {
-
+      .cart-mobile {
+        padding: 14px 0;
+        @include media-breakpoint-up(lg) {
+          margin-top: 8px;
+          padding: 0;
+        }
+      }
     }
     .mega-container {
       .logo {
         text-align: center;
+        @include media-breakpoint-down(md) {
+          padding: 14px 0;
+        }
         &__link {
         }
         &__img-mobile {
@@ -90,7 +162,7 @@ nav.navigation {
     .left-module {
       &__logo {
         display:  inline-block;
-        height: 38px;
+        height: 42px;
         width: 50px;
         margin-top: 0;
         @include media-breakpoint-down(lg) {
@@ -107,7 +179,7 @@ nav.navigation {
   .logo {
     text-align: center;
     &__link {
-      background-color: yellow;
+      background-color: $white;
     }
     &__img-mobile {
       display:  none;
@@ -122,8 +194,8 @@ nav.navigation {
       display: none;
       height: auto;
       margin: 20px 0;
-      max-width: 240px;
-      width: 240px;
+      max-width: 214px;
+      width: 214px;
       @include media-breakpoint-up(lg) {
         display: inline-block;
       }
@@ -148,7 +220,7 @@ nav.navigation {
     }
     .icon-shopping-bag {
       display: inline-block;
-      margin-left: 4px;
+      margin-left: 10px;
       &__block {
         display: block;
         position: relative;
