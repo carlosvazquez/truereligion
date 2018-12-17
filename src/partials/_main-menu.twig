@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12 col-xl-12 no-padding">
-          <ul class="navigation d-flex justify-content-start">
+          <ul class="navigation d-flex justify-content-between">
           {% for link in menus.truereligion %}
             <li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a>
               <div class="megamenu">
@@ -13,9 +13,9 @@
                       {% set level = 1 %}
                       <ul class="level-{{ level }}">
                         {% if link.children | length > 0 %}
-                          {% include '_subnav.twig' with {'level': level, 'level': level } %}
+                          {% include '_subnav.twig' with {'level': level, '': level } %}
                         {% else %}
-                          <li class="id-12 title-level-{{ level }}"><a href="{{ link.url }}">{{ link.name }}</a>
+                          <li class="id-12 title-level-{{ level }}"><a href="{{ link.url }}">AAAAA{{ link.name }}</a>
                         {% endif %}
                       </ul>
                     </div>
