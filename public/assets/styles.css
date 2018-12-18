@@ -3500,8 +3500,8 @@ nav.navigation {
       text-decoration: none; }
 
 .discount-banner {
-  color: "{{ settings.discount_text_color }}";
-  background-color: "{{ settings.discount_bg_color }}";
+  color: #ffffff;
+  background-color: #003049;
   text-align: center; }
   .discount-banner .discount-banner-js {
     display: none;
@@ -3830,8 +3830,7 @@ nav.navigation.stick .main-menu .menu .logo {
 
 .megamenu .level-block-item {
   display: block;
-  padding-top: 12px;
-  margin-bottom: 20px; }
+  padding-top: 12px; }
 
 .megamenu .level-block-item-link {
   color: #6e6e6e;
@@ -3845,6 +3844,9 @@ nav.navigation.stick .main-menu .menu .logo {
 .megamenu .level-block-list .divider {
   width: 49.888889%;
   float: left; }
+
+.megamenu .level-block .title-level-2 {
+  margin-bottom: 20px; }
 
 .megamenu .level-block .menu-link {
   font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
@@ -3860,3 +3862,9 @@ nav.navigation.stick .main-menu .menu .logo {
   display: block;
   height: auto;
   width: 100%; }
+
+.megamenu .divider .menu-item {
+  display: none; }
+
+.megamenu .divider .submenu .menu-item {
+  display: block; }
