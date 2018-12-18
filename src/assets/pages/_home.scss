@@ -14,6 +14,7 @@
       width: 100%;
     }
   }
+  // Collections Promos
   .home-season-promotions {
     background-color: $white;
     text-align: center;
@@ -40,8 +41,7 @@
       text-transform: none;
     }
     &__btn {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin: 0 10px 10px;
       font-size: 15px;
       max-width: 250px;
       text-decoration: none;
@@ -54,6 +54,59 @@
       line-height: 1.86;
       letter-spacing: .4px;
       white-space: nowrap;
+    }
+  }
+  // Vertical Banners
+  .home-vertical-banners {
+    margin-bottom: 40px;
+    .vertical-cards {
+      &__item {
+        text-align: center;
+      }
+      &__img-container {
+        margin-bottom: 12px;
+      }
+      &__image-link {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+      &__image-link:hover {
+        text-decoration: none;
+      }
+      &__image {
+        background-color: $white;
+        display: block;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        @include media-breakpoint-down(md) {
+          display: inline-block;
+          margin: 0 auto;
+          max-width: 70%;
+        }
+      }
+      &__title {
+        font-size: 24px;
+        font-family: "AvenirBlack";
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 25px 0 0;
+      }
+      &__info {
+        margin-bottom: 20px;
+      }
+      &__link {
+        color: #6e6e6e;
+        display: block;
+        font-size: 12px;
+        margin-top: 10px;
+        letter-spacing: 0;
+        font-family: "AvenirRegular";
+        text-transform: capitalize;
+        text-decoration: underline;
+      }
     }
   }
 }

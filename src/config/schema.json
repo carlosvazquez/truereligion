@@ -220,6 +220,10 @@
                 {
                   "value": "home-season-promotions",
                   "label": "Bloque temporada"
+                },
+                {
+                  "value": "home-vertical-banners",
+                  "label": "Banners verticales"
                 }
               ]
             },
@@ -240,6 +244,34 @@
                 {
                   "value": "home-season-promotions",
                   "label": "Bloque temporada"
+                },
+                {
+                  "value": "home-vertical-banners",
+                  "label": "Banners verticales"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_3",
+              "label": "Sección 3",
+              "default": "home-season-promotions",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ningúno"
+                },
+                {
+                  "value": "home-main-banner",
+                  "label": "Banner principal"
+                },
+                {
+                  "value": "home-season-promotions",
+                  "label": "Bloque temporada"
+                },
+                {
+                  "value": "home-vertical-banners",
+                  "label": "Banners verticales"
                 }
               ]
             }
@@ -248,7 +280,7 @@
       ]
     },
     {
-      "name": "Página de Inicio - Banner",
+      "name": "Página de Inicio - Banners",
       "icon": "home-page",
       "sections": [
         {
@@ -317,6 +349,131 @@
               "label": "Enlace colección dos"
             }
           ]
+        },
+        {
+          "header": "Promos verticales - 1",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "home_vertical_banners",
+              "label": "Activo"
+            },
+            {
+              "type": "image",
+              "id": "home_vertical_banners_1_image",
+              "label": "Promo 1 - Imagen"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_1_title",
+              "label": "Promo 1 - Título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_1_link",
+              "label": "Promo 1 - Enlace"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_1_collection_1_title",
+              "label": "Mini Enlace - título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_1_collection_1",
+              "label": "Mini Enlace - url"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_1_collection_2_title",
+              "label": "Mini Enlace - título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_1_collection_2",
+              "label": "Mini Enlace - url"
+            }
+          ]
+        },
+        {
+          "header": "Promos verticales - 2",
+          "settings": [
+            {
+              "type": "image",
+              "id": "home_vertical_banners_2_image",
+              "label": "Promo 2 - Imagen"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_2_title",
+              "label": "Promo 2 - Título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_2_link",
+              "label": "Promo 2 - Enlace"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_2_collection_1_title",
+              "label": "Mini Enlace - título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_2_collection_1",
+              "label": "Mini Enlace - url"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_2_collection_2_title",
+              "label": "Mini Enlace - título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_2_collection_2",
+              "label": "Mini Enlace - url"
+            }
+          ]
+        },
+        {
+          "header": "Promos verticales - 3",
+          "settings": [
+            {
+              "type": "image",
+              "id": "home_vertical_banners_3_image",
+              "label": "Promo 3 - Imagen"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_3_title",
+              "label": "Promo 3 - Título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_3_link",
+              "label": "Promo 3 - Enlace"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_3_collection_1_title",
+              "label": "Mini Enlace - título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_3_collection_1",
+              "label": "Mini Enlace - url"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_3_collection_2_title",
+              "label": "Mini Enlace - título"
+            },
+            {
+              "type": "text",
+              "id": "home_vertical_banners_3_collection_2",
+              "label": "Mini Enlace - url"
+            }
+          ]
         }
       ]
     },
@@ -345,33 +502,6 @@
               "label": "Límite de Productos a Mostrar",
               "default": "8",
               "info": "Para mostrar todos los productos de esta colección deja vacío este campo"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Página de Inicio - Banners",
-      "icon": "home-page",
-      "sections": [
-        {
-          "header": "Banner en Navegación",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "navigation_top_banner_active",
-              "default": false,
-              "label": "Activar"
-            }
-          ]
-        },
-        {
-          "header": "Banner estático",
-          "settings": [
-            {
-              "type": "checkbox",
-              "id": "featured_static_banner",
-              "label": "Activar"
             }
           ]
         }

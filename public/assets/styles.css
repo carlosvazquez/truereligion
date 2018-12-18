@@ -3136,8 +3136,9 @@ a.btn, .btn {
   -o-border-radius: 0; }
 
 a.btn.btn-primary, .btn.btn-primary, .btn-primary {
+  color: #fff;
   background-color: #000;
-  color: #fff; }
+  border-color: #000; }
 
 .bgblack {
   background-color: #000; }
@@ -3916,8 +3917,7 @@ nav.navigation.stick .main-menu .menu .logo {
     max-width: 630px;
     text-transform: none; }
   .home_page .home-season-promotions__btn {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px 10px;
     font-size: 15px;
     max-width: 250px;
     text-decoration: none;
@@ -3930,3 +3930,45 @@ nav.navigation.stick .main-menu .menu .logo {
     line-height: 1.86;
     letter-spacing: .4px;
     white-space: nowrap; }
+
+.home_page .home-vertical-banners {
+  margin-bottom: 40px; }
+  .home_page .home-vertical-banners .vertical-cards__item {
+    text-align: center; }
+  .home_page .home-vertical-banners .vertical-cards__img-container {
+    margin-bottom: 12px; }
+  .home_page .home-vertical-banners .vertical-cards__image-link {
+    display: block;
+    margin: 0;
+    padding: 0; }
+  .home_page .home-vertical-banners .vertical-cards__image-link:hover {
+    text-decoration: none; }
+  .home_page .home-vertical-banners .vertical-cards__image {
+    background-color: #fff;
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    @media (max-width: 1149.98px) {
+      .home_page .home-vertical-banners .vertical-cards__image {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 70%; } }
+  .home_page .home-vertical-banners .vertical-cards__title {
+    font-size: 24px;
+    font-family: "AvenirBlack";
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 25px 0 0; }
+  .home_page .home-vertical-banners .vertical-cards__info {
+    margin-bottom: 20px; }
+  .home_page .home-vertical-banners .vertical-cards__link {
+    color: #6e6e6e;
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 0;
+    font-family: "AvenirRegular";
+    text-transform: capitalize;
+    text-decoration: underline; }

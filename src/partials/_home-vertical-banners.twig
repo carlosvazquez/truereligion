@@ -1,0 +1,67 @@
+{% if settings.home_vertical_banners %}
+<div class="home-vertical-banners">
+  <div class="container">
+    <div class="row vertical-cards">
+
+      <div class="col-12 col-md-4">
+        <div class="vertical-cards__item">
+          <div class="vertical-cards__img-container">
+            <a href="{{ settings.home_vertical_banners_1_link }}" class="vertical-cards__image-link">
+              <img src="{{ settings.home_vertical_banners_1_image }}" alt="Banner vertical" class="vertical-cards__image">
+            </a>
+          </div>
+          <div class="vertical-cards__info">
+            <h3 class="vertical-cards__title">{{ settings.home_vertical_banners_1_title }}</h3>
+            {% if settings.home_vertical_banners_1_collection_1_title is not empty %}
+            <p><a href="{{ settings.home_vertical_banners_1_collection_1 }}" class="vertical-cards__link">{{ settings.home_vertical_banners_1_collection_1_title }}</a></p>
+            {% endif %}
+            {% if settings.home_vertical_banners_1_collection_2_title is not empty %}
+            <p><a href="{{ settings.home_vertical_banners_1_collection_2 }}" class="vertical-cards__link">{{ settings.home_vertical_banners_1_collection_2_title }}</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div> <!-- end .col .col-md-4 -->
+
+      <div class="col-12 col-md-4">
+        <div class="vertical-cards__item">
+          <div class="vertical-cards__img-container">
+            <a href="{{ settings.home_vertical_banners_2_link }}" class="vertical-cards__image-link">
+              <img src="{{ settings.home_vertical_banners_2_image }}" alt="Banner vertical" class="vertical-cards__image">
+            </a>
+          </div>
+          <div class="vertical-cards__info">
+            <h3 class="vertical-cards__title">{{ settings.home_vertical_banners_2_title }}</h3>
+            {% if settings.home_vertical_banners_2_collection_1_title is not empty %}
+            <p><a href="{{ settings.home_vertical_banners_2_collection_1 }}" class="vertical-cards__link">{{ settings.home_vertical_banners_2_collection_1_title }}</a></p>
+            {% endif %}
+            {% if settings.home_vertical_banners_2_collection_2_title is not empty %}
+            <p><a href="{{ settings.home_vertical_banners_2_collection_2 }}" class="vertical-cards__link">{{ settings.home_vertical_banners_2_collection_2_title }}</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div> <!-- end .col .col-md-4 -->
+
+      <div class="col-12 col-md-4">
+        <div class="vertical-cards__item">
+          <div class="vertical-cards__img-container">
+            <a href="{{ settings.home_vertical_banners_3_link }}" class="vertical-cards__image-link">
+              <img src="{{ settings.home_vertical_banners_3_image }}" alt="Banner vertical" class="vertical-cards__image">
+            </a>
+          </div>
+          <div class="vertical-cards__info">
+            <h3 class="vertical-cards__title">{{ settings.home_vertical_banners_3_title }}</h3>
+            {% if settings.home_vertical_banners_3_collection_1_title is not empty %}
+            <p><a href="{{ settings.home_vertical_banners_3_collection_1 }}" class="vertical-cards__link">{{ settings.home_vertical_banners_3_collection_1_title }}</a></p>
+            {% endif %}
+            {% if settings.home_vertical_banners_3_collection_2_title is not empty %}
+            <p><a href="{{ settings.home_vertical_banners_3_collection_2 }}" class="vertical-cards__link">{{ settings.home_vertical_banners_3_collection_2_title }}</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div> <!-- end .col .col-md-4 -->
+
+    </div>
+  </div>
+</div>
+{% endif %}
+

@@ -6,8 +6,9 @@ a.btn, .btn {
   -o-border-radius: 0;
 }
 a.btn.btn-primary, .btn.btn-primary, .btn-primary {
-  background-color: $black;
   color: $white;
+  background-color: $black;
+  border-color: $black;
 }
 a.btn.btn-primary:hover, .btn.btn-primary:hover, .btn-primary:hover,
 a.btn.btn-primary:focus, .btn.btn-primary:focus, .btn-primary:focus {
