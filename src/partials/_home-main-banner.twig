@@ -1,0 +1,7 @@
+{% if settings.home_main_banner and settings.home_main_banner_image is not empty %}
+<div class="home-main-banner">
+  <a href="{{ settings.home_main_banner_link }}" class="home-main-banner__link">
+    <img class="home-main-banner__image" src="{{ settings.home_main_banner_image }}" alt="Imagen del banner principal">
+  </a>
+</div>
+{% endif %}

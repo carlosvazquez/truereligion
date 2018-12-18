@@ -1,0 +1,59 @@
+.home_page {
+  .home-main-banner {
+    &__link {
+      display: block;
+      margin: 0;
+      padding: 0;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &__image {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+  .home-season-promotions {
+    background-color: $white;
+    text-align: center;
+    padding: 40px 30px 40px;
+    &__title {
+      letter-spacing: 3px;
+      font-family: "AvenirBlack";
+      font-size: 24px;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 900;
+      margin: 0;
+      line-height: 1.08;
+      text-transform: uppercase;
+      white-space: normal;
+    }
+    &__intro {
+      color: #6e6e6e;
+      font-family: "FrankRuhlLibreRegular";
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 15px auto 32px;
+      max-width: 630px;
+      text-transform: none;
+    }
+    &__btn {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+      max-width: 250px;
+      text-decoration: none;
+      padding: 10px 64.15px;
+      font-family: "AvenirRegular";
+      text-transform: capitalize;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.86;
+      letter-spacing: .4px;
+      white-space: nowrap;
+    }
+  }
+}

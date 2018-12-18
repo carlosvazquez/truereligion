@@ -3128,6 +3128,17 @@ body {
   font-size: 12px;
   letter-spacing: .3px; }
 
+a.btn, .btn {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0; }
+
+a.btn.btn-primary, .btn.btn-primary, .btn-primary {
+  background-color: #000;
+  color: #fff; }
+
 .bgblack {
   background-color: #000; }
 
@@ -3868,3 +3879,54 @@ nav.navigation.stick .main-menu .menu .logo {
 
 .megamenu .divider .submenu .menu-item {
   display: block; }
+
+.home_page .home-main-banner__link {
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .home_page .home-main-banner__link:hover {
+    text-decoration: none; }
+
+.home_page .home-main-banner__image {
+  display: block;
+  height: auto;
+  width: 100%; }
+
+.home_page .home-season-promotions {
+  background-color: #fff;
+  text-align: center;
+  padding: 40px 30px 40px; }
+  .home_page .home-season-promotions__title {
+    letter-spacing: 3px;
+    font-family: "AvenirBlack";
+    font-size: 24px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.08;
+    text-transform: uppercase;
+    white-space: normal; }
+  .home_page .home-season-promotions__intro {
+    color: #6e6e6e;
+    font-family: "FrankRuhlLibreRegular";
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 15px auto 32px;
+    max-width: 630px;
+    text-transform: none; }
+  .home_page .home-season-promotions__btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    max-width: 250px;
+    text-decoration: none;
+    padding: 10px 64.15px;
+    font-family: "AvenirRegular";
+    text-transform: capitalize;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.86;
+    letter-spacing: .4px;
+    white-space: nowrap; }

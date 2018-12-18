@@ -1,6 +1,13 @@
 a.btn, .btn {
+  border-radius: 0;;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
 }
 a.btn.btn-primary, .btn.btn-primary, .btn-primary {
+  background-color: $black;
+  color: $white;
 }
 a.btn.btn-primary:hover, .btn.btn-primary:hover, .btn-primary:hover,
 a.btn.btn-primary:focus, .btn.btn-primary:focus, .btn-primary:focus {

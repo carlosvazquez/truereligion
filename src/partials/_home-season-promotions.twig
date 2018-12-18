@@ -1,0 +1,13 @@
+{% if settings.home_season_promotions %}
+<div class="home-season-promotions">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="home-season-promotions__title">{{ settings.home_season_promotions_title }}</h2>
+        <p class="home-season-promotions__intro">{{ settings.home_season_promotions_intro }}</p>
+        <p><a href="{{ settings.home_season_promotions_collection_one_link }}" class="btn btn-lg btn-primary home-season-promotions__btn">{{ settings.home_season_promotions_collection_one_title }}</a><a href="{{ settings.home_season_promotions_collection_two_link }}" class="btn btn-lg btn-primary home-season-promotions__btn">{{ settings.home_season_promotions_collection_two_title }}</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
