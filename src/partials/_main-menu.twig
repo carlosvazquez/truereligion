@@ -5,6 +5,8 @@
         <div class="col-12 col-md-12 col-lg-12 col-xl-12 no-padding">
           <ul class="navigation d-flex justify-content-between">
           {% for link in menus.truereligion %}
+            {% if link.children | length > 0 %}
+            {% set menu_image = settings['navmenu_block_image_'~loop.index] %}
             <li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a>
               <div class="megamenu">
                 <div class="container">
@@ -12,17 +14,16 @@
                     <div class="col-6 col-sm-6 offset-sm-3 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mega-container">
                       {% set level = 1 %}
                       <ul class="level-{{ level }}">
-                        {% if link.children | length > 0 %}
-                          {% include '_subnav.twig' with {'level': level, '': level } %}
-                        {% else %}
-                          <li class="id-12 title-level-{{ level }}"><a href="{{ link.url }}">AAAAA{{ link.name }}</a>
-                        {% endif %}
+                        {% include '_subnav.twig' with {'level': level } %}
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
+            {% else %}
+              <li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a>
+            {% endif %}
           {% endfor %}
           </ul>
         </div>

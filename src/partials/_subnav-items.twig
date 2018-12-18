@@ -1,26 +1,13 @@
-{% set level = level %}
 {% if link.children | length > 0 %}
-  {% if level == 3 and counter is not divisible by(2) %}<div class="col">{% endif %}
   <li class="id-1 title-level-{{ level }}">
-  {% if level != 2 %}
-    <a href="{{ link.url }}">{{ link.name }}</a>
-  {% endif %}
-    <ul class="{% if level == 2 %}row{% endif %} level-{{ level }} {% if counter != 0 %}counter-{{ counter }}{% endif %}">
+    <ul class="submenu">
       {% for children in link.children %}
-        {% include '_subnav-items.twig' with {'link': children, 'level': level, 'counter': loop.index, 'total':loop.length } %}
+        {% include '_subnav-items.twig' with {'link': children, 'level': level + 1 } %}
       {% endfor %}
-        {% if level == 2 %}
-          <div class="col">
-            <img src="https://fakeimg.pl/350x200/ff0000,128/000,255">
-          </div>
-        {% endif %}
     </ul>
   </li>
-  {% if level == 3 and counter is divisible by(2) %}</div>{% endif %}
-
 {% else %}
-  <li class="id-2">
-    <a href="{{ link.url }}">{{ link.name }}</a>
+  <li class="menu-item">
+    <a class="menu-link" href="{{ link.url }}">{{ link.name }}</a>
   </li>
 {% endif %}
-

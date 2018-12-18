@@ -1,0 +1,56 @@
+.megamenu {
+  .mega-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+  .main-level-items-list {
+  }
+  .level-block {
+    > .row.align-items-start {
+      padding: 0 30px 0 50px;
+    }
+    &--1 {
+    }
+    &-title {
+    }
+    &-item--1  {
+    }
+    &-item {
+      display: block;
+      padding-top: 12px;
+      margin-bottom: 20px;
+    }
+    &-item-link  {
+      color: #6e6e6e;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.73!important;
+      letter-spacing: .4px;
+      padding: 0;
+    }
+    &-list {
+      .divider {
+        width: 49.888889%;
+        float: left;
+      }
+      &--1 {
+      }
+    }
+    .menu-link {
+      font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 2.17!important;
+      letter-spacing: .3px;
+      color: #000;
+    }
+  }
+  .submenu {
+    margin-bottom: 20px !important;
+  }
+  .menu-main-image {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
