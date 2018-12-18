@@ -1,0 +1,13 @@
+{% if link.children | length > 0 %}
+  <li class="id-1 title-level-{{ level }}">
+    <ul class="submenu">
+      {% for children in link.children %}
+        {% include '_subnav-items.twig' with {'link': children, 'level': level + 1 } %}
+      {% endfor %}
+    </ul>
+  </li>
+{% else %}
+  <li class="menu-item">
+    <a class="menu-link" href="{{ link.url }}">{{ link.name }}</a>
+  </li>
+{% endif %}

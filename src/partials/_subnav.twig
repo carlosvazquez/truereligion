@@ -1,0 +1,25 @@
+<li class="level-block level-block--{{ level }}">
+{% if link.children | length > 0 %}
+<div class="row align-items-start">
+  <ul class="level-block-list level-block-list--{{ level }} col-7">
+    {% for children in link.children %}
+      {% set columns = (loop.length / 2)|round  %}
+      {% if loop.index0 == 0 %}<div class="divider">{% endif %}
+      <li class="level-block-item index-{{ loop.index }} level-block-title--{{ level }}"><a class="level-block-item-link" href="{{ children.url }}">{{ children.name }}</a></li>
+      {% include '_subnav-items.twig' with {'link': children, 'level': level + 1 } %}
+      {% if columns == loop.index %}</div><div class="divider">{% endif %}
+      {% if loop.last %}</div>{% endif %}
+    {% endfor %}
+  </ul>
+  <div class="col-5">
+    {% if menu_image is not empty%}
+    <img class="menu-main-image" src="{{ menu_image }}">
+    {% endif %}
+  </div>
+</div>
+{% else %}
+    <a class="level-block-item-link" href="{{ link.url }}">{{ link.name }}</a>
+{% endif %}
+</li>
+
+

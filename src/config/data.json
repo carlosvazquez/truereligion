@@ -13,7 +13,16 @@
       "discount_subtitle": "Great Choice. Enter your email below for an extra 10% off",
       "discount_code_title": "Take 10% Off",
       "discount_code_subtitle": "with code",
-      "discount_code_tag": "Take10"
+      "discount_code_tag": "Take10",
+      "navmenu_block_image_1": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_2": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_3": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_4": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_5": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_6": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_7": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_8": "https://via.placeholder.com/407x300",
+      "navmenu_block_image_9": "https://via.placeholder.com/407x300"
     }
   }
 }
