@@ -116,7 +116,7 @@
       },
       MobileMenu: function() {
         $('.navigation__link-toggle').on('click', function(){
-          $(this).next('.subnav').slideToggle();
+          $(this).next('.subnav').slideToggle('fast');
         });
         $('.navigation__link-toggle').on('click', function(){
           $(this).toggleClass('on');

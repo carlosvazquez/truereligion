@@ -1,20 +1,41 @@
 <div class="mobileMenu">
   <ul class="navigation">
-      <li class="navigation__item"><span class="mobile_nav_btn" href="{{ link.url }}">Close</span></li>
+    <li class="navigation__item">
+      <span class="mobile_nav_btn" href="{{ link.url }}">
+        <img src="https://storage.kometia.test/store1/images/delete-cross.png?v=1545242815" alt="Close menu">
+      </span>
+    </li>
     {% for link in menus.truereligion %}
-      {% if link.children | length > 0 %}
-      <li class="navigation__item navigation--has-children">
-        <a href="{{ link.url }}" class="navigation__link-title">{{ link.name }}</a>
-        <a href="#" class="navigation__link-toggle"></a>
-        <ul class="subnav{% if loop.last or loop.length - 1 == loop.index %} last{% endif %}">
-          {% for children in link.children %}
-            {% include '_nav-item.twig' with { 'link': children } %}
-          {% endfor %}
-        </ul>
+    {% if link.children | length > 0 %}
+    <li class="navigation__item navigation--has-children">
+      <a href="{{ link.url }}" class="navigation__link-title">{{ link.name }}</a>
+      <a href="#" class="navigation__link-toggle"></a>
+      <ul class="subnav{% if loop.last or loop.length - 1 == loop.index %} last{% endif %}">
+        {% for children in link.children %}
+          {% include '_nav-item.twig' with { 'link': children } %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% else %}
+    <li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if store.customer_accounts_enabled_or_optional %}
+      {% if customer %}
+      <li class="navigation__item">
+        <a href="/cuenta" class="navigation__link-title navigation--title-inverse">Órdenes</a>
+      </li>
+      <li class="navigation__item">
+        <a href="/cuenta/logout" class="navigation__link-title navigation--title-inverse">Salir</a>
       </li>
       {% else %}
-      <li class="navigation__item"><a class="navigation__link" href="{{ link.url }}">{{ link.name }}</a></li>
+      <li class="navigation__item isInverse">
+        <a href="/cuenta/registro" class="navigation__link-title navigation--title-inverse inline-block">Registrarse</a><a href="/cuenta/login" class="navigation__link-title navigation--title-inverse inline-block">Entrar</a>
+      </li>
       {% endif %}
-    {% endfor %}
+    {% endif %}
+      <li class="navigation__item">
+        <a href="/paginas/tiendas" class="navigation__link-title navigation--title-inverse">Ver tiendas</a>
+      </li>
   </ul>
 </div>

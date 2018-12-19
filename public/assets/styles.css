@@ -3146,6 +3146,12 @@ a.btn.btn-primary, .btn.btn-primary, .btn-primary {
 .bgblack {
   background-color: #000; }
 
+.no-padding {
+  padding: 0; }
+
+.inline-block {
+  display: inline-block !important; }
+
 header.header .discount-banner {
   display: none; }
 
@@ -3603,11 +3609,11 @@ body.has-mobile-menu .mobileMenu {
   display: block;
   opacity: 1;
   right: 0;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
   animation: c .2s ease forwards; }
 
 body.has-mobile-menu .overlay {
@@ -3620,21 +3626,21 @@ body.has-mobile-menu .overlay {
   right: 0;
   top: 0;
   z-index: 99;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out; }
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
 
 body .overlay {
   background-color: rgba(255, 255, 255, 0);
   display: none;
   opacity: 0;
-  -webkit-transition: all .6s ease-in-out;
-  -moz-transition: all .6s ease-in-out;
-  -o-transition: all .6s ease-in-out;
-  -ms-transition: all .6s ease-in-out;
-  transition: all .6s ease-in-out; }
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
 
 .mobileMenu {
   background: #fff;
@@ -3653,11 +3659,11 @@ body .overlay {
   -webkit-box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.25);
-  -webkit-transition: all .6s ease-in;
-  -moz-transition: all .6s ease-in;
-  -o-transition: all .6s ease-in;
-  -ms-transition: all .6s ease-in;
-  transition: all .6s ease-in; }
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  transition: all .3s ease-in; }
 
 .mobileMenu ul {
   margin: 0;
@@ -3671,6 +3677,19 @@ body .overlay {
     .mobileMenu ul li a:hover, .mobileMenu ul li a:focus {
       text-decoration: none; }
 
+.mobileMenu .navigation .mobile_nav_btn {
+  display: block;
+  line-height: 1;
+  padding: 20px 16px; }
+  .mobileMenu .navigation .mobile_nav_btn img {
+    height: 13px;
+    width: 13px; }
+
+.mobileMenu .navigation .isInverse {
+  background-color: #000;
+  border-color: #000;
+  color: #ffffff; }
+
 .mobileMenu .navigation__link-title, .mobileMenu .navigation__link {
   background-color: #f4f4f4;
   color: #000;
@@ -3681,6 +3700,15 @@ body .overlay {
   letter-spacing: .4px;
   line-height: 2.17;
   padding: 10px 10px 10px 20px; }
+
+.mobileMenu .navigation--title-inverse {
+  background-color: #000 !important;
+  border-color: #000 !important;
+  color: #ffffff !important;
+  padding-bottom: 10px !important;
+  padding-top: 10px !important;
+  padding-right: 0;
+  text-transform: none !important; }
 
 .mobileMenu .navigation__link-toggle {
   cursor: pointer;
@@ -3750,7 +3778,7 @@ body .overlay {
     display: block; }
 
 .mobileMenu .navigation > .navigation__item > .navigation__link-title {
-  color: #b2292e;
+  color: #000;
   border-bottom: 1px solid rgba(227, 227, 227, 0.5);
   background-color: #fff;
   font-weight: 500;
@@ -3763,6 +3791,9 @@ body .overlay {
   font-style: normal;
   font-stretch: normal;
   text-transform: uppercase; }
+
+.mobileMenu .navigation .isActive {
+  color: #b2292e; }
 
 .mega-container {
   position: initial; }

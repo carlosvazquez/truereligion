@@ -3,11 +3,11 @@ body.has-mobile-menu {
     display: block;
     opacity: 1;
     right: 0;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
     animation: c .2s ease forwards;
   }
 }
@@ -21,21 +21,21 @@ body.has-mobile-menu .overlay {
   right: 0;
   top: 0;
   z-index: 99;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 body .overlay {
   background-color: rgba(255,255,255,0);
   display: none;
   opacity: 0;
-  -webkit-transition: all .6s ease-in-out;
-  -moz-transition: all .6s ease-in-out;
-  -o-transition: all .6s ease-in-out;
-  -ms-transition: all .6s ease-in-out;
-  transition: all .6s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 .mobileMenu {
   background: $white;
@@ -54,11 +54,11 @@ body .overlay {
   -webkit-box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
   box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
-  -webkit-transition: all .6s ease-in;
-  -moz-transition: all .6s ease-in;
-  -o-transition: all .6s ease-in;
-  -ms-transition: all .6s ease-in;
-  transition: all .6s ease-in;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  transition: all .3s ease-in;
 }
 
 .mobileMenu {
@@ -79,6 +79,18 @@ body .overlay {
   }
   .navigation {
     .mobile_nav_btn {
+      display: block;
+      line-height: 1;
+      padding: 20px 16px;
+      img {
+        height: 13px;
+        width: 13px;
+      }
+    }
+    .isInverse {
+      background-color: $black;
+      border-color: $black;
+      color: #ffffff;
     }
     &__item {
     }
@@ -92,6 +104,15 @@ body .overlay {
       letter-spacing: .4px;
       line-height: 2.17;
       padding: 10px 10px 10px 20px;
+    }
+    &--title-inverse {
+      background-color: $black !important;
+      border-color: $black  !important;
+      color: #ffffff !important;
+      padding-bottom: 10px !important;
+      padding-top: 10px !important;
+      padding-right: 0;
+      text-transform: none !important;
     }
     &__link-toggle {
       cursor: pointer;
@@ -169,7 +190,7 @@ body .overlay {
       }
     }
     > .navigation__item > .navigation__link-title {
-      color: #b2292e;
+      color: $black;
       border-bottom: 1px solid rgba(227,227,227,.5);
       background-color: $white;
       font-weight: 500;
@@ -182,6 +203,9 @@ body .overlay {
       font-style: normal;
       font-stretch: normal;
       text-transform: uppercase;
+    }
+    .isActive {
+      color: #b2292e;
     }
   }
 }
