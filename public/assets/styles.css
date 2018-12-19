@@ -3916,18 +3916,80 @@ nav.navigation.stick .main-menu .menu .logo {
 .megamenu .divider .submenu .menu-item {
   display: block; }
 
-.home-collection-slider .slick-slide {
-  display: inline-block !important; }
-
-.home-collection-slider .slider {
-  overflow: hidden; }
-
-.home-collection-slider .slide {
-  padding: 0 20px 0; }
-  .home-collection-slider .slide__img {
-    display: block;
-    width: 100%;
-    height: auto; }
+.home-collection-slider {
+  margin: 20px 0;
+  padding: 40px 0; }
+  @media (max-width: 1149.98px) {
+    .home-collection-slider {
+      margin: 12px 0;
+      padding: 20px 0; } }
+  .home-collection-slider__title {
+    color: #000;
+    font-family: "Avenir Next Cyr W00 Bold", helvetica, sans-serif;
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 900;
+    height: 14px;
+    letter-spacing: 1.8px;
+    line-height: 1.44;
+    margin: 108px 0 50px;
+    text-align: center;
+    text-transform: uppercase; }
+  .home-collection-slider .slick-slide {
+    display: inline-block !important; }
+  .home-collection-slider .slider {
+    overflow: hidden; }
+  .home-collection-slider .slide {
+    padding: 0 20px 0; }
+    .home-collection-slider .slide__img {
+      display: block;
+      width: 100%;
+      height: auto; }
+  .home-collection-slider .card__thumbnail {
+    background-color: #fff;
+    margin-bottom: 37px; }
+    @media (max-width: 1149.98px) {
+      .home-collection-slider .card__thumbnail {
+        margin-bottom: 14px; } }
+  .home-collection-slider .card__title {
+    height: auto;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: 1.2px;
+    text-align: left;
+    color: #000;
+    text-transform: uppercase; }
+  .home-collection-slider .card__link {
+    color: #000;
+    display: inline-block;
+    margin: 0;
+    padding: 0; }
+  .home-collection-slider .card__link:hover {
+    text-decoration: none; }
+  .home-collection-slider .card__img {
+    max-width: 100%;
+    height: auto;
+    width: 100%; }
+  .home-collection-slider .card__info {
+    margin-bottom: 12px; }
+  .home-collection-slider .card__price {
+    font-family: "FrankRuhlLibre-Regular";
+    font-weight: 400;
+    letter-spacing: .3px;
+    line-height: normal;
+    margin: 0;
+    color: #6e6e6e;
+    text-align: left;
+    height: auto !important;
+    padding-bottom: 0 !important; }
+  .home-collection-slider .card--compared-price {
+    color: #b2292e;
+    text-decoration: line-through; }
 
 .home_page .home-main-banner__link {
   display: block;
@@ -4020,6 +4082,3 @@ nav.navigation.stick .main-menu .menu .logo {
     font-family: "AvenirRegular";
     text-transform: capitalize;
     text-decoration: underline; }
-
-.home_page .home-collection-slider {
-  background-color: palevioletred; }

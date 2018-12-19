@@ -5,20 +5,27 @@
       <div class="row">
 
         <div class="col-12">
+          <h3 class="home-collection-slider__title">{{ slides.title }}</h3>
           <div class="slider">
           {% for product in slides.products | slice(0, 10) %}
             {% if product.image_url is not null %}
-              {% set image_url = product.image_url ~ '&w=360&h='~height~'&fit=bounds' %}
+              {% set image_url = product.image_url ~ '&w=375&h=565&fit=crop' %}
             {% else %}
               {% set image_url = 'placeholders/product-11.jpg' | global_img_url %}
             {% endif %}
             <div class="slide">
               <div class="card">
-                <div class="card__img-container">
-                  <img class="slide__img" src="{{ image_url }}">
+                <div class="card__thumbnail">
+                  <a class="card__link" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
+                    <img class="card__img" src="{{ image_url }}" alt="image of {{ product.name }}">
+                  </a>
                 </div>
                 <div class="card__info">
-                  <h3 class="card__title">{{ product.name }}</h3>
+                  <h3 class="card__title"><a class="card__link" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">{{ product.name }}</a></h3>
+                  {% if product.price < product.compared_price and product.compared_price > 0 %}
+                  <p class="card__price card--compared-price">{{ product.compared_price | money('symbol', 'code') }}</p>
+                  {% endif %}
+                  <p class="card__price">{{ product.price | money('symbol', 'code') }}</p>
                 </div>
               </div>
             </div>

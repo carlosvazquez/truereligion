@@ -1,4 +1,24 @@
 .home-collection-slider {
+  margin: 20px 0;
+  padding: 40px 0;
+  @include media-breakpoint-down(md) {
+    margin: 12px 0;
+    padding: 20px 0;
+  }
+  &__title {
+    color: $black;
+    font-family: "Avenir Next Cyr W00 Bold", helvetica, sans-serif;
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 900;
+    height: 14px;
+    letter-spacing: 1.8px;
+    line-height: 1.44;
+    margin: 108px 0 50px;
+    text-align: center;
+    text-transform: uppercase;
+  }
   .slick-slide {
     display: inline-block !important;
   }
@@ -11,6 +31,60 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+  }
+  .card {
+    &__thumbnail {
+      background-color: $white;
+      margin-bottom: 37px;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 14px;
+      }
+    }
+    &__title {
+      height: auto;
+      font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.75;
+      letter-spacing: 1.2px;
+      text-align: left;
+      color: #000;
+      text-transform: uppercase;
+    }
+    &__link {
+      color: $black;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    &__link:hover {
+      text-decoration: none;
+    }
+    &__img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+    }
+    &__info {
+      margin-bottom: 12px;
+    }
+    &__price {
+      font-family: "FrankRuhlLibre-Regular";
+      font-weight: 400;
+      letter-spacing: .3px;
+      line-height: normal;
+      margin: 0;
+      color: #6e6e6e;
+      text-align: left;
+      height: auto!important;
+      padding-bottom: 0!important;
+    }
+    &--compared-price {
+      color: #b2292e;
+      text-decoration: line-through;
     }
   }
 }
