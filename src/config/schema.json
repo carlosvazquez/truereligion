@@ -224,6 +224,10 @@
                 {
                   "value": "home-vertical-banners",
                   "label": "Banners verticales"
+                },
+                {
+                  "value": "home-collection-slider",
+                  "label": "Colección - slider"
                 }
               ]
             },
@@ -248,6 +252,10 @@
                 {
                   "value": "home-vertical-banners",
                   "label": "Banners verticales"
+                },
+                {
+                  "value": "home-collection-slider",
+                  "label": "Colección - slider"
                 }
               ]
             },
@@ -272,6 +280,38 @@
                 {
                   "value": "home-vertical-banners",
                   "label": "Banners verticales"
+                },
+                {
+                  "value": "home-collection-slider",
+                  "label": "Colección - slider"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_4",
+              "label": "Sección 4",
+              "default": "home-collection-slider",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ningúno"
+                },
+                {
+                  "value": "home-main-banner",
+                  "label": "Banner principal"
+                },
+                {
+                  "value": "home-season-promotions",
+                  "label": "Bloque temporada"
+                },
+                {
+                  "value": "home-vertical-banners",
+                  "label": "Banners verticales"
+                },
+                {
+                  "value": "home-collection-slider",
+                  "label": "Colección - slider"
                 }
               ]
             }
@@ -512,13 +552,17 @@
       "icon": "home-page",
       "sections": [
         {
-          "header": "Colecciones",
+          "header": "Slider Colecciones",
           "settings": [
             {
-              "type": "text",
-              "id": "featured_best_collections_btn_text",
-              "label": "Texto del botón",
-              "default": "Ver más"
+              "type": "checkbox",
+              "id": "home_collection_slider",
+              "label": "Activado"
+            },
+            {
+              "type": "collection",
+              "id": "home_collection_slider_collection",
+              "label": "Colección"
             }
           ]
         }

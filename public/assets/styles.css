@@ -3237,14 +3237,15 @@ nav.navigation {
         nav.navigation .mega-container .logo__img-desktop {
           display: inline-block; } }
   nav.navigation.stick {
+    padding-bottom: 12px;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 10;
     -webkit-transition: padding-top .2s ease-out;
     -moz-transition: padding-top .2s ease-out;
     -o-transition: padding-top .2s ease-out;
-    transition: padding-top .2s ease-out; }
+    transition: padding-top .2s ease-out;
+    width: 100%;
+    z-index: 10; }
     @media (max-width: 1279.98px) {
       nav.navigation.stick {
         padding-top: 0;
@@ -3881,6 +3882,19 @@ nav.navigation.stick .main-menu .menu .logo {
 .megamenu .divider .submenu .menu-item {
   display: block; }
 
+.home-collection-slider .slick-slide {
+  display: inline-block !important; }
+
+.home-collection-slider .slider {
+  overflow: hidden; }
+
+.home-collection-slider .slide {
+  padding: 0 20px 0; }
+  .home-collection-slider .slide__img {
+    display: block;
+    width: 100%;
+    height: auto; }
+
 .home_page .home-main-banner__link {
   display: block;
   margin: 0;
@@ -3972,3 +3986,6 @@ nav.navigation.stick .main-menu .menu .logo {
     font-family: "AvenirRegular";
     text-transform: capitalize;
     text-decoration: underline; }
+
+.home_page .home-collection-slider {
+  background-color: palevioletred; }

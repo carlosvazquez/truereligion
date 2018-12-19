@@ -1,0 +1,32 @@
+{% set slides = collections[settings.home_collection_slider_collection] %}
+{% if settings.home_collection_slider and slides | length > 0 %}
+  <div class="home-collection-slider">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="slider">
+          {% for product in slides.products | slice(0, 10) %}
+            {% if product.image_url is not null %}
+              {% set image_url = product.image_url ~ '&w=360&h='~height~'&fit=bounds' %}
+            {% else %}
+              {% set image_url = 'placeholders/product-11.jpg' | global_img_url %}
+            {% endif %}
+            <div class="slide">
+              <div class="card">
+                <div class="card__img-container">
+                  <img class="slide__img" src="{{ image_url }}">
+                </div>
+                <div class="card__info">
+                  <h3 class="card__title">{{ product.name }}</h3>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endif %}

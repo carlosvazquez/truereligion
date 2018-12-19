@@ -164,6 +164,16 @@
     home_page: {
       init: function() {
         console.log('estas en el home');
+        this.collection_slider();
+      },
+      collection_slider: function() {
+        $('.home-collection-slider .slider').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: false,
+          autoplay: true
+        });
       }
     },
     product_page: {
