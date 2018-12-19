@@ -3,11 +3,10 @@
 <div class="row align-items-start">
   <ul class="level-block-list level-block-list--{{ level }} col-7">
     {% for children in link.children %}
-      {% set columns = (loop.length / 2)|round  %}
       {% if loop.index0 == 0 %}<div class="divider">{% endif %}
-      <li class="level-block-item index-{{ loop.index }} level-block-title--{{ level }}"><a class="level-block-item-link" href="{{ children.url }}">{{ children.name }}</a></li>
+      {% if '- divider' in children.name %}</div><div class="divider">{% endif %}
+      <li class="level-block-item index-{{ loop.index }} level-block-title--{{ level }}"><a class="level-block-item-link" href="{{ children.url }}">{{ children.name|replace({'- divider': ''}) }}</a></li>
       {% include '_subnav-items.twig' with {'link': children, 'level': level + 1 } %}
-      {% if columns == loop.index %}</div><div class="divider">{% endif %}
       {% if loop.last %}</div>{% endif %}
     {% endfor %}
   </ul>

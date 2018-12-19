@@ -2886,6 +2886,9 @@ a.text-dark:hover, a.text-dark:focus {
 .invisible {
   visibility: hidden !important; }
 
+html {
+  overflow-y: scroll; }
+
 a,
 button {
   transition: all .3s ease-in-out; }

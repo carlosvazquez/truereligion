@@ -1,6 +1,6 @@
 {% if link.children | length > 0 %}
 <li class="navigation__item navigation--has-children">
-  <a href="{{ link.url }}" class="navigation__link-title">{{ link.name }}</a>
+  <a href="{{ link.url }}" class="navigation__link-title">{{ link.name |replace({'- divider': ''}) }}</a>
   <a href="#" class="navigation__link-toggle"></a>
   <ul class="subnav">
     {% for children in link.children %}
