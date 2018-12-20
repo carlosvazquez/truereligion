@@ -1,0 +1,24 @@
+{% if settings.home_instagram_gallery %}
+<div class="home-instagram-gallery">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+      <h3 class="home-instagram-gallery__title">{{ settings.home_instagram_gallery_title }}</h3>
+      <p><a href="{{ settings.home_instagram_gallery_link }}" class="home-instagram-gallery__link" target="_blank">{{ settings.home_instagram_gallery_link_title }}</a></p>
+      </div>
+      <div class="col-6 col-sm-6 col-md-6 col-lg-3 home-instagram-gallery__img-container">
+        <img class="home-instagram-gallery__image" src="{{ settings.home_instagram_gallery_image_1 }}" alt="Imagen instagram">
+      </div>
+      <div class="col-6 col-sm-6 col-md-6 col-lg-3 home-instagram-gallery__img-container">
+        <img class="home-instagram-gallery__image" src="{{ settings.home_instagram_gallery_image_2 }}" alt="Imagen instagram">
+      </div>
+      <div class="col-6 col-lg-3 home-instagram-gallery__img-container isLastImage">
+        <img class="home-instagram-gallery__image" src="{{ settings.home_instagram_gallery_image_3 }}" alt="Imagen instagram">
+      </div>
+      <div class="col-6 col-lg-3 home-instagram-gallery__img-container isLastImage">
+        <img class="home-instagram-gallery__image" src="{{ settings.home_instagram_gallery_image_4 }}" alt="Imagen instagram">
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

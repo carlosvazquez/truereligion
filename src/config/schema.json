@@ -566,6 +566,143 @@
       ]
     },
     {
+      "name": "Página de Inicio - Colecciones",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Bloque Colecciones (2)",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "home_last_collections",
+              "label": "Activar"
+            }
+          ]
+        },
+        {
+          "header": "Colecciones Imágenes",
+          "settings": [
+            {
+              "type": "image",
+              "id": "home_last_collections_one_image",
+              "label": "Imagen colección 1"
+            },
+            {
+              "type": "image",
+              "id": "home_last_collections_two_image",
+              "label": "Imagen colección 1"
+            }
+          ]
+        },
+        {
+          "header": "Colección 1",
+          "settings": [
+            {
+              "type": "text",
+              "id": "home_last_collections_one_title",
+              "label": "Título colección 1"
+            },
+            {
+              "type": "text",
+              "id": "home_last_collections_one_description",
+              "label": "Descripción colección 1"
+            },
+            {
+              "type": "collection",
+              "id": "home_last_collections_one_collection_1",
+              "label": "Primera colección"
+            },
+            {
+              "type": "collection",
+              "id": "home_last_collections_one_collection_2",
+              "label": "Segunda colección"
+            }
+          ]
+        },
+        {
+          "header": "Colección 2",
+          "settings": [
+            {
+              "type": "text",
+              "id": "home_last_collections_two_title",
+              "label": "Título colección 2"
+            },
+            {
+              "type": "text",
+              "id": "home_last_collections_two_description",
+              "label": "Descripción colección 2"
+            },
+            {
+              "type": "collection",
+              "id": "home_last_collections_two_collection_1",
+              "label": "Primera colección"
+            },
+            {
+              "type": "collection",
+              "id": "home_last_collections_two_collection_2",
+              "label": "Segunda colección"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Página de Inicio - Instagram",
+      "icon": "home-page",
+      "sections": [
+        {
+          "header": "Configuración",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "home_instagram_gallery",
+              "label": "Activar"
+            },
+            {
+              "type": "text",
+              "id": "home_instagram_gallery_title",
+              "label": "Título"
+            },
+            {
+              "type": "text",
+              "id": "home_instagram_gallery_link_title",
+              "label": "Título del enlace"
+            },
+            {
+              "type": "text",
+              "id": "home_instagram_gallery_link",
+              "label": "Enlace a la cuenta de Instagram"
+            }
+          ]
+        },
+        {
+          "header": "Imágenes",
+          "settings": [
+            {
+              "type": "image",
+              "id": "home_instagram_gallery_image_1",
+              "label": "Imagen 1"
+            },
+            {
+              "type": "image",
+              "id": "home_instagram_gallery_image_2",
+              "label": "Imagen 2"
+            },
+            {
+              "type": "image",
+              "id": "home_instagram_gallery_image_3",
+              "label": "Imagen 3"
+            },
+            {
+              "type": "image",
+              "id": "home_instagram_gallery_image_4",
+              "label": "Imagen 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Página de Inicio - Productos",
       "icon": "home-page",
       "sections": [
@@ -596,7 +733,7 @@
       ]
     },
     {
-      "name": "Página de Inicio - Colecciones",
+      "name": "Página de Inicio - Slider Colecciones",
       "icon": "home-page",
       "sections": [
         {

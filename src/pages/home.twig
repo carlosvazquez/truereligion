@@ -22,4 +22,8 @@
     {% include '_' ~ settings.frontpage_section_5 ~ '.twig' %}
   {% endif %}
 
+  {% if settings.frontpage_section_6 is not empty and settings.frontpage_section_6 != 'none' %}
+    {% include '_' ~ settings.frontpage_section_6 ~ '.twig' %}
+  {% endif %}
+
 {% endblock body %}
