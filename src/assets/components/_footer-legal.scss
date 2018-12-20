@@ -1,0 +1,47 @@
+footer {
+  .legal {
+    background-color: $black;
+    color: $white;
+    &__text {
+      color: $white;
+      margin: 0;
+      padding: 12px 0;
+    }
+    &__menu {
+      text-align: right;
+      @include media-breakpoint-down(md) {
+        text-align: center;
+      }
+    }
+    &__list {
+      display: inline-block;
+      margin: 0;
+    }
+    &__item {
+      display: inline-block;
+      position: relative;
+    }
+    &__item::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: 0;
+      width: 1px;
+      background: white;
+      bottom: 14px;
+    }
+    &__item:last-of-type::before {
+      display: none;
+    }
+    &__link {
+      color: $white;
+      display: block;
+      height: 100%;
+      padding: 12px 14px;
+    }
+    &__link:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}

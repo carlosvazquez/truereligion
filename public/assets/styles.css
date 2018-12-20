@@ -4033,6 +4033,43 @@ nav.navigation.stick .main-menu .menu .logo {
     color: #b2292e;
     text-decoration: line-through; }
 
+footer .legal {
+  background-color: #000;
+  color: #fff; }
+  footer .legal__text {
+    color: #fff;
+    margin: 0;
+    padding: 12px 0; }
+  footer .legal__menu {
+    text-align: right; }
+    @media (max-width: 1149.98px) {
+      footer .legal__menu {
+        text-align: center; } }
+  footer .legal__list {
+    display: inline-block;
+    margin: 0; }
+  footer .legal__item {
+    display: inline-block;
+    position: relative; }
+  footer .legal__item::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 1px;
+    background: white;
+    bottom: 14px; }
+  footer .legal__item:last-of-type::before {
+    display: none; }
+  footer .legal__link {
+    color: #fff;
+    display: block;
+    height: 100%;
+    padding: 12px 14px; }
+  footer .legal__link:hover {
+    color: #fff;
+    text-decoration: underline; }
+
 .home_page .home-main-banner__link {
   display: block;
   margin: 0;
