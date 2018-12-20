@@ -1,10 +1,40 @@
 .home-collection-slider {
   margin: 20px 0;
   padding: 40px 0;
+  text-align: center;
   @include media-breakpoint-down(md) {
     margin: 12px 0;
     padding: 20px 0;
   }
+  button.slick-prev {
+    -ms-transform: translateY(-50px); /* IE 9 */
+    -webkit-transform: translateY(-50px); /* Safari */
+    transform: translateY(-50px);
+    @include media-breakpoint-down(md) {
+      left: 8px;
+    }
+  }
+  button.slick-next {
+    -ms-transform: translateY(-50px); /* IE 9 */
+    -webkit-transform: translateY(-50px); /* Safari */
+    transform: translateY(-50px);
+    @include media-breakpoint-down(md) {
+      right: 8px;
+    }
+  }
+
+  button.slick-prev {
+    &::before {
+      content: url('https://storage.kometia.test/store1/images/slide-left-arrow.png?v=1545258939');
+    }
+  }
+
+  button.slick-next {
+    &::before {
+      content: url('https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939');
+    }
+  }
+
   &__title {
     color: $black;
     font-family: "Avenir Next Cyr W00 Bold", helvetica, sans-serif;
@@ -18,6 +48,23 @@
     margin: 108px 0 50px;
     text-align: center;
     text-transform: uppercase;
+  }
+  &__collection-btn {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    display: inline-block;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    height: 40px;
+    letter-spacing: .4px;
+    line-height: normal;
+    margin: 50px 0 150px;
+    text-align: center;
+    width: 300px;
   }
   .slick-slide {
     display: inline-block !important;

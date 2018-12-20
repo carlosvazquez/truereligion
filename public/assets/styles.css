@@ -3918,11 +3918,34 @@ nav.navigation.stick .main-menu .menu .logo {
 
 .home-collection-slider {
   margin: 20px 0;
-  padding: 40px 0; }
+  padding: 40px 0;
+  text-align: center; }
   @media (max-width: 1149.98px) {
     .home-collection-slider {
       margin: 12px 0;
       padding: 20px 0; } }
+  .home-collection-slider button.slick-prev {
+    -ms-transform: translateY(-50px);
+    /* IE 9 */
+    -webkit-transform: translateY(-50px);
+    /* Safari */
+    transform: translateY(-50px); }
+    @media (max-width: 1149.98px) {
+      .home-collection-slider button.slick-prev {
+        left: 8px; } }
+  .home-collection-slider button.slick-next {
+    -ms-transform: translateY(-50px);
+    /* IE 9 */
+    -webkit-transform: translateY(-50px);
+    /* Safari */
+    transform: translateY(-50px); }
+    @media (max-width: 1149.98px) {
+      .home-collection-slider button.slick-next {
+        right: 8px; } }
+  .home-collection-slider button.slick-prev::before {
+    content: url("https://storage.kometia.test/store1/images/slide-left-arrow.png?v=1545258939"); }
+  .home-collection-slider button.slick-next::before {
+    content: url("https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939"); }
   .home-collection-slider__title {
     color: #000;
     font-family: "Avenir Next Cyr W00 Bold", helvetica, sans-serif;
@@ -3936,6 +3959,22 @@ nav.navigation.stick .main-menu .menu .logo {
     margin: 108px 0 50px;
     text-align: center;
     text-transform: uppercase; }
+  .home-collection-slider__collection-btn {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    display: inline-block;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    height: 40px;
+    letter-spacing: .4px;
+    line-height: normal;
+    margin: 50px 0 150px;
+    text-align: center;
+    width: 300px; }
   .home-collection-slider .slick-slide {
     display: inline-block !important; }
   .home-collection-slider .slider {
@@ -4005,8 +4044,9 @@ nav.navigation.stick .main-menu .menu .logo {
 
 .home_page .home-season-promotions {
   background-color: #fff;
-  text-align: center;
-  padding: 40px 30px 40px; }
+  margin: 40px 0;
+  padding: 40px 30px 40px;
+  text-align: center; }
   .home_page .home-season-promotions__title {
     letter-spacing: 3px;
     font-family: "AvenirBlack";

@@ -13,7 +13,7 @@
             {% else %}
               {% set image_url = 'placeholders/product-11.jpg' | global_img_url %}
             {% endif %}
-            <div class="slide">
+             <div class="slide">
               <div class="card">
                 <div class="card__thumbnail">
                   <a class="card__link" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
@@ -31,6 +31,7 @@
             </div>
           {% endfor %}
           </div>
+          <a href="/colecciones/{{ slides.permalink }}" class="btn btn-lg home-collection-slider__collection-btn">Shop {{ slides.title }}</a>
         </div>
 
       </div>

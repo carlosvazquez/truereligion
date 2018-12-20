@@ -168,11 +168,29 @@
       },
       collection_slider: function() {
         $('.home-collection-slider .slider').slick({
+          autoplay: true,
+          arrows: true,
+          fade: false,
           infinite: true,
           slidesToShow: 4,
           slidesToScroll: 4,
-          arrows: false,
-          autoplay: false
+          speed: 500,
+          responsive: [
+            {
+              breakpoint: 1149,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
         });
       }
     },
