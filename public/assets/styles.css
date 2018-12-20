@@ -3131,6 +3131,9 @@ body {
   font-size: 12px;
   letter-spacing: .3px; }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Avenir Next Cyr W00 Medium", helvetica, arial, sans-serif; }
+
 a.btn, .btn {
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -4120,5 +4123,43 @@ nav.navigation.stick .main-menu .menu .logo {
     margin-top: 10px;
     letter-spacing: 0;
     font-family: "AvenirRegular";
+    text-transform: capitalize;
+    text-decoration: underline; }
+
+.home_page .home-last-collections {
+  margin-bottom: 40px;
+  text-align: center; }
+  @media (max-width: 1149.98px) {
+    .home_page .home-last-collections {
+      margin-bottom: 20px; } }
+  .home_page .home-last-collections .collection-one img, .home_page .home-last-collections .collection-two img {
+    display: block;
+    height: auto;
+    width: 100%; }
+  .home_page .home-last-collections .collection-one__img-container, .home_page .home-last-collections .collection-two__img-container {
+    margin-bottom: 30px; }
+  .home_page .home-last-collections .collection-one__info, .home_page .home-last-collections .collection-two__info {
+    margin-bottom: 20px; }
+  .home_page .home-last-collections .collection-one__title, .home_page .home-last-collections .collection-two__title {
+    font-size: 18px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-family: "AvenirBlack";
+    text-transform: uppercase; }
+  .home_page .home-last-collections .collection-one__description, .home_page .home-last-collections .collection-two__description {
+    color: #6e6e6e;
+    font-size: 15px;
+    max-width: 535px;
+    line-height: 1.5;
+    text-transform: none;
+    margin: 15px auto 32px;
+    font-family: "FrankRuhlLibreRegular"; }
+  .home_page .home-last-collections .collection-one__link, .home_page .home-last-collections .collection-two__link {
+    color: #6e6e6e;
+    display: block;
+    font-size: 12px;
+    margin-top: 0;
+    letter-spacing: 0;
+    font-family: "AvenirBook";
     text-transform: capitalize;
     text-decoration: underline; }

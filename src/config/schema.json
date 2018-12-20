@@ -228,6 +228,10 @@
                 {
                   "value": "home-collection-slider",
                   "label": "Colección - slider"
+                },
+                {
+                  "value": "home-last-collections",
+                  "label": "Extra Colecciones"
                 }
               ]
             },
@@ -256,6 +260,10 @@
                 {
                   "value": "home-collection-slider",
                   "label": "Colección - slider"
+                },
+                {
+                  "value": "home-last-collections",
+                  "label": "Extra Colecciones"
                 }
               ]
             },
@@ -263,7 +271,7 @@
               "type": "select",
               "id": "frontpage_section_3",
               "label": "Sección 3",
-              "default": "home-season-promotions",
+              "default": "home-vertical-banners",
               "options": [
                 {
                   "value": "none",
@@ -284,6 +292,10 @@
                 {
                   "value": "home-collection-slider",
                   "label": "Colección - slider"
+                },
+                {
+                  "value": "home-last-collections",
+                  "label": "Extra Colecciones"
                 }
               ]
             },
@@ -312,6 +324,42 @@
                 {
                   "value": "home-collection-slider",
                   "label": "Colección - slider"
+                },
+                {
+                  "value": "home-last-collections",
+                  "label": "Extra Colecciones"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "frontpage_section_5",
+              "label": "Sección 5",
+              "default": "home-last-collections",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "Ningúno"
+                },
+                {
+                  "value": "home-main-banner",
+                  "label": "Banner principal"
+                },
+                {
+                  "value": "home-season-promotions",
+                  "label": "Bloque temporada"
+                },
+                {
+                  "value": "home-vertical-banners",
+                  "label": "Banners verticales"
+                },
+                {
+                  "value": "home-collection-slider",
+                  "label": "Colección - slider"
+                },
+                {
+                  "value": "home-last-collections",
+                  "label": "Extra Colecciones"
                 }
               ]
             }
