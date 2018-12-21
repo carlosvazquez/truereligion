@@ -32,6 +32,7 @@
         this.newsletterDiscount();
         this.MobileMenu();
         this.setMegaMenu();
+        this.footerMenu();
       },
       LocalStorage: function() {
         if(window.localStorage.getItem("newsletter_discount") == null) {
@@ -128,6 +129,12 @@
         $('.overlay').on('click', function(e){
           e.preventDefault();
           $('body.has-mobile-menu').removeClass('has-mobile-menu');
+        });
+      },
+      footerMenu: function() {
+        $('.toggle-icon').on('click', function(){
+          $(this).toggleClass('plus minus');
+          $(this).parent().next('.menu__list').slideToggle();
         });
       }
     },

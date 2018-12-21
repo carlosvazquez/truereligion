@@ -128,12 +128,67 @@
       "icon": "footer",
       "sections": [
         {
-          "header": "Datos de contacto",
+          "header": "Menú Uno",
           "settings": [
             {
-              "type": "checkbox",
-              "id": "footer_display_contact_data",
-              "label": "Mostrar datos"
+              "type": "text",
+              "id": "footer_menu_one_title",
+              "label": "Título menú uno"
+            }
+          ]
+        },
+        {
+          "header": "Menú Dos",
+          "settings": [
+            {
+              "type": "text",
+              "id": "footer_menu_two",
+              "label": "Identificador"
+            },
+            {
+              "type": "text",
+              "id": "footer_menu_two_title",
+              "label": "Título"
+            }
+          ]
+        },
+        {
+          "header": "Menú Tres",
+          "settings": [
+            {
+              "type": "text",
+              "id": "footer_menu_three",
+              "label": "Identificador"
+            },
+            {
+              "type": "text",
+              "id": "footer_menu_three_title",
+              "label": "Título"
+            }
+          ]
+        },
+        {
+          "header": "Menú Cuatro",
+          "settings": [
+            {
+              "type": "text",
+              "id": "footer_menu_four_title",
+              "label": "Título"
+            }
+          ]
+        },
+        {
+          "header": "Menú Legal",
+          "settings": [
+            {
+              "type": "text",
+              "id": "footer_menu_legal",
+              "label": "Identificador"
+            },
+            {
+              "type": "text",
+              "id": "footer_menu_rights",
+              "label": "Leyenda legal"
             }
           ]
         },

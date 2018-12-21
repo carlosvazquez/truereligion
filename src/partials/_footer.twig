@@ -1,24 +1,71 @@
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-3 col-lg-5 col-xl-4">
+      <div class="menu menu--one">
+        <h4 class="menu__title">{{ settings.footer_menu_one_title }} <span class="toggle-icon plus"></span></h4>
+        <div class="menu__newsletter">
+          {% form 'newsletter' 'class="form-inline"' %}
+          <div class="newsletter">
+            <div class="row">
+              <div class="form-group col-8">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Correo electrónico" required>
+              </div>
+              <div class="form-group col-4">
+                <button type="submit" class="btn btn-primary btn-lg">Suscríbete</button>
+              </div>
+            </div>
+          </div>
+          {% endform %}
+        </div>
+        <p>Be the first to find out about exclusive deals, the latest lookbooks, and top trends.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-2 col-xl-3">
+      <div class="menu menu--two">
+        <h4 class="menu__title">{{ settings.footer_menu_two_title }} <span class="toggle-icon plus"></span></h4>
+        <ul class="menu__list">
+        {% for item in menus[settings.footer_menu_two] %}
+          <li class="menu__item"><a class="menu__link" href="{{ item.link }}">{{ item.name }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-2 col-xl-2">
+      <div class="menu menu--three">
+        <h4 class="menu__title">{{ settings.footer_menu_three_title }} <span class="toggle-icon plus"></span></h4>
+        <ul class="menu__list">
+        {% for item in menus[settings.footer_menu_three] %}
+          <li class="menu__item"><a class="menu__link" href="{{ item.link }}">{{ item.name }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-3 col-xl-3">
+      <div class="menu menu--four">
+        <h4 class="menu__title">{{ settings.footer_menu_four_title }} <span class="toggle-icon plus"></span></h4>
+        <div class="menu__list">
+          <p>1-844-TRU-RLGN (844-878-7546)</p>
+          <p>Monday - Friday: 5:00am - 6:00pm PT</p>
+          <p>cs@truereligion.com</p>
+        </div>
+      </div>
+      <p class="store-locator"><span class="store-image"><img alt="Ícono localizador de tiendas" src="https://cdn.kometia-static.com/true-religion/images/store-locator-footer.png?v=1545354709" title=""></span> Localizador de tiendas</p>
     </div>
   </div>
-  <div class="legal">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-7">
-          <p class="legal__text">{{ "now"|date("Y") }} True Religion Brand Jeans. Todos los Derechos Reservados.</p>
-        </div>
-        <div class="col-sm-6 col-md-5 legal__menu">
-          <ul class="legal__list">
-          {% for item in menus['footer-legal']%}
-            <li class="legal__item"><a class="legal__link" href="{{ item.link }}">{{ item.name }}</a></li>
-          {% endfor %}
-          </ul>
-        </div>
+</div>
+<div class="legal">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-7">
+        <p class="legal__text">{{ "now"|date("Y") }} {{ settings.footer_menu_rights }}</p>
+      </div>
+      <div class="col-sm-6 col-md-5 legal__menu">
+        <ul class="legal__list">
+        {% for item in menus[settings.footer_menu_legal]%}
+          <li class="legal__item"><a class="legal__link" href="{{ item.link }}">{{ item.name }}</a></li>
+        {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
-</footer>
-
+</div>

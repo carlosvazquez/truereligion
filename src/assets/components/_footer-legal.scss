@@ -2,10 +2,15 @@ footer {
   .legal {
     background-color: $black;
     color: $white;
+    margin-top: 30px;
     &__text {
       color: $white;
       margin: 0;
       padding: 12px 0;
+      @include media-breakpoint-down(sm) {
+       font-size: 12px;
+       text-align: center;
+      }
     }
     &__menu {
       text-align: right;
@@ -16,6 +21,7 @@ footer {
     &__list {
       display: inline-block;
       margin: 0;
+      padding: 0;
     }
     &__item {
       display: inline-block;
@@ -38,6 +44,11 @@ footer {
       display: block;
       height: 100%;
       padding: 12px 14px;
+      @include media-breakpoint-down(sm) {
+        font-size: 12px;
+        padding: 12px 6px;
+        text-align: center;
+      }
     }
     &__link:hover {
       color: $white;

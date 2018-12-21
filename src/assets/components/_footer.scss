@@ -1,0 +1,119 @@
+footer.footer {
+  border-top: 1px solid #e3e3e3;
+  background-color: $white;
+  padding: 2.5% 0 0;
+  .menu {
+    &__title {
+      border: none;
+      height: 11px;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 15px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: .4px;
+      text-align: left;
+      margin-bottom: 25px;
+      color: #6e6e6e;
+      position: relative;
+      @include media-breakpoint-down(sm) {
+        border-bottom: none;
+        border-top: 1px solid #999999;
+        display: block;
+        height: auto;
+        margin: 0;
+        padding: 15px 0;
+      }
+      span.toggle-icon {
+        display: none;
+        @include media-breakpoint-down(sm) {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 44px;
+          width: 44px;
+        }
+      }
+      span.toggle-icon.plus::after {
+        content: '+';
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        display: inline-block;
+        text-align: center;
+        padding: 15px 18px;
+      }
+      span.toggle-icon.minus::after {
+        content: '—';
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        display: inline-block;
+        text-align: center;
+        padding: 15px 15px;
+      }
+    }
+    p {
+
+    }
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      @include media-breakpoint-down(sm) {
+        display: none;
+        padding: 0 0 12px 0;
+      }
+    }
+    &__newsletter {
+      padding: 20px 0;
+    }
+    &__item {
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+    &__link {
+      color: #070808;
+      display: block;
+      padding: 4px 0;
+      @include media-breakpoint-down(sm) {
+        padding: 14px 0;
+      }
+    }
+    &--one {
+      span.toggle-icon {
+        display: none !important;
+      }
+    }
+    &--two {
+    }
+    &--three {
+    }
+    &--four {
+      .menu__title {
+        border: none;
+      }
+      @include media-breakpoint-down(sm) {
+        border-bottom: 1px solid #999999;
+        .menu__title {
+          border-top: 1px solid #999999;
+        }
+      }
+    }
+  }
+  .store-locator {
+    @include media-breakpoint-down(sm) {
+      margin-top: 24px;
+    }
+    .store-image {
+      img {
+        display: inline-block;
+        height: auto;
+        margin-right: 4px;
+        width: 16px;
+      }
+    }
+  }
+}
