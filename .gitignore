@@ -3,7 +3,6 @@
 dist/*.log
 cache/
 cache/cached_uglify/assets/*.js
-dist/theme/
-dist/.src/
+dist/
 node_modules/
-dist/theme.zip
+!dist/theme.zip
