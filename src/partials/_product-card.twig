@@ -1,0 +1,71 @@
+{% set default_color = '' %}
+{% for attribute, attribute_variants in product.skus_modifiers %}
+  {% if attribute | lower == 'color' %}
+    {% set step = loop.index - 1 %}
+    {% set default_color = product.sku.modifiers[step] | lower %}
+  {% endif %}
+{% endfor %}
+
+{% set default_color = default_color |replace({' ':'-'}) %}
+
+{% set mainImag = false %}
+
+{% if product.image_url is not null %}
+  {% set image_url = product.image_url %}
+  {% set mainImag = true %}
+{% else %}
+  {% set image_url = 'placeholders/product-11.jpg' | global_img_url %}
+{% endif %}
+
+{% set counter = 0 %}
+{% for item in product.skus if item.is_listable == 1 %}
+  {% set counter = counter + 1 %}
+{% endfor %}
+
+{% set images = [] %}
+{% set totalImageCounter = 0 %}
+{% for thumbnail in product.images %}
+  {% if 'color-' not in thumbnail.url | lower and '_'~default_color | lower in thumbnail.url | lower %}
+    {% set totalImageCounter = totalImageCounter + 1 %}
+    {% set images = images|merge([thumbnail.url]) %}
+  {% endif %}
+{% endfor %}
+
+{% if mainImag and (image_url | lower != images[0] | lower) and images | length > 1 %}
+ {% set image_url = images[0] %}
+{% endif %}
+<div class="product-card">
+  <script type="text/javascript">
+    ProductsObj.push({{ product |json }});
+  </script>
+  <div class="product-card__image">
+    <a class="product-card__image-link" href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}">
+    {% if counter == 1 and totalImageCounter > 1 %}
+        {% if images | length > 1 %}
+          <img class="img-responsive preview-1 product-card__url" src="{{ image_url }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+          <img class="img-responsive preview-2 product-card__url" src="{{ images[1] }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+        {% else %}
+          <img class="img-responsive preview-1 product-card__url" src="{{ image_url }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+        {% endif %}
+    {% elseif counter > 1 and totalImageCounter > 1 %}
+        {% if images | length > 1 %}
+          <img class="img-responsive preview-1 product-card__url" src="{{ image_url }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+          <img class="img-responsive preview-2 product-card__url" src="{{ images[1] }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+        {% else %}
+          <img class="img-responsive preview-1 product-card__url" src="{{ image_url }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+        {% endif %}
+    {% else %}
+        <img class="img-responsive preview" src="{{ image_url }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
+    {% endif %}
+    </a>
+    <a data-product-id="{{ product.id }}" class="btn btn-primary btn-block btn-lg quick-view" href="#" data-toggle="modal" data-target="#modalProduct">Quick View</a>
+  </div>
+  <div class="product-card__description visible">
+    <h4 class="product-card__title"><a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}" class="product-card--link">{{ product.name }}</a></h4>
+    {% if product.compared_price is not empty and product.compared_price > product.price %}
+    <p class="product-card__compared-price">{{ product.compared_price | money('symbol', 'code') }}</p>
+    {% endif %}
+    <p class="product-card__price">{{ product.price | money('symbol', 'code') }}</p>
+    {% if counter > 1 %}<p>Más colores</p>{% endif %}
+  </div>
+</div>

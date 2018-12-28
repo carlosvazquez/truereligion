@@ -1,0 +1,99 @@
+.product-card {
+    text-align: center;
+    margin-bottom: 55px;
+    &__image {
+      margin-bottom: 7px;
+      position: relative;
+      .quick-view {
+        display: none;
+      }
+    }
+    &__image:hover {
+      .quick-view {
+        display: block;
+        opacity: 1;
+      }
+    }
+    &__image-link {
+      position: relative;
+    }
+    &__image-link .preview-1 {
+      display: block;
+    }
+    &__image-link:hover .preview-1 {
+      display: none;
+    }
+    &__image-link .preview-2 {
+      display: none;
+    }
+    &__image-link:hover .preview-2 {
+      display: block;
+    }
+    &__image-link.alternative .preview-1 {
+      display: none;
+    }
+    &__image-link.alternative:hover .preview-1 {
+      display: block;
+    }
+    &__image-link.alternative .preview-2 {
+      display: block;
+    }
+    &__image-link.alternative:hover .preview-2 {
+      display: none;
+    }
+    &__url {
+      margin: 0 auto;
+    }
+    &__description {
+      display: none;
+    }
+    &__description.visible {
+      display: block;
+    }
+    &__title {
+      text-align: center;
+      line-height: 20px;
+      font-size: 14px;
+      margin: 0 0 6px 0;
+    }
+    &--link {
+      text-decoration: none;
+      color: #000;
+      font-weight: 300;
+      margin-top: 2px;
+      text-transform: uppercase;
+    }
+    &--link:hover,
+    &--link:focus {
+      text-decoration: none;
+    }
+    &__price {
+      color: #000000;
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0;
+      text-align: center;
+    }
+    &__compared-price {
+      color: #ff3300;
+      margin-bottom: 3px;
+      text-decoration: line-through;
+    }
+    .quick-view {
+      color: #fff;
+      background: #003049;
+      border: none;
+      border-radius: 0;
+      bottom: 20px;
+      height: auto;
+      font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+      font-size: 13px;
+      left: 0;
+      opacity: .8;
+      padding: 10px 0 9px;
+      position: absolute;
+      right: 0;
+      text-transform: capitalize;
+      z-index: 2;
+    }
+  }

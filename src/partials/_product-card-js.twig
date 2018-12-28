@@ -1,0 +1,71 @@
+<script type="text/javascript">
+  $(function () {
+    var $productSlider = $('.product-slider');
+    var $productData = $('.product-data');
+    var resetModal = function(){
+      $productSlider.empty();
+      $productData.empty();
+    }
+    var lowerCase = function(string){ 
+      return string.toLowerCase();
+    };
+    var getClickedProductObject = function(id){
+      return ProductsObj.find(function(element){
+        return element.id === id
+      });
+    }
+    var fillSliderContent = function(data) {
+      var _html = '';
+      _html += '<h2>'+data.name+'</h2>';
+      $productSlider.append(_html);
+      return true;
+    }
+    var fillDataContent = function(data) {
+      var _html = '';
+      _html += '<h2>'+data.name+'</h2>';
+      $productData.append(_html);
+      return true;
+    }
+    var getImages = function(index, object) {
+      var _index = index;
+      console.log(_index);
+      colors = [];
+      object.skus.forEach(function(element){
+        element.modifiers.forEach(function(color, i){
+          var _color = lowerCase(color);
+          if(i == _index) {
+            colors.push({'color':_color,images:[]});
+          }
+        });
+      });
+      console.log(colors);
+      // var images = [];
+      // object.images.forEach(function(value){
+        // images.push(value.url);
+      // });
+      // return images;
+    }
+    var getColorIndex = function(ArrayModifiers) {
+      var ArrayModifiers = ArrayModifiers.map(lowerCase);
+      return ArrayModifiers.indexOf('color');
+    }
+    var buildContentModal = function(object) {
+      console.log(object);
+      var index = getColorIndex(object.modifiers);
+      var images = getImages(index, object);
+      var data = {
+        name: object.name,
+        images: images
+      }
+      console.log(data);
+      fillSliderContent(data);
+      fillDataContent(data);
+    }
+    $('.quick-view').on('click', function() {
+      var _id = $(this).data('product-id');
+      resetModal();
+      var currentProduct = getClickedProductObject(_id);
+      buildContentModal(currentProduct);
+    });
+  });
+</script>
