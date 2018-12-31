@@ -14,7 +14,13 @@
         return element.id === id
       });
     }
+    var filterImagesByColor = function(data){
+      var color = data.color;
+      var images = data.images
+      return false;
+    }
     var fillSliderContent = function(data) {
+      var images = filterImagesByColor(data);
       var _html = '';
       _html += '<h2>'+data.name+'</h2>';
       $productSlider.append(_html);
@@ -26,46 +32,67 @@
       $productData.append(_html);
       return true;
     }
-    var getImages = function(index, object) {
+    var getImagesByColor = function(colorList, ObjectImages) {
+      var _listcolors = colorList;
+      var images = [];
+      if(_listcolors != null) {
+        _listcolors.forEach(function(value, index){
+          var _currentColor = '_'+value+'_';
+          ObjectImages.forEach(function(nextvalue){
+            if(nextvalue.original_filename.includes(_currentColor)) {
+              images.push({color:value, url: nextvalue.url });
+            }
+          });
+        });
+      } else {
+        ObjectImages.forEach(function(value){
+          images.push({url: value.url });
+        });
+      }
+      console.log(images);
+      return images;
+    }
+    var getColorsList = function(index, object) {
       var _index = index;
-      console.log(_index);
-      colors = [];
+      if(_index == false) {
+        return null;
+      }
+      listcolors = [];
       object.skus.forEach(function(element){
         element.modifiers.forEach(function(color, i){
           var _color = lowerCase(color);
-          if(i == _index) {
-            colors.push({'color':_color,images:[]});
+          if(i == _index && listcolors.indexOf(_color) == -1) {
+            listcolors.push(_color);
           }
         });
       });
-      console.log(colors);
-      // var images = [];
-      // object.images.forEach(function(value){
-        // images.push(value.url);
-      // });
-      // return images;
+      return listcolors;
     }
     var getColorIndex = function(ArrayModifiers) {
       var ArrayModifiers = ArrayModifiers.map(lowerCase);
-      return ArrayModifiers.indexOf('color');
+      return ArrayModifiers.indexOf('color') != -1 ? ArrayModifiers.indexOf('color') : false;
     }
-    var buildContentModal = function(object) {
-      console.log(object);
+    var buildContentModal = function(color, object) {
+      var _defaultColor = color;
       var index = getColorIndex(object.modifiers);
-      var images = getImages(index, object);
+      var colorList = getColorsList(index, object);
+      var images = getImagesByColor(colorList, object.images);
+      console.log('index: '+index);
       var data = {
         name: object.name,
+        color: _defaultColor,
         images: images
       }
-      console.log(data);
       fillSliderContent(data);
       fillDataContent(data);
     }
     $('.quick-view').on('click', function() {
+      var ProductObj = {}
       var _id = $(this).data('product-id');
+      var _defaultColor = $(this).data('product-color');
       resetModal();
-      var currentProduct = getClickedProductObject(_id);
-      buildContentModal(currentProduct);
+      var _currentProduct = getClickedProductObject(_id);
+      buildContentModal(_defaultColor, _currentProduct);
     });
   });
 </script>

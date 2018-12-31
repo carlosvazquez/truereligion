@@ -58,7 +58,7 @@
         <img class="img-responsive preview" src="{{ image_url }}&w=342&h=551&fit=crop" alt="{{ product.name }}">
     {% endif %}
     </a>
-    <a data-product-id="{{ product.id }}" class="btn btn-primary btn-block btn-lg quick-view" href="#" data-toggle="modal" data-target="#modalProduct">Quick View</a>
+    <a data-product-id="{{ product.id }}" data-product-color="{{ default_color }}" class="btn btn-primary btn-block btn-lg quick-view" href="#" data-toggle="modal" data-target="#modalProduct">Quick View</a>
   </div>
   <div class="product-card__description visible">
     <h4 class="product-card__title"><a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}" class="product-card--link">{{ product.name }}</a></h4>
