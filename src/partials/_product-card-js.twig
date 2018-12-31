@@ -1,12 +1,22 @@
 <script type="text/javascript">
   $(function () {
+    var ProductState = {
+        name: null,
+        color: null,
+        images: null
+    }
+    var setProductState = function(obj) {
+      if(typeof obj === 'object' && obj !== null){
+        ProductState = obj;
+      }
+    }
     var $productSlider = $('.product-slider');
     var $productData = $('.product-data');
     var resetModal = function(){
       $productSlider.empty();
       $productData.empty();
     }
-    var lowerCase = function(string){ 
+    var lowerCase = function(string){
       return string.toLowerCase();
     };
     var getClickedProductObject = function(id){
@@ -14,21 +24,28 @@
         return element.id === id
       });
     }
-    var filterImagesByColor = function(data){
-      var color = data.color;
-      var images = data.images
-      return false;
+    var filterImagesByColor = function(color, images){
+      var _color = color;
+      var _images = images;
+      if(_color == undefined) {
+        return _images;
+      }
+      // filter
+      return _images.filter(function(value, index) {
+        return value.color == _color;
+      });
     }
-    var fillSliderContent = function(data) {
-      var images = filterImagesByColor(data);
+    var fillSliderContent = function() {
+      var images = filterImagesByColor(ProductState.color, ProductState.images);
+      console.log(images);
       var _html = '';
-      _html += '<h2>'+data.name+'</h2>';
+      _html += '<h2>'+ProductState.name+'</h2>';
       $productSlider.append(_html);
       return true;
     }
-    var fillDataContent = function(data) {
+    var fillDataContent = function() {
       var _html = '';
-      _html += '<h2>'+data.name+'</h2>';
+      _html += '<h2>'+ProductState.name+'</h2>';
       $productData.append(_html);
       return true;
     }
@@ -37,10 +54,11 @@
       var images = [];
       if(_listcolors != null) {
         _listcolors.forEach(function(value, index){
-          var _currentColor = '_'+value+'_';
+          var _currentColor = '_'+value.replace(/\s/g,'-')+'_';
           ObjectImages.forEach(function(nextvalue){
-            if(nextvalue.original_filename.includes(_currentColor)) {
-              images.push({color:value, url: nextvalue.url });
+          var _originalName = nextvalue.original_filename.toLowerCase();
+            if(_originalName.includes(_currentColor)) {
+              images.push({color:value.replace(/\s/g,'-'), url: nextvalue.url });
             }
           });
         });
@@ -49,12 +67,16 @@
           images.push({url: value.url });
         });
       }
-      console.log(images);
+      if(images.length === 0) {
+        ObjectImages.forEach(function(value){
+          images.push({url: value.url });
+        });
+      }
       return images;
     }
     var getColorsList = function(index, object) {
       var _index = index;
-      if(_index == false) {
+      if(_index === false) {
         return null;
       }
       listcolors = [];
@@ -77,19 +99,19 @@
       var index = getColorIndex(object.modifiers);
       var colorList = getColorsList(index, object);
       var images = getImagesByColor(colorList, object.images);
-      console.log('index: '+index);
       var data = {
         name: object.name,
         color: _defaultColor,
         images: images
       }
-      fillSliderContent(data);
-      fillDataContent(data);
+      setProductState(data);
+      fillSliderContent();
+      fillDataContent();
     }
     $('.quick-view').on('click', function() {
       var ProductObj = {}
       var _id = $(this).data('product-id');
-      var _defaultColor = $(this).data('product-color');
+      var _defaultColor = $(this).data('product-color') === "" ? null : $(this).data('product-color');
       resetModal();
       var _currentProduct = getClickedProductObject(_id);
       buildContentModal(_defaultColor, _currentProduct);
