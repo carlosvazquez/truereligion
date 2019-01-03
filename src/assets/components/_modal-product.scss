@@ -3,12 +3,22 @@ body.hasModal {
   padding-right: 0!important;
   overflow-y: auto;
   .modal-dialog-centered {
-    height: 90vh;
+    height: 676px;
+    max-height: 676px;
     width: 90vw;
-    max-width: 90vw;
+    max-width: 1086px;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-out 100ms;
+    -moz-transition: opacity 200ms ease-out 100ms;
+    -o-transition: opacity 200ms ease-out 100ms;
+    transition: opacity 200ms ease-out 100ms;
+    -ms-transition: opacity 200ms ease-out 100ms;
     @include media-breakpoint-down(md) {
       max-width: 100%;
     }
+  }
+  .modal-backdrop.show {
+    opacity: 0.3;
   }
 }
 .hasModal.modal-open .modal {
@@ -17,9 +27,65 @@ body.hasModal {
 .hasModal {
   .modal.show {
     .modal-dialog-centered {
+      height: 676px;
+      max-height: 676px;
+      opacity: 1;
+      -webkit-transition: opacity 100ms ease-out 200ms;
+      -moz-transition: opacity 100ms ease-out 200ms;
+      -o-transition: opacity 100ms ease-out 200ms;
+      transition: opacity 100ms ease-out 200ms;
+      -ms-transition: opacity 100ms ease-out 200ms;
+}
+    .modal-header {
+      border: none;
+      button.close {
+        opacity: 1;
+        padding: 1.4rem 1.8rem;
+      }
     }
     .modal-content {
-      height: 100%;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .modal-body {
+      overflow: hidden;
+    }
+    .image-slide {
+      display: block;
+      height: auto;
+      margin: 0 auto;
+      max-width: initial;
+      max-height: 100%;
+      width: 448px;
+    }
+  }
+
+  .product-slider {
+    display: block;
+    overflow: hidden;
+    .slick-slide {
+      display: inline-block !important;
+    }
+    .slide {
+      text-align: center;
+    }
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0;
+    }
+    .slick-next,
+    .slick-prev {
+      width: 30px;
+      height: 30px;
+    }
+    .slick-prev:before {
+      content: url("https://storage.kometia.test/store1/images/slide-left-arrow.png?v=1545258939");
+    }
+    .slick-next:before {
+      content: url("https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939");
     }
   }
 }

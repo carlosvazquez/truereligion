@@ -1,8 +1,9 @@
 <script type="text/javascript">
-  $(function () {
+  $(function (){
     var ProductState = {
         name: null,
         color: null,
+        colors: null,
         images: null
     }
     var setProductState = function(obj) {
@@ -35,17 +36,97 @@
         return value.color == _color;
       });
     }
-    var fillSliderContent = function() {
+    var initProductSlider = function(){
+      $productSlider.slick({
+        dots: false,
+        infinite: true,
+        autoplay: false,
+        arrows: true,
+        fade: false,
+        speed: 600,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+        variableWidth: false,
+        responsive: [
+            {
+              breakpoint: 1149,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+      });
+    }
+    var destroyProductSlider = function(){
+      if($('.product-slider.slick-initialized').length) {
+        $productSlider.slick('unslick');
+      }
+      $('.product-slider').empty();
+      return true;
+    }
+    var fillSliderContent = function(){
       var images = filterImagesByColor(ProductState.color, ProductState.images);
-      console.log(images);
       var _html = '';
-      _html += '<h2>'+ProductState.name+'</h2>';
+      images.forEach(function(value,index){
+        var _index = index + 1;
+        _html += '<div class"slide slide-' + _index +'"><img class="image-slide" src="' + value.url + '"></div>';
+      });
       $productSlider.append(_html);
       return true;
     }
-    var fillDataContent = function() {
+    var getMainThumnail = function(){
+      var images = ProductState.images;
+      var color = ProductState.color;
+      return "https://storage.kometia.test/store1/images/101711_negro_1001_frt1.jpeg?v=1546281889";
+    }
+    var getNormalPriceOption = function(){
+      var price = TrueReligion.formatMoney(6900);
+      return price;
+    }
+    var getDiscountPriceOption = function(){
+      var price = TrueReligion.formatMoney(4140);
+      return price;
+    }
+    var getColorProductSelected = function(){
+      return 'Black';
+    }
+    var getSizeProductOptions = function(){
+      return '<li>xxs</li><li>xs</li><li>s</li><li>m</li><li>l</li><li>xl</li><li>xxl</li><li>xxxl</li>';
+    }
+    var getAddToCartOptions = function(){
+      return '<select></select>';
+    }
+    var getUrlToCompleteProduct = function(){
+      return 'https://www.truereligion.com/mens-40-off-select';
+    }
+    var getThumbnailPermalink = function(){
+      var _w = '&w=38';
+      var _h = '&h=52';
+      var _fit = '&fit=crop';
+      var url = 'https://www.truereligion.com/mens-40-off-select'
+      return url+_w+_h+_fit;
+    }
+    var fillDataContent = function(){
       var _html = '';
-      _html += '<h2>'+ProductState.name+'</h2>';
+      _html += '<h2 class="product-name">'+ProductState.name+'</h2>';
+      _html += '<div class="product-price"><span class="price-standard">'+getNormalPriceOption()+'</span></div>';
+      _html += '<div class="product-price"><span class="price-discount">'+getDiscountPriceOption()+'</span></div>';
+      _html += '<div class="thumbnails-color"><a class="thumbnails-permalink active" href="'+getThumbnailPermalink()+'"><img class="thumbnails-image" src="'+getMainThumnail()+'"></a>';
+      _html += '<a class="thumbnails-permalink" href="'+getThumbnailPermalink()+'"><img class="thumbnails-image" src="'+getMainThumnail()+'"></a></div>';
+      _html += '<div class="color-selected">'+getColorProductSelected()+'</div>';
+      _html += '<ul class="size-options">'+getSizeProductOptions()+'</ul>';
+      _html += '<div class="message-options">'+getSizeProductOptions()+'</div>';
+      _html += '<div class="addToCart">'+getAddToCartOptions()+'</div>';
+      _html += '<div class="view-full-product"><a href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
       $productData.append(_html);
       return true;
     }
@@ -102,13 +183,17 @@
       var data = {
         name: object.name,
         color: _defaultColor,
+        colors: colorList,
         images: images
       }
       setProductState(data);
+      destroyProductSlider();
       fillSliderContent();
       fillDataContent();
+      initProductSlider();
+      console.log(ProductState);
     }
-    $('.quick-view').on('click', function() {
+    $('.quick-view').on('click', function(){
       var ProductObj = {}
       var _id = $(this).data('product-id');
       var _defaultColor = $(this).data('product-color') === "" ? null : $(this).data('product-color');
@@ -116,5 +201,5 @@
       var _currentProduct = getClickedProductObject(_id);
       buildContentModal(_defaultColor, _currentProduct);
     });
-  });
+  })();
 </script>

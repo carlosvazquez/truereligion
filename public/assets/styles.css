@@ -3718,8 +3718,25 @@ a.btn, .btn {
 
 a.btn.btn-primary, .btn.btn-primary, .btn-primary {
   color: #fff;
+  background: #000;
   background-color: #000;
   border-color: #000; }
+
+a.btn.btn-primary:hover, .btn.btn-primary:hover, .btn-primary:hover,
+a.btn.btn-primary:focus, .btn.btn-primary:focus, .btn-primary:focus,
+a.btn.btn-primary:active, .btn.btn-primary:active, .btn-primary:active {
+  color: #fff;
+  background: #000;
+  background-color: #000;
+  border-color: #000; }
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary.dropdown-toggle {
+  color: #fff;
+  background: #343a40;
+  background-color: #343a40;
+  border-color: #343a40; }
 
 .bgblack {
   background-color: #000; }
@@ -4824,18 +4841,126 @@ body.hasModal {
   padding-right: 0 !important;
   overflow-y: auto; }
   body.hasModal .modal-dialog-centered {
-    height: 90vh;
+    height: 676px;
+    max-height: 676px;
     width: 90vw;
-    max-width: 90vw; }
+    max-width: 1086px;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-out 100ms;
+    -moz-transition: opacity 200ms ease-out 100ms;
+    -o-transition: opacity 200ms ease-out 100ms;
+    transition: opacity 200ms ease-out 100ms;
+    -ms-transition: opacity 200ms ease-out 100ms; }
     @media (max-width: 1149.98px) {
       body.hasModal .modal-dialog-centered {
         max-width: 100%; } }
+  body.hasModal .modal-backdrop.show {
+    opacity: 0.3; }
 
 .hasModal.modal-open .modal {
   opacity: 1; }
 
+.hasModal .modal.show .modal-dialog-centered {
+  height: 676px;
+  max-height: 676px;
+  opacity: 1;
+  -webkit-transition: opacity 100ms ease-out 200ms;
+  -moz-transition: opacity 100ms ease-out 200ms;
+  -o-transition: opacity 100ms ease-out 200ms;
+  transition: opacity 100ms ease-out 200ms;
+  -ms-transition: opacity 100ms ease-out 200ms; }
+
+.hasModal .modal.show .modal-header {
+  border: none; }
+  .hasModal .modal.show .modal-header button.close {
+    opacity: 1;
+    padding: 1.4rem 1.8rem; }
+
 .hasModal .modal.show .modal-content {
-  height: 100%; }
+  border: none;
+  border-radius: 0;
+  box-shadow: none; }
+
+.hasModal .modal.show .modal-body {
+  overflow: hidden; }
+
+.hasModal .modal.show .image-slide {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: initial;
+  max-height: 100%;
+  width: 448px; }
+
+.hasModal .product-slider {
+  display: block;
+  overflow: hidden; }
+  .hasModal .product-slider .slick-slide {
+    display: inline-block !important; }
+  .hasModal .product-slider .slide {
+    text-align: center; }
+  .hasModal .product-slider .slick-prev {
+    left: 0; }
+  .hasModal .product-slider .slick-next {
+    right: 0; }
+  .hasModal .product-slider .slick-next,
+  .hasModal .product-slider .slick-prev {
+    width: 30px;
+    height: 30px; }
+  .hasModal .product-slider .slick-prev:before {
+    content: url("https://storage.kometia.test/store1/images/slide-left-arrow.png?v=1545258939"); }
+  .hasModal .product-slider .slick-next:before {
+    content: url("https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939"); }
+
+.hasModal .product-data {
+  text-align: center; }
+  .hasModal .product-data .product-name {
+    color: #000;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    line-height: 1.31;
+    margin: 0;
+    padding: 72px 35px 0 34px;
+    text-align: center; }
+  .hasModal .product-data .product-price {
+    color: #6e6e6e;
+    font-family: "FrankRuhlLibre-Regular";
+    font-size: 18px;
+    height: auto !important;
+    letter-spacing: .5px;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 25px 0 0; }
+    .hasModal .product-data .product-price .price-standard {
+      text-decoration: line-through; }
+    .hasModal .product-data .product-price .price-discount {
+      color: #b2292e;
+      margin-top: 5px; }
+  .hasModal .product-data .thumbnails-color {
+    display: block; }
+  .hasModal .product-data .thumbnails-image {
+    background-color: #fff;
+    height: 52px;
+    width: 38px; }
+  .hasModal .product-data .thumbnails-permalink {
+    background-color: #fff;
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 3px; }
+  .hasModal .product-data .thumbnails-permalink.active {
+    border: 1px solid #000; }
+  .hasModal .product-data .color-selected {
+    background-color: orange; }
+  .hasModal .product-data .size-options {
+    background-color: grey; }
+  .hasModal .product-data .message-options {
+    background-color: pink; }
+  .hasModal .product-data .addToCart {
+    background-color: lemonchiffon; }
+  .hasModal .product-data .view-full-product a {
+    background-color: plum; }
 
 .home_page .home-main-banner__link {
   display: block;

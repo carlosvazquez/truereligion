@@ -1,0 +1,67 @@
+.hasModal {
+  .product-data {
+    text-align: center;
+    .product-name {
+      color: #000;
+      font-family: "Avenir Next Cyr W00 Medium", helvetica, arial, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      line-height: 1.31;
+      margin: 0;
+      padding: 72px 35px 0 34px;
+      text-align: center;
+    }
+    .product-price {
+      color: #6e6e6e;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 18px;
+      height: auto!important;
+      letter-spacing: .5px;
+      margin: 0;
+      margin-bottom: 0;
+      padding: 25px 0 0;
+      .price-standard {
+        text-decoration: line-through;
+      }
+      .price-discount {
+        color: #b2292e;
+        margin-top: 5px;
+      }
+    }
+    .thumbnails-color {
+      display: block;
+    }
+    .thumbnails-image {
+      background-color: $white;
+      height: 52px;
+      width: 38px;
+    }
+    .thumbnails-permalink {
+      background-color: $white;
+      border: 1px solid $white;
+      display: inline-block;
+      padding: 3px;
+    }
+    .thumbnails-permalink.active {
+      border: 1px solid $black;
+    }
+    .color-selected {
+      background-color: orange;
+    }
+    .size-options {
+      background-color: grey;
+    }
+    .message-options {
+      background-color: pink;
+    }
+    .addToCart {
+      background-color: lemonchiffon;
+    }
+    .view-full-product {
+      a {
+        background-color: plum;
+      }
+    }
+  }
+}
