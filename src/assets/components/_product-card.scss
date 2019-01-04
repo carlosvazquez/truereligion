@@ -12,6 +12,9 @@
       .quick-view {
         display: block;
         opacity: 1;
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
       }
     }
     &__image-link {

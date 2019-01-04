@@ -1,4 +1,10 @@
 .hasModal {
+  #modalProduct {
+    @include media-breakpoint-down(md) {
+      display: none !important;
+      opacity: 0 !important;
+    }
+  }
   .product-data {
     text-align: center;
     .product-name {
@@ -23,6 +29,7 @@
       padding: 25px 0 0;
       .price-standard {
         text-decoration: line-through;
+        margin-right: 8px;
       }
       .price-discount {
         color: #b2292e;
@@ -31,6 +38,19 @@
     }
     .thumbnails-color {
       display: block;
+      list-style: none;
+      padding: 0 80px;
+      input {
+        display: none;
+      }
+      img {
+        border: 1px solid transparent;
+      }
+      input[type="radio"]:checked+label{
+        img {
+          border: 1px solid $black;
+        }
+      }
     }
     .thumbnails-image {
       background-color: $white;
@@ -41,16 +61,31 @@
       background-color: $white;
       border: 1px solid $white;
       display: inline-block;
+      margin: 4px;
       padding: 3px;
     }
     .thumbnails-permalink.active {
       border: 1px solid $black;
     }
     .color-selected {
-      background-color: orange;
+      color: #000;
+      font-size: 12px;
+      font-family: "FrankRuhlLibre-Regular";
+      letter-spacing: .3px;
+      line-height: 2.17;
+      margin: 15px 0 0;
+      text-align: center;
+      text-transform: capitalize;
     }
     .size-options {
       background-color: grey;
+      display: block;
+      list-style: none;
+      padding: 0;
+      &__item {
+        display: inline-block;
+        float: left;
+      }
     }
     .message-options {
       background-color: pink;

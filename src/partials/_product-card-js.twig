@@ -1,10 +1,22 @@
 <script type="text/javascript">
   $(function (){
+    var formatMoney = function(price){
+      var currency = $('script#app').data("currency");
+      var _formatPrice = price /= 100;
+      _formatPrice = _formatPrice.toFixed(2);
+      _formatPrice = _formatPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      return '$' + _formatPrice + ' ' + currency;
+    }
     var ProductState = {
         name: null,
+        permalink: null,
         color: null,
         colors: null,
-        images: null
+        images: null,
+        sku_default: null,
+        skus: null,
+        modifiers: null
     }
     var setProductState = function(obj) {
       if(typeof obj === 'object' && obj !== null){
@@ -78,35 +90,32 @@
       var _html = '';
       images.forEach(function(value,index){
         var _index = index + 1;
-        _html += '<div class"slide slide-' + _index +'"><img class="image-slide" src="' + value.url + '"></div>';
+        var _image = value.url + '&w=488&h=675&fit=crop';
+        _html += '<div class"slide slide-' + _index +'"><img class="image-slide" src="' + _image + '"></div>';
       });
       $productSlider.append(_html);
       return true;
     }
-    var getMainThumnail = function(){
-      var images = ProductState.images;
-      var color = ProductState.color;
-      return "https://storage.kometia.test/store1/images/101711_negro_1001_frt1.jpeg?v=1546281889";
-    }
     var getNormalPriceOption = function(){
-      var price = TrueReligion.formatMoney(6900);
+      var price = formatMoney(6900);
       return price;
     }
     var getDiscountPriceOption = function(){
-      var price = TrueReligion.formatMoney(4140);
+      var price = formatMoney(4140);
       return price;
     }
     var getColorProductSelected = function(){
-      return 'Black';
+      var _defaultColor = ProductState.color;
+      return $('.color-selected').val(_defaultColor);
     }
     var getSizeProductOptions = function(){
-      return '<li>xxs</li><li>xs</li><li>s</li><li>m</li><li>l</li><li>xl</li><li>xxl</li><li>xxxl</li>';
+      return '<li class="size-options__item">xxs</li><li class="size-options__item">xs</li><li class="size-options__item">s</li><li class="size-options__item">m</li><li class="size-options__item">l</li><li class="size-options__item">xl</li><li class="size-options__item">xxl</li><li class="size-options__item">xxxl</li>';
     }
     var getAddToCartOptions = function(){
       return '<select></select>';
     }
     var getUrlToCompleteProduct = function(){
-      return 'https://www.truereligion.com/mens-40-off-select';
+      return ProductState.permalink != null ? '/productos/'+ProductState.permalink : '';
     }
     var getThumbnailPermalink = function(){
       var _w = '&w=38';
@@ -115,19 +124,57 @@
       var url = 'https://www.truereligion.com/mens-40-off-select'
       return url+_w+_h+_fit;
     }
+    var ThumbnailColors = function() {
+      $('.thumbnails-color input[type=radio]').on('change',function(){
+        var _color = $(this).val();
+        ProductState.color = _color;
+        $('.color-selected').text(ProductState.color);
+      });
+    }
+    var initPermalink = function(){
+
+    }
+    var getHtmlThumbnailsImages = function(){
+      var _html = '';
+      var colors = ProductState.colors;
+      var images = ProductState.images;
+
+      if(colors != null && images != null && colors.length > 0){
+        colors.forEach(function(color){
+          var _color = color;
+          var current = images.find(function(element) {
+            return element.color == _color;
+          });
+          if(current !== null) {
+            var isChecked = current.color == ProductState.color ? 'checked' : '';
+            _html += '<li class="thumbnails-permalink"><input id="'+current.color+'" type="radio" name="color" value="'+current.color+'" '+isChecked+'><label for="'+current.color+'"><img class="thumbnails-image" src="'+current.url+'"></label></li>';
+          }
+        });
+      }
+
+      return _html != '' ? _html : '';
+    }
+
     var fillDataContent = function(){
       var _html = '';
       _html += '<h2 class="product-name">'+ProductState.name+'</h2>';
-      _html += '<div class="product-price"><span class="price-standard">'+getNormalPriceOption()+'</span></div>';
-      _html += '<div class="product-price"><span class="price-discount">'+getDiscountPriceOption()+'</span></div>';
-      _html += '<div class="thumbnails-color"><a class="thumbnails-permalink active" href="'+getThumbnailPermalink()+'"><img class="thumbnails-image" src="'+getMainThumnail()+'"></a>';
-      _html += '<a class="thumbnails-permalink" href="'+getThumbnailPermalink()+'"><img class="thumbnails-image" src="'+getMainThumnail()+'"></a></div>';
-      _html += '<div class="color-selected">'+getColorProductSelected()+'</div>';
-      _html += '<ul class="size-options">'+getSizeProductOptions()+'</ul>';
+      _html += '<div class="product-price">';
+      _html += '<span class="price-standard">'+getNormalPriceOption()+'</span>';
+      _html += '<span class="price-discount">'+getDiscountPriceOption()+'</span>';
+      _html += '</div>';
+      _html += '<div class="color-selected">'+ProductState.color+'</div>';
+      _html += '<ul class="thumbnails-color">';
+      _html += getHtmlThumbnailsImages();
+      _html += '</ul>';
+      _html += '<ul class="size-options">';
+      _html += getSizeProductOptions();
+      _html += '</ul>';
       _html += '<div class="message-options">'+getSizeProductOptions()+'</div>';
       _html += '<div class="addToCart">'+getAddToCartOptions()+'</div>';
       _html += '<div class="view-full-product"><a href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
       $productData.append(_html);
+      ThumbnailColors();
+      getHtmlThumbnailsImages();
       return true;
     }
     var getImagesByColor = function(colorList, ObjectImages) {
@@ -177,21 +224,25 @@
     }
     var buildContentModal = function(color, object) {
       var _defaultColor = color;
+      console.log(object);
       var index = getColorIndex(object.modifiers);
       var colorList = getColorsList(index, object);
       var images = getImagesByColor(colorList, object.images);
       var data = {
         name: object.name,
+        permalink: object.permalink,
         color: _defaultColor,
         colors: colorList,
-        images: images
+        images: images,
+        sku_default: object.sku_id,
+        skus: object.skus,
+        modifiers: object.modifiers
       }
       setProductState(data);
       destroyProductSlider();
       fillSliderContent();
       fillDataContent();
       initProductSlider();
-      console.log(ProductState);
     }
     $('.quick-view').on('click', function(){
       var ProductObj = {}
@@ -201,5 +252,5 @@
       var _currentProduct = getClickedProductObject(_id);
       buildContentModal(_defaultColor, _currentProduct);
     });
-  })();
+  });
 </script>

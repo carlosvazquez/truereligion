@@ -4773,6 +4773,9 @@ footer .legal {
   .product-card__image:hover .quick-view {
     display: block;
     opacity: 1; }
+    @media (max-width: 1149.98px) {
+      .product-card__image:hover .quick-view {
+        display: none; } }
   .product-card__image-link {
     position: relative; }
   .product-card__image-link .preview-1 {
@@ -4912,6 +4915,11 @@ body.hasModal {
   .hasModal .product-slider .slick-next:before {
     content: url("https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939"); }
 
+@media (max-width: 1149.98px) {
+  .hasModal #modalProduct {
+    display: none !important;
+    opacity: 0 !important; } }
+
 .hasModal .product-data {
   text-align: center; }
   .hasModal .product-data .product-name {
@@ -4934,12 +4942,21 @@ body.hasModal {
     margin-bottom: 0;
     padding: 25px 0 0; }
     .hasModal .product-data .product-price .price-standard {
-      text-decoration: line-through; }
+      text-decoration: line-through;
+      margin-right: 8px; }
     .hasModal .product-data .product-price .price-discount {
       color: #b2292e;
       margin-top: 5px; }
   .hasModal .product-data .thumbnails-color {
-    display: block; }
+    display: block;
+    list-style: none;
+    padding: 0 80px; }
+    .hasModal .product-data .thumbnails-color input {
+      display: none; }
+    .hasModal .product-data .thumbnails-color img {
+      border: 1px solid transparent; }
+    .hasModal .product-data .thumbnails-color input[type="radio"]:checked + label img {
+      border: 1px solid #000; }
   .hasModal .product-data .thumbnails-image {
     background-color: #fff;
     height: 52px;
@@ -4948,13 +4965,27 @@ body.hasModal {
     background-color: #fff;
     border: 1px solid #fff;
     display: inline-block;
+    margin: 4px;
     padding: 3px; }
   .hasModal .product-data .thumbnails-permalink.active {
     border: 1px solid #000; }
   .hasModal .product-data .color-selected {
-    background-color: orange; }
+    color: #000;
+    font-size: 12px;
+    font-family: "FrankRuhlLibre-Regular";
+    letter-spacing: .3px;
+    line-height: 2.17;
+    margin: 15px 0 0;
+    text-align: center;
+    text-transform: capitalize; }
   .hasModal .product-data .size-options {
-    background-color: grey; }
+    background-color: grey;
+    display: block;
+    list-style: none;
+    padding: 0; }
+    .hasModal .product-data .size-options__item {
+      display: inline-block;
+      float: left; }
   .hasModal .product-data .message-options {
     background-color: pink; }
   .hasModal .product-data .addToCart {
