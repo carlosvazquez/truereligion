@@ -17,10 +17,11 @@
         size: null,
         sizes: null,
         images: null,
-        sku_default: null,
+        sku_selected: null,
         skus: null,
         size_default: null,
-        modifiers: null
+        modifiers: null,
+        qty: null
     }
     var setProductState = function(obj) {
       if(typeof obj === 'object' && obj !== null){
@@ -146,7 +147,13 @@
       return _html;
     }
     var getAddToCartOptions = function(){
-      return '<select></select>';
+      var _html = '<select>';
+      var items = 6;
+      for (i = 1; i < items; i++) {
+        _html += '<option value="'+i+'">'+i+'</option>';
+      }
+      _html += '<select>';
+      return _html;
     }
     var getUrlToCompleteProduct = function(){
       return ProductState.permalink != null ? '/productos/'+ProductState.permalink : '';
@@ -165,8 +172,24 @@
         $('.color-selected').text(ProductState.color);
       });
     }
-    var productMessage = function(){
-      return 'Selecciona la talla';
+    var stockMessage = function(){
+      var message = 'Seleccione una talla disponible';
+      var _sku = ProductState.sku_selected;
+      var _skus = ProductState.skus;
+      var _selectedSku = _skus.find(function(value){
+        return value.id === _sku;
+      });
+      var _getQtySelected = ProductState.qty;
+      if(_selectedSku.stock_policy === 'none' || _selectedSku.is_backorderable){
+        message = 'Disponible';
+        return message;
+      }
+      console.log(_selectedSku.in_stock, _getQtySelected);
+      if(_selectedSku.in_stock >= _getQtySelected){
+        message = 'Disponible';
+        return message;
+      }
+      return message;
     }
     var getHtmlThumbnailsImages = function(){
       var _html = '';
@@ -206,8 +229,8 @@
       _html += '<ul class="size-options size-options-js">';
       _html += getSizeProductOptions();
       _html += '</ul>';
-      _html += '<div class="message-options">'+productMessage()+'</div>';
-      _html += '<div class="addToCart">'+getAddToCartOptions()+'</div>';
+      _html += '<div class="message-options">'+stockMessage()+'</div>';
+      _html += '<div class="addToCart">'+getAddToCartOptions()+'<button class="addToCart-js">Agregar al carrito</button></div>';
       _html += '<div class="view-full-product"><a href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
       $productData.append(_html);
       ThumbnailColors();
@@ -284,10 +307,11 @@
         size: size,
         sizes: sizesList,
         images: images,
-        sku_default: object.sku_id,
+        sku_selected: object.sku_id,
         skus: object.skus,
         size_default: size,
-        modifiers: object.modifiers
+        modifiers: object.modifiers,
+        qty: 1
       }
       setProductState(data);
       destroyProductSlider();
