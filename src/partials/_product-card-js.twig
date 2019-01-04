@@ -109,7 +109,14 @@
       return $('.color-selected').val(_defaultColor);
     }
     var getSizeProductOptions = function(){
-      return '<li class="size-options__item">xxs</li><li class="size-options__item">xs</li><li class="size-options__item">s</li><li class="size-options__item">m</li><li class="size-options__item">l</li><li class="size-options__item">xl</li><li class="size-options__item">xxl</li><li class="size-options__item">xxxl</li>';
+      var _html = '';
+      var isChecked = false;
+      _html += '<li class="size-options__item"><input id="xxs" type="radio" name="size" value="xxs"><label for="xxs">xxs</label></li>';
+      _html += '<li class="size-options__item"><input id="xs" type="radio" name="size" value="xs"><label for="xs">xs</label></li>';
+      _html += '<li class="size-options__item"><input id="s" type="radio" name="size" value="s"><label for="s">s</label></li>';
+      _html += '<li class="size-options__item"><input id="m" type="radio" name="size" value="m"><label for="m">m</label></li>';
+      _html += '<li class="size-options__item"><input id="l" type="radio" name="size" value="l"><label for="l">l</label></li>';
+      return _html;
     }
     var getAddToCartOptions = function(){
       return '<select></select>';
@@ -125,14 +132,14 @@
       return url+_w+_h+_fit;
     }
     var ThumbnailColors = function() {
-      $('.thumbnails-color input[type=radio]').on('change',function(){
+      $('.options-js input[type=radio]').on('change',function(){
         var _color = $(this).val();
         ProductState.color = _color;
         $('.color-selected').text(ProductState.color);
       });
     }
-    var initPermalink = function(){
-
+    var productMessage = function(){
+      return 'Selecciona la talla';
     }
     var getHtmlThumbnailsImages = function(){
       var _html = '';
@@ -163,13 +170,13 @@
       _html += '<span class="price-discount">'+getDiscountPriceOption()+'</span>';
       _html += '</div>';
       _html += '<div class="color-selected">'+ProductState.color+'</div>';
-      _html += '<ul class="thumbnails-color">';
+      _html += '<ul class="thumbnails-color options-js">';
       _html += getHtmlThumbnailsImages();
       _html += '</ul>';
-      _html += '<ul class="size-options">';
+      _html += '<ul class="size-options options-js">';
       _html += getSizeProductOptions();
       _html += '</ul>';
-      _html += '<div class="message-options">'+getSizeProductOptions()+'</div>';
+      _html += '<div class="message-options">'+productMessage()+'</div>';
       _html += '<div class="addToCart">'+getAddToCartOptions()+'</div>';
       _html += '<div class="view-full-product"><a href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
       $productData.append(_html);
