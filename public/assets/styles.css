@@ -4897,6 +4897,7 @@ body.hasModal {
 
 .hasModal .product-slider {
   display: block;
+  margin-top: -40px;
   overflow: hidden; }
   .hasModal .product-slider .slick-slide {
     display: inline-block !important; }
@@ -4979,13 +4980,29 @@ body.hasModal {
     text-align: center;
     text-transform: capitalize; }
   .hasModal .product-data .size-options {
-    background-color: grey;
     display: block;
     list-style: none;
     padding: 0; }
+    .hasModal .product-data .size-options input {
+      display: none; }
+    .hasModal .product-data .size-options input[type="radio"]:checked + label {
+      border-bottom: 1px solid #000; }
+    .hasModal .product-data .size-options label {
+      border: none;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 12px;
+      font-weight: normal;
+      letter-spacing: .3px;
+      text-align: center;
+      color: #000;
+      height: 30px;
+      line-height: 2.5;
+      padding: 0 !important;
+      text-transform: uppercase;
+      width: 30px;
+      margin: 0 7px 0 0; }
     .hasModal .product-data .size-options__item {
-      display: inline-block;
-      float: left; }
+      display: inline-block; }
   .hasModal .product-data .message-options {
     background-color: pink; }
   .hasModal .product-data .addToCart {

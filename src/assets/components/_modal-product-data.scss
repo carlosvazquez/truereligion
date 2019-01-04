@@ -78,13 +78,32 @@
       text-transform: capitalize;
     }
     .size-options {
-      background-color: grey;
       display: block;
       list-style: none;
       padding: 0;
+      input {
+        display: none;
+      }
+      input[type="radio"]:checked+label{
+        border-bottom: 1px solid $black;
+      }
+      label {
+        border: none;
+        font-family: "FrankRuhlLibre-Regular";
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: .3px;
+        text-align: center;
+        color: #000;
+        height: 30px;
+        line-height: 2.5;
+        padding: 0!important;
+        text-transform: uppercase;
+        width: 30px;
+        margin: 0 7px 0 0;
+      }
       &__item {
         display: inline-block;
-        float: left;
       }
     }
     .message-options {
