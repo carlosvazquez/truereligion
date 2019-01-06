@@ -8,12 +8,13 @@
 
       return '$' + _formatPrice + ' ' + currency;
     }
-
     var ProductState = {
         name: null,
         permalink: null,
+        colorIndex: null,
         color: null,
         colors: null,
+        sizeIndex: null,
         size: null,
         sizes: null,
         images: null,
@@ -45,12 +46,12 @@
     var filterImagesByColor = function(color, images){
       var _color = color;
       var _images = images;
-      if(_color == undefined) {
+      if(_color === undefined) {
         return _images;
       }
       // filter
       return _images.filter(function(value, index) {
-        return value.color == _color;
+        return value.color === _color;
       });
     }
     var initProductSlider = function(){
@@ -92,7 +93,7 @@
     }
     var fillSliderContent = function(){
       var _html = '';
-      if(ProductState.colors.length > 1){
+      if(ProductState.colors != null && ProductState.colors.length > 1){
         var images = filterImagesByColor(ProductState.color, ProductState.images);
         images.forEach(function(value,index){
           var _index = index + 1;
@@ -100,7 +101,7 @@
           _html += '<div class"slide slide-' + _index +'"><img class="image-slide" src="' + _image + '"></div>';
         });
       }
-      if(ProductState.colors.length == 1){
+      if(ProductState.colors === null || ProductState.colors.length === 1){
         var images = ProductState.images;
         images.forEach(function(value,index){
           var _index = index + 1;
@@ -108,6 +109,7 @@
           _html += '<div class"slide slide-' + _index +'"><img class="image-slide" src="' + _image + '"></div>';
         });
       }
+
       $productSlider.append(_html);
       return true;
     }
@@ -125,7 +127,7 @@
     }
 
     var getSizeList = function(colorIdx, obj){
-      var _id = colorIdx == 0 ? 1 : 0;
+      var _id = colorIdx === 0 ? 1 : 0;
       var _sizes = [];
       obj.skus.forEach(function(value){
         var size = value.modifiers[_id];
@@ -133,7 +135,7 @@
         _sizes.push(size);
         }
       });
-      return _sizes.length == 0 ? null : _sizes;
+      return _sizes.length === 0 ? null : _sizes;
     }
     var getSizeProductOptions = function(){
       var _html = '';
@@ -141,7 +143,7 @@
       var _sizeDefault = ProductState.size;
       var _sizeList = ProductState.sizes;
       _sizeList.forEach(function(value){
-        var _checked = _sizeDefault == value ? 'checked' : '';
+        var _checked = _sizeDefault === value ? 'checked' : '';
         _html += '<li class="size-options__item"><input id="'+value+'" type="radio" name="size" value="'+value+'" '+_checked+'><label for="'+value+'">'+value+'</label></li>';
       });
       return _html;
@@ -158,6 +160,21 @@
     var getUrlToCompleteProduct = function(){
       return ProductState.permalink != null ? '/productos/'+ProductState.permalink : '';
     }
+    var updateSkuInput = function(){
+      var _permalink = ProductState.sizeIndex == 0 ? ProductState.size+'-'+ProductState.color : ProductState.color+'-'+ProductState.size;
+      var _skus = ProductState.skus;
+      var sku = _skus.find(function(value){
+        return value.permalink === _permalink;
+      });
+      console.log(sku.id);
+    }
+    var updateSizeSelected = function() {
+      $('.size-options-js input[type=radio]').on('change',function(){
+        var _size = $(this).val();
+        ProductState.size = _size;
+        updateSkuInput();
+      });
+    }
     var getThumbnailPermalink = function(){
       var _w = '&w=38';
       var _h = '&h=52';
@@ -170,6 +187,14 @@
         var _color = $(this).val();
         ProductState.color = _color;
         $('.color-selected').text(ProductState.color);
+        updateSkuInput();
+      });
+    }
+    var setAddToCart = function(){
+      $('input[name=sku_id]').val(ProductState.sku_selected);
+      $('.addToCart select').on('change', function(){
+        var qty = $(this).val();
+        $('input[name=quantity]').val(qty);
       });
     }
     var stockMessage = function(){
@@ -184,7 +209,6 @@
         message = 'Disponible';
         return message;
       }
-      console.log(_selectedSku.in_stock, _getQtySelected);
       if(_selectedSku.in_stock >= _getQtySelected){
         message = 'Disponible';
         return message;
@@ -193,7 +217,10 @@
     }
     var getHtmlThumbnailsImages = function(){
       var _html = '';
-      var colors = ProductState.colors.length > 1 ? ProductState.colors : ProductState.colors.join();
+      var colors = null;
+      if(ProductState.colors != null){
+        colors = ProductState.colors.length > 1 ? ProductState.colors : ProductState.colors.join();
+      }
       var images = ProductState.images;
       var current = null;
 
@@ -201,10 +228,10 @@
         colors.forEach(function(color){
           var _color = color;
           var current = images.find(function(element) {
-            return element.color == _color;
+            return element.color === _color;
           });
           if(current !== null) {
-            var isChecked = current.color == ProductState.color ? 'checked' : '';
+            var isChecked = current.color === ProductState.color ? 'checked' : '';
             _html += '<li class="thumbnails-permalink"><input id="'+current.color+'" type="radio" name="color" value="'+current.color+'" '+isChecked+'><label for="'+current.color+'"><img class="thumbnails-image" src="'+current.url+'"></label></li>';
           }
         });
@@ -217,12 +244,13 @@
 
     var fillDataContent = function(){
       var _html = '';
+      var colorName = ProductState.color === null ? '' : ProductState.color;
       _html += '<h2 class="product-name">'+ProductState.name+'</h2>';
       _html += '<div class="product-price">';
       _html += '<span class="price-standard">'+getNormalPriceOption()+'</span>';
       _html += '<span class="price-discount">'+getDiscountPriceOption()+'</span>';
       _html += '</div>';
-      _html += '<div class="color-selected">'+ProductState.color+'</div>';
+      _html += '<div class="color-selected">'+colorName+'</div>';
       _html += '<ul class="thumbnails-color color-options-js">';
       _html += getHtmlThumbnailsImages();
       _html += '</ul>';
@@ -231,10 +259,14 @@
       _html += '</ul>';
       _html += '<div class="message-options">'+stockMessage()+'</div>';
       _html += '<div class="addToCart">'+getAddToCartOptions()+'<button class="addToCart-js">Agregar al carrito</button></div>';
+      _html += '<input type="hidden" name="sku_id" value="'+ProductState.sku_selected+'" id="js-sku-id">';
+      _html += '<input type="hidden" id="quantity" name="quantity" value="1">';
       _html += '<div class="view-full-product"><a href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
       $productData.append(_html);
       ThumbnailColors();
+      updateSizeSelected();
       getHtmlThumbnailsImages();
+      setAddToCart();
       return true;
     }
     var getImagesByColor = function(colorList, ObjectImages) {
@@ -271,7 +303,7 @@
       object.skus.forEach(function(element){
         element.modifiers.forEach(function(color, i){
           var _color = lowerCase(color);
-          if(i == _index && listcolors.indexOf(_color) == -1) {
+          if(i === _index && listcolors.indexOf(_color) === -1) {
             listcolors.push(_color);
           }
         });
@@ -283,11 +315,11 @@
       return ArrayModifiers.indexOf('color') != -1 ? ArrayModifiers.indexOf('color') : false;
     }
     var getDefaultSize = function(colorIdx, obj){
-      var _id = colorIdx == 0 ? 1 : 0;
+      var _id = colorIdx === 0 ? 1 : 0;
       var _skus = obj.skus;
       var _skuId = obj.sku_id;
       var result = _skus.find(function(value, index){
-        return value.id == _skuId;
+        return value.id === _skuId;
       });
       var size = result.modifiers[_id]
       return size;
@@ -295,6 +327,7 @@
     var buildContentModal = function(color, object) {
       var _defaultColor = color;
       var index = getColorIndex(object.modifiers);
+      var sizeIndex = index === 0 ? 1 : 0;
       var colorList = getColorsList(index, object);
       var images = getImagesByColor(colorList, object.images);
       var size = getDefaultSize(index, object);
@@ -302,8 +335,10 @@
       var data = {
         name: object.name,
         permalink: object.permalink,
+        colorIndex: index,
         color: _defaultColor,
         colors: colorList,
+        sizeIndex: sizeIndex,
         size: size,
         sizes: sizesList,
         images: images,
