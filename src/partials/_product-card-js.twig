@@ -17,12 +17,18 @@
         sizeIndex: null,
         size: null,
         sizes: null,
+        sizesAvailable: null,
         images: null,
         sku_selected: null,
         skus: null,
         size_default: null,
         modifiers: null,
-        qty: null
+        qty: 0,
+        normalPrice: null,
+        discountPrice: null,
+        stock: 0,
+        stockPolicy: 'overall',
+        isBackorderable: false
     }
     var setProductState = function(obj) {
       if(typeof obj === 'object' && obj !== null){
@@ -113,13 +119,11 @@
       $productSlider.append(_html);
       return true;
     }
-    var getNormalPriceOption = function(){
-      var price = formatMoney(6900);
-      return price;
+    var getNormalPriceOption = function(normalPrice){
+      return formatMoney(normalPrice);
     }
-    var getDiscountPriceOption = function(){
-      var price = formatMoney(4140);
-      return price;
+    var getDiscountPriceOption = function(discountPrice){
+      return formatMoney(discountPrice);
     }
     var getColorProductSelected = function(){
       var _defaultColor = ProductState.color;
@@ -144,35 +148,49 @@
       var _sizeList = ProductState.sizes;
       _sizeList.forEach(function(value){
         var _checked = _sizeDefault === value ? 'checked' : '';
-        _html += '<li class="size-options__item"><input id="'+value+'" type="radio" name="size" value="'+value+'" '+_checked+'><label for="'+value+'">'+value+'</label></li>';
+        _html += '<li class="size-options__item"><input id="'+value+'" class="disabled" type="radio" name="size" value="'+value+'" '+_checked+'><label class="disabled" for="'+value+'">'+value+'</label></li>';
       });
       return _html;
     }
     var getAddToCartOptions = function(){
-      var _html = '<select>';
+      var _html = '<div class="quantity-container"><select class="qty">';
       var items = 6;
       for (i = 1; i < items; i++) {
         _html += '<option value="'+i+'">'+i+'</option>';
       }
-      _html += '<select>';
+      _html += '<select></div>';
       return _html;
     }
     var getUrlToCompleteProduct = function(){
       return ProductState.permalink != null ? '/productos/'+ProductState.permalink : '';
     }
-    var updateSkuInput = function(){
+    var updateSkuInputsAndPrices = function(){
       var _permalink = ProductState.sizeIndex == 0 ? ProductState.size+'-'+ProductState.color : ProductState.color+'-'+ProductState.size;
       var _skus = ProductState.skus;
-      var sku = _skus.find(function(value){
+      var _sku = _skus.find(function(value){
         return value.permalink === _permalink;
       });
-      console.log(sku.id);
+      ProductState.qty = _sku.qty;
+      ProductState.normalPrice = _sku.price;
+      ProductState.discountPrice = _sku.compared_price;
+      ProductState.stock = _sku.in_stock == null ? 0 : _sku.in_stock;
+      ProductState.stockPolicy = _sku.stock_policy;
+      ProductState.isBackorderable = _sku.is_backorderable;
+      updatePrices(_sku.price, _sku.compared_price);
+      $('input[name=sku_id]').val(_sku.id);
+    }
+    var updatePrices = function(standard, discount){
+      var _standard = formatMoney(standard);
+      var _discount = discount != null ? formatMoney(discount) : '';
+      $('.price-standard').text(_standard);
+      $('.price-discount').text(_discount);
     }
     var updateSizeSelected = function() {
       $('.size-options-js input[type=radio]').on('change',function(){
         var _size = $(this).val();
         ProductState.size = _size;
-        updateSkuInput();
+        updateSkuInputsAndPrices();
+        enableBuyButton();
       });
     }
     var getThumbnailPermalink = function(){
@@ -182,12 +200,26 @@
       var url = 'https://www.truereligion.com/mens-40-off-select'
       return url+_w+_h+_fit;
     }
+    var enableSizeElements = function(){
+      $('.size-options-js input').addClass('disabled');
+      $('.size-options-js label').addClass('disabled');
+      var colorSelected = $('.color-options-js input[type=radio]:checked').val();
+      $('.size-options-js input[type=radio').each(function(i,value){
+        var size = $(value).val();
+        if(ProductState.sizesAvailable[colorSelected].includes(size)){
+          $(value).removeClass('disabled');
+          $('label[for="'+size+'"]').removeClass('disabled');
+        }
+      });
+    }
     var ThumbnailColors = function() {
       $('.color-options-js input[type=radio]').on('change',function(){
         var _color = $(this).val();
         ProductState.color = _color;
         $('.color-selected').text(ProductState.color);
-        updateSkuInput();
+        updateSkuInputsAndPrices();
+        enableSizeElements();
+        enableBuyButton();
       });
     }
     var setAddToCart = function(){
@@ -195,6 +227,8 @@
       $('.addToCart select').on('change', function(){
         var qty = $(this).val();
         $('input[name=quantity]').val(qty);
+        updateSkuInputsAndPrices();
+        enableBuyButton();
       });
     }
     var stockMessage = function(){
@@ -241,14 +275,26 @@
 
       return _html != '' ? _html : '';
     }
+    var skuPrices = function(object){
+      var result = [];
+      var sku = object.sku_id;
+      var selectedsku = object.skus.find(function(element) {
+        return element.id === sku;
+      });
+      result.push(selectedsku.price);
+      result.push(selectedsku.compared_price != null ? selectedsku.compared_price : 0);
+      return result;
+    }
 
     var fillDataContent = function(){
       var _html = '';
       var colorName = ProductState.color === null ? '' : ProductState.color;
+      var price = getNormalPriceOption(ProductState.normalPrice);
+      var compared_price = ProductState.discountPrice != 0 ? getDiscountPriceOption(ProductState.discountPrice) : '';
       _html += '<h2 class="product-name">'+ProductState.name+'</h2>';
       _html += '<div class="product-price">';
-      _html += '<span class="price-standard">'+getNormalPriceOption()+'</span>';
-      _html += '<span class="price-discount">'+getDiscountPriceOption()+'</span>';
+      _html += '<span class="price-standard">'+ price +'</span>';
+      _html += '<span class="price-discount">'+ compared_price +'</span>';
       _html += '</div>';
       _html += '<div class="color-selected">'+colorName+'</div>';
       _html += '<ul class="thumbnails-color color-options-js">';
@@ -258,14 +304,15 @@
       _html += getSizeProductOptions();
       _html += '</ul>';
       _html += '<div class="message-options">'+stockMessage()+'</div>';
-      _html += '<div class="addToCart">'+getAddToCartOptions()+'<button class="addToCart-js">Agregar al carrito</button></div>';
+      _html += '<div class="addToCart">'+getAddToCartOptions()+'<button class="addToCart-js">Agregar al Carrito</button></div>';
       _html += '<input type="hidden" name="sku_id" value="'+ProductState.sku_selected+'" id="js-sku-id">';
       _html += '<input type="hidden" id="quantity" name="quantity" value="1">';
-      _html += '<div class="view-full-product"><a href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
+      _html += '<div class="view-full-product"><a class="more-details" href="'+getUrlToCompleteProduct()+'">Ver Detalles Completos</a></div>';
       $productData.append(_html);
       ThumbnailColors();
       updateSizeSelected();
       getHtmlThumbnailsImages();
+      enableSizeElements();
       setAddToCart();
       return true;
     }
@@ -308,6 +355,7 @@
           }
         });
       });
+      ProductState.colors = listcolors;
       return listcolors;
     }
     var getColorIndex = function(ArrayModifiers) {
@@ -324,6 +372,60 @@
       var size = result.modifiers[_id]
       return size;
     }
+    var enableBuyButton = function(){
+      var qty = $('input[name=quantity]').val();
+      if(ProductState.stockPolicy === 'none'){
+        $('.message-options').text('Disponible');
+        $('.addToCart-js').addClass('active');
+        return false;
+      }
+      if(ProductState.stockPolicy === 'overall' && ProductState.isBackorderable){
+        $('.message-options').text('Disponible');
+        $('.addToCart-js').addClass('active');
+        return false;
+      }
+      if(qty <= ProductState.stock){
+        $('.message-options').text('Disponible');
+        $('.addToCart-js').addClass('active');
+        return false;
+      }
+      $('.message-options').text('No disponible');
+      $('.addToCart-js').removeClass('active');
+    }
+
+    var getDefaultStockValues = function(object){
+      var values = [];
+      var _sku = object.sku_id;
+      var _skus = object.skus;
+      var result = _skus.find(function(value, index){
+        return value.id === _sku;
+      });
+      values.push(result.in_stock);
+      values.push(result.stock_policy);
+      values.push(result.is_backorderable);
+      return values;
+    }
+    var sizesAvailable = function(colorIndex, sizeIndex,object){
+      var color_index = colorIndex;
+      var size_index = sizeIndex;
+      var colors = ProductState.colors;
+      var list = {};
+      colors.forEach(function(value, i){
+        var colorName = value.toLowerCase();
+        list[colorName] = [];
+      });
+      var skus = object.skus;
+      skus.forEach(function(value, i){
+        if(value.stock_policy === 'none' || value.is_backorderable || value.in_stock > 0){
+          var color_name = value.modifiers[color_index].toLowerCase();
+          var size_value = value.modifiers[size_index].toLowerCase();
+          list[color_name].push(size_value);
+        }
+      });
+      ProductState.sizesAvailable = list;
+      return list;
+    }
+
     var buildContentModal = function(color, object) {
       var _defaultColor = color;
       var index = getColorIndex(object.modifiers);
@@ -332,6 +434,10 @@
       var images = getImagesByColor(colorList, object.images);
       var size = getDefaultSize(index, object);
       var sizesList = getSizeList(index, object);
+      var normalprice = skuPrices(object)[0];
+      var discountprice = skuPrices(object)[1];
+      var defaultStockValues = getDefaultStockValues(object);
+      var sizesAvailableList = sizesAvailable(index,sizeIndex,object);
       var data = {
         name: object.name,
         permalink: object.permalink,
@@ -341,18 +447,25 @@
         sizeIndex: sizeIndex,
         size: size,
         sizes: sizesList,
+        sizesAvailable: sizesAvailableList,
         images: images,
         sku_selected: object.sku_id,
         skus: object.skus,
         size_default: size,
         modifiers: object.modifiers,
-        qty: 1
+        qty: 1,
+        normalPrice: normalprice,
+        discountPrice: discountprice,
+        stock: defaultStockValues[0],
+        stockPolicy: defaultStockValues[1],
+        isBackorderable: defaultStockValues[2]
       }
       setProductState(data);
       destroyProductSlider();
       fillSliderContent();
       fillDataContent();
       initProductSlider();
+      enableBuyButton();
     }
     $('.quick-view').on('click', function(){
       var ProductObj = {}

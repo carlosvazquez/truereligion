@@ -4984,9 +4984,17 @@ body.hasModal {
     list-style: none;
     padding: 0; }
     .hasModal .product-data .size-options input {
-      display: none; }
+      display: none;
+      cursor: pointer;
+      pointer-events: auto; }
+    .hasModal .product-data .size-options input.disabled {
+      cursor: not-allowed;
+      display: none;
+      pointer-events: none; }
     .hasModal .product-data .size-options input[type="radio"]:checked + label {
       border-bottom: 1px solid #000; }
+    .hasModal .product-data .size-options input[type="radio"]:checked + label.disabled {
+      border-bottom-color: transparent; }
     .hasModal .product-data .size-options label {
       border: none;
       font-family: "FrankRuhlLibre-Regular";
@@ -4999,16 +5007,63 @@ body.hasModal {
       line-height: 2.5;
       padding: 0 !important;
       text-transform: uppercase;
-      width: 30px;
-      margin: 0 7px 0 0; }
+      min-width: 20px;
+      margin: 0 10px; }
+    .hasModal .product-data .size-options label.disabled {
+      background-image: repeating-linear-gradient(145deg, transparent, transparent 48%, #bcbcbc 54%, transparent 0, transparent);
+      border-color: transparent;
+      color: #bcbcbc;
+      margin: 0 10px;
+      min-width: 20px; }
     .hasModal .product-data .size-options__item {
       display: inline-block; }
-  .hasModal .product-data .message-options {
-    background-color: pink; }
-  .hasModal .product-data .addToCart {
-    background-color: lemonchiffon; }
-  .hasModal .product-data .view-full-product a {
-    background-color: plum; }
+  .hasModal .product-data .addToCart .quantity-container {
+    display: inline-block;
+    height: 40px;
+    margin: 20px 0;
+    width: 12.7%; }
+  .hasModal .product-data .addToCart select.qty {
+    border: 1px solid #000;
+    font-family: "FrankRuhlLibre-Regular";
+    font-size: 15px;
+    height: 40px;
+    margin-left: 0 !important;
+    padding: .7em .3em;
+    text-align: center;
+    text-align-last: center;
+    width: 100%;
+    -webkit-appearance: menulist !important; }
+  .hasModal .product-data .addToCart .addToCart-js {
+    background: #bfbfbf !important;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: #fff;
+    cursor: not-allowed;
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    letter-spacing: .1em;
+    margin: 20px 0 20px 6px;
+    padding: 0;
+    pointer-events: none;
+    text-transform: none;
+    width: 85%; }
+    .hasModal .product-data .addToCart .addToCart-js.active {
+      background: #000000 !important;
+      cursor: pointer;
+      pointer-events: auto; }
+  .hasModal .product-data .view-full-product a.more-details {
+    color: #6e6e6e;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .3px;
+    line-height: 1.83;
+    text-align: left;
+    text-decoration: underline; }
 
 .home_page .home-main-banner__link {
   display: block;
