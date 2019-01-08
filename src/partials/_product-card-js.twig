@@ -170,7 +170,7 @@
       var _permalink = ProductState.sizeIndex == 0 ? ProductState.size+'-'+ProductState.color : ProductState.color+'-'+ProductState.size;
       var _skus = ProductState.skus;
       var _sku = _skus.find(function(value){
-        return value.permalink === _permalink;
+        return value.permalink === _permalink.toLowerCase();
       });
       ProductState.qty = _sku.qty;
       ProductState.normalPrice = _sku.price;
@@ -184,8 +184,8 @@
     var updatePrices = function(standard, discount){
       var _standard = formatMoney(standard);
       var _discount = discount != null ? formatMoney(discount) : '';
-      $('.price-standard').text(_standard);
-      $('.price-discount').text(_discount);
+      $('.price-standard').text(_discount);
+      $('.price-discount').text(_standard);
     }
     var updateSizeSelected = function() {
       $('.size-options-js input[type=radio]').on('change',function(){
@@ -209,7 +209,7 @@
       var colorSelected = $('.color-options-js input[type=radio]:checked').val();
       $('.size-options-js input[type=radio').each(function(i,value){
         var size = $(value).val();
-        if(ProductState.sizesAvailable[colorSelected].includes(size)){
+        if(ProductState.sizesAvailable[colorSelected].includes(size.toLowerCase())){
           $(value).removeClass('disabled');
           $('label[for="'+size+'"]').removeClass('disabled');
         }
@@ -335,8 +335,8 @@
       var compared_price = ProductState.discountPrice != 0 ? getDiscountPriceOption(ProductState.discountPrice) : '';
       _html += '<h2 class="product-name">'+ProductState.name+'</h2>';
       _html += '<div class="product-price">';
-      _html += '<span class="price-standard">'+ price +'</span>';
-      _html += '<span class="price-discount">'+ compared_price +'</span>';
+      _html += '<span class="price-standard">'+ compared_price +'</span>';
+      _html += '<span class="price-discount">'+ price +'</span>';
       _html += '</div>';
       _html += '<div class="color-selected">'+colorName+'</div>';
       _html += '<ul class="thumbnails-color color-options-js">';
@@ -582,9 +582,6 @@
         addProductToCartByAjax();
       });
     }
-
     // End ajax component
-
-
   });
 </script>
