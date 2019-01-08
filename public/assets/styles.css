@@ -5047,14 +5047,21 @@ body.hasModal {
     height: 40px;
     letter-spacing: .1em;
     margin: 20px 0 20px 6px;
+    opacity: 1;
     padding: 0;
     pointer-events: none;
     text-transform: none;
     width: 85%; }
     .hasModal .product-data .addToCart .addToCart-js.active {
+      opacity: 1;
       background: #000000 !important;
       cursor: pointer;
       pointer-events: auto; }
+    .hasModal .product-data .addToCart .addToCart-js.disabled {
+      opacity: .6;
+      background-color: #333333 !important;
+      cursor: not-allowed;
+      pointer-events: none; }
   .hasModal .product-data .view-full-product a.more-details {
     color: #6e6e6e;
     font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;

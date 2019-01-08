@@ -28,7 +28,8 @@
         discountPrice: null,
         stock: 0,
         stockPolicy: 'overall',
-        isBackorderable: false
+        isBackorderable: false,
+        cartQty: 1
     }
     var setProductState = function(obj) {
       if(typeof obj === 'object' && obj !== null){
@@ -192,6 +193,7 @@
         ProductState.size = _size;
         updateSkuInputsAndPrices();
         enableBuyButton();
+        enableAddToCartByAjaxBtn();
       });
     }
     var getThumbnailImage = function(url){
@@ -257,15 +259,18 @@
         updateSkuInputsAndPrices();
         enableSizeElements();
         enableBuyButton();
+        enableAddToCartByAjaxBtn();
       });
     }
     var setAddToCart = function(){
       $('input[name=sku_id]').val(ProductState.sku_selected);
       $('.addToCart select').on('change', function(){
         var qty = $(this).val();
+        ProductState.cartQty = qty;
         $('input[name=quantity]').val(qty);
         updateSkuInputsAndPrices();
         enableBuyButton();
+        enableAddToCartByAjaxBtn();
       });
     }
     var stockMessage = function(){
@@ -494,7 +499,8 @@
         discountPrice: discountprice,
         stock: defaultStockValues[0],
         stockPolicy: defaultStockValues[1],
-        isBackorderable: defaultStockValues[2]
+        isBackorderable: defaultStockValues[2],
+        cartQty: 1
       }
       setProductState(data);
       destroyProductSlider();
@@ -502,6 +508,7 @@
       fillDataContent();
       initProductSlider();
       enableBuyButton();
+      enableAddToCartByAjaxBtn();
     }
     $('.quick-view').on('click', function(){
       var ProductObj = {}
@@ -511,5 +518,73 @@
       resetModal();
       buildContentModal(_defaultColor, _currentProduct);
     });
+
+    // AJAX Add to Cart Component
+    // Add Product to cart by ajax
+    var root = window.location.hostname;
+    var PROTOCOL = window.location.protocol;
+    var getAjaxStoteUrl = function(type) {
+      return PROTOCOL + '//' + root + '/' + type;
+    }
+    var ajaxConfig = {
+      getUrl:   getAjaxStoteUrl('cart.json'),
+      postUrl: getAjaxStoteUrl('cart/add.js')
+    }
+    var clearAjaxCart = function(){
+      console.log('clearAjaxCart');
+    }
+    var buildAjaxResult = function(obj, sku, data, total) {
+      console.log('buildAjaxResult: '+obj, sku, data, total);
+      clearAjaxCart();
+    }
+    var displayCartWarning = function(data) {
+      console.log('displayCartWarning');
+    }
+    var showAjaxCart = function(){
+      console.log('showAjaxCart');
+    }
+    var updateCartQty = function(){
+      console.log('updateCartQty');
+    }
+    var addSimpleProductToCarByAjax = function(sku, qty) {
+      var productSku = sku;
+      var qty = qty == null ? 1 : qty;
+      $.post(ajaxConfig.postUrl,{'sku_id':productSku,'quantity':qty})
+      .done(function(data) {
+        AjaxCart = data.object || {};
+        var item = AjaxCart.items;
+        buildAjaxResult(AjaxCart, productSku, item[item.length - 1], AjaxCart.total_price);
+        extraData = data.extra ? 1 : 0;
+        updateCartQty(AjaxCart.total_items);
+        if(extraData){
+          displayCartWarning(data.extra[1]);
+        }
+      showAjaxCart();
+      })
+      .done(function(data){});
+    }
+    var addProductToCartByAjax = function() {
+      var sku = $("input#js-sku-id").val();
+      var qty = $("#quantity").val();
+      addSimpleProductToCarByAjax(sku, qty);
+    }
+    var enableAddToCartByAjaxBtn = function(){
+      $('.addToCart-js.active').on('click', function(e) {
+        console.log('clicked');
+        //e.preventDefault();
+        var el = $(this);
+        el.addClass('disabled');
+        el.prop('disabled', true);
+        setTimeout(function(){
+          el.removeClass('disabled');
+          el.prop('disabled', false);
+        }, 3000);
+        addProductToCartByAjax();
+      });
+    }
+
+    // End ajax component
+
+
   });
 </script>
