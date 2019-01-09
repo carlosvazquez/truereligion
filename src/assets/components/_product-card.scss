@@ -16,8 +16,14 @@
           display: none;
         }
       }
+      .quick-view.disabled {
+        background-color: #666666;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
     }
     &__image-link {
+      display: block;
       position: relative;
     }
     &__image-link .preview-1 {

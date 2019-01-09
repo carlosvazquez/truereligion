@@ -1,5 +1,6 @@
 <script type="text/javascript">
   $(function (){
+    $('.quick-view').removeClass('disabled');
     var formatMoney = function(price){
       var currency = $('script#app').data("currency");
       var _formatPrice = price /= 100;
@@ -562,7 +563,7 @@
     var hideAjaxModalCart = function(){
       setTimeout(function(){
         $('#modalProduct').modal('hide')
-      }, 3000);
+      }, 2500);
     }
     var updateCartQty = function(qty){
       $('.cart-qty').text(qty);

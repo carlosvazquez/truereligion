@@ -6,6 +6,8 @@ body.products-page.hasModal.modal-open {
     display: none;
   }
   .modal-dialog.modal-dialog-centered.ProductAddedToCart {
+    align-items: flex-start;
+    top: 40px;
     width: 300px;
       .modal-content .modal-header .title-modal {
         display: block;

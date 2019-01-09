@@ -4776,7 +4776,12 @@ footer .legal {
     @media (max-width: 1149.98px) {
       .product-card__image:hover .quick-view {
         display: none; } }
+  .product-card__image:hover .quick-view.disabled {
+    background-color: #666666;
+    cursor: not-allowed;
+    pointer-events: none; }
   .product-card__image-link {
+    display: block;
     position: relative; }
   .product-card__image-link .preview-1 {
     display: block; }
@@ -5101,6 +5106,8 @@ body.products-page.hasModal.modal-open .modal-content .modal-header .title-modal
   display: none; }
 
 body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart {
+  align-items: flex-start;
+  top: 40px;
   width: 300px; }
   body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-content .modal-header .title-modal {
     display: block; }
