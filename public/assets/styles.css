@@ -4844,8 +4844,9 @@ body.hasModal {
   padding-right: 0 !important;
   overflow-y: auto; }
   body.hasModal .modal-dialog-centered {
-    height: 676px;
-    max-height: 676px;
+    height: 100vh;
+    max-height: 658px;
+    min-height: calc(100vh - 20px);
     width: 90vw;
     max-width: 1086px;
     opacity: 0;
@@ -4857,15 +4858,19 @@ body.hasModal {
     @media (max-width: 1149.98px) {
       body.hasModal .modal-dialog-centered {
         max-width: 100%; } }
+    @media (max-height: 1280px) {
+      body.hasModal .modal-dialog-centered {
+        margin: 0 auto; } }
   body.hasModal .modal-backdrop.show {
     opacity: 0.3; }
 
 .hasModal.modal-open .modal {
+  max-height: 100vh;
   opacity: 1; }
 
 .hasModal .modal.show .modal-dialog-centered {
-  height: 676px;
-  max-height: 676px;
+  height: 100vh;
+  max-height: 658px;
   opacity: 1;
   -webkit-transition: opacity 100ms ease-out 200ms;
   -moz-transition: opacity 100ms ease-out 200ms;
@@ -4874,15 +4879,32 @@ body.hasModal {
   -ms-transition: opacity 100ms ease-out 200ms; }
 
 .hasModal .modal.show .modal-header {
-  border: none; }
+  border: none;
+  height: auto;
+  display: block;
+  position: relative; }
   .hasModal .modal.show .modal-header button.close {
     opacity: 1;
-    padding: 1.4rem 1.8rem; }
+    padding: 12px 14px;
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    z-index: 10; }
 
 .hasModal .modal.show .modal-content {
   border: none;
+  box-shadow: none;
   border-radius: 0;
-  box-shadow: none; }
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  height: 100vh;
+  max-height: 664px; }
+  @media (min-height: 800px) {
+    .hasModal .modal.show .modal-content {
+      height: auto;
+      max-height: 700px; } }
 
 .hasModal .modal.show .modal-body {
   overflow: hidden; }
@@ -5035,11 +5057,11 @@ body.hasModal {
     -webkit-appearance: menulist !important; }
   .hasModal .product-data .addToCart .addToCart-js {
     background: #bfbfbf !important;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
     color: #fff;
     cursor: not-allowed;
     display: inline-block;
@@ -5071,6 +5093,69 @@ body.hasModal {
     line-height: 1.83;
     text-align: left;
     text-decoration: underline; }
+
+body.products-page.hasModal.modal-open .ajax-cart-result {
+  display: none; }
+
+body.products-page.hasModal.modal-open .modal-content .modal-header .title-modal {
+  display: none; }
+
+body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart {
+  width: 300px; }
+  body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-content .modal-header .title-modal {
+    display: block; }
+  body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .ajax-cart-result {
+    display: block; }
+  body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-header {
+    padding-bottom: 5px; }
+    body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-header .title-modal {
+      display: block;
+      font-size: 15px;
+      padding: .5rem 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%; }
+  body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-content {
+    width: 300px;
+    height: auto; }
+  body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-header::after {
+    content: '';
+    background-color: #dedddd;
+    bottom: 0px;
+    display: block;
+    height: 1px;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+    z-index: 100; }
+  body.products-page.hasModal.modal-open .modal-dialog.modal-dialog-centered.ProductAddedToCart .modal-body {
+    text-align: center; }
+
+body.products-page.hasModal.modal-open .minicart-ajax__title {
+  color: #444444;
+  font-size: 12px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  text-transform: uppercase; }
+
+body.products-page.hasModal.modal-open .minicart-ajax__image {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100px;
+  width: 100%; }
+
+body.products-page.hasModal.modal-open .minicart-ajax__footer {
+  border-top: 1px solid #dedddd;
+  padding-top: 10px; }
+
+body.products-page.hasModal.modal-open .minicart-ajax--link {
+  color: #999999;
+  text-decoration: underline; }
+
+body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
+  color: #000000;
+  text-decoration: underline; }
 
 .home_page .home-main-banner__link {
   display: block;
