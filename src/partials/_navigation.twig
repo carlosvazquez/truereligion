@@ -33,9 +33,11 @@
 
             <div class="icon-shopping-bag {% if cart.total_items > 0 %}active{% endif %}">
               <span class="icon-shopping-bag__block">
+                <span class="cart-qty">
                 {% if cart.total_items > 0 %}
-                <span class="cart-qty">{{ cart.total_items }}</span>
+                {{ cart.total_items }}
                 {% endif %}
+                </span>
                 <img src="https://cdn.kometia-static.com/true-religion/images/header-re-bag.png?v=1545332634" alt="" class="icon-shopping-bag__img empty">
                 <img src="https://cdn.kometia-static.com/true-religion/images/header-re-filled-bag.png?v=1545332634" alt="" class="icon-shopping-bag__img filled">
               </span>
