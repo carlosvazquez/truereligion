@@ -4,9 +4,11 @@
     <div class="container">
 
       <div class="row align-items-start">
-        <div class="col-3 col-sm-3 col-md-2 col-lg-1 left-module">
+        <div class="col-3 col-sm-3 col-md-2 col-lg-2 left-module">
           <div class="logo">
-            <img class="logo__img-desktop" src="https://cdn.kometia-static.com/true-religion/images/logo_truereligion_mobile.png?v=1545332634" alt="Logo True Religion">
+            <a class="logo__link" href="/">
+              <img class="logo__img-desktop" src="https://cdn.kometia-static.com/true-religion/images/logo_truereligion_mobile.png?v=1545332634" alt="Logo True Religion">
+            </a>
           </div>
           <div class="icon-search">
             <span class="icon-search__block">
@@ -15,24 +17,34 @@
           </div>
         </div>
 
-        <div class="col-6 col-sm-6 col-md-8 col-lg-10 mega-container">
+        <div class="col-6 col-sm-6 col-md-8 col-lg-8 mega-container">
           <div class="logo">
-            <img class="logo__img-desktop" src="https://cdn.kometia-static.com/true-religion/images/logo_truereligion.png?v=1545332634" alt="Logo True Religion">
-            <img class="logo__img-mobile" src="https://cdn.kometia-static.com/true-religion/images/logo_truereligion_mobile.png?v=1545332634" alt="Logo True Religion">
+            <a href="/">
+              <img class="logo__img-desktop" src="https://cdn.kometia-static.com/true-religion/images/logo_truereligion.png?v=1545332634" alt="Logo True Religion">
+              <img class="logo__img-mobile" src="https://cdn.kometia-static.com/true-religion/images/logo_truereligion_mobile.png?v=1545332634" alt="Logo True Religion">
+            </a>
           </div>
           {% include '_main-menu.twig' %}
         </div>
 
-        <div class="col-3 col-sm-3 col-md-2 col-lg-1 right-module">
+        <div class="col-3 col-sm-3 col-md-2 col-lg-2 right-module">
           <div class="cart-mobile">
             <div class="icon-search">
               <span class="icon-search__block">
                 <img src="https://cdn.kometia-static.com/true-religion/files/search.svg?v=1546278579" alt="" class="icon-search__img">
               </span>
+              <div class="searchframe">
+                <span class="form__close"><img src="https://cdn.kometia-static.com/true-religion/images/delete-cross.png?v=1546448197" alt="close"></span>
+                <form action="/buscar" method="get" class="searchframe__search">
+                  <input type="hidden" name="type" value="product"/>
+                  <input type="text" name="q" class="searchframe__input" placeholder="Buscar" autocomplete="on">
+                  <input class="searchframe__submit" type="submit"/>
+                </form>
+              </div>
             </div>
 
             <div class="icon-shopping-bag {% if cart.total_items > 0 %}active{% endif %}">
-              <span class="icon-shopping-bag__block">
+              <span class="icon-shopping-bag">
                 <a href="/carrito" class="cart-qty">
                 {% if cart.total_items > 0 %}
                 {{ cart.total_items }}
@@ -56,4 +68,14 @@
       </div>
     </div>
   </div>
+
+  <div class="mobile-search">
+    <span class="form__close"><img src="https://cdn.kometia-static.com/true-religion/images/delete-cross.png?v=1546448197" alt="close"></span>
+    <form action="/buscar" method="get" class="search-form">
+      <input type="hidden" name="type" value="product"/>
+      <input type="text" name="q" class="search-form__input" placeholder="Buscar en True Religion" autocomplete="on">
+      <input class="search-form__submit" type="submit"/>
+    </form>
+  </div>
+
 </nav>
