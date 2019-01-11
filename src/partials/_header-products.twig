@@ -1,0 +1,103 @@
+{% set pageTitle = title %}
+{% set pageType = type %}
+{% set isCollection = isCollection %}
+
+{% if pageType == 'collection' %}
+  {% set parentTitle = 'Colecciones' %}
+{% elseif pageType == 'category' %}
+  {% set parentTitle = 'Categorías' %}
+{% else %}
+  {% set parentTitle = 'Productos' %}
+{% endif %}
+
+<div class="products-header">
+{% if isCollection and collection.image_url is not empty %}
+  <div class="splash-image">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 {{ pageTitle }}">
+          <img class="collection-image" src="{{ collection.image_url }}" alt="Image header">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+  <div class="breadcrumb-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              {% if pageType == 'products' %}
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="/productos">{{ parentTitle }}</a></li>
+              {% else %}
+              <li class="breadcrumb-item">{{ parentTitle }}</li>
+              {% endif %}
+              <li class="breadcrumb-item active" aria-current="page">{{ pageTitle }}</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="products-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="products-page__header">
+            <h1 class="products-page__title">{{ pageTitle }}</h1>
+            {% if isCollection %}
+            <div class="products-page__intro">{{ collection.description }}</div>
+            {% else %}
+            <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="filtersbar">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-6">
+        <div class="filter">
+          <h4 class="filter__title">Filtro</h4>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="selector">
+          <h4 class="selector__title">Ordenar: <span></span></h4>
+          <ul class="selector__list">
+            <li class="selector__item" data-value="date-newer">Más nuevo</li>
+            <li class="selector__item" data-value="date-older">Más viejo</li>
+            <li class="selector__item" data-value="price-descending">Precio Mayor a Menor</li>
+            <li class="selector__item" data-value="price-ascending">Precio Menor a Mayor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-frame">
+      <div class="row">
+        <div class="col-12 col-md-2">AA</div>
+        <div class="col-12 col-md-1">BB</div>
+        <div class="col-12 col-md-1">CC</div>
+        <div class="col-12 col-md-1">DD</div>
+        <div class="col-12 col-md-1">EE</div>
+        <div class="col-12 col-md-1">FF</div>
+        <div class="col-12 col-md-1">GG</div>
+        <div class="col-12 col-md-1">HH</div>
+        <div class="col-12 col-md-2">II</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

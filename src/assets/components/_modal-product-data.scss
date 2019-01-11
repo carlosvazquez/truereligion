@@ -1,0 +1,191 @@
+.hasModal {
+  #modalProduct {
+    @include media-breakpoint-down(md) {
+      display: none !important;
+      opacity: 0 !important;
+    }
+  }
+  .product-data {
+    text-align: center;
+    .product-name {
+      color: #000;
+      font-family: "Avenir Next Cyr W00 Medium", helvetica, arial, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      line-height: 1.31;
+      margin: 0;
+      padding: 72px 35px 0 34px;
+      text-align: center;
+    }
+    .product-price {
+      color: #6e6e6e;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 18px;
+      height: auto!important;
+      letter-spacing: .5px;
+      margin: 0;
+      margin-bottom: 0;
+      padding: 25px 0 0;
+      .price-standard {
+        text-decoration: line-through;
+        margin-right: 8px;
+      }
+      .price-discount {
+        color: #b2292e;
+        margin-top: 5px;
+      }
+    }
+    .thumbnails-color {
+      display: block;
+      list-style: none;
+      padding: 0 80px;
+      input {
+        display: none;
+      }
+      img {
+        border: 1px solid transparent;
+      }
+      input[type="radio"]:checked+label{
+        img {
+          border: 1px solid $black;
+        }
+      }
+    }
+    .thumbnails-image {
+      background-color: $white;
+      height: 52px;
+      width: 38px;
+    }
+    .thumbnails-permalink {
+      background-color: $white;
+      border: 1px solid $white;
+      display: inline-block;
+      margin: 4px;
+      padding: 3px;
+    }
+    .thumbnails-permalink.active {
+      border: 1px solid $black;
+    }
+    .color-selected {
+      color: #000;
+      font-size: 12px;
+      font-family: "FrankRuhlLibre-Regular";
+      letter-spacing: .3px;
+      line-height: 2.17;
+      margin: 15px 0 0;
+      text-align: center;
+      text-transform: capitalize;
+    }
+    .size-options {
+      display: block;
+      list-style: none;
+      padding: 0;
+      input {
+        display: none;
+        cursor: pointer;
+        pointer-events: auto;
+      }
+      input.disabled {
+        cursor: not-allowed;
+        display: none;
+        pointer-events: none;
+      }
+      input[type="radio"]:checked+label{
+        border-bottom: 1px solid $black;
+      }
+      input[type="radio"]:checked+label.disabled{
+        border-bottom-color: transparent;
+      }
+      label {
+        border: none;
+        font-family: "FrankRuhlLibre-Regular";
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: .3px;
+        text-align: center;
+        color: #000;
+        height: 30px;
+        line-height: 2.5;
+        padding: 0!important;
+        text-transform: uppercase;
+        min-width: 20px;
+        margin: 0 10px;
+      }
+      label.disabled {
+        background-image: repeating-linear-gradient(145deg,transparent,transparent 48%,#bcbcbc 54%,transparent 0,transparent);
+        border-color: transparent;
+        color: #bcbcbc;
+        margin: 0 10px;
+        min-width: 20px;
+      }
+      &__item {
+        display: inline-block;
+      }
+    }
+    .addToCart {
+      .quantity-container {
+        display: inline-block;
+        height: 40px;
+        margin: 20px 0;
+        width: 12.7%;
+      }
+      select.qty {
+        border: 1px solid #000;
+        font-family: "FrankRuhlLibre-Regular";
+        font-size: 15px;
+        height: 40px;
+        margin-left: 0!important;
+        padding: .7em .3em;
+        text-align: center;
+        text-align-last: center;
+        width: 100%;
+        -webkit-appearance: menulist!important;
+      }
+      .addToCart-js {
+        background: #bfbfbf!important;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        color: #fff;
+        cursor: not-allowed;
+        display: inline-block;
+        font-size: 15px;
+        height: 40px;
+        letter-spacing: .1em;
+        margin: 20px 0 20px 6px;
+        opacity: 1;
+        padding: 0;
+        pointer-events: none;
+        text-transform: none;
+        width: 85%;
+        &.active {
+          opacity: 1;
+          background: #000000!important;
+          cursor: pointer;
+          pointer-events: auto;
+        }
+        &.disabled {
+          opacity: .6;
+          background-color: #333333 !important;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+      }
+    }
+    .view-full-product {
+      a.more-details {
+        color: #6e6e6e;
+        font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: .3px;
+        line-height: 1.83;
+        text-align: left;
+        text-decoration: underline;
+      }
+    }
+  }
+}

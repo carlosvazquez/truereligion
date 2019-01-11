@@ -1,0 +1,88 @@
+.products-header {
+  background-color: $white;
+  display: block;
+  .splash-image {
+    display: block;
+    margin: 0 0 20px;
+    @include media-breakpoint-down(md) {
+      margin: 0 0 12px;
+    }
+  }
+  .collection-image {
+    background-color: $white;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+  .breadcrumb-container {
+    .breadcrumb {
+      background-color: transparent;
+      border-radius: 0;
+      padding-left: 0;
+      &-item {
+        color: #6e6e6e;
+        display: inline-block;
+        height: auto;
+        min-height: 11px;
+        font-family: "FrankRuhlLibre-Regular";
+        font-size: 11px;
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.36;
+        letter-spacing: .3px;
+        text-align: left;
+        text-transform: capitalize;
+      }
+      &-link {
+        color: $black;
+        display: block;
+      }
+      &-link:hover {
+        text-decoration: none;
+      }
+      .active {
+        color: $black;
+      }
+    }
+  }
+
+  .products-page {
+    &__header {
+      margin: 0 0 40px;
+      @include media-breakpoint-down(md) {
+        margin: 0 0 20px;
+      }
+    }
+    &__title {
+      color: $black;
+      font-family: "Avenir Next Cyr W00 Bold",helvetica,arial,sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.08;
+      letter-spacing: 4.8px;
+      margin-bottom: 14px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__intro {
+      color: #6e6e6e;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 15px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.47;
+      letter-spacing: .4px;
+      margin: auto;
+      margin-bottom: 54px;
+      text-align: center;
+      padding: 0 30%;
+      @include media-breakpoint-down(md) {
+        padding: 0 10px;
+      }
+    }
+  }
+}

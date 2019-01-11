@@ -47,6 +47,18 @@
         $('.megamenu').css({ 'width': _w + 'px' });
       },
       signInMenu: function() {
+        $('.right-module .searchframe .form__close').on('click', function(){
+          $('.searchframe').removeClass('active');
+        });
+        $('.mobile-search .form__close').on('click', function(){
+          $('.mobile-search').slideToggle('fast');
+        });
+        $('.left-module .icon-search .icon-search__block').on('click', function(){
+          $('.mobile-search').slideToggle('fast');
+        });
+        $('.right-module .cart-mobile .icon-search .icon-search__block').on('click', function(){
+          $('.searchframe').toggleClass('active');
+        });
         $( ".access" ).hover(function() {
           $(this).find(".login-window").stop( true, false ).fadeIn();
         }, function() {
@@ -261,7 +273,7 @@
     })
     .on("load", function () {
       console.log('on load');
-      TrueReligion.onLoadEvents()
+      TrueReligion.onLoadEvents();
     });
   });
 })(jQuery);

@@ -7,11 +7,25 @@ a.btn, .btn {
 }
 a.btn.btn-primary, .btn.btn-primary, .btn-primary {
   color: $white;
+  background: $black;
   background-color: $black;
   border-color: $black;
 }
 a.btn.btn-primary:hover, .btn.btn-primary:hover, .btn-primary:hover,
-a.btn.btn-primary:focus, .btn.btn-primary:focus, .btn-primary:focus {
+a.btn.btn-primary:focus, .btn.btn-primary:focus, .btn-primary:focus,
+a.btn.btn-primary:active, .btn.btn-primary:active, .btn-primary:active {
+  color: $white;
+  background: $black;
+  background-color: $black;
+  border-color: $black;
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary.dropdown-toggle {
+  color: $white;
+  background: $gray-800;
+  background-color: $gray-800;
+  border-color: $gray-800;
 }
 .btn-link {
 }

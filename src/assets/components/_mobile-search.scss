@@ -1,0 +1,43 @@
+.mobile-search {
+  display: none;
+  margin: 14px 0 -16px;
+  position: relative;
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    display: none !important;
+  }
+  .form__close {
+    bottom: 0;
+    cursor: pointer;
+    height: 100%;
+    padding: 9px 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    z-index: 99;
+    img {
+      display: block;
+      height: auto;
+      width: 20px;
+    }
+  }
+  .search-form {
+    &__input {
+      border: 1px solid #eeeeee;
+      border-left: none;
+      border-right: none;
+      display: block;
+      padding: 10px 9px;
+      width: 100%;
+    }
+    &__submit {
+      display: none;
+    }
+  }
+}
+.navigation.stick {
+  .mobile-search {
+    margin-top: 0;
+  }
+}

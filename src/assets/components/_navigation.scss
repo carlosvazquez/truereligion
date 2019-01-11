@@ -1,12 +1,15 @@
 nav.navigation {
   background-color: $white;
+  margin-bottom: 20px;
   padding-top: 20px;
+  position: relative;
   -webkit-transition: padding-top .2s ease-out;
   -moz-transition: padding-top .2s ease-out;
   -o-transition: padding-top .2s ease-out;
   transition: padding-top .2s ease-out;
   @include media-breakpoint-down(md) {
     border-bottom: 1px solid #eeeeee;
+    margin-bottom: 0;
     padding-top: 16px;
     padding-bottom: 16px;
   }
@@ -14,7 +17,10 @@ nav.navigation {
     .logo {
       text-align: center;
       &__link {
-        background-color: goldenrod;
+        @include media-breakpoint-down(md) {
+          display: none;
+          pointer-events: none;
+        }
       }
       &__img-desktop {
         display:  none;
@@ -26,9 +32,17 @@ nav.navigation {
         display: block;
         padding: 6px 0;
       }
-    }
-    .icon-search:hover {
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
+      &__block {
+        display: block;
+      }
+      &__img {
+        display: block;
+        height: auto;
+        width: 25px;
+      }
     }
   }
   .right-module {
@@ -38,13 +52,18 @@ nav.navigation {
         margin-top: 0;
       }
       .icon-search {
+        position: relative;
         @include media-breakpoint-down(md) {
           display: none;
+        }
+        &__block:hover {
+          cursor: pointer;
         }
       }
       .icon-shopping-bag {
         @include media-breakpoint-down(md) {
           margin-left: 0;
+          position: relative;
         }
       }
     }
@@ -70,6 +89,54 @@ nav.navigation {
           margin: 4px 0 8px;
         }
       }
+    }
+    .searchframe {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      right: -100px;
+      top: -4px;
+      transition: opacity .5s ease-in-out;
+      -webkit-transition: opacity .5s ease-in-out;
+      -moz-transition: opacity .5s ease-in-out;
+      -ms-transition: opacity .5s ease-in-out;
+      -o-transition: opacity .5s ease-in-out;
+      &__input {
+        background-color: #ffffff;
+        border: 1px solid #eeeeee;
+        border-radius: 2px;
+        padding: 8px;
+        min-width: 180px;
+        width: auto;
+      }
+      &__submit {
+        display: none;
+      }
+      .form__close {
+        cursor: pointer;
+        display: block;
+        height: 100%;
+        padding: 9px 8px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+        img {
+          display: block;
+          height: auto;
+          width: 18px;
+        }
+      }
+    }
+    .searchframe.active {
+      display: block;
+      opacity: 1;
+      right: 40px;
+      transition: opacity 1s ease-in-out;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -ms-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
     }
   }
   .mega-container {
@@ -138,6 +205,9 @@ nav.navigation {
         @include media-breakpoint-up(lg) {
           margin-top: 8px;
           padding: 0;
+        }
+        .icon-search:hover {
+          cursor: pointer;
         }
       }
     }
@@ -222,6 +292,7 @@ nav.navigation {
     .icon-shopping-bag {
       display: inline-block;
       margin-left: 10px;
+      position: relative;
       &__block {
         display: block;
         position: relative;

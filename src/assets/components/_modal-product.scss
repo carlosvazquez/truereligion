@@ -1,0 +1,114 @@
+
+body.hasModal {
+  padding-right: 0!important;
+  overflow-y: auto;
+  .modal-dialog-centered {
+    height: 100vh;
+    max-height: 658px;
+    min-height: calc(100vh - 20px);
+    width: 90vw;
+    max-width: 1086px;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-out 100ms;
+    -moz-transition: opacity 200ms ease-out 100ms;
+    -o-transition: opacity 200ms ease-out 100ms;
+    transition: opacity 200ms ease-out 100ms;
+    -ms-transition: opacity 200ms ease-out 100ms;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+    @media (max-height: 1280px) {
+      margin: 0 auto;
+    }
+  }
+  .modal-backdrop.show {
+    opacity: 0.3;
+  }
+}
+.hasModal.modal-open .modal {
+  max-height: 100vh;
+  opacity: 1;
+}
+.hasModal {
+  .modal.show {
+    .modal-dialog-centered {
+      height: 100vh;
+      max-height: 658px;
+      opacity: 1;
+      -webkit-transition: opacity 100ms ease-out 200ms;
+      -moz-transition: opacity 100ms ease-out 200ms;
+      -o-transition: opacity 100ms ease-out 200ms;
+      transition: opacity 100ms ease-out 200ms;
+      -ms-transition: opacity 100ms ease-out 200ms;
+}
+    .modal-header {
+      border: none;
+      height: auto;
+      display: block;
+      position: relative;
+      button.close {
+        opacity: 1;
+        padding: 12px 14px;
+        position: absolute;
+        right: 14px;
+        top: 10px;
+        z-index: 10;
+      }
+    }
+    .modal-content {
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      height: 100vh;
+      max-height: 664px;
+      @media (min-height: 800px) {
+        height: auto;
+        max-height: 700px;
+      }
+}
+    .modal-body {
+      overflow: hidden;
+    }
+    .image-slide {
+      display: block;
+      height: auto;
+      margin: 0 auto;
+      max-width: initial;
+      max-height: 100%;
+      width: 448px;
+    }
+  }
+
+  .product-slider {
+    display: block;
+    margin-top: -40px;
+    overflow: hidden;
+    .slick-slide {
+      display: inline-block !important;
+    }
+    .slide {
+      text-align: center;
+    }
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0;
+    }
+    .slick-next,
+    .slick-prev {
+      width: 30px;
+      height: 30px;
+    }
+    .slick-prev:before {
+      content: url("https://storage.kometia.test/store1/images/slide-left-arrow.png?v=1545258939");
+    }
+    .slick-next:before {
+      content: url("https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939");
+    }
+  }
+}
