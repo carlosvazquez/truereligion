@@ -645,6 +645,12 @@
       });
     }
     enableOrderBy();
+    var enableFilterBy = function(){
+      $('.filtersbar .filter .filter__title').on('click', function(){
+        $(this).toggleClass('active');
+      });
+    }
+    enableFilterBy();
   });
 
   $(window).on('load', function(){

@@ -93,6 +93,10 @@
       text-transform: uppercase;
       vertical-align: middle;
     }
+    &__title.active {
+      background-color: $black;
+      color: $white;
+    }
     &__title::after {
       background: url('https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1547166112') no-repeat center center;
       content: '';
@@ -108,6 +112,7 @@
     }
     &.active {
       .filter__title::after {
+        content: '"\f106"';
         background: url('https://cdn.kometia-static.com/true-religion/images/caret-up.png?v=1547166112') no-repeat center center;
       }
     }
@@ -119,6 +124,8 @@
 
 .filtersbar.active {
   .filter-frame {
+    padding: 10px 0;
+    border: 1px solid #eeeeee;
     display: block;
   }
 }

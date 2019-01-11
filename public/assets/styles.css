@@ -5441,6 +5441,9 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     position: relative;
     text-transform: uppercase;
     vertical-align: middle; }
+  .filtersbar .filter__title.active {
+    background-color: #000;
+    color: #fff; }
   .filtersbar .filter__title::after {
     background: url("https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1547166112") no-repeat center center;
     content: '';
@@ -5454,12 +5457,15 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     width: 30px;
     z-index: 99; }
   .filtersbar .filter.active .filter__title::after {
+    content: '"\F106"';
     background: url("https://cdn.kometia-static.com/true-religion/images/caret-up.png?v=1547166112") no-repeat center center; }
 
 .filtersbar .filter-frame {
   display: none; }
 
 .filtersbar.active .filter-frame {
+  padding: 10px 0;
+  border: 1px solid #eeeeee;
   display: block; }
 
 .home_page .home-main-banner__link {
