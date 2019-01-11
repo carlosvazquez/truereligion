@@ -3773,6 +3773,7 @@ header.header.hasNewsletterDiscount .third-step.active .block-one {
 
 nav.navigation {
   background-color: #fff;
+  margin-bottom: 20px;
   padding-top: 20px;
   position: relative;
   -webkit-transition: padding-top .2s ease-out;
@@ -3782,6 +3783,7 @@ nav.navigation {
   @media (max-width: 1149.98px) {
     nav.navigation {
       border-bottom: 1px solid #eeeeee;
+      margin-bottom: 0;
       padding-top: 16px;
       padding-bottom: 16px; } }
   nav.navigation .left-module .logo {
@@ -4835,7 +4837,7 @@ footer .legal {
     @media (max-width: 1149.98px) {
       .product-card__image:hover .quick-view {
         display: none; } }
-  .product-card__image:hover .quick-view.disabled {
+  .product-card__image:hover .disabled {
     background-color: #666666;
     cursor: not-allowed;
     pointer-events: none; }
@@ -5283,6 +5285,182 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
 
 .navigation.stick .mobile-search {
   margin-top: 0; }
+
+.products-header {
+  background-color: #fff;
+  display: block; }
+  .products-header .splash-image {
+    display: block;
+    margin: 0 0 20px; }
+    @media (max-width: 1149.98px) {
+      .products-header .splash-image {
+        margin: 0 0 12px; } }
+  .products-header .collection-image {
+    background-color: #fff;
+    display: block;
+    height: auto;
+    width: 100%; }
+  .products-header .breadcrumb-container .breadcrumb {
+    background-color: transparent;
+    border-radius: 0;
+    padding-left: 0; }
+    .products-header .breadcrumb-container .breadcrumb-item {
+      color: #6e6e6e;
+      display: inline-block;
+      height: auto;
+      min-height: 11px;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 11px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.36;
+      letter-spacing: .3px;
+      text-align: left;
+      text-transform: capitalize; }
+    .products-header .breadcrumb-container .breadcrumb-link {
+      color: #000;
+      display: block; }
+    .products-header .breadcrumb-container .breadcrumb-link:hover {
+      text-decoration: none; }
+    .products-header .breadcrumb-container .breadcrumb .active {
+      color: #000; }
+  .products-header .products-page__header {
+    margin: 0 0 40px; }
+    @media (max-width: 1149.98px) {
+      .products-header .products-page__header {
+        margin: 0 0 20px; } }
+  .products-header .products-page__title {
+    color: #000;
+    font-family: "Avenir Next Cyr W00 Bold",helvetica,arial,sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.08;
+    letter-spacing: 4.8px;
+    margin-bottom: 14px;
+    text-align: center;
+    text-transform: uppercase; }
+  .products-header .products-page__intro {
+    color: #6e6e6e;
+    font-family: "FrankRuhlLibre-Regular";
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: .4px;
+    margin: auto;
+    margin-bottom: 54px;
+    text-align: center;
+    padding: 0 30%; }
+    @media (max-width: 1149.98px) {
+      .products-header .products-page__intro {
+        padding: 0 10px; } }
+
+.filtersbar .selector {
+  float: right;
+  height: 40px;
+  max-height: 40px;
+  position: relative; }
+  .filtersbar .selector .selector__title {
+    border: 1px solid #e3e3e3;
+    color: #000;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 11px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    height: 100%;
+    letter-spacing: 1.1px;
+    margin: 0;
+    min-width: 230px;
+    padding: 12px 30px 12px 12px;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle; }
+    .filtersbar .selector .selector__title span {
+      text-transform: initial; }
+  .filtersbar .selector .selector__title::after {
+    background: url("https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1547166112") no-repeat center center;
+    content: '';
+    cursor: pointer;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    z-index: 99; }
+  .filtersbar .selector .selector__list {
+    color: #7c7c7c;
+    cursor: pointer;
+    border: 1px solid #e3e3e3;
+    border-top: none;
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99; }
+    .filtersbar .selector .selector__list .selector__item {
+      padding: 10px 8px;
+      background-color: #ffffff; }
+    .filtersbar .selector .selector__list .selector__item:hover {
+      background-color: #f7f7f7; }
+    .filtersbar .selector .selector__list .selection {
+      background-color: #f7f7f7; }
+  .filtersbar .selector.active .selector__list {
+    display: block; }
+  .filtersbar .selector.active .selector__title::after {
+    background: url("https://cdn.kometia-static.com/true-religion/images/caret-up.png?v=1547166112") no-repeat center center; }
+
+.filtersbar .filter {
+  height: 40px;
+  max-height: 40px;
+  position: relative; }
+  .filtersbar .filter__title {
+    border: 1px solid #e3e3e3;
+    color: #000;
+    display: inline-block;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 11px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    height: 100%;
+    letter-spacing: 1.1px;
+    margin: 0;
+    min-width: 130px;
+    max-width: 200px;
+    padding: 12px 30px 12px 12px;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle; }
+  .filtersbar .filter__title::after {
+    background: url("https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1547166112") no-repeat center center;
+    content: '';
+    cursor: pointer;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    z-index: 99; }
+  .filtersbar .filter.active .filter__title::after {
+    background: url("https://cdn.kometia-static.com/true-religion/images/caret-up.png?v=1547166112") no-repeat center center; }
+
+.filtersbar .filter-frame {
+  display: none; }
+
+.filtersbar.active .filter-frame {
+  display: block; }
 
 .home_page .home-main-banner__link {
   display: block;

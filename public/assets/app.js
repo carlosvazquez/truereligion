@@ -273,7 +273,7 @@
     })
     .on("load", function () {
       console.log('on load');
-      TrueReligion.onLoadEvents()
+      TrueReligion.onLoadEvents();
     });
   });
 })(jQuery);

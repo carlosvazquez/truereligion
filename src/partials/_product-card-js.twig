@@ -1,6 +1,5 @@
 <script type="text/javascript">
   $(function (){
-    $('.quick-view').removeClass('disabled');
     var formatMoney = function(price){
       var currency = $('script#app').data("currency");
       var _formatPrice = price /= 100;
@@ -605,5 +604,50 @@
       });
     }
     // End ajax component
+
+    // Filters and orders
+    var FilterState = {
+      orderBy: null
+    }
+    var $selector = $('.filtersbar .selector');
+    var enableOrderBy = function(){
+      $('.filtersbar .selector .selector__title').on('click', function(){
+        $(this).parent('.selector').toggleClass('active');
+      });
+      $('.filtersbar .selector .selector__item').on('click', function(){
+        var option = $(this);
+        option.siblings().removeClass('selection');
+        option.toggleClass('selection');
+        $selector.removeClass('active');
+        if(option.hasClass('selection') && FilterState.orderBy != option.data('value')) {
+          var $label = $('.filtersbar .selector .selector__title span');
+          FilterState.orderBy = option.data('value');
+          switch(FilterState.orderBy) {
+            case 'date-older':
+              $label.text('Más viejo');
+              break;
+            case 'date-newer':
+              $label.text('Más nuevo');
+              break;
+            case 'price-ascending':
+              $label.text('Precio ascendente');
+              break;
+            case 'price-descending':
+              $label.text('Precio descendente');
+              break;
+            default:
+              $label.text('');
+          }
+        }
+      });
+      $('.selector__list').mouseleave(function(){
+        $selector.removeClass('active');
+      });
+    }
+    enableOrderBy();
+  });
+
+  $(window).on('load', function(){
+    $('.quick-view, .product-card__image-link').prop("disabled", false).removeClass('disabled');
   });
 </script>
