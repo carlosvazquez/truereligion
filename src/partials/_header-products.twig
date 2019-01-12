@@ -48,9 +48,11 @@
           <div class="products-page__header">
             <h1 class="products-page__title">{{ pageTitle }}</h1>
             {% if isCollection %}
-            <div class="products-page__intro">{{ collection.description }}</div>
+              {% if collection.description is not empty %}
+              <div class="products-page__intro">{{ collection.description }}</div>
+              {% endif %}
             {% else %}
-            <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
+              <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
             {% endif %}
           </div>
         </div>
@@ -86,7 +88,7 @@
 
     <div class="filter-frame filter">
       <div class="row">
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Color</h4>
           <ul class="filter__options type-color">
             <li class="filter__option color-azul" data-type="color" data-filter="azul">
@@ -127,7 +129,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Talla</h4>
           <ul class="filter__options type-size">
             <li class="filter__option" data-type="talla" data-filter="xxs">xxs</li>
@@ -139,28 +141,28 @@
             <li class="filter__option" data-type="talla" data-filter="xxl">xxl</li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Entrepierna</h4>
           <ul class="filter__options type-inseam">
             <li class="filter__option" data-type="tags" data-filter="32L">32L</li>
             <li class="filter__option" data-type="tags" data-filter="34L">34L</li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Silueta</h4>
           <ul class="filter__options type-silhouette">
             <li class="filter__option" data-type="tags" data-filter="skinny">Skinny</li>
             <li class="filter__option" data-type="tags" data-filter="super-skinny">Super skinny</li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Ajuste</h4>
           <ul class="filter__options type-fit">
             <li class="filter__option" data-type="tags" data-filter="m">Rocco</li>
             <li class="filter__option" data-type="tags" data-filter="n">Jack</li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Altura</h4>
           <ul class="filter__options type-rise">
             <li class="filter__option" data-type="tags" data-filter="mid-rise">Mid Rise</li>
@@ -168,7 +170,7 @@
             <li class="filter__option" data-type="tags" data-filter="high">High</li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Lavado</h4>
           <ul class="filter__options type-wash">
             <li class="filter__option" data-type="tags" data-filter="light">Light</li>
@@ -176,19 +178,23 @@
             <li class="filter__option" data-type="tags" data-filter="dark">Dark</li>
           </ul>
         </div>
-        <div class="col-12 col-md-1 filter-colum-js filerColumn">
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Pocket Flap</h4>
           <ul class="filter__options type-pocket-flap">
             <li class="filter__option" data-type="tags" data-filter="pocketflap-yes">Yes</li>
             <li class="filter__option" data-type="tags" data-filter="pocketflap-no">No</li>
           </ul>
         </div>
-        <div class="col-12 col-md-2 filter-colum-js filerColumnLast">
+        <div class="col-12 col-md-2 filter-colum-js filterColumnLast">
           <h4 class="filter__type-title">Price range</h4>
           <ul class="filter__options type-price-range">
-            <li class="filter__option" data-type="pricerange" data-filter="0-99" data-filter="0-99">$0 - $99</li>
-            <li class="filter__option" data-type="pricerange" data-filter="100-200">$100 - $199</li>
-            <li class="filter__option" data-type="pricerange" data-filter="200-300">$200 - $300</li>
+            <li class="filter__option" data-type="pricerange" data-filter="0-249" data-filter="0-249">$0 - $249</li>
+            <li class="filter__option" data-type="pricerange" data-filter="250-500">$250 - $500</li>
+            <li class="filter__option" data-type="pricerange" data-filter="501-1000">$501 - $1000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="1001-2000">$1001 - $2000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="2001-3000">$2001 - $3000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="3001-5000">$3001 - $5000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="5001-null">$5001 - &#8734;</li>
           </ul>
         </div>
       </div>

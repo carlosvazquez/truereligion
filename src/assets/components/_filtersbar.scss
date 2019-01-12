@@ -124,10 +124,11 @@
   .filter-frame {
     display: none;
     margin-top: 20px;
-    .filerColumn {
-      border-right: 1px solid #cccccc;
+    .filterColumn {
+      border-right: 1px solid #eeeeee;
       flex: 0 0 10.41665%;
       padding: 12px;
+      padding-left: 20px;
       max-width: 10.41665%;
       @include media-breakpoint-down(sm) {
         border-right: none;
@@ -136,9 +137,7 @@
         max-width: 100%;
       }
     }
-    .filerColumnLast {
-      background-color: pink;
-    }
+    .filerColumnLast {}
   }
 }
 
@@ -242,41 +241,92 @@
       }
     }
   }
+  .type-size,
+  .type-inseam,
+  .type-silhouette,
+  .type-fit,
+  .type-rise,
+  .type-wash,
+  .type-pocket-flap,
+  .type-price-range {
+    .filter {
+      &__option {
+        color: $black;
+        font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+        margin-bottom: 16px;
+        padding-left: 25px;
+        position: relative;
+      }
+      &__option::before {
+        background-color: $white;
+        border: 1px solid $black;
+        bottom: 0;
+        content: '';
+        display: inline-block;
+        height: 18px;
+        left: 0;
+        margin-right: 6px;
+        padding: 2px;
+        position: absolute;
+        top: 0;
+        vertical-align: middle;
+        width: 18px;
+      }
+      &__option.active {
+        font-family: "Avenir Next Cyr W00 Bold",helvetica,sans-serif;
+        font-weight: bold;
+      }
+      &__option.active::before {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+      &__option::after {
+        content: '';
+        display: none;
+        position: absolute;
+      }
+      &__option.active::after {
+        background-color:$black;
+        display: inline-block;
+        height: 12px;
+        left: 3px;
+        top: 3px;
+        width: 12px;
+      }
+    }
+  }
 
   .filters-apply {
-    text-align: center;
     margin: 30px 0 10px;
+    text-align: center;
     button.btn {
-      color: $white;
       background-color: $black;
+      border-radius: 2px;
+      color: $white;
+      display: inline-block;
       font-family: "Avenir Next Cyr W00 Regular", helvetica, sans-serif;
       font-size: 12px;
       height: 28px;
-      width: 100px;
-      display: inline-block;
-      text-align: center;
-      border-radius: 2px;
       pointer-events: auto;
+      text-align: center;
+      width: 100px;
     }
     button.btn.btn-disabled {
       background: #bfbfbf!important;
       pointer-events: none;
     }
     .text-link {
+      color: #6e6e6e;
       display: block;
-      text-decoration: underline;
-      height: 12px;
       font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
       font-size: 12px;
-      color: #6e6e6e;
+      height: 12px;
       letter-spacing: .3px;
       line-height: 3.17;
+      text-decoration: underline;
       @include media-breakpoint-down(sm) {
         display: none;
       }
     }
   }
 }
-
-// .filters-apply {
-//     button.btn {}

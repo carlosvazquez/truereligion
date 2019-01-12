@@ -4473,7 +4473,7 @@ body .overlay {
     margin: 0; }
     .main-menu .navigation__item {
       display: inline-block;
-      padding: 0 1.8%;
+      padding: 0 12px;
       vertical-align: top; }
     .main-menu .navigation__link {
       color: #000;
@@ -5329,7 +5329,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     .products-header .breadcrumb-container .breadcrumb .active {
       color: #000; }
   .products-header .products-page__header {
-    margin: 0 0 40px; }
+    margin: 0 0 30px; }
     @media (max-width: 1149.98px) {
       .products-header .products-page__header {
         margin: 0 0 20px; } }
@@ -5468,19 +5468,18 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
   .filtersbar .filter-frame {
     display: none;
     margin-top: 20px; }
-    .filtersbar .filter-frame .filerColumn {
-      border-right: 1px solid #cccccc;
+    .filtersbar .filter-frame .filterColumn {
+      border-right: 1px solid #eeeeee;
       flex: 0 0 10.41665%;
       padding: 12px;
+      padding-left: 20px;
       max-width: 10.41665%; }
       @media (max-width: 799.98px) {
-        .filtersbar .filter-frame .filerColumn {
+        .filtersbar .filter-frame .filterColumn {
           border-right: none;
           border-bottom: 1px solid #cccccc;
           flex: 0 0 100%;
           max-width: 100%; } }
-    .filtersbar .filter-frame .filerColumnLast {
-      background-color: pink; }
 
 .filtersbar.active .filter-frame {
   border: 1px solid #eeeeee;
@@ -5568,32 +5567,117 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     .filter-frame.filter .type-color .filter__option {
       margin: 0 12px 8px 0; } }
 
+.filter-frame.filter .type-size .filter__option,
+.filter-frame.filter .type-inseam .filter__option,
+.filter-frame.filter .type-silhouette .filter__option,
+.filter-frame.filter .type-fit .filter__option,
+.filter-frame.filter .type-rise .filter__option,
+.filter-frame.filter .type-wash .filter__option,
+.filter-frame.filter .type-pocket-flap .filter__option,
+.filter-frame.filter .type-price-range .filter__option {
+  color: #000;
+  font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+  margin-bottom: 16px;
+  padding-left: 25px;
+  position: relative; }
+
+.filter-frame.filter .type-size .filter__option::before,
+.filter-frame.filter .type-inseam .filter__option::before,
+.filter-frame.filter .type-silhouette .filter__option::before,
+.filter-frame.filter .type-fit .filter__option::before,
+.filter-frame.filter .type-rise .filter__option::before,
+.filter-frame.filter .type-wash .filter__option::before,
+.filter-frame.filter .type-pocket-flap .filter__option::before,
+.filter-frame.filter .type-price-range .filter__option::before {
+  background-color: #fff;
+  border: 1px solid #000;
+  bottom: 0;
+  content: '';
+  display: inline-block;
+  height: 18px;
+  left: 0;
+  margin-right: 6px;
+  padding: 2px;
+  position: absolute;
+  top: 0;
+  vertical-align: middle;
+  width: 18px; }
+
+.filter-frame.filter .type-size .filter__option.active,
+.filter-frame.filter .type-inseam .filter__option.active,
+.filter-frame.filter .type-silhouette .filter__option.active,
+.filter-frame.filter .type-fit .filter__option.active,
+.filter-frame.filter .type-rise .filter__option.active,
+.filter-frame.filter .type-wash .filter__option.active,
+.filter-frame.filter .type-pocket-flap .filter__option.active,
+.filter-frame.filter .type-price-range .filter__option.active {
+  font-family: "Avenir Next Cyr W00 Bold",helvetica,sans-serif;
+  font-weight: bold; }
+
+.filter-frame.filter .type-size .filter__option.active::before,
+.filter-frame.filter .type-inseam .filter__option.active::before,
+.filter-frame.filter .type-silhouette .filter__option.active::before,
+.filter-frame.filter .type-fit .filter__option.active::before,
+.filter-frame.filter .type-rise .filter__option.active::before,
+.filter-frame.filter .type-wash .filter__option.active::before,
+.filter-frame.filter .type-pocket-flap .filter__option.active::before,
+.filter-frame.filter .type-price-range .filter__option.active::before {
+  background-color: #fff;
+  border: 1px solid #000; }
+
+.filter-frame.filter .type-size .filter__option::after,
+.filter-frame.filter .type-inseam .filter__option::after,
+.filter-frame.filter .type-silhouette .filter__option::after,
+.filter-frame.filter .type-fit .filter__option::after,
+.filter-frame.filter .type-rise .filter__option::after,
+.filter-frame.filter .type-wash .filter__option::after,
+.filter-frame.filter .type-pocket-flap .filter__option::after,
+.filter-frame.filter .type-price-range .filter__option::after {
+  content: '';
+  display: none;
+  position: absolute; }
+
+.filter-frame.filter .type-size .filter__option.active::after,
+.filter-frame.filter .type-inseam .filter__option.active::after,
+.filter-frame.filter .type-silhouette .filter__option.active::after,
+.filter-frame.filter .type-fit .filter__option.active::after,
+.filter-frame.filter .type-rise .filter__option.active::after,
+.filter-frame.filter .type-wash .filter__option.active::after,
+.filter-frame.filter .type-pocket-flap .filter__option.active::after,
+.filter-frame.filter .type-price-range .filter__option.active::after {
+  background-color: #000;
+  display: inline-block;
+  height: 12px;
+  left: 3px;
+  top: 3px;
+  width: 12px; }
+
 .filter-frame.filter .filters-apply {
-  text-align: center;
-  margin: 30px 0 10px; }
+  margin: 30px 0 10px;
+  text-align: center; }
   .filter-frame.filter .filters-apply button.btn {
-    color: #fff;
     background-color: #000;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
     font-family: "Avenir Next Cyr W00 Regular", helvetica, sans-serif;
     font-size: 12px;
     height: 28px;
-    width: 100px;
-    display: inline-block;
+    pointer-events: auto;
     text-align: center;
-    border-radius: 2px;
-    pointer-events: auto; }
+    width: 100px; }
   .filter-frame.filter .filters-apply button.btn.btn-disabled {
     background: #bfbfbf !important;
     pointer-events: none; }
   .filter-frame.filter .filters-apply .text-link {
+    color: #6e6e6e;
     display: block;
-    text-decoration: underline;
-    height: 12px;
     font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
     font-size: 12px;
-    color: #6e6e6e;
+    height: 12px;
     letter-spacing: .3px;
-    line-height: 3.17; }
+    line-height: 3.17;
+    text-decoration: underline; }
     @media (max-width: 799.98px) {
       .filter-frame.filter .filters-apply .text-link {
         display: none; } }
