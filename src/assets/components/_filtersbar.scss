@@ -1,4 +1,5 @@
 .filtersbar {
+  margin-bottom: 20px;
   .selector {
     float: right;
     height: 40px;
@@ -35,7 +36,7 @@
       right: 0;
       top: 0;
       width: 30px;
-      z-index: 99;
+      z-index: 2;
     }
     .selector__list {
       color: #7c7c7c;
@@ -49,7 +50,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      z-index: 99;
+      z-index: 2;
       .selector__item {
           padding: 10px 8px;
           background-color: #ffffff;
@@ -93,9 +94,9 @@
       text-transform: uppercase;
       vertical-align: middle;
     }
-    &__title.active {
-      background-color: $black;
-      color: $white;
+    &__title {
+      background-color: $white;
+      color: $black;
     }
     &__title::after {
       background: url('https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1547166112') no-repeat center center;
@@ -108,24 +109,174 @@
       right: 0;
       top: 0;
       width: 30px;
-      z-index: 99;
+      z-index: 2;
     }
     &.active {
-      .filter__title::after {
-        content: '"\f106"';
-        background: url('https://cdn.kometia-static.com/true-religion/images/caret-up.png?v=1547166112') no-repeat center center;
+      .filter__title {
+        background-color: $black;
+        color: $white;
+        &::after {
+          background: url('https://cdn.kometia-static.com/true-religion/images/caret-up-inverse.png?v=1547188446') no-repeat center center;
+        }
       }
     }
   }
   .filter-frame {
     display: none;
+    margin-top: 20px;
+    .filerColumn {
+      border-right: 1px solid #cccccc;
+      flex: 0 0 10.41665%;
+      padding: 12px;
+      max-width: 10.41665%;
+      @include media-breakpoint-down(sm) {
+        border-right: none;
+        border-bottom: 1px solid #cccccc;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .filerColumnLast {
+      background-color: pink;
+    }
   }
 }
 
 .filtersbar.active {
   .filter-frame {
-    padding: 10px 0;
     border: 1px solid #eeeeee;
     display: block;
+    height: auto;
+    max-height: initial;
+    padding: 10px 14px;
   }
 }
+
+.filter-frame.filter {
+  .filter {
+    &__type-title {
+      margin: 0;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 15px;
+      padding: 0 0 10px;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    &__options {
+      list-style: none;
+      padding: 0;
+    }
+    &__option {}
+    .active {}
+  }
+  // Types
+  .type-color {
+    .checkmark {
+      display: none;
+    }
+    .active {
+      .checkmark {
+        color: $white;
+        bottom: 0;
+        display: block;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 0;
+        padding: 5px 0;
+        position: absolute;
+        vertical-align: middle;
+      }
+    }
+    .color-azul {
+      background-color: $filter_color_azul;
+    }
+    .color-blanco {
+      background-color: $filter_color_blanco;
+      border: 1px solid $black !important;
+      .checkmark {
+        color: $black !important;
+      }
+    }
+    .color-negro {
+      background-color: $filter_color_negro;
+    }
+    .color-multicolor {
+      background: url('https://cdn.kometia-static.com/true-religion/images/swatch-multi.png?v=1547237856') repeat center center;
+      background-size: cover;
+      border: transparent !important;
+    }
+    .color-amarillo {
+      background-color: $filter_color_amarillo;
+    }
+    .color-rojo {
+      background-color: $filter_color_rojo;
+    }
+    .color-gris {
+      background-color: $filter_color_gris;
+    }
+    .color-verde {
+      background-color: $filter_color_verde;
+    }
+    .color-beige {
+      background-color: $filter_color_beige;
+    }
+    .color-morado {
+      background-color: $filter_color_morado;
+    }
+    .color-naranja {
+      background-color: $filter_color_naranja;
+    }
+    .color-rosa {
+      background-color: $filter_color_rosa;
+    }
+    .filter__option {
+      border: 1px solid transparent;
+      display: inline-block;
+      height: 30px;
+      margin: 0 10px 10px 0;
+      position: relative;
+      width: 30px;
+      @include media-breakpoint-down(sm) {
+        margin: 0 12px 8px 0;
+      }
+    }
+  }
+
+  .filters-apply {
+    text-align: center;
+    margin: 30px 0 10px;
+    button.btn {
+      color: $white;
+      background-color: $black;
+      font-family: "Avenir Next Cyr W00 Regular", helvetica, sans-serif;
+      font-size: 12px;
+      height: 28px;
+      width: 100px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 2px;
+      pointer-events: auto;
+    }
+    button.btn.btn-disabled {
+      background: #bfbfbf!important;
+      pointer-events: none;
+    }
+    .text-link {
+      display: block;
+      text-decoration: underline;
+      height: 12px;
+      font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+      font-size: 12px;
+      color: #6e6e6e;
+      letter-spacing: .3px;
+      line-height: 3.17;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+// .filters-apply {
+//     button.btn {}

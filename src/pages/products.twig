@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
 {% block body_class %}products-page hasModal{% endblock body_class %}
 {% block body %}
-  {% include '_header-products.twig' with { 'title': 'Blackout Capsule', 'type': 'collection','isCollection': true } %}
+  {% include '_header-products.twig' with { 'title': 'Productos', 'type': 'collection','isCollection': true } %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -22,9 +22,7 @@
       {% else %}
         <div class="row">
           <div class="col-xs-12 text-center">
-            <h2 class="products-title">¡Falta poco!</h2>
-            <p class="products-text">Todavía no existen Productos, una vez que empieces a crearlos aparecerán aquí.</p>
-            <p><a class="btn btn-primary" href="/admin/products">Gestionar Productos</a> <a class="btn btn-primary" href="/admin/collections">Gestionar Colecciones</a></p>
+            <h2 class="products-title">No hay productos</h2>
           </div>
         </div>
       {% endif %}

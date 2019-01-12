@@ -89,8 +89,19 @@
       "footer_menu_three_title": "Company",
       "footer_menu_four_title": "Contact Us",
       "footer_menu_legal": "footer-legal",
-      "footer_menu_rights": "True Religion Brand Jeans. Todos los Derechos Reservados."
-
+      "footer_menu_rights": "True Religion Brand Jeans. Todos los Derechos Reservados.",
+      "filter_color_azul": "#00436D",
+      "filter_color_blanco": "#ffffff",
+      "filter_color_negro": "#000000",
+      "filter_color_multicolor": "#ffffff",
+      "filter_color_rojo": "#A22526",
+      "filter_color_gris": "#ADB0B0",
+      "filter_color_verde": "#56814B",
+      "filter_color_naranja": "#DA970A",
+      "filter_color_beige": "#ddd59d",
+      "filter_color_morado": "#6B4C81",
+      "filter_color_rosa": "#DA9EB1",
+      "filter_color_amarillo": "#EFE393"
     }
   }
 }
