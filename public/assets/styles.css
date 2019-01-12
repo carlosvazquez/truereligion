@@ -4189,6 +4189,9 @@ nav.navigation {
     top: 10px;
     width: 20px;
     z-index: 99; }
+    .discount-banner .discount-banner-js img {
+      width: 25px;
+      height: 25px; }
   .discount-banner .first-step {
     display: none; }
     .discount-banner .first-step div.block-two .btn-get-discount {
@@ -4388,7 +4391,7 @@ body .overlay {
   font-stretch: normal; }
 
 .mobileMenu .navigation__link-toggle::after {
-  content: url("https://storage.kometia.test/store1/images/plus.png?v=1544216531");
+  content: url("https://cdn.kometia-static.com/true-religion/images/plus.png?v=1545332635");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -4397,7 +4400,7 @@ body .overlay {
   right: 30px; }
 
 .mobileMenu .navigation__link-toggle.on::after {
-  content: url("https://storage.kometia.test/store1/images/minus.png?v=1544216531");
+  content: url("https://cdn.kometia-static.com/true-religion/images/minus.png?v=1545332635");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -4599,9 +4602,9 @@ nav.navigation.stick .main-menu .menu .logo {
       .home-collection-slider button.slick-next {
         right: 8px; } }
   .home-collection-slider button.slick-prev::before {
-    content: url("https://storage.kometia.test/store1/images/slide-left-arrow.png?v=1545258939"); }
+    content: url("https://cdn.kometia-static.com/true-religion/images/slide-left-arrow.png?v=1545332633"); }
   .home-collection-slider button.slick-next::before {
-    content: url("https://storage.kometia.test/store1/images/slide-right-arrow.png?v=1545258939"); }
+    content: url("https://cdn.kometia-static.com/true-religion/images/slide-right-arrow.png?v=1545332633"); }
   .home-collection-slider__title {
     color: #000;
     font-family: "Avenir Next Cyr W00 Bold", helvetica, sans-serif;
