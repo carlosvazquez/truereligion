@@ -264,9 +264,9 @@ nav.navigation {
     &__img-desktop {
       display: none;
       height: auto;
-      margin: 20px 0;
-      max-width: 214px;
-      width: 214px;
+      margin: 14px 0;
+      max-width: 200px;
+      width: 200px;
       @include media-breakpoint-up(lg) {
         display: inline-block;
       }

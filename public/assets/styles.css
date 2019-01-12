@@ -3975,9 +3975,9 @@ nav.navigation {
     nav.navigation .logo__img-desktop {
       display: none;
       height: auto;
-      margin: 20px 0;
-      max-width: 214px;
-      width: 214px; }
+      margin: 14px 0;
+      max-width: 200px;
+      width: 200px; }
       @media (min-width: 1150px) {
         nav.navigation .logo__img-desktop {
           display: inline-block; } }
