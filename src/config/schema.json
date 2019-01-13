@@ -841,6 +841,2393 @@
       ]
     },
     {
+      "name": "Colecciones",
+      "icon": "collections-page",
+      "sections": [
+        {
+          "header": "Colores",
+          "icon": "colors",
+          "settings": [
+            {
+              "type": "color",
+              "id": "filter_color_azul",
+              "label": "Azul"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_blanco",
+              "label": "Blanco"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_negro",
+              "label": "Negro"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_rojo",
+              "label": "Rojo"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_gris",
+              "label": "Gris"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_verde",
+              "label": "Verde"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_naranja",
+              "label": "Naranja"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_beige",
+              "label": "Beige"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_morado",
+              "label": "Morado"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_rosa",
+              "label": "Rosa"
+            },
+            {
+              "type": "color",
+              "id": "filter_color_amarillo",
+              "label": "Amarillo"
+            }
+          ]
+        },
+        {
+          "header": "Colección 1",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_1_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },            
+            {
+              "type": "text",
+              "id": "collection_filter_1_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_1_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 2",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_2_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_2_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 3",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_3_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_3_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 4",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_4_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_4_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 5",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_5_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_5_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 6",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_6_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_6_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 7",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_7_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_7_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 8",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_8_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_8_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 9",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_9_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_9_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 10",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_10_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_10_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 11",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_11_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_11_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 12",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_12_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_12_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 13",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_13_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_13_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 14",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_14_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_14_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 15",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_15_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_15_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 16",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_16_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_16_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 17",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_17_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_17_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 18",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_18_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_18_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 19",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_19_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_19_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 20",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_20_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_20_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 21",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_21_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_21_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 22",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_22_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_22_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 23",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_23_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_23_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 24",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_24_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_24_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 25",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_25_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_25_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 26",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_26_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_26_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 27",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_27_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_27_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 28",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_28_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_28_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 29",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_29_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 30",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_30_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_30_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 31",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_31_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_31_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 32",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_32_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_32_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 33",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_33_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_33_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 34",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_34_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_34_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 35",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_35_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_35_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 36",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_36_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_36_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 37",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_37_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_37_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 38",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_38_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_38_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 39",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_39_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_39_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_29_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        },
+        {
+          "header": "Colección 40",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection_filter_40_name",
+              "label": "Colección"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_colors",
+              "label": "Lista de colores",
+              "info": "Separa los colores con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_sizes",
+              "label": "Lista de tallas",
+              "info": "Separa las tallas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_inseams",
+              "label": "Lista de entrepierna",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_silhouettes",
+              "label": "Lista de siluetas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_fits",
+              "label": "Lista de fits",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_rises",
+              "label": "Lista de alturas",
+              "info": "Separa las medidas con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_washs",
+              "label": "Lista de lavado",
+              "info": "Separa los tipos con comas"
+            },
+            {
+              "type": "text",
+              "id": "collection_filter_40_pocket_flaps",
+              "label": "Lista de solapas",
+              "info": "Separa los tipos con comas"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Contacto",
       "icon": "contact-page",
       "sections": [
