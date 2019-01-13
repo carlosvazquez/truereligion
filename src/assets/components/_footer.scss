@@ -2,6 +2,11 @@ footer.footer {
   border-top: 1px solid #e3e3e3;
   background-color: $white;
   padding: 2.5% 0 0;
+  .container {
+    @include media-breakpoint-down(xl) {
+      max-width: 1020px;
+    }
+  }
   .menu {
     &__title {
       border: none;
@@ -68,6 +73,23 @@ footer.footer {
     }
     &__newsletter {
       padding: 20px 0;
+      .newsletter {
+        height: 42px;
+        .row > .form-group {
+          padding-right: 0;
+          @include media-breakpoint-down(sm) {
+            padding-right: 15px;
+          }
+        }
+      }
+      #email {
+        border-radius: 0;
+        height: 42px;
+        width: 100%;
+      }
+      button.btn {
+        height: 100%;
+      }
     }
     &__item {
       @include media-breakpoint-down(sm) {
@@ -83,6 +105,12 @@ footer.footer {
       }
     }
     &--one {
+      .menu__title {
+        margin-bottom: 0;
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 25px;
+        }
+      }
       span.toggle-icon {
         display: none !important;
       }
