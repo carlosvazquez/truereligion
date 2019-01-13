@@ -162,11 +162,10 @@
       text-transform: capitalize;
     }
     &__options {
+      cursor: pointer;
       list-style: none;
       padding: 0;
     }
-    &__option {}
-    .active {}
   }
   // Types
   .type-color {
@@ -231,6 +230,7 @@
     }
     .filter__option {
       border: 1px solid transparent;
+      cursor: pointer;
       display: inline-block;
       height: 30px;
       margin: 0 10px 10px 0;
