@@ -3747,6 +3747,18 @@ a.btn.btn-primary:active, .btn.btn-primary:active, .btn-primary:active {
 .inline-block {
   display: inline-block !important; }
 
+.space-top {
+  margin-top: 2em; }
+  @media (max-width: 1149.98px) {
+    .space-top {
+      margin-top: 1.2em; } }
+
+.space-bottom {
+  margin-bottom: 2em; }
+  @media (max-width: 1149.98px) {
+    .space-bottom {
+      margin-bottom: 1.2em; } }
+
 header.header .discount-banner {
   display: none; }
 
@@ -5683,6 +5695,10 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     @media (max-width: 799.98px) {
       .filter-frame.filter .filters-apply .text-link {
         display: none; } }
+
+.no-results {
+  min-height: 400px;
+  margin: 20px 0 120px; }
 
 .home_page .home-main-banner__link {
   display: block;
