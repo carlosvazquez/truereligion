@@ -514,7 +514,7 @@
     var buildAjaxResult = function(skuId, arraySkus) {
       var _sku = skuId;
       var _skus = arraySkus;
-      if($('.ajax-cart-result').lenght > 0){
+      if($('.ajax-cart-result').length > 0){
         $('.ajax-cart-result').remove();
       }
       var _sku = _skus.filter(function(value){
@@ -735,6 +735,7 @@
       return true;
     };
     setInitialFiltersFromUrl();
+    // TODO select already options from url
     var checkAlreadySelectedOptions = function(){
       $('.filter__options.type-color .filter__option').each(function(index){
         var _this = $(this);
@@ -746,7 +747,7 @@
     }
     checkAlreadySelectedOptions();
 
-    var getFilterOptionsSelected = function(){
+    var updateFilterStateBeforeRequest = function(){
       $('.filter-frame.filter .filter__options .filter__option').each(function(){
           var $this = $(this);
           if($this.hasClass('active') && $this.data('type') != 'pricerange'){
@@ -754,20 +755,50 @@
           }
       });
       var $pricerange = $('.filter-frame.filter .filter__options.type-price-range .filter__option.active').data('filter');
-      if($pricerange != undefined && $pricerange !== null) {
+      if($pricerange != undefined && $pricerange != null) {
         FilterState['pricerange'] = $pricerange;
         FilterState['minprice'] = $pricerange.split('-')[0];
         FilterState['maxprice'] = $pricerange.split('-')[1];
       }
       return true
     }
+    var root = window.location.hostname;
+    var PROTOCOL = window.location.protocol;
+    var getBaseUrl = function() {
+      return PROTOCOL + '//' + root + '/' + type;
+    }
+    var buildUrl = function(url) {
+      var _url = url;
+      _url = _url.replace("?&", "?");
+      if (_url === "?") {
+        return false;
+      }
+      return _url;      
+    };
+    var redirectToUrl = function(url) {
+      window.location.href = url
+    }
     var fireFilterQuery = function() {
-      var options = getFilterOptionsSelected();
-      console.log(options, FilterState);
+      updateFilterStateBeforeRequest();
+      var _url = "?";
+         _url += FilterState.color.length >= 1 ? '&options[color]='+FilterState.color.join(',') : '';
+         _url += FilterState.talla.length >= 1 ? '&options[talla]='+FilterState.talla.join(',') : '';
+         _url += FilterState.tags.length >= 1 ? '&q='+FilterState.tags.join(',') : '';
+         if(FilterState.minprice != null) {
+         _url += (FilterState.minprice != null) ? '&price[min]='+FilterState.minprice : '';
+         }
+         if(!isNaN(Number(FilterState.maxprice))) {
+         _url += (FilterState.maxprice != null) ? '&price[max]='+FilterState.maxprice : '';
+         }
+         _url += FilterState.orderBy != null ? '&sort_by='+FilterState.orderBy : '';
+         _url = buildUrl(_url);
+     redirectToUrl(_url); 
+     return true;
     }
   });
 
   $(window).on('load', function(){
     $('.quick-view, .product-card__image-link').prop("disabled", false).removeClass('disabled');
   });
+// https://store1.kometia.test/productos?options[color]=amarillo,negro,blanco&options[talla]=2,4,8&q=zapatos,jeans,polo&price[min]=1200&price[max]=8300&sort_by=created-ascending
 </script>
