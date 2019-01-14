@@ -5716,6 +5716,42 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
       .filter-frame.filter .filters-apply .text-link {
         display: none; } }
 
+.simple-product-card .product-card {
+  margin: 0; }
+  .simple-product-card .product-card__image {
+    background-color: #fff; }
+  .simple-product-card .product-card__description {
+    display: block; }
+  .simple-product-card .product-card__title {
+    color: #000;
+    font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+    font-size: 12px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500 !important;
+    letter-spacing: 1.2px;
+    line-height: 17px;
+    text-align: left;
+    width: 92.6%; }
+  .simple-product-card .product-card__price {
+    color: #6e6e6e;
+    font-family: "FrankRuhlLibre-Regular";
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: .4px;
+    margin: 0;
+    margin-top: 7px;
+    padding-bottom: 0;
+    text-align: left; }
+  .simple-product-card .product-card--compared {
+    text-decoration: line-through; }
+  .simple-product-card .product-card--normal {
+    color: #b2292e;
+    margin-left: 8px; }
+
 .no-results {
   min-height: 400px;
   margin: 20px 0 120px; }
@@ -5896,3 +5932,66 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     @media (max-width: 1149.98px) {
       .home_page .home-instagram-gallery .isLastImage {
         display: none; } }
+
+.product-page .breadcrumb {
+  display: block;
+  background-color: transparent;
+  margin-bottom: 0;
+  padding: 8px 0; }
+  @media (max-width: 1149.98px) {
+    .product-page .breadcrumb {
+      display: none; } }
+  .product-page .breadcrumb-item {
+    font-family: "FrankRuhlLibre-Regular";
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.36;
+    letter-spacing: .3px;
+    text-align: left;
+    color: #6e6e6e;
+    text-transform: capitalize; }
+  .product-page .breadcrumb-item .active {
+    color: #6e6e6e; }
+  .product-page .breadcrumb-link {
+    color: #6e6e6e;
+    text-decoration: none; }
+  .product-page .breadcrumb-link:hover {
+    color: #6e6e6e;
+    text-decoration: none; }
+
+.product-page .page-header {
+  display: block;
+  background-color: yellow; }
+  @media (max-width: 1149.98px) {
+    .product-page .page-header {
+      display: none;
+      background-color: red; } }
+  .product-page .page-header .title {
+    color: #000;
+    font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: normal;
+    margin: 0 0 12px;
+    text-align: center;
+    text-transform: uppercase; }
+
+.product-page .page-header.isMobile {
+  display: none; }
+  @media (max-width: 1149.98px) {
+    .product-page .page-header.isMobile {
+      display: block;
+      background-color: orange; } }
+  .product-page .page-header.isMobile .title {
+    background-color: pink; }
+
+.product-page .related-products {
+  margin-bottom: 40px; }
+  @media (max-width: 1149.98px) {
+    .product-page .related-products {
+      margin-bottom: 20px; } }

@@ -1,0 +1,36 @@
+{% set thumb = {'width': 634, 'height': 955} %}
+{# {% set thumb = {'width': 856, 'height': 1290} %} #}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 columnA">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Inicio</a></li>
+          <li class="breadcrumb-item"><a class="breadcrumb-link" href="/productos">Productos</a></li>
+          <li class="breadcrumb-item active" aria-current="page">MENS CRINKLE STRAIGHT JEAN W/ FLAP</li>
+        </ol>
+      </nav>
+      <div class="page-header isMobile">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="title">MENS CRINKLE STRAIGHT JEAN W/ FLAP Mobile</h1>
+          </div>
+        </div><!-- .row -->
+      </div><!-- .page-header -->
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 columnB">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="title">MENS CRINKLE STRAIGHT JEAN W/ FLAP Desktop</h1>
+          </div>
+        </div><!-- .row -->
+      </div><!-- .page-header -->
+    </div>
+  </div><!-- .row -->
+
+  <div class="related-products">
+  {% include '_related-products.twig' %}
+  </div>
+</div><!-- .container -->

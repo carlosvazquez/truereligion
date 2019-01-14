@@ -1,0 +1,10 @@
+<div class="row">
+{% if product.related_by_tags | length > 0 %}
+  {% set related_products = product.related_by_tags | slice(0, 4) %}
+  {% for related_product in related_products %}
+  <div class="col-xs-6 col-sm-6 col-md-3">
+    {% include '_simple-product-card.twig' with { 'product' : related_product } %}
+  </div>
+  {% endfor %}
+{% endif %}
+</div>
