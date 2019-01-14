@@ -646,6 +646,14 @@
               $label.text('');
           }
         }
+        var _url = '?';
+        var fireEvent = $('.filtersbar').hasClass('active');
+        $(this).parent('.selector').toggleClass('active');
+        if(!fireEvent){
+         _url += FilterState.orderBy != null ? '&sort_by='+FilterState.orderBy : '';
+          _url = buildUrl(_url);
+        redirectToUrl(_url); 
+        }
       });
       $('.selector__list').mouseleave(function(){
         $selector.removeClass('active');
