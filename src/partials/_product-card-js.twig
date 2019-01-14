@@ -630,10 +630,10 @@
           var $label = $('.filtersbar .selector .selector__title span');
           FilterState.orderBy = option.data('value');
           switch(FilterState.orderBy) {
-            case 'date-older':
+            case 'created-descending':
               $label.text('Más viejo');
               break;
-            case 'date-newer':
+            case 'created-ascending':
               $label.text('Más nuevo');
               break;
             case 'price-ascending':
@@ -641,6 +641,12 @@
               break;
             case 'price-descending':
               $label.text('Precio descendente');
+              break;
+            case 'name-ascending':
+              $label.text('A-Z');
+              break;
+            case 'name-descending':
+              $label.text('Z-A');
               break;
             default:
               $label.text('');
