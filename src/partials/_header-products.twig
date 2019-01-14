@@ -2,6 +2,12 @@
 {% set pageType = type %}
 {% set isCollection = isCollection %}
 
+{% if options is not empty %}
+  {% set options = options %}
+{% else %}
+  {% set options = '' %}
+{% endif %}
+
 {% if pageType == 'collection' %}
   {% set parentTitle = 'Colecciones' %}
 {% elseif pageType == 'category' %}
@@ -48,16 +54,17 @@
           <div class="products-page__header">
             <h1 class="products-page__title">{{ pageTitle }}</h1>
             {% if isCollection %}
-            <div class="products-page__intro">{{ collection.description }}</div>
+              {% if collection.description is not empty %}
+              <div class="products-page__intro">{{ collection.description }}</div>
+              {% endif %}
             {% else %}
-            <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
+              <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
             {% endif %}
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="filtersbar">
@@ -70,13 +77,15 @@
           <h4 class="filter__title">Filtro</h4>
         </div>
       </div>
-
+      
       <div class="col-6">
         <div class="selector">
           <h4 class="selector__title">Ordenar: <span></span></h4>
           <ul class="selector__list">
-            <li class="selector__item" data-value="date-newer">Más nuevo</li>
-            <li class="selector__item" data-value="date-older">Más viejo</li>
+            <li class="selector__item" data-value="created-ascending">Más nuevo</li>
+            <li class="selector__item" data-value="created-descending">Más viejo</li>
+            <li class="selector__item" data-value="name-ascending">A-Z</li>
+            <li class="selector__item" data-value="name-descending">Z-A</li>
             <li class="selector__item" data-value="price-descending">Precio Mayor a Menor</li>
             <li class="selector__item" data-value="price-ascending">Precio Menor a Mayor</li>
           </ul>
@@ -84,20 +93,177 @@
       </div>
     </div>
 
-    <div class="filter-frame">
+{# {% set options = [name,title,custom,maxcollections,type_colors,type_sizes,type_inseams,type_silhouettes,type_fits,type_rises,type_washs,type_pocket_flaps] %} #}
+
+    <div class="filter-frame filter">
       <div class="row">
-        <div class="col-12 col-md-2">AA</div>
-        <div class="col-12 col-md-1">BB</div>
-        <div class="col-12 col-md-1">CC</div>
-        <div class="col-12 col-md-1">DD</div>
-        <div class="col-12 col-md-1">EE</div>
-        <div class="col-12 col-md-1">FF</div>
-        <div class="col-12 col-md-1">GG</div>
-        <div class="col-12 col-md-1">HH</div>
-        <div class="col-12 col-md-2">II</div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Color</h4>
+          <ul class="filter__options type-color">
+          {% if options.type_colors is empty %}
+            <li class="filter__option color-azul" data-type="color" data-filter="azul">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-blanco" data-type="color" data-filter="blanco">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-negro" data-type="color" data-filter="negro">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-multicolor" data-type="color" data-filter="multicolor">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-rojo" data-type="color" data-filter="rojo">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-gris" data-type="color" data-filter="gris">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-verde" data-type="color" data-filter="verde">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-naranja" data-type="color" data-filter="naranja">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-beige" data-type="color" data-filter="beige">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-morado" data-type="color" data-filter="morado">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-rosa" data-type="color" data-filter="rosa">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            <li class="filter__option color-amarillo" data-type="color" data-filter="amarillo">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+          {% else %}
+            {% for color in options.type_colors if color is not empty %}
+            <li class="filter__option color-{{ color|trim }}" data-type="color" data-filter="{{ color|trim }}">
+             <span class="checkmark"><i class="fa fa-check"></i></span>
+            </li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Talla</h4>
+          <ul class="filter__options type-size">
+          {% if options.type_sizes is empty %}
+            <li class="filter__option" data-type="talla" data-filter="0">0</li>
+            <li class="filter__option" data-type="talla" data-filter="3">3</li>
+            <li class="filter__option" data-type="talla" data-filter="5">5</li>
+            <li class="filter__option" data-type="talla" data-filter="7">7</li>
+            <li class="filter__option" data-type="talla" data-filter="9">9</li>
+            <li class="filter__option" data-type="talla" data-filter="11">11</li>
+            <li class="filter__option" data-type="talla" data-filter="13">13</li>
+          {% else %}
+            {% for size in options.type_sizes if size is not empty %}
+            <li class="filter__option" data-type="talla" data-filter="{{ size|trim }}">{{ size|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Entrepierna</h4>
+          <ul class="filter__options type-inseam">
+          {% if options.type_inseams is empty %}
+            <li class="filter__option" data-type="tags" data-filter="32L">32L</li>
+            <li class="filter__option" data-type="tags" data-filter="34L">34L</li>
+          {% else %}
+            {% for inseams in options.type_inseams if inseams is not empty %}
+            <li class="filter__option" data-type="tags" data-filter="{{ inseams|trim }}">{{ inseams|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Silueta</h4>
+          <ul class="filter__options type-silhouette">
+          {% if options.type_silhouettes is empty %}
+            <li class="filter__option" data-type="tags" data-filter="skinny">Skinny</li>
+            <li class="filter__option" data-type="tags" data-filter="super-skinny">Super skinny</li>
+          {% else %}
+            {% for silhouettes in options.type_silhouettes if silhouettes is not empty %}
+            <li class="filter__option" data-type="tags" data-filter="{{ silhouettes|trim }}">{{ silhouettes|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Ajuste</h4>
+          <ul class="filter__options type-fit">
+          {% if options.type_fits is empty %}
+            <li class="filter__option" data-type="tags" data-filter="m">Rocco</li>
+            <li class="filter__option" data-type="tags" data-filter="n">Jack</li>
+          {% else %}
+            {% for fits in options.type_fits if fits is not empty %}
+            <li class="filter__option" data-type="tags" data-filter="{{ fits|trim }}">{{ fits|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Altura</h4>
+          <ul class="filter__options type-rise">
+          {% if options.type_rises is empty %}
+            <li class="filter__option" data-type="tags" data-filter="mid-rise">Mid Rise</li>
+            <li class="filter__option" data-type="tags" data-filter="low">Low</li>
+            <li class="filter__option" data-type="tags" data-filter="high">High</li>
+          {% else %}
+            {% for rises in options.type_rises if rises is not empty %}
+            <li class="filter__option" data-type="tags" data-filter="{{ rises|trim }}">{{ rises|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Lavado</h4>
+          <ul class="filter__options type-wash">
+          {% if options.type_washs is empty %}
+            <li class="filter__option" data-type="tags" data-filter="light">Light</li>
+            <li class="filter__option" data-type="tags" data-filter="medium">Medium</li>
+            <li class="filter__option" data-type="tags" data-filter="dark">Dark</li>
+          {% else %}
+            {% for washs in options.type_washs if washs is not empty %}
+            <li class="filter__option" data-type="tags" data-filter="{{ washs|trim }}">{{ washs|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-1 filter-colum-js filterColumn">
+          <h4 class="filter__type-title">Pocket Flap</h4>
+          <ul class="filter__options type-pocket-flap">
+          {% if options.type_pocket_flaps is empty %}
+            <li class="filter__option" data-type="tags" data-filter="pocketflap-yes">Yes</li>
+            <li class="filter__option" data-type="tags" data-filter="pocketflap-no">No</li>
+          {% else %}
+            {% for pocket_flaps in options.type_pocket_flaps if pocket_flaps is not empty %}
+            <li class="filter__option" data-type="tags" data-filter="{{ pocket_flaps|trim }}">{{ pocket_flaps|trim }}</li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+        <div class="col-12 col-md-2 filter-colum-js filterColumnLast">
+          <h4 class="filter__type-title">Rango de precio</h4>
+          <ul class="filter__options type-price-range">
+            <li class="filter__option" data-type="pricerange" data-filter="0-249" data-filter="0-249">$0 - $249</li>
+            <li class="filter__option" data-type="pricerange" data-filter="250-500">$250 - $500</li>
+            <li class="filter__option" data-type="pricerange" data-filter="501-1000">$501 - $1000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="1001-2000">$1001 - $2000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="2001-3000">$2001 - $3000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="3001-5000">$3001 - $5000</li>
+            <li class="filter__option" data-type="pricerange" data-filter="5001-null">$5001 - &#8734;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row filters-apply">
+        <div class="col-12">
+          <p><button class="btn btn-disabled">Aplicar filtros</button></p>
+          <p><a class="text-link" href="#">Cerrar filtros</a></p>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
-

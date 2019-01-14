@@ -1,4 +1,5 @@
 .filtersbar {
+  margin-bottom: 20px;
   .selector {
     float: right;
     height: 40px;
@@ -35,7 +36,7 @@
       right: 0;
       top: 0;
       width: 30px;
-      z-index: 99;
+      z-index: 2;
     }
     .selector__list {
       color: #7c7c7c;
@@ -49,7 +50,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      z-index: 99;
+      z-index: 2;
       .selector__item {
           padding: 10px 8px;
           background-color: #ffffff;
@@ -93,6 +94,10 @@
       text-transform: uppercase;
       vertical-align: middle;
     }
+    &__title {
+      background-color: $white;
+      color: $black;
+    }
     &__title::after {
       background: url('https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1547166112') no-repeat center center;
       content: '';
@@ -104,21 +109,224 @@
       right: 0;
       top: 0;
       width: 30px;
-      z-index: 99;
+      z-index: 2;
     }
     &.active {
-      .filter__title::after {
-        background: url('https://cdn.kometia-static.com/true-religion/images/caret-up.png?v=1547166112') no-repeat center center;
+      .filter__title {
+        background-color: $black;
+        color: $white;
+        &::after {
+          background: url('https://cdn.kometia-static.com/true-religion/images/caret-up-inverse.png?v=1547188446') no-repeat center center;
+        }
       }
     }
   }
   .filter-frame {
     display: none;
+    margin-top: 20px;
+    .filterColumn {
+      border-right: 1px solid #eeeeee;
+      flex: 0 0 10.41665%;
+      padding: 12px;
+      padding-left: 20px;
+      max-width: 10.41665%;
+      @include media-breakpoint-down(sm) {
+        border-right: none;
+        border-bottom: 1px solid #cccccc;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .filerColumnLast {}
   }
 }
 
 .filtersbar.active {
   .filter-frame {
+    border: 1px solid #eeeeee;
     display: block;
+    height: auto;
+    max-height: initial;
+    padding: 10px 14px;
+  }
+}
+
+.filter-frame.filter {
+  .filter {
+    &__type-title {
+      margin: 0;
+      font-family: "FrankRuhlLibre-Regular";
+      font-size: 15px;
+      padding: 0 0 10px;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    &__options {
+      cursor: pointer;
+      list-style: none;
+      padding: 0;
+    }
+  }
+  // Types
+  .type-color {
+    .checkmark {
+      display: none;
+    }
+    .active {
+      .checkmark {
+        color: $white;
+        bottom: 0;
+        display: block;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 0;
+        padding: 5px 0;
+        position: absolute;
+        vertical-align: middle;
+      }
+    }
+    .color-azul {
+      background-color: $filter_color_azul;
+    }
+    .color-blanco {
+      background-color: $filter_color_blanco;
+      border: 1px solid $black !important;
+      .checkmark {
+        color: $black !important;
+      }
+    }
+    .color-negro {
+      background-color: $filter_color_negro;
+    }
+    .color-multicolor {
+      background: url('https://cdn.kometia-static.com/true-religion/images/swatch-multi.png?v=1547237856') repeat center center;
+      background-size: cover;
+      border: transparent !important;
+    }
+    .color-amarillo {
+      background-color: $filter_color_amarillo;
+    }
+    .color-rojo {
+      background-color: $filter_color_rojo;
+    }
+    .color-gris {
+      background-color: $filter_color_gris;
+    }
+    .color-verde {
+      background-color: $filter_color_verde;
+    }
+    .color-beige {
+      background-color: $filter_color_beige;
+    }
+    .color-morado {
+      background-color: $filter_color_morado;
+    }
+    .color-naranja {
+      background-color: $filter_color_naranja;
+    }
+    .color-rosa {
+      background-color: $filter_color_rosa;
+    }
+    .filter__option {
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-block;
+      height: 30px;
+      margin: 0 10px 10px 0;
+      position: relative;
+      width: 30px;
+      @include media-breakpoint-down(sm) {
+        margin: 0 12px 8px 0;
+      }
+    }
+  }
+  .type-size,
+  .type-inseam,
+  .type-silhouette,
+  .type-fit,
+  .type-rise,
+  .type-wash,
+  .type-pocket-flap,
+  .type-price-range {
+    .filter {
+      &__option {
+        color: $black;
+        font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+        margin-bottom: 16px;
+        padding-left: 25px;
+        position: relative;
+      }
+      &__option::before {
+        background-color: $white;
+        border: 1px solid $black;
+        bottom: 0;
+        content: '';
+        display: inline-block;
+        height: 18px;
+        left: 0;
+        margin-right: 6px;
+        padding: 2px;
+        position: absolute;
+        top: 0;
+        vertical-align: middle;
+        width: 18px;
+      }
+      &__option.active {
+        font-family: "Avenir Next Cyr W00 Bold",helvetica,sans-serif;
+        font-weight: bold;
+      }
+      &__option.active::before {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+      &__option::after {
+        content: '';
+        display: none;
+        position: absolute;
+      }
+      &__option.active::after {
+        background-color:$black;
+        display: inline-block;
+        height: 12px;
+        left: 3px;
+        top: 3px;
+        width: 12px;
+      }
+    }
+  }
+
+  .filters-apply {
+    margin: 30px 0 10px;
+    text-align: center;
+    button.btn {
+      background-color: $black;
+      border-radius: 2px;
+      color: $white;
+      display: inline-block;
+      font-family: "Avenir Next Cyr W00 Regular", helvetica, sans-serif;
+      font-size: 12px;
+      height: 28px;
+      pointer-events: auto;
+      text-align: center;
+      width: 100px;
+    }
+    button.btn.btn-disabled {
+      background: #bfbfbf!important;
+      pointer-events: none;
+    }
+    .text-link {
+      color: #6e6e6e;
+      display: block;
+      font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+      font-size: 12px;
+      height: 12px;
+      letter-spacing: .3px;
+      line-height: 3.17;
+      text-decoration: underline;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
   }
 }

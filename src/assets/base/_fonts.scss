@@ -1,297 +1,297 @@
-$font-url: "https://cdn.kometia.test";
+$font-url: "https://cdn.kometia-static.com/true-religion/files/";
 
 @font-face {
   font-family: "FrankRuhlLibre";
-  src: url($font-url+"/fonts/FrankRuhlLibre-Regular.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/FrankRuhlLibre-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/FrankRuhlLibre-Regular.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/FrankRuhlLibre-Regular.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/FrankRuhlLibre-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/FrankRuhlLibre-Regular.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/FrankRuhlLibre-Regular.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"FrankRuhlLibre-Regular.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"FrankRuhlLibre-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"FrankRuhlLibre-Regular.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"FrankRuhlLibre-Regular.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"FrankRuhlLibre-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"FrankRuhlLibre-Regular.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"FrankRuhlLibre-Regular.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirRegular";
-  src: url($font-url+"/fonts/AvenirRegular.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirRegular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirRegular.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirRegular.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirRegular.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirRegular.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirRegular.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirRegular.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirRegular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirRegular.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirRegular.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirRegular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirRegular.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirRegular.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirMedium";
-  src: url($font-url+"/fonts/AvenirMedium.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirMedium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirMedium.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirMedium.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirMedium.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirMedium.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirMedium.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirMedium.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirMedium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirMedium.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirMedium.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirMedium.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirMedium.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirMedium.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirLTStd-Book";
-  src: url($font-url+"/fonts/AvenirLTStd-Book.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirLTStd-Book.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirLTStd-Book.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirLTStd-Book.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirLTStd-Book.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirLTStd-Book.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirLTStd-Book.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirLTStd-Book.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirLTStd-Book.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirLTStd-Book.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirLTStd-Book.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirLTStd-Book.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirLTStd-Black";
-  src: url($font-url+"/fonts/AvenirLTStd-Black.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirLTStd-Black.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirLTStd-Black.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirLTStd-Black.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirLTStd-Black.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirLTStd-Black.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirLTStd-Black.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirLTStd-Black.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirLTStd-Black.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirLTStd-Black.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirLTStd-Black.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirLTStd-Black.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirLight";
-  src: url($font-url+"/fonts/AvenirLight.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirLight.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirLight.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirLight.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirLight.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirLight.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirLight.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirLight.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirLight.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirLight.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirLight.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirLight.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirBold";
-  src: url($font-url+"/fonts/AvenirBold.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirBold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirBold.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirBold.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirBold.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirBold.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirBold.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirBold.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirBold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirBold.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirBold.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirBold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirBold.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirBold.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AvenirBlack";
-  src: url($font-url+"/fonts/AvenirBlack.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirBlack.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url($font-url+"/fonts/AvenirBlack.otf") format("opentype"), /* Open Type Font */
-    url($font-url+"/fonts/AvenirBlack.svg") format("svg"), /* Legacy iOS */
-    url($font-url+"/fonts/AvenirBlack.ttf") format("truetype"), /* Safari, Android, iOS */
-    url($font-url+"/fonts/AvenirBlack.woff") format("woff"), /* Modern Browsers */
-    url($font-url+"/fonts/AvenirBlack.woff2") format("woff2"); /* Modern Browsers */
+  src: url($font-url+"AvenirBlack.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirBlack.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url($font-url+"AvenirBlack.otf") format("opentype"), /* Open Type Font */
+    url($font-url+"AvenirBlack.svg") format("svg"), /* Legacy iOS */
+    url($font-url+"AvenirBlack.ttf") format("truetype"), /* Safari, Android, iOS */
+    url($font-url+"AvenirBlack.woff") format("woff"), /* Modern Browsers */
+    url($font-url+"AvenirBlack.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 HeavyItalic';
-  src: url($font-url+"/fonts/AvenirNextCyr-HeavyItalic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-HeavyItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-HeavyItalic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-HeavyItalic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-HeavyItalic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-HeavyItalic.svg#AvenirNextCyr-HeavyItalic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-HeavyItalic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-HeavyItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-HeavyItalic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-HeavyItalic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-HeavyItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-HeavyItalic.svg#AvenirNextCyr-HeavyItalic") format("svg"); /* Legacy iOS */
   font-weight: 900;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 BoldItalic';
-  src: url($font-url+"/fonts/AvenirNextCyr-BoldItalic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-BoldItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-BoldItalic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-BoldItalic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-BoldItalic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-BoldItalic.svg#AvenirNextCyr-BoldItalic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-BoldItalic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-BoldItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-BoldItalic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-BoldItalic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-BoldItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-BoldItalic.svg#AvenirNextCyr-BoldItalic") format("svg"); /* Legacy iOS */
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Heavy';
-  src: url($font-url+"/fonts/AvenirNextCyr-Heavy.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Heavy.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Heavy.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Heavy.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Heavy.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Heavy.svg#AvenirNextCyr-Heavy") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Heavy.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Heavy.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Heavy.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Heavy.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Heavy.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Heavy.svg#AvenirNextCyr-Heavy") format("svg"); /* Legacy iOS */
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Bold';
-  src: url($font-url+"/fonts/AvenirNextCyr-Bold.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Bold.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Bold.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Bold.svg#AvenirNextCyr-Bold") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Bold.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Bold.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Bold.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Bold.svg#AvenirNextCyr-Bold") format("svg"); /* Legacy iOS */
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 LightItalic';
-  src: url($font-url+"/fonts/AvenirNextCyr-LightItalic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-LightItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-LightItalic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-LightItalic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-LightItalic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-LightItalic.svg#AvenirNextCyr-LightItalic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-LightItalic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-LightItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-LightItalic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-LightItalic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-LightItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-LightItalic.svg#AvenirNextCyr-LightItalic") format("svg"); /* Legacy iOS */
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 UltraLight';
-  src: url($font-url+"/fonts/AvenirNextCyr-UltraLight.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-UltraLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLight.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLight.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLight.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLight.svg#AvenirNextCyr-UltraLight") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-UltraLight.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-UltraLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-UltraLight.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-UltraLight.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-UltraLight.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-UltraLight.svg#AvenirNextCyr-UltraLight") format("svg"); /* Legacy iOS */
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Medium';
-  src: url($font-url+"/fonts/AvenirNextCyr-Medium.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Medium.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Medium.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Medium.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Medium.svg#AvenirNextCyr-Medium") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Medium.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Medium.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Medium.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Medium.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Medium.svg#AvenirNextCyr-Medium") format("svg"); /* Legacy iOS */
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Light';
-  src: url($font-url+"/fonts/AvenirNextCyr-Light.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Light.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Light.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Light.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Light.svg#AvenirNextCyr-Light") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Light.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Light.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Light.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Light.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Light.svg#AvenirNextCyr-Light") format("svg"); /* Legacy iOS */
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Regular';
-  src: url($font-url+"/fonts/AvenirNextCyr-Regular.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Regular.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Regular.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Regular.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Regular.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Regular.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular") format("svg"); /* Legacy iOS */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Demi';
-  src: url($font-url+"/fonts/AvenirNextCyr-Demi.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Demi.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Demi.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Demi.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Demi.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Demi.svg#AvenirNextCyr-Demi") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Demi.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Demi.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Demi.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Demi.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Demi.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Demi.svg#AvenirNextCyr-Demi") format("svg"); /* Legacy iOS */
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Thin';
-  src: url($font-url+"/fonts/AvenirNextCyr-Thin.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Thin.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Thin.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Thin.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Thin.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Thin.svg#AvenirNextCyr-Thin") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Thin.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Thin.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Thin.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Thin.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Thin.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Thin.svg#AvenirNextCyr-Thin") format("svg"); /* Legacy iOS */
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 MediumItalic';
-  src: url($font-url+"/fonts/AvenirNextCyr-MediumItalic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-MediumItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-MediumItalic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-MediumItalic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-MediumItalic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-MediumItalic.svg#AvenirNextCyr-MediumItalic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-MediumItalic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-MediumItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-MediumItalic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-MediumItalic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-MediumItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-MediumItalic.svg#AvenirNextCyr-MediumItalic") format("svg"); /* Legacy iOS */
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 DemiItalic';
-  src: url($font-url+"/fonts/AvenirNextCyr-DemiItalic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-DemiItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-DemiItalic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-DemiItalic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-DemiItalic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-DemiItalic.svg#AvenirNextCyr-DemiItalic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-DemiItalic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-DemiItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-DemiItalic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-DemiItalic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-DemiItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-DemiItalic.svg#AvenirNextCyr-DemiItalic") format("svg"); /* Legacy iOS */
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 UltraLightIt';
-  src: url($font-url+"/fonts/AvenirNextCyr-UltraLightIt.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-UltraLightIt.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLightIt.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLightIt.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLightIt.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-UltraLightIt.svg#AvenirNextCyr-UltraLightIt") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-UltraLightIt.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-UltraLightIt.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-UltraLightIt.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-UltraLightIt.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-UltraLightIt.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-UltraLightIt.svg#AvenirNextCyr-UltraLightIt") format("svg"); /* Legacy iOS */
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 Italic';
-  src: url($font-url+"/fonts/AvenirNextCyr-Italic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-Italic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-Italic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Italic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-Italic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-Italic.svg#AvenirNextCyr-Italic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-Italic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-Italic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-Italic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Italic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-Italic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-Italic.svg#AvenirNextCyr-Italic") format("svg"); /* Legacy iOS */
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Avenir Next Cyr W00 ThinItalic';
-  src: url($font-url+"/fonts/AvenirNextCyr-ThinItalic.eot"); /* IE9 Compat Modes */
-  src: url($font-url+"/fonts/AvenirNextCyr-ThinItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url($font-url+"/fonts/AvenirNextCyr-ThinItalic.woff2") format("woff2"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-ThinItalic.woff") format("woff"), /* Modern Browsers */
-      url($font-url+"/fonts/AvenirNextCyr-ThinItalic.ttf") format("truetype"), /* Safari, Android, iOS */
-      url($font-url+"/fonts/AvenirNextCyr-ThinItalic.svg#AvenirNextCyr-ThinItalic") format("svg"); /* Legacy iOS */
+  src: url($font-url+"AvenirNextCyr-ThinItalic.eot"); /* IE9 Compat Modes */
+  src: url($font-url+"AvenirNextCyr-ThinItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url($font-url+"AvenirNextCyr-ThinItalic.woff2") format("woff2"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-ThinItalic.woff") format("woff"), /* Modern Browsers */
+      url($font-url+"AvenirNextCyr-ThinItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+      url($font-url+"AvenirNextCyr-ThinItalic.svg#AvenirNextCyr-ThinItalic") format("svg"); /* Legacy iOS */
   font-weight: 100;
   font-style: italic;
 }

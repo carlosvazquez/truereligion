@@ -514,7 +514,7 @@
     var buildAjaxResult = function(skuId, arraySkus) {
       var _sku = skuId;
       var _skus = arraySkus;
-      if($('.ajax-cart-result').lenght > 0){
+      if($('.ajax-cart-result').length > 0){
         $('.ajax-cart-result').remove();
       }
       var _sku = _skus.filter(function(value){
@@ -607,8 +607,15 @@
 
     // Filters and orders
     var FilterState = {
+      color: [],
+      talla: [],
+      tags: [],
+      minprice: null,
+      maxprice: null,
+      pricerange: '',
       orderBy: null
     }
+
     var $selector = $('.filtersbar .selector');
     var enableOrderBy = function(){
       $('.filtersbar .selector .selector__title').on('click', function(){
@@ -623,10 +630,10 @@
           var $label = $('.filtersbar .selector .selector__title span');
           FilterState.orderBy = option.data('value');
           switch(FilterState.orderBy) {
-            case 'date-older':
+            case 'created-descending':
               $label.text('Más viejo');
               break;
-            case 'date-newer':
+            case 'created-ascending':
               $label.text('Más nuevo');
               break;
             case 'price-ascending':
@@ -635,9 +642,23 @@
             case 'price-descending':
               $label.text('Precio descendente');
               break;
+            case 'name-ascending':
+              $label.text('A-Z');
+              break;
+            case 'name-descending':
+              $label.text('Z-A');
+              break;
             default:
               $label.text('');
           }
+        }
+        var _url = '?';
+        var fireEvent = $('.filtersbar').hasClass('active');
+        $(this).parent('.selector').toggleClass('active');
+        if(!fireEvent){
+         _url += FilterState.orderBy != null ? '&sort_by='+FilterState.orderBy : '';
+          _url = buildUrl(_url);
+        redirectToUrl(_url); 
         }
       });
       $('.selector__list').mouseleave(function(){
@@ -645,9 +666,153 @@
       });
     }
     enableOrderBy();
+    var enableFilterBy = function(){
+      $('.filtersbar .filter .filter__title').on('click', function(){
+        $(this).parent().toggleClass('active');
+        $('.filtersbar').toggleClass('active');
+      });
+    }
+    enableFilterBy();
+    var filterOptionSelector = function(){
+      $('.filter__options .filter__option').on('click', function(){
+        $(this).toggleClass('active');
+        $('.filters-apply button.btn').removeClass('btn-disabled');
+      });
+      $('.filters-apply .text-link').on('click', function(){
+        $('.filters-apply button.btn').addClass('btn-disabled');
+        $('.filtersbar, .filtersbar .filter, .filter-frame.filter .filter__options .filter__option').removeClass('active');
+      });
+      $('.filter__options.type-price-range .filter__option').on('click', function(){
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+      });
+      $('.filters-apply button.btn').on('click', function(){
+        fireFilterQuery();
+      });
+      return true;
+    }
+    filterOptionSelector();
+
+    // https://store1.kometia.test/productos?options[color]=amarillo,negro,blanco&options[talla]=2,4,8&q=zapatos,jeans,polo&price[min]=1200&price[max]=8300&sort_by=created-ascending
+
+    var setInitialFiltersFromUrl = function() {
+      var _url = decodeURIComponent(window.location.search.substring(1)),
+          _urlVars = _url.split('&'),
+          _parameterName,
+          i;
+      if (_url.length != 0) {
+        $('.filters-apply button').removeClass('btn-disabled');
+        for (i = 0; i < _urlVars.length; i++) {
+          _parameterName = _urlVars[i].split('=');
+          if (_parameterName[0] === 'options[color]') {
+            _paramColor = _parameterName[1].split(',');
+            $.each( _paramColor, function(key, value) {
+              FilterState['color'].push(value);
+            });
+          }
+          if (_parameterName[0] === 'options[talla]') {
+            _paramSize = _parameterName[1].split(',');
+            $.each( _paramSize, function(key, value) {
+              FilterState['talla'].push(value);
+            });
+          }
+          if (_parameterName[0] === 'q') {
+            _paramTag = _parameterName[1].split(',');
+            $.each( _paramTag, function(key, value) {
+              FilterState['tags'].push(value);
+            });
+          }
+
+          if (_parameterName[0] === 'price[min]') {
+            _paramTag = _parameterName[1].split(',');
+            $.each( _paramTag, function(key, value) {
+              FilterState['minprice'] = value;
+            });
+          }
+
+          if (_parameterName[0] === 'price[max]') {
+            _paramTag = _parameterName[1].split(',');
+            $.each( _paramTag, function(key, value) {
+              FilterState['maxprice'] = value;
+            });
+          }
+
+          if (_parameterName[0] === 'sort_by') {
+            _paramTag = _parameterName[1].split(',');
+            $.each( _paramTag, function(key, value) {
+              FilterState['orderBy'] = value;
+            });
+          }
+        }
+      }
+      FilterState['pricerange'] = (FilterState['minprice'] != null ? FilterState['minprice'] : 0) + '-' + (FilterState['maxprice'] != null ? FilterState['maxprice'] : 20000);
+      return true;
+    };
+    setInitialFiltersFromUrl();
+    // TODO select already options from url
+    var checkAlreadySelectedOptions = function(){
+      $('.filter__options.type-color .filter__option').each(function(index){
+        var _this = $(this);
+         if(FilterState.color.includes(_this.data('filter'))){
+           _this.addClass('active');
+           enableFilterButton = true;
+         }
+      });
+    }
+    checkAlreadySelectedOptions();
+
+    var updateFilterStateBeforeRequest = function(){
+      $('.filter-frame.filter .filter__options .filter__option').each(function(){
+          var $this = $(this);
+          if($this.hasClass('active') && $this.data('type') != 'pricerange'){
+            FilterState[$this.data('type')].push($this.data('filter'));
+          }
+      });
+      var $pricerange = $('.filter-frame.filter .filter__options.type-price-range .filter__option.active').data('filter');
+      if($pricerange != undefined && $pricerange != null) {
+        FilterState['pricerange'] = $pricerange;
+        FilterState['minprice'] = $pricerange.split('-')[0];
+        FilterState['maxprice'] = $pricerange.split('-')[1];
+      }
+      return true
+    }
+    var root = window.location.hostname;
+    var PROTOCOL = window.location.protocol;
+    var getBaseUrl = function() {
+      return PROTOCOL + '//' + root + '/' + type;
+    }
+    var buildUrl = function(url) {
+      var _url = url;
+      _url = _url.replace("?&", "?");
+      if (_url === "?") {
+        return false;
+      }
+      return _url;      
+    };
+    var redirectToUrl = function(url) {
+      window.location.href = url
+    }
+    var fireFilterQuery = function() {
+      updateFilterStateBeforeRequest();
+      var _url = "?";
+         _url += FilterState.color.length >= 1 ? '&options[color]='+FilterState.color.join(',') : '';
+         _url += FilterState.talla.length >= 1 ? '&options[talla]='+FilterState.talla.join(',') : '';
+         _url += FilterState.tags.length >= 1 ? '&q='+FilterState.tags.join(',') : '';
+         if(FilterState.minprice != null) {
+         _url += (FilterState.minprice != null) ? '&price[min]='+FilterState.minprice : '';
+         }
+         if(!isNaN(Number(FilterState.maxprice))) {
+         _url += (FilterState.maxprice != null) ? '&price[max]='+FilterState.maxprice : '';
+         }
+         _url += FilterState.orderBy != null ? '&sort_by='+FilterState.orderBy : '';
+         _url = buildUrl(_url);
+     redirectToUrl(_url); 
+     return true;
+    }
   });
 
   $(window).on('load', function(){
     $('.quick-view, .product-card__image-link').prop("disabled", false).removeClass('disabled');
   });
+// https://store1.kometia.test/productos?options[color]=amarillo,negro,blanco&options[talla]=2,4,8&q=zapatos,jeans,polo&price[min]=1200&price[max]=8300&sort_by=created-ascending
 </script>

@@ -136,7 +136,7 @@ body .overlay {
       font-stretch: normal;
     }
     &__link-toggle::after {
-      content: url('https://storage.kometia.test/store1/images/plus.png?v=1544216531');
+      content: url('https://cdn.kometia-static.com/true-religion/images/plus.png?v=1545332635');
       width: 20px;
       height: 20px;
       display: inline-block;
@@ -145,7 +145,7 @@ body .overlay {
       right: 30px;
     }
     &__link-toggle.on::after {
-      content: url('https://storage.kometia.test/store1/images/minus.png?v=1544216531');
+      content: url('https://cdn.kometia-static.com/true-religion/images/minus.png?v=1545332635');
       width: 20px;
       height: 20px;
       display: inline-block;

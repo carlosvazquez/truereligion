@@ -1,7 +1,60 @@
 {% extends 'layout.twig' %}
 {% block body_class %}products-page hasModal{% endblock body_class %}
 {% block body %}
-  {% include '_header-products.twig' with { 'title': collection.title, 'type': 'collection','isCollection': true } %}
+
+{% set name = collection.permalink %}
+{% set title = collection.title %}
+{% set custom = false %}
+{% set maxcollections = settings.maxcollections %}
+{% set type_colors = [] %}
+{% set type_sizes = [] %}
+{% set type_inseams = [] %}
+{% set type_silhouettes = [] %}
+{% set type_fits = [] %}
+{% set type_rises = [] %}
+{% set type_washs = [] %}
+{% set type_pocket_flaps = [] %}
+´
+{% set notkeep = false %}
+{% for i in 1..maxcollections if notkeep == false %}
+  {% if name == settings['collection_filter_'~i~'_name'] %}
+    {% set custom = true %}
+    {% if settings['collection_filter_'~i~'_colors'] is not empty %}
+      {% set type_colors = type_colors|merge( settings['collection_filter_'~i~'_colors']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_sizes'] is not empty %}
+      {% set type_sizes = type_sizes|merge( settings['collection_filter_'~i~'_sizes']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_inseams'] is not empty %}
+      {% set type_inseams = type_inseams|merge( settings['collection_filter_'~i~'_inseams']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_silhouettes'] is not empty %}
+      {% set type_silhouettes = type_silhouettes|merge( settings['collection_filter_'~i~'_silhouettes']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_fits'] is not empty %}
+      {% set type_fits = type_fits|merge( settings['collection_filter_'~i~'_fits']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_rises'] is not empty %}
+      {% set type_rises = type_rises|merge( settings['collection_filter_'~i~'_rises']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_washs'] is not empty %}
+      {% set type_washs = type_washs|merge( settings['collection_filter_'~i~'_washs']|lower|split(',') ) %}
+    {% endif %}
+    {% if settings['collection_filter_'~i~'_pocket_flaps'] is not empty %}
+      {% set type_pocket_flaps = type_pocket_flaps|merge( settings['collection_filter_'~i~'_pocket_flaps']|lower|split(',') ) %}
+    {% endif %}
+    {% set notkeep = true %}
+  {% endif %}
+{% endfor %}
+
+{% set options = { 'name':name,'title':title,'custom':custom,'maxcollections':maxcollections,'type_colors':type_colors,'type_sizes':type_sizes,'type_inseams':type_inseams,'type_silhouettes':type_silhouettes,'type_fits':type_fits,'type_rises':type_rises,'type_washs':type_washs,'type_pocket_flaps':type_pocket_flaps } %}
+
+{% if custom %}
+  {% include '_header-products.twig' with { 'title': title, 'type': 'collection','isCollection': true, 'options': options } %}
+{% else %}
+  {% include '_header-products.twig' with { 'title': title, 'type': 'collection','isCollection': true } %}
+{% endif %}
+
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -21,10 +74,8 @@
         </div>
       {% else %}
         <div class="row">
-          <div class="col-xs-12 text-center">
-            <h2 class="products-title">¡Falta poco!</h2>
-            <p class="products-text">Todavía no existen Productos, una vez que empieces a crearlos aparecerán aquí.</p>
-            <p><a class="btn btn-primary" href="/admin/products">Gestionar Productos</a> <a class="btn btn-primary" href="/admin/collections">Gestionar Colecciones</a></p>
+          <div class="col-xs-12 text-center no-results">
+            <h2 class="products-title space-top space-bottom">No hay productos</h2>
           </div>
         </div>
       {% endif %}

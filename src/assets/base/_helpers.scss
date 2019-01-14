@@ -4,3 +4,17 @@
 .inline-block {
   display: inline-block !important;
 }
+.space {
+  &-top {
+    margin-top: 2em;
+    @include media-breakpoint-down(md) {
+      margin-top: 1.2em;
+    }    
+  }
+  &-bottom {
+    margin-bottom: 2em;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 1.2em;
+    }
+  }
+}
