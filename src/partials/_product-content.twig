@@ -1,36 +1,122 @@
 {% set thumb = {'width': 634, 'height': 955} %}
-{# {% set thumb = {'width': 856, 'height': 1290} %} #}
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 columnA">
+
+
+    <div class="col-12 col-sm-12 col-md-8 col-lg-9 columnA">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Inicio</a></li>
           <li class="breadcrumb-item"><a class="breadcrumb-link" href="/productos">Productos</a></li>
-          <li class="breadcrumb-item active" aria-current="page">MENS CRINKLE STRAIGHT JEAN W/ FLAP</li>
+          <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
         </ol>
       </nav>
       <div class="page-header isMobile">
         <div class="row">
-          <div class="col-xs-12">
-            <h1 class="title">MENS CRINKLE STRAIGHT JEAN W/ FLAP Mobile</h1>
+          <div class="col-12">
+            <h1 class="title">{{ product.name }}</h1>
+            <p class="price">
+            {% if product.compared_price != null and product.compared_price  > product.price %}
+            <span class="price--compared">{{ product.compared_price | money('symbol', 'code') }}</span>
+            {% endif %}
+            <span class="price--final">{{ product.price | money('symbol', 'code') }}</span>
+            </p>
           </div>
         </div><!-- .row -->
       </div><!-- .page-header -->
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 columnB">
+    </div><!-- .columnA -->
+
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3 columnB">
       <div class="page-header">
         <div class="row">
-          <div class="col-xs-12">
-            <h1 class="title">MENS CRINKLE STRAIGHT JEAN W/ FLAP Desktop</h1>
+          <div class="col-12">
+            <h1 class="title">{{ product.name }}</h1>
+            <p class="price">
+            {% if product.compared_price != null and product.compared_price  > product.price %}
+            <span class="price--compared">{{ product.compared_price | money('symbol', 'code') }}</span>
+            {% endif %}
+            <span class="price--final">{{ product.price | money('symbol', 'code') }}</span>
+            </p>
           </div>
         </div><!-- .row -->
       </div><!-- .page-header -->
-    </div>
-  </div><!-- .row -->
+      <div class="product-description">
+        <div class="row">
+          <div class="col-12">
 
-  <div class="related-products">
+
+            <div class="accordion" id="productDescriptionBox">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0 card-header__title">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Descripción
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#productDescriptionBox">
+                  <div class="card-body">
+                  The Womens Striped Logo Jogger is the perfect pick for anytime comfort and style. This women’s jogger features an easy drawcord waist, tapered ankle hem, contrast striping down the outer seams, and a branded inner waistband. Finished with handy hip pockets, back pockets with subtle horseshoe stitching, and a horseshoe logo on the hip.
+                  Style: 200991
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0 card-header__title">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Ajuste + Medida
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#productDescriptionBox">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0 card-header__title">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Cuidado
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#productDescriptionBox">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0 card-header__title">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Servicio al cliente
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#productDescriptionBox">
+                  <div class="card-body">
+                  <a class="text-link" href="#">Necesitas ayuda? &nbsp;&nbsp;Chatea ahora</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div><!-- .columnA -->
+
+  </div><!-- .row -->
   {% include '_related-products.twig' %}
-  </div>
 </div><!-- .container -->
+

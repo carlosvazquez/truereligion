@@ -4704,7 +4704,12 @@ nav.navigation.stick .main-menu .menu .logo {
 footer.footer {
   border-top: 1px solid #e3e3e3;
   background-color: #fff;
-  padding: 2.5% 0 0; }
+  margin-top: 120px;
+  padding: 2.5% 0 0;
+  margin-top: 40px; }
+  @media (max-width: 799.98px) {
+    footer.footer {
+      border: none; } }
   footer.footer .container {
     max-width: 1020px; }
   footer.footer .menu__title {
@@ -4723,7 +4728,7 @@ footer.footer {
     @media (max-width: 799.98px) {
       footer.footer .menu__title {
         border-bottom: none;
-        border-top: 1px solid #999999;
+        border-top: 1px solid #e3e3e3;
         display: block;
         height: auto;
         margin: 0;
@@ -4791,7 +4796,10 @@ footer.footer {
     margin-bottom: 0; }
     @media (max-width: 799.98px) {
       footer.footer .menu--one .menu__title {
-        margin-bottom: 25px; } }
+        margin-bottom: 0; } }
+  @media (max-width: 799.98px) {
+    footer.footer .menu--one .menu__newsletter {
+      padding-top: 0; } }
   footer.footer .menu--one span.toggle-icon {
     display: none !important; }
   footer.footer .menu--four .menu__title {
@@ -5717,7 +5725,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
         display: none; } }
 
 .simple-product-card .product-card {
-  margin: 0; }
+  margin: 0 0 30px; }
   .simple-product-card .product-card__image {
     background-color: #fff; }
   .simple-product-card .product-card__description {
@@ -5731,8 +5739,9 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     font-weight: 500 !important;
     letter-spacing: 1.2px;
     line-height: 17px;
+    padding-right: 20%;
     text-align: left;
-    width: 92.6%; }
+    width: 100%; }
   .simple-product-card .product-card__price {
     color: #6e6e6e;
     font-family: "FrankRuhlLibre-Regular";
@@ -5962,12 +5971,11 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     text-decoration: none; }
 
 .product-page .page-header {
-  display: block;
-  background-color: yellow; }
+  border: none;
+  display: block; }
   @media (max-width: 1149.98px) {
     .product-page .page-header {
-      display: none;
-      background-color: red; } }
+      display: none; } }
   .product-page .page-header .title {
     color: #000;
     font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
@@ -5980,18 +5988,115 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
     margin: 0 0 12px;
     text-align: center;
     text-transform: uppercase; }
+  .product-page .page-header .price {
+    color: #6e6e6e;
+    display: block;
+    font-family: "FrankRuhlLibre-Regular";
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: .4px;
+    line-height: 1;
+    margin-top: 26px;
+    text-align: center; }
+    .product-page .page-header .price--compared {
+      text-decoration: line-through; }
+    .product-page .page-header .price--final {
+      color: #b2292e;
+      margin-left: 7px; }
 
 .product-page .page-header.isMobile {
   display: none; }
   @media (max-width: 1149.98px) {
     .product-page .page-header.isMobile {
-      display: block;
-      background-color: orange; } }
-  .product-page .page-header.isMobile .title {
-    background-color: pink; }
+      display: block; } }
+
+.product-page .product-description .accordion .card .card-header:first-child__title {
+  border: none; }
+
+.product-page .product-description .accordion .card .card-header:last-child__title {
+  border: none; }
+
+.product-page .product-description .accordion .card .card-header__title {
+  color: #000;
+  color: #6e6e6e;
+  text-align: center;
+  width: 100%; }
+  .product-page .product-description .accordion .card .card-header__title button.btn.collapsed {
+    border-bottom: 1px solid #e3e3e3; }
+  .product-page .product-description .accordion .card .card-header__title button.btn {
+    border: none;
+    color: #000;
+    display: block;
+    font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 1.2px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 2px;
+    position: relative;
+    width: 100%; }
+  .product-page .product-description .accordion .card .card-header__title button.btn:hover {
+    text-decoration: none; }
+  .product-page .product-description .accordion .card .card-header__title button.btn::after {
+    content: '+';
+    bottom: 0;
+    display: block;
+    font-size: 15px;
+    height: 100%;
+    margin: 0;
+    padding: 12px 0px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 34px; }
+  .product-page .product-description .accordion .card .card-header__title button.btn.collapsed::after {
+    content: '-'; }
+
+.product-page .product-description .accordion .card #headingFour.card-header {
+  border: none; }
+
+.product-page .product-description .accordion .card .card-body {
+  border-bottom: 1px solid #e3e3e3;
+  color: #6e6e6e;
+  font-family: "Avenir Next Cyr W00 Regular",helvetica,sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+  letter-spacing: .3px;
+  line-height: 2;
+  margin-bottom: 0;
+  padding: 20px 0;
+  text-align: center; }
+  .product-page .product-description .accordion .card .card-body .text-link, .product-page .product-description .accordion .card .card-body .text-link:hover {
+    color: #6e6e6e;
+    text-decoration: none; }
+
+.product-page .product-description .accordion .card:last-child button.btn.collapsed {
+  border: none; }
+
+.product-page .product-description .accordion .card:last-child .card-body {
+  border: none; }
 
 .product-page .related-products {
-  margin-bottom: 40px; }
+  margin: 40px 0; }
   @media (max-width: 1149.98px) {
     .product-page .related-products {
-      margin-bottom: 20px; } }
+      margin: 20px 0; } }
+  .product-page .related-products__title {
+    font: 30px "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 1.8px;
+    color: #000;
+    margin-bottom: 70px;
+    text-align: center; }
+    @media (max-width: 1149.98px) {
+      .product-page .related-products__title {
+        margin-bottom: 20px; } }
