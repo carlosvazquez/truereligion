@@ -35,6 +35,7 @@
   {% endfor %}
   {% set default_color = default_color|replace({' ': "-"}) %}
   <script type="text/javascript">
+    var defaultColor = '{{ default_color |capitalize}}';
     var colors = {{ colors | json }};
     var colorNames = {{ colors_names | json }};
     var skus = {{ product.skus | json }};

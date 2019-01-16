@@ -14,13 +14,13 @@
       <div class="page-header isMobile">
         <div class="row">
           <div class="col-12">
-            <h1 class="title">{{ product.name }}</h1>
-            <p class="price">
-            {% if product.compared_price != null and product.compared_price  > product.price %}
-            <span class="price--compared">{{ product.compared_price | money('symbol', 'code') }}</span>
-            {% endif %}
-            <span class="price--final">{{ product.price | money('symbol', 'code') }}</span>
-            </p>
+              <h1 class="title">{{ product.name }}</h1>
+              <p class="price">
+              {% if product.compared_price != null and product.compared_price  > product.price %}
+              <span class="price--compared">{{ product.compared_price | money('symbol', 'code') }}</span>
+              {% endif %}
+              <span class="price--final">{{ product.price | money('symbol', 'code') }}</span>
+              </p>
           </div>
         </div><!-- .row -->
       </div><!-- .page-header -->
@@ -66,6 +66,7 @@
             {% endif %}
             <span class="price--final">{{ product.price | money('symbol', 'code') }}</span>
             </p>
+            <div class="product-data"></div>
           </div>
         </div><!-- .row -->
       </div><!-- .page-header -->

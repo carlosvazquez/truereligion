@@ -6,6 +6,31 @@
 <script type="text/javascript">
   $(function() {
     console.log('product content js');
+    var ProductState = {
+        name: null,
+        permalink: null,
+        colorIndex: null,
+        color: null,
+        colors: null,
+        sizeIndex: null,
+        size: null,
+        sizes: null,
+        sizesAvailable: null,
+        images: null,
+        sku_selected: null,
+        skus: null,
+        size_default: null,
+        modifiers: null,
+        qty: 0,
+        normalPrice: null,
+        discountPrice: null,
+        stock: 0,
+        stockPolicy: 'overall',
+        isBackorderable: false,
+        cartQty: 1
+    }
+    console.log('default color: '+defaultColor);
+
     $('.slider').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
@@ -47,6 +72,34 @@
       });
     }
     setThumbnailImageLinks();
+    var getHtmlThumbnailsImages = function(){
+      var _color = defaultColor;
+      var _html = '';
+      colors.forEach(function(){
+         _html += '<li class="thumbnails-permalink"><input id="'+colors+'" type="radio" name="color" value="'+colors+'" checked><label for="'+colors+'"><img class="thumbnails-image" src="aaaa"></label></li>';
+      });
+    return _html;
+    }
+    var initDefaultValues = function(){
+      var _html = '';
+      var $dataContainer = $('.product-data');
+         _html += '<div class="color-selected">'+defaultColor+'</div>';
+         _html += '<ul class="thumbnails-color color-options-js">';
+         _html += getHtmlThumbnailsImages();
+         _html += '</ul>';
+      $dataContainer.append(_html);
+    }
+
+    initDefaultValues();
+
+    console.log('defaultColor: '+defaultColor);
+    console.log('colors: ');
+    console.log(colors);
+    console.log('color names: ');
+    console.log(colorNames);
+    console.log('skus: ');
+    console.log(skus);
+
     $(window).on('resize', function() {
 
     });
