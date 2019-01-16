@@ -26,15 +26,29 @@
       </div><!-- .page-header -->
       <div class="product-slider">
         <div class="row">
-          <div class="images-container mobile">
-            <div class="col-12">
-              <ul class="images-list">
-                <li class="images-item"><img src="https://s7d9.scene7.com/is/image/TrueReligion/200991_1001_dtl4?$dfs_large$" alt="Imagen de producto"></li>
-                <li class="images-item"><img src="https://s7d9.scene7.com/is/image/TrueReligion/200991_1001_dtl4?$dfs_large$" alt="Imagen de producto"></li>
-                <li class="images-item"><img src="https://s7d9.scene7.com/is/image/TrueReligion/200991_1001_dtl4?$dfs_large$" alt="Imagen de producto"></li>
-                <li class="images-item"><img src="https://s7d9.scene7.com/is/image/TrueReligion/200991_1001_dtl4?$dfs_large$" alt="Imagen de producto"></li>
-                <li class="images-item"><img src="https://s7d9.scene7.com/is/image/TrueReligion/200991_1001_dtl4?$dfs_large$" alt="Imagen de producto"></li>
+          <div class="col-12 col-md-3 col-lg-2">
+            <div class="images-container isDesktop">
+              <ul class="images-list slider">
+              {% if product.images | length > 1 %}
+                {% for image in product.images if '_'~default_color in image.url |lower %}
+                <li class="images-item"><img class="images-img" src="{{ image.url }}&w=94&h=140&fit=crop" alt="{{ product.name }}" title="{{ product.name }}"></li>
+                {% endfor %}
+              {% endif %}
               </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-9 col-lg-10">
+            <div class="main-images-container">
+              <div class="main-image isDesktop">
+                <img id="mainzoom" class="main-image__img" src="{{ product.image_url }}" data-zoom-image="{{ product.image_url }}" alt="Imagen de producto">
+              </div>
+              <div class="main-image isMobile">
+              {% if product.images | length > 1 %}
+                {% for image in product.images if '_'~default_color in image.url |lower %}
+                <img class="main-image__img" src="{{ image.url }}&w=1200&h=1808&fit=crop" alt="Imagen de producto" alt="{{ product.name }}" title="{{ product.name }}">
+                {% endfor %}
+              {% endif %}
+              </div>
             </div>
           </div>
         </div>
@@ -58,8 +72,11 @@
       <div class="product-description">
         <div class="row">
           <div class="col-12">
-
-
+          {% set sections = product.description|split('@') %}
+          {% set section_one = sections[0]|replace({'<p>':'', '</p>':''})|trim %}
+          {% set section_two = sections[1]|replace({'<p>':'', '</p>':''})|trim %}
+          {% set section_three = section_two|split('-') %}
+          {% set section_four = sections[2]|replace({'<p>':'', '</p>':''})|trim %}
             <div class="accordion" id="productDescriptionBox">
               <div class="card">
                 <div class="card-header" id="headingOne">
@@ -72,8 +89,7 @@
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#productDescriptionBox">
                   <div class="card-body">
-                  The Womens Striped Logo Jogger is the perfect pick for anytime comfort and style. This women’s jogger features an easy drawcord waist, tapered ankle hem, contrast striping down the outer seams, and a branded inner waistband. Finished with handy hip pockets, back pockets with subtle horseshoe stitching, and a horseshoe logo on the hip.
-                  Style: 200991
+                  {{ section_one }}
                   </div>
                 </div>
               </div>
@@ -87,7 +103,14 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#productDescriptionBox">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  {{ section_two }}
+                  {% if section_three |length > 1 %}
+                    <ul class="card-list">
+                    {% for item in section_three %}
+                      <li class="card-list-item">{{ item|replace({'-':''}) }}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
                   </div>
                 </div>
               </div>
@@ -101,7 +124,7 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#productDescriptionBox">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  {{ section_four }}
                   </div>
                 </div>
               </div>

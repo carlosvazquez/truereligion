@@ -2,6 +2,43 @@
 
 {% block body_class %}product-page{% endblock body_class %}
 {% block body %}
+  {% set color_index = 0 %}
+  {% set colors_names = {} %}
+  {% set colors = {} %}
+  {% set default_color = '' %}
+
+  {# find what index in color variant #}
+  {% for modifier in product.modifiers %}
+    {% if modifier |lower == 'color' %}
+      {% set color_index = loop.index0 %}
+    {% endif %}
+  {% endfor %}
+
+  {% for sku in product.skus %}
+    {% set colors_names = colors_names|merge({ (sku.modifiers[color_index]|replace({' ': "-"})|lower):[] }) %}
+  {% endfor %}
+
+  {% for image in product.images %}
+      {% set image_url = image.url %}
+      {% for color, value in colors_names %}
+        {% if '_'~color|lower in image_url | lower %}
+        {% set colors = colors|merge([{ 'color' : color, 'url' : [image_url] }]) %}
+        {% endif %}
+      {% endfor %}
+  {% endfor %}
+
+  {% for attribute, attribute_variants in product.skus_modifiers %}
+    {% if attribute | lower == 'color' %}
+      {% set step = loop.index0 %}
+      {% set default_color = product.sku.modifiers[step] | lower %}
+    {% endif %}
+  {% endfor %}
+  {% set default_color = default_color|replace({' ': "-"}) %}
+  <script type="text/javascript">
+    var colors = {{ colors | json }};
+    var colorNames = {{ colors_names | json }};
+    var skus = {{ product.skus | json }};
+  </script>
 {% include '_product-content.twig' %}
 {% endblock %}
 

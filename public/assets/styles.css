@@ -6006,11 +6006,17 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
       color: #b2292e;
       margin-left: 7px; }
 
-.product-page .page-header.isMobile {
+.product-page .isMobile {
   display: none; }
   @media (max-width: 1149.98px) {
-    .product-page .page-header.isMobile {
+    .product-page .isMobile {
       display: block; } }
+
+.product-page .isDesktop {
+  display: block; }
+  @media (max-width: 1149.98px) {
+    .product-page .isDesktop {
+      display: none; } }
 
 .product-page .product-description .accordion .card .card-header:first-child__title {
   border: none; }
@@ -6077,12 +6083,85 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover {
   .product-page .product-description .accordion .card .card-body .text-link, .product-page .product-description .accordion .card .card-body .text-link:hover {
     color: #6e6e6e;
     text-decoration: none; }
+  .product-page .product-description .accordion .card .card-body .card-list {
+    list-style-position: outside;
+    margin-top: 12px;
+    padding: 0;
+    padding-left: 20px;
+    text-align: left; }
 
 .product-page .product-description .accordion .card:last-child button.btn.collapsed {
   border: none; }
 
 .product-page .product-description .accordion .card:last-child .card-body {
   border: none; }
+
+.product-page .product-slider .images-container {
+  overflow: hidden; }
+
+.product-page .product-slider .images-list {
+  padding: 0;
+  list-style: none;
+  margin: 0; }
+
+.product-page .product-slider .images-item {
+  display: block;
+  margin: 0;
+  padding: 0; }
+
+.product-page .product-slider .images-img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 93px; }
+
+@media (max-width: 1149.98px) {
+  .product-page .product-slider .images-container.mobile {
+    display: none; } }
+
+.product-page .product-slider .main-image__img {
+  height: auto;
+  margin: -40px auto 0;
+  width: 100%;
+  max-width: 660px; }
+
+.product-page .product-slider .main-image.isDesktop {
+  text-align: center; }
+
+.product-page .product-slider .slider {
+  padding: 25px 0;
+  position: relative; }
+  .product-page .product-slider .slider .products-slider__link {
+    background-color: #fff;
+    display: block;
+    height: 25px;
+    position: absolute;
+    width: 100%;
+    z-index: 20; }
+  .product-page .product-slider .slider .prev::before {
+    content: '';
+    background-image: url("https://cdn.kometia-static.com/true-religion/images/arrow-up.png?v=1547594918");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 30px; }
+  .product-page .product-slider .slider .next::before {
+    content: '';
+    background-image: url("https://cdn.kometia-static.com/true-religion/images/arrow-down.png?v=1547594918");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 30px; }
+  .product-page .product-slider .slider .products-slider__link.prev {
+    right: 0;
+    top: 0;
+    left: 0; }
+  .product-page .product-slider .slider .products-slider__link.next {
+    bottom: 0;
+    left: 0;
+    right: 0; }
 
 .product-page .related-products {
   margin: 40px 0; }

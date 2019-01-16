@@ -72,10 +72,16 @@
     }
   }
   // Header
-  .page-header.isMobile {
+  .isMobile {
     display: none;
     @include media-breakpoint-down(md) {
       display: block;
+    }
+  }
+  .isDesktop {
+    display: block;
+    @include media-breakpoint-down(md) {
+      display: none;
     }
   }
 
@@ -160,6 +166,13 @@
             color: #6e6e6e;
             text-decoration: none;
           }
+          .card-list {
+            list-style-position: outside;
+            margin-top: 12px;
+            padding: 0;
+            padding-left: 20px;
+            text-align: left;
+          }
         }
       }
       .card:last-child {
@@ -169,6 +182,88 @@
         .card-body {
           border: none;
         }
+      }
+    }
+  }
+  .product-slider {
+    .images {
+      &-container {
+        overflow: hidden;
+      }
+      &-list {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+      }
+      &-item {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+      &-img {
+        display: block;
+        height: auto;
+        margin: 0 auto;
+        width: 93px;
+      }
+      &-container.mobile {
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+      }
+    }
+    .main-images {
+      &-container {}
+    }
+    .main-image {
+      &__img {
+        height: auto;
+        margin: -40px auto 0;
+        width: 100%;
+        max-width: 660px;
+      }
+      &.isDesktop {
+        text-align: center;
+      }
+    }
+    .slider {
+      padding: 25px 0;
+      position: relative;
+      .products-slider__link {
+        background-color: $white;
+        display: block;
+        height: 25px;
+        position: absolute;
+        width: 100%;
+        z-index: 20;
+      }
+      .prev::before {
+        content: '';
+        background-image: url('https://cdn.kometia-static.com/true-religion/images/arrow-up.png?v=1547594918');
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        width: 100%;
+        height: 30px;
+      }
+      .next::before {
+        content: '';
+        background-image: url('https://cdn.kometia-static.com/true-religion/images/arrow-down.png?v=1547594918');
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        width: 100%;
+        height: 30px;
+      }
+      .products-slider__link.prev {
+        right: 0;
+        top: 0;
+        left: 0;
+      }
+      .products-slider__link.next {
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
     }
   }

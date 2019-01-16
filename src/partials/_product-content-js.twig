@@ -1,8 +1,52 @@
 {# {{ '//cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.18/jquery.zoom.min.js' | script_tag }} #}
 {# {{ 'sku-select/v1/sku-select.min.js' | global_asset_url | script_tag }} #}
+{{ '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js' | script_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js' | script_tag }}
+
 <script type="text/javascript">
   $(function() {
     console.log('product content js');
+    $('.slider').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      dots: false,
+      infinite: false,
+      arrows: true,
+      centerMode: false,
+      vertical: true,
+      verticalSwiping: true,
+      focusOnSelect: false,
+      appendArrows: $(".images-list.slider"),
+      prevArrow: '<a href="#" class="products-slider__link prev"></a>',
+      nextArrow: '<a href="#" class="products-slider__link next"></a>'
+    });
+    var updateMainImage = function(url){
+      var _newUrl = url;
+      $('.main-images-container .main-image.isDesktop .main-image__img').attr('src', _newUrl);
+      $('.main-images-container .main-image.isDesktop .main-image__img').data('zoom-image', _newUrl);
+      return true;
+    }
+    var zoomConfig = {cursor: 'crosshair', zoomType: "inner" };
+
+    var initZoom = function(){
+      $('.zoomContainer').remove();
+      var zoomImage = $('img#mainzoom');
+      zoomImage.removeData('elevateZoom');
+      $("#mainzoom").elevateZoom();
+    }
+    $("#mainzoom").elevateZoom();
+    var setThumbnailImageLinks = function(){
+      $('.images-container.isDesktop .images-list.slider .images-item .images-img').on('click', function(){
+        var _this = $(this);
+        var oldUrl = $('.main-images-container .main-image.isDesktop .main-image__img').attr('src').split('&')[0];
+        var newUrl = _this.attr('src').split('&')[0];
+        if(oldUrl != newUrl){
+          updateMainImage(newUrl);
+          initZoom();
+        }
+      });
+    }
+    setThumbnailImageLinks();
     $(window).on('resize', function() {
 
     });
