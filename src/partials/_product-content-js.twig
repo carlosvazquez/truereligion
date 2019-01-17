@@ -7,44 +7,27 @@
   $(function() {
     console.log('product content js');
     var ProductState = {
-        name: null,
-        permalink: null,
-        colorIndex: null,
-        color: null,
-        colors: null,
-        sizeIndex: null,
-        size: null,
-        sizes: null,
-        sizesAvailable: null,
-        images: null,
-        sku_selected: null,
-        skus: null,
-        size_default: null,
-        modifiers: null,
-        qty: 0,
-        normalPrice: null,
-        discountPrice: null,
-        stock: 0,
-        stockPolicy: 'overall',
-        isBackorderable: false,
-        cartQty: 1
+        colorSelected: null
     }
     console.log('default color: '+defaultColor);
+    var initSlider = function(){
+      $('.slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        infinite: false,
+        arrows: true,
+        centerMode: false,
+        vertical: true,
+        verticalSwiping: true,
+        focusOnSelect: false,
+        appendArrows: $(".images-list.slider"),
+        prevArrow: '<a href="#" class="products-slider__link prev"></a>',
+        nextArrow: '<a href="#" class="products-slider__link next"></a>'
+      });
+    }
+    initSlider();
 
-    $('.slider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      dots: false,
-      infinite: false,
-      arrows: true,
-      centerMode: false,
-      vertical: true,
-      verticalSwiping: true,
-      focusOnSelect: false,
-      appendArrows: $(".images-list.slider"),
-      prevArrow: '<a href="#" class="products-slider__link prev"></a>',
-      nextArrow: '<a href="#" class="products-slider__link next"></a>'
-    });
     var updateMainImage = function(url){
       var _newUrl = url;
       $('.main-images-container .main-image.isDesktop .main-image__img').attr('src', _newUrl);
@@ -72,15 +55,63 @@
       });
     }
     setThumbnailImageLinks();
+
     var getHtmlThumbnailsImages = function(){
-      var _color = defaultColor;
+      var _color = defaultColor.toLowerCase();
       var _html = '';
-      colors.forEach(function(){
-         _html += '<li class="thumbnails-permalink"><input id="'+colors+'" type="radio" name="color" value="'+colors+'" checked><label for="'+colors+'"><img class="thumbnails-image" src="aaaa"></label></li>';
+      Object.keys(colorNames).map(function(value){
+        var _isActive = value == _color ? 'checked' : '';
+        var _checkedDefault = value == _color ? 'checkedDefault' : '';
+        var currentColor = colors.find(function(v, i){
+          return value == v.color;
+        });
+      _html += '<li class="thumbnails-permalink '+_checkedDefault+'"><input id="'+value+'" class="" type="radio" name="color" value="'+value+'" '+_isActive+'><label for="'+value+'"><img class="thumbnails-image" src="'+currentColor.url+'"></label></li>';
       });
+
     return _html;
     }
+
+    var rebuildSlider = function(){
+      var colorName = ProductState.colorSelected;
+      var _html = '<ul class="images-list slider">';
+
+      colors.map(function(value, _){
+        if(value.color == colorName){
+          _html += '<li class="images-item">';
+          _html += '<img class="images-img" src="'+value.url[0]+'&w=94&h=140&fit=crop">';
+          _html += '</li>';
+        }
+      });
+         _html += '</ul>';
+      $('.slider').slick('unslick');
+      $('.images-container.isDesktop').empty();
+      $('.images-container.isDesktop').append(_html);
+      var mainImage = colors.find(function(value, _){
+        return colorName == value.color;
+      });
+      updateMainImage(mainImage.url[0]);
+      setTimeout(function(){
+        initSlider();
+      }, 500);
+      setTimeout(function(){
+        setThumbnailImageLinks();
+        initZoom();
+      }, 500);
+    }
+    var changeThumbnailOption = function(){
+      $('.color-options-js input[type=radio]').on('change',function(){
+        var _this = $(this).val();
+        $('.thumbnails-permalink').removeClass('checkedDefault');
+        if(ProductState.colorSelected != _this){
+          ProductState.colorSelected = _this;
+          rebuildSlider();
+        }
+      });
+    }
+
     var initDefaultValues = function(){
+      ProductState.colorSelected = defaultColor.toLowerCase();
+      var _color = ProductState.colorSelected;
       var _html = '';
       var $dataContainer = $('.product-data');
          _html += '<div class="color-selected">'+defaultColor+'</div>';
@@ -88,20 +119,14 @@
          _html += getHtmlThumbnailsImages();
          _html += '</ul>';
       $dataContainer.append(_html);
+      changeThumbnailOption();
     }
-
     initDefaultValues();
 
-    console.log('defaultColor: '+defaultColor);
-    console.log('colors: ');
-    console.log(colors);
-    console.log('color names: ');
-    console.log(colorNames);
-    console.log('skus: ');
-    console.log(skus);
-
     $(window).on('resize', function() {
-
+    });
+    $(window).on('load',function() {
+      $("input[name=color]:checked").next('img').css({'border':'1px solid #000000'});
     });
   });
 </script>

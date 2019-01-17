@@ -129,7 +129,7 @@
               text-decoration: none;
             }
             button.btn::after {
-              content: '+';
+              content: '-';
               bottom: 0;
               display: block;
               font-size: 15px;
@@ -142,7 +142,7 @@
               width: 34px;
             }
             button.btn.collapsed::after {
-              content: '-';
+              content: '+';
             }
           }
         }
@@ -296,6 +296,14 @@
       display: inline-block;
       margin: 4px;
       padding: 3px;
+    }
+    .thumbnails-permalink.checkedDefault {
+      label img {
+        border: 1px solid $black;
+      }
+    }
+    .slick-list.draggable {
+      max-height: 580px;
     }
     .thumbnails-permalink.active {
       border: 1px solid $black;
