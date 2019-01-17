@@ -6,6 +6,7 @@
   {% set colors_names = {} %}
   {% set colors = {} %}
   {% set default_color = '' %}
+  {% set default_size = '' %}
 
   {# find what index in color variant #}
   {% for modifier in product.modifiers %}
@@ -32,10 +33,15 @@
       {% set step = loop.index0 %}
       {% set default_color = product.sku.modifiers[step] | lower %}
     {% endif %}
+    {% if attribute | lower == 'talla' %}
+      {% set step = loop.index0 %}
+      {% set default_size = product.sku.modifiers[step] | lower %}
+    {% endif %}
   {% endfor %}
   {% set default_color = default_color|replace({' ': "-"}) %}
   <script type="text/javascript">
     var defaultColor = '{{ default_color |capitalize}}';
+    var defaultSize = '{{ default_size }}';
     var colors = {{ colors | json }};
     var colorNames = {{ colors_names | json }};
     var skus = {{ product.skus | json }};

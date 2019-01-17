@@ -7,7 +7,11 @@
   $(function() {
     console.log('product content js');
     var ProductState = {
-        colorSelected: null
+        colorSelected: null,
+        colorList: [],
+        permalink: null,
+        sizes: null,
+        defaultSize: defaultSize
     }
     console.log('default color: '+defaultColor);
     var initSlider = function(){
@@ -105,8 +109,54 @@
         if(ProductState.colorSelected != _this){
           ProductState.colorSelected = _this;
           rebuildSlider();
+          $('.product-data .color-selected').text(_this);
         }
       });
+    }
+    var sizesAvailable = function(){
+      var colors = ProductState.colorList;
+      var list = {};
+      colors.forEach(function(value, i){
+        var colorName = value.toLowerCase();
+        list[colorName] = [];
+      });
+      var _skus = skus;
+      skus.forEach(function(value, i){
+        if(value.stock_policy === 'none' || value.is_backorderable || value.in_stock > 0){
+          var color_name = value.modifiers[0].toLowerCase();
+          var size_value = value.modifiers[1].toLowerCase();
+          list[color_name].push(size_value);
+        }
+      });
+      ProductState.sizesAvailable = list;
+      return list;
+    }
+    var getHtmlSizesList = function(){
+      var sizes = [];
+      var _html = '';
+      skus.forEach(function(value, index){
+        var _size = value.modifiers[1].toLowerCase();
+        if(sizes.indexOf(_size) == -1){
+          sizes.push(_size);
+        }
+      });
+      ProductState.sizes = sizes;
+      sizes.forEach(function(value){
+        var _checked = ProductState.defaultSize === value ? 'checked' : '';
+        _html += '<li class="size-options__item"><input id="'+value+'" class="disabled" type="radio" name="size" value="'+value+'" '+_checked+'><label class="disabled" for="'+value+'">'+value+'</label></li>';
+      });
+      return _html;
+    }
+
+    var generatePermalink = function(){
+      var color = $('.color-options-js input[type=radio]').val();
+      var size = $('.size-options-js input[type=radio]').val();
+      ProductState.permalink = color+'-'+size;
+      return true;
+    }
+    var updateSizeStock = function(){
+      var color = ProductState.colorSelected;
+
     }
 
     var initDefaultValues = function(){
@@ -118,9 +168,24 @@
          _html += '<ul class="thumbnails-color color-options-js">';
          _html += getHtmlThumbnailsImages();
          _html += '</ul>';
+         _html += '<ul class="size-options size-options-js">';
+         _html += getHtmlSizesList();
+         _html += '</ul>';
       $dataContainer.append(_html);
+      generatePermalink();
+      Object.keys(colorNames).forEach(function(value){
+        ProductState.colorList.push(value);
+      });
+      updateSizeStock();
       changeThumbnailOption();
     }
+
+    console.log(ProductState);
+    console.log(defaultColor);
+    console.log(colors);
+    console.log(colorNames);
+    console.log(skus);
+
     initDefaultValues();
 
     $(window).on('resize', function() {
