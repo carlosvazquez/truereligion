@@ -48,6 +48,112 @@
     }
     initSlider();
 
+    // AJAX Add to Cart Component
+    // Add Product to cart by ajax
+    var root = window.location.hostname;
+    var PROTOCOL = window.location.protocol;
+    var getAjaxStoteUrl = function(type) {
+      return PROTOCOL + '//' + root + '/' + type;
+    }
+    var ajaxConfig = {
+      getUrl:   getAjaxStoteUrl('cart.json'),
+      postUrl: getAjaxStoteUrl('cart/add.js')
+    }
+    var buildAjaxResult = function(skuId, arraySkus) {
+      var _sku = skuId;
+      var _skus = arraySkus;
+      if($('.ajax-cart-result').length > 0){
+        $('.ajax-cart-result').remove();
+      }
+      var _sku = _skus.filter(function(value){
+        return value.sku.id === skuId;
+      });
+      _sku = _sku[0];
+
+      var description = '';
+
+      _sku.product.modifiers.forEach(function(value, index){
+        description += value + ': '+ _sku.sku.modifiers[index]+' ';
+      });
+
+      $('.product-slider').empty();
+      $('.product-data').empty();
+
+      $('.modal-dialog.modal-dialog-centered').addClass('ProductAddedToCart');
+
+      var modalBody = $('.modal-dialog.modal-dialog-centered .modal-content .modal-body .row');
+      modalBody.prepend('<div class="col-12 ajax-cart-result"></div>');
+      var container = $('.ajax-cart-result');
+      container.empty();
+      var _html = '<div class="minicart-ajax">';
+      _html += '<div class="minicart-ajax__container">';
+      _html += '<h3 class="minicart-ajax__title">'+_sku.product.name+'</h3>';
+      _html += '<div class="minicart-ajax__thumbnail">';
+      _html += '<img class="minicart-ajax__image"src="'+_sku.sku.image_url+'&w=44&h=58&fit=crop" alt="miniatura">';
+      _html += '</div>';
+      _html += '<div class="minicart-ajax__description">';
+      _html += '<p class="minicart-ajax__text">'+description+'</p>';
+      _html += '</div>';
+      _html += '<div class="minicart-ajax__footer">';
+      _html += '<p class="minicart-ajax__shopping-cart"><a class="btn btn-primary btn-lg btn-block minicart-ajax--btn" href="/carrito">Ver Carrito</a></p>';
+      _html += '<p class="minicart-ajax__shopping-keep"><a class="minicart-ajax--link" href="/productos">Continuar Comprando</a></p>';
+      _html += '</div>';
+      _html += '</div>';
+      _html += '</div>';
+      $(container).append(_html);
+    }
+    var displayCartWarning = function(data) {
+      var _html = '<p class="minicart-ajax__warning-text">'+data[1]+'</p>';
+      $('.minicart-ajax__footer').prepend(_html);
+      return true;
+    }
+    var hideAjaxModalCart = function(){
+      setTimeout(function(){
+        $('#modalProduct').modal('hide')
+      }, 2500);
+    }
+    var updateCartQty = function(qty){
+      $('.main-nav .right-module .icon-shopping-bag').addClass('active');
+      $('.cart-qty').text(qty);
+      return true;
+    }
+    var addSimpleProductToCarByAjax = function(sku, qty) {
+      var _sku = sku;
+      var qty = qty == null ? 1 : qty;
+      $.post(ajaxConfig.postUrl,{'sku_id':_sku,'quantity':qty})
+      .done(function(data) {
+        AjaxCart = data.object || {};
+        buildAjaxResult(_sku, AjaxCart.items);
+        extraData = data.extra ? 1 : 0;
+        updateCartQty(AjaxCart.total_items);
+        if(extraData){
+          displayCartWarning(data.extra);
+        }
+      hideAjaxModalCart();
+      })
+      .done(function(data){});
+    }
+    var addProductToCartByAjax = function() {
+      var sku = $("input#js-sku-id").val();
+      var qty = $("#quantity").val();
+      addSimpleProductToCarByAjax(sku, qty);
+    }
+    var enableAddToCartByAjaxBtn = function(){
+      $('.addToCart-js.active').on('click', function(e) {
+        console.log('fired');
+        e.preventDefault();
+        addProductToCartByAjax();
+        var el = $(this);
+        el.addClass('disabled');
+        el.prop('disabled', true);
+        setTimeout(function(){
+          el.removeClass('disabled');
+          el.prop('disabled', false);
+        }, 3000);
+      });
+    }
+    // End ajax component
+
     var updateMainImage = function(url){
       var _newUrl = url;
       $('.main-images-container .main-image.isDesktop .main-image__img').attr('src', _newUrl);
@@ -300,7 +406,7 @@
          _html += '<ul class="size-options size-options-js">';
          _html += getHtmlSizesList();
          _html += '</ul>';
-        _html += '<div class="addToCart">'+getAddToCartOptions()+'<button class="addToCart-js">Agregar al Carrito</button></div>';
+        _html += '<div class="addToCart">'+getAddToCartOptions()+'<button class="addToCart-js active">Agregar al Carrito</button></div>';
         _html += '<input type="hidden" name="sku_id" value="'+ProductState.sku_selected+'" id="js-sku-id">';
         _html += '<input type="hidden" id="quantity" name="quantity" value="1">';
       $dataContainer.append(_html);
@@ -314,6 +420,7 @@
       updateSizeStock();
       changeThumbnailOption();
       setAddToCart();
+      enableAddToCartByAjaxBtn();
     }
 
     initDefaultValues();
