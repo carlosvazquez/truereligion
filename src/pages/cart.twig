@@ -3,9 +3,9 @@
 {% block body_class %}cart-page{% endblock body_class %}
 {% block body %}
 {% set maxqty = 5 %}
-<div class="container page cart-page">
+<div class="container page">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <div class="cart-page__header block_title text-center">
         <h1 class="cart-page__title title">{{ settings.cart_title }}</h1>
         <hr class="page__line">
@@ -15,18 +15,17 @@
 
   <div class="row">
     <div class="col-sm-12 cart-page__content">
-    {% if cart.items | length > 0 %}
+  {% if cart.items | length > 0 %}
       <div class="row cart-page__heading-row hidden-xs">
         <div class="col-sm-6 col-md-8"><h5 class="cart-page__heading-row--title">Artículo</h5></div>
         <div class="col-sm-3 col-md-2"><h5 class="cart-page__heading-row--title">Cantidad</h5></div>
         <div class="col-sm-3 col-md-2"><h5 class="cart-page__heading-row--title cart-page__heading-row--right">Precio</h5></div>
       </div>
-
-    {% for item in cart.items %}
+      {% for item in cart.items %}
       <div class="row cart-page__items-row">
         <div class="col-sm-6 col-md-8 cart-item__data-container">
           <div class="row">
-            <div class="col-xs-4 col-md-3 cart-item__image">
+            <div class="col-4 col-md-3 cart-item__image">
             {% if item.sku.image_url is not empty %}
               <img class="img-fluid cart-item__image-thumbnail" src="{{ item.sku.image_url }}&w=250" width="250" alt="{{ item.product.name }}">
             {% elseif item.product.image_url is not empty %}
@@ -35,7 +34,7 @@
               <img class="img-fluid cart-item__image-thumbnail" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" width="100" alt="{{ item.product.name }}">
             {% endif %}
             </div>
-            <div class="col-xs-8 col-md-9 cart-item__product">
+            <div class="col-8 col-md-9 cart-item__product">
               <h4 class="cart-item__product--title"><a class="cart-item__product--link" href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}">{{ item.product.name }}</a></h4>
               {% for modifier in item.product.modifiers %}
               <p class="cart-item__product--variant">{{ modifier | title }}: <span class="cart-item__product--variant-desc">{{ item.sku.modifiers[loop.index0] | title }}</span></p>
@@ -56,7 +55,7 @@
                   <input type="hidden" name="_method" value="delete">
                   <input type="hidden" name="id" value="{{ item.id }}">
                   <input type="hidden" name="quantity" value="0">
-                  <button type="submit" class="btn btn-link btn-link item__delete">Borrar</button>
+                  <button type="submit" class="btn btn-primary item__delete">Borrar</button>
                 </form>
               </div>
               {% if cart.items | length > 1 %}
@@ -67,7 +66,7 @@
         </div>
 
         <div class="col-sm-3 col-md-2 cart-item__quantity-container hidden-xs">
-          <h5 class="visible-xs-block cart-item__quantity-item-title">Cantidad</h5>
+          <h5 class="visible-block cart-item__quantity-item-title">Cantidad</h5>
           <form name="updateQty" action="/carrito/actualizar" method="post" class="form-inline cart-item__quantity-form">
             <div class="form-group">
               <input type="hidden" name="_method" value="patch">
@@ -81,13 +80,13 @@
           </form>
         </div>
         <div class="col-sm-3 col-md-2 cart-item__price-container hidden-xs">
-          <h5 class="visible-xs-block cart-item__price-item-variant">Precio</h5>
+          <h5 class="visible-block cart-item__price-item-variant">Precio</h5>
           <h4 class="cart-item__price-item-price">{{ item.total | money('symbol', 'code') }}</h4>
         </div>
       </div>
-    {% endfor %}
+      {% endfor %}
       <div class="row cart-page__heading-row resume">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-12 col-sm-6">
           <form action="/carrito" method="post">
               <div class="cartgift__form">
                 <div class="checkbox">
@@ -113,22 +112,24 @@
           </form>
         </div>
 
-        <div class="col-xs-12 col-sm-6">
-          <div class="cart-page__payment__info">
+        <div class="col-12 col-sm-6">
+          <div class="cart-page__payment__info text-right">
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-12">
                 <h4 class="cart-page__payment__heading">Total</h4>
               </div>
-              <div class="col-xs-12">
+              <div class="col-12">
                 <h4 class="cart-page__payment__total">{{ cart.total_price | money('symbol', 'code') }}</h4>
                 {% if store.is_tax_included %}
                   <span class="cart-page__payment__taxes-included">IVA Incluído</span>
                 {% endif %}
               </div>
+              <div class="col-12">
+                <a href="/productos" class="btn btn-primary btn-lg cart-page__btn-cart">Ver más</a>
+                <a href="/checkout" class="btn btn-primary btn-lg cart-page__btn-cart">Pagar</a>
+              </div>
             </div>
           </div>
-          <a href="/productos" class="btn btn-primary btn-lg cart-page__btn-cart">Ver más</a>
-          <a href="/checkout" class="btn btn-primary btn-lg cart-page__btn-cart">Pagar</a>
         </div>
       </div>
   {% else %}
