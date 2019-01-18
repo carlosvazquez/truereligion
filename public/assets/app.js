@@ -152,12 +152,12 @@
     },
     // On Resize Events
     resizeEvents: function() {
-      console.log('Fire resize events');
+      // console.log('Fire resize events');
       this.setMegaMenu();
     },
     // On Load Events
     onLoadEvents: function() {
-      console.log('Fire on load events');
+      // console.log('Fire on load events');
     },
     onScrollEvents: function() {
       var windowPos = $(window).scrollTop();
@@ -182,7 +182,7 @@
     // Home page
     home_page: {
       init: function() {
-        console.log('estas en el home');
+        // console.log('estas en el home');
         this.collection_slider();
       },
       collection_slider: function() {
@@ -258,12 +258,12 @@
   $(function() {
     var currentTime;
     // Init App
-    console.log('on ready');
+    // console.log('on ready');
     STORE.loadEvents();
 
     // Windows events chained
     $(window).on('scroll', function() {
-      console.log('on scroll');
+      // console.log('on scroll');
       TrueReligion.onScrollEvents()
     })
     .on("resize", function() {
@@ -272,7 +272,7 @@
       currentTime = setTimeout(TrueReligion.resizeEvents(), 100);
     })
     .on("load", function () {
-      console.log('on load');
+      // console.log('on load');
       TrueReligion.onLoadEvents();
     });
   });

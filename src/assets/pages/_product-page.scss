@@ -34,9 +34,6 @@
   .page-header {
     border: none;
     display: block;
-    @include media-breakpoint-down(md) {
-      display: none;
-    }
     .title {
       color: $black;
       font-family: "Avenir Next Cyr W00 Medium",helvetica,sans-serif;
@@ -70,18 +67,11 @@
         margin-left: 7px;
       }
     }
-  }
-  // Header
-  .isMobile {
-    display: none;
-    @include media-breakpoint-down(md) {
-      display: block;
-    }
-  }
-  .isDesktop {
-    display: block;
-    @include media-breakpoint-down(md) {
+    &.isMobile {
       display: none;
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
     }
   }
 
@@ -218,6 +208,9 @@
         margin: -40px auto 0;
         width: 100%;
         max-width: 660px;
+        @include media-breakpoint-down(md) {
+          margin: 0 auto;
+        }
       }
       &.isDesktop {
         text-align: center;
@@ -448,5 +441,18 @@
         margin-bottom: 20px;
       }
     }
+  }
+}
+// Header
+.isMobile {
+  display: none;
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}
+.isDesktop {
+  display: block;
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
 }
