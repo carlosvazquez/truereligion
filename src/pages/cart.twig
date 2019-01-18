@@ -6,7 +6,7 @@
 <div class="container page cart-page">
   <div class="row">
     <div class="col-xs-12">
-      <div class="cart-page__header block_title">
+      <div class="cart-page__header block_title text-center">
         <h1 class="cart-page__title title">{{ settings.cart_title }}</h1>
         <hr class="page__line">
       </div>
@@ -26,15 +26,6 @@
       <div class="row cart-page__items-row">
         <div class="col-sm-6 col-md-8 cart-item__data-container">
           <div class="row">
-            <div class="cart-item_mobile-delete visible-xs">
-              <form action="/carrito/eliminar" method="post">
-                <input type="hidden" name="_method" value="delete">
-                <input type="hidden" name="id" value="{{ item.id }}">
-                <input type="hidden" name="quantity" value="0">
-                <button type="submit" class="btn-link item__delete"><i class="mdi mdi-close"></i></button>
-              </form>
-            </div>
-
             <div class="col-xs-4 col-md-3 cart-item__image">
             {% if item.sku.image_url is not empty %}
               <img class="img-fluid cart-item__image-thumbnail" src="{{ item.sku.image_url }}&w=250" width="250" alt="{{ item.product.name }}">
@@ -60,6 +51,14 @@
                   </select>
                 </div>
               </form>
+              <div class="cart-item_mobile-delete">
+                <form action="/carrito/eliminar" method="post">
+                  <input type="hidden" name="_method" value="delete">
+                  <input type="hidden" name="id" value="{{ item.id }}">
+                  <input type="hidden" name="quantity" value="0">
+                  <button type="submit" class="btn btn-link btn-link item__delete">Borrar</button>
+                </form>
+              </div>
               {% if cart.items | length > 1 %}
               <h5 class="cart-item__product--price visible-xs">{{ item.total | money('symbol', 'code') }}</h5>
               {% endif %}
@@ -84,14 +83,6 @@
         <div class="col-sm-3 col-md-2 cart-item__price-container hidden-xs">
           <h5 class="visible-xs-block cart-item__price-item-variant">Precio</h5>
           <h4 class="cart-item__price-item-price">{{ item.total | money('symbol', 'code') }}</h4>
-          <div class="cart-item__price-item-delete hidden-xs">
-            <form action="/carrito/eliminar" method="post" class="text-center">
-              <input type="hidden" name="_method" value="delete">
-              <input type="hidden" name="id" value="{{ item.id }}">
-              <input type="hidden" name="quantity" value="0">
-              <button type="submit" class="btn btn-link cart-item__price-item-btn"><i class="mdi mdi-close"></i></button>
-            </form>
-          </div>
         </div>
       </div>
     {% endfor %}
