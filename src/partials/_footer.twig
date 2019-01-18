@@ -56,10 +56,10 @@
 <div class="legal">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-7">
+      <div class="col-12 col-sm-6 col-md-6">
         <p class="legal__text">{{ "now"|date("Y") }} {{ settings.footer_menu_rights }}</p>
       </div>
-      <div class="col-sm-6 col-md-5 legal__menu">
+      <div class="col-12 col-sm-6 col-md-6 legal__menu">
         <ul class="legal__list">
         {% for item in menus[settings.footer_menu_legal]%}
           <li class="legal__item"><a class="legal__link" href="{{ item.link }}">{{ item.name }}</a></li>

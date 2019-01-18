@@ -1,7 +1,14 @@
 footer.footer {
   border-top: 1px solid #e3e3e3;
   background-color: $white;
+  margin-top: 120px;
   padding: 2.5% 0 0;
+  @include media-breakpoint-down(xl) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-down(sm) {
+    border: none
+  }
   .container {
     @include media-breakpoint-down(xl) {
       max-width: 1020px;
@@ -23,7 +30,7 @@ footer.footer {
       position: relative;
       @include media-breakpoint-down(sm) {
         border-bottom: none;
-        border-top: 1px solid #999999;
+        border-top: 1px solid #e3e3e3;
         display: block;
         height: auto;
         margin: 0;
@@ -108,7 +115,12 @@ footer.footer {
       .menu__title {
         margin-bottom: 0;
         @include media-breakpoint-down(sm) {
-          margin-bottom: 25px;
+          margin-bottom: 0;
+        }
+      }
+      .menu__newsletter {
+        @include media-breakpoint-down(sm) {
+          padding-top: 0;
         }
       }
       span.toggle-icon {
