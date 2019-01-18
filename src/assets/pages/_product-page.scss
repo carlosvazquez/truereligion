@@ -259,7 +259,7 @@
   }
 
   // Product Data
-  .product-data {
+  .product-data, .second-data {
     text-align: center;
 
     .thumbnails-color {
@@ -362,7 +362,7 @@
         display: inline-block;
         height: 40px;
         margin: 20px 0;
-        width: 12.7%;
+        width: 13%;
       }
       select.qty {
         border: 1px solid #000;
@@ -394,7 +394,7 @@
         padding: 0;
         pointer-events: none;
         text-transform: none;
-        width: 85%;
+        width: 82%;
         &.active {
           opacity: 1;
           background: #000000!important;

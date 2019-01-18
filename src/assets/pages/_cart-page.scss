@@ -1,0 +1,14 @@
+.cart-page {
+  .cart-item {
+    &__product--title {
+      color: $black;
+    }
+    &__product--link {
+      color: $black;
+    }
+    &__product--link:hover {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,7 +1,8 @@
 {% extends 'layout.twig' %}
 
+{% block body_class %}cart-page{% endblock body_class %}
 {% block body %}
-{% set maxqty = settings.max_cart_items > 20 ? 20 : settings.max_cart_items %}
+{% set maxqty = 5 %}
 <div class="container page cart-page">
   <div class="row">
     <div class="col-xs-12">
@@ -17,7 +18,7 @@
     {% if cart.items | length > 0 %}
       <div class="row cart-page__heading-row hidden-xs">
         <div class="col-sm-6 col-md-8"><h5 class="cart-page__heading-row--title">Artículo</h5></div>
-        <div class="col-sm-3 col-md-2"><h5 class="cart-page__heading-row--title text-center">Cantidad</h5></div>
+        <div class="col-sm-3 col-md-2"><h5 class="cart-page__heading-row--title">Cantidad</h5></div>
         <div class="col-sm-3 col-md-2"><h5 class="cart-page__heading-row--title cart-page__heading-row--right">Precio</h5></div>
       </div>
 
@@ -36,15 +37,15 @@
 
             <div class="col-xs-4 col-md-3 cart-item__image">
             {% if item.sku.image_url is not empty %}
-              <img class="cart-item__image-thumbnail" src="{{ item.sku.image_url }}&w=250" width="250" alt="{{ item.product.name }}">
+              <img class="img-fluid cart-item__image-thumbnail" src="{{ item.sku.image_url }}&w=250" width="250" alt="{{ item.product.name }}">
             {% elseif item.product.image_url is not empty %}
-              <img class="cart-item__image-thumbnail" src="{{ item.product.image_url }}&w=250" width="250" alt="{{ item.product.name }}">
+              <img class="img-fluid cart-item__image-thumbnail" src="{{ item.product.image_url }}&w=250" width="250" alt="{{ item.product.name }}">
             {% else %}
-              <img class="cart-item__image-thumbnail" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" width="100" alt="{{ item.product.name }}">
+              <img class="img-fluid cart-item__image-thumbnail" src="{{ 'placeholders/product-11.jpg' | global_img_url }}" width="100" alt="{{ item.product.name }}">
             {% endif %}
             </div>
             <div class="col-xs-8 col-md-9 cart-item__product">
-              <h4 class="cart-item__product--title"><a href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}">{{ item.product.name }}</a></h4>
+              <h4 class="cart-item__product--title"><a class="cart-item__product--link" href="/productos/{{ item.product.permalink }}{% if item.sku.permalink != 'default' %}/{{ item.sku.permalink }}{% endif %}">{{ item.product.name }}</a></h4>
               {% for modifier in item.product.modifiers %}
               <p class="cart-item__product--variant">{{ modifier | title }}: <span class="cart-item__product--variant-desc">{{ item.sku.modifiers[loop.index0] | title }}</span></p>
                {% endfor %}
@@ -97,31 +98,27 @@
       <div class="row cart-page__heading-row resume">
         <div class="col-xs-12 col-sm-6">
           <form action="/carrito" method="post">
-            {% if settings.enabled_gift_option %}
               <div class="cartgift__form">
                 <div class="checkbox">
-                  <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>{{ settings.gift_title_message }}</label>
+                  <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>Es un regalo</label>
                 </div>
                 <div class="cartgift__form--content">
                   <div class="form-group">
                     <label class="sr-only" for="gift_message">{{ settings.gift_title_message }}</label>
                     <textarea type="text" class="form-control" name="gift_message" value="{{ cart.gift_message }}" maxlength="150">{{ cart.gift_message }}</textarea>
                   </div>
-                  <button type="submit" class="btn btn-xs btn-primary cartgift__btn">{{ settings.gift_btn_message }}</button>
+                  <button type="submit" class="btn btn-xs btn-primary cartgift__btn">Guardar</button>
                 </div>
               </div>
-            {% endif %}
-            {% if settings.enabled_customer_note_option %}
             <hr>
-              <p>{{ settings.customer_title_note }}</p>
-              <div class="cartnote__form">
-                <div class="form-group">
-                  <label class="sr-only" for="note">{{ settings.customer_title_note }}</label>
-                  <textarea class="form-control cartnote__note" type="textarea" name="note" value="{{ cart.customer_note }}" maxlength="500">{{ cart.customer_note }}</textarea>
-                </div>
-                <button type="submit" class="btn btn-xs btn-primary cartnote__btn">{{ settings.customer_btn_note_text }}</button>
+            <p>Agregar nota al pedido</p>
+            <div class="cartnote__form">
+              <div class="form-group">
+                <label class="sr-only" for="note">Agregar nota al pedido</label>
+                <textarea class="form-control cartnote__note" type="textarea" name="note" value="{{ cart.customer_note }}" maxlength="500">{{ cart.customer_note }}</textarea>
               </div>
-            {% endif %}
+              <button type="submit" class="btn btn-xs btn-primary cartnote__btn">Guardar</button>
+            </div>
           </form>
         </div>
 
@@ -139,8 +136,8 @@
               </div>
             </div>
           </div>
-          <a href="/productos" class="btn btn-primary btn-lg cart-page__btn-cart">{{ settings.cart_btn_more_text }}</a>
-          <a href="/checkout" class="btn btn-primary btn-lg cart-page__btn-cart">{{ settings.cart_btn_buy_text }}</a>
+          <a href="/productos" class="btn btn-primary btn-lg cart-page__btn-cart">Ver más</a>
+          <a href="/checkout" class="btn btn-primary btn-lg cart-page__btn-cart">Pagar</a>
         </div>
       </div>
   {% else %}
