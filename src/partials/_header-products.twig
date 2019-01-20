@@ -67,17 +67,15 @@
   </div>
 </div>
 
+{% if useFilters %}
 <div class="filtersbar">
   <div class="container">
-
     <div class="row">
-
       <div class="col-6">
         <div class="filter">
           <h4 class="filter__title">Filtro</h4>
         </div>
       </div>
-      
       <div class="col-6">
         <div class="selector">
           <h4 class="selector__title">Ordenar: <span></span></h4>
@@ -92,9 +90,6 @@
         </div>
       </div>
     </div>
-
-{# {% set options = [name,title,custom,maxcollections,type_colors,type_sizes,type_inseams,type_silhouettes,type_fits,type_rises,type_washs,type_pocket_flaps] %} #}
-
     <div class="filter-frame filter">
       <div class="row">
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
@@ -264,6 +259,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
+{% endif %}
