@@ -1,22 +1,20 @@
 {% extends 'layout.twig' %}
 
+{% block body_class %}login-page{% endblock body_class %}
 {% block body %}
-<div class="container page login-page">
+<div class="container page">
   <div class="row">
     <div class="col-xs-12">
-      <div class="login-page__header block_title">
-        <h1 class="login-page__title title">Iniciar Sesión</h1>
-        <hr class="page__line">
+      <div class="page__header">
+        <h1 class="page__title">Iniciar Sesión</h1>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 text-center login-page__create-account">
-      <p class="login-page__create-account-link">¿No estás registrado? <a href="/cuenta/registro">Crear cuenta</a></p>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-4 login-page__content">
+      <div class="col-xs-12 text-center page__create-account">
+        <p class="page__create-account-link">¿No estás registrado? <a href="/cuenta/registro">Crear cuenta</a></p>
+      </div>
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-4 page__content">
       {% form 'customer_login' 'role="form" class="login-page__login-form"' %}
         <div class="row">
           <div class="col-xs-12">

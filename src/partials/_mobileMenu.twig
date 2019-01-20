@@ -5,7 +5,7 @@
         <img src="https://cdn.kometia-static.com/true-religion/images/delete-cross.png?v=1545332633" alt="Close menu">
       </span>
     </li>
-    {% for link in menus.truereligion %}
+    {% for link in menus.main %}
     {% if link.children | length > 0 %}
     <li class="navigation__item navigation--has-children">
       <a href="{{ link.url }}" class="navigation__link-title">{{ link.name }}</a>

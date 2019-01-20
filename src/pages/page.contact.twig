@@ -1,21 +1,20 @@
 {% extends 'layout.twig' %}
 {% block body_class %}contact-page{% endblock body_class %}
 {% block body %}
-  <div class="container page contact-page">
+  <div class="container page">
     <div class="row">
       <div class="col-xs-12">
-        <div class="contact-page__header block_title">
-          <h1 class="contact-page__title title">{{ page.title }}</h1>
-          <hr class="page__line">
+        <div class="page__header">
+          <h1 class="page__title">{{ page.title }}</h1>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 contact-page__content">
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 page__content">
         {{ page.content }}
       </div>
     </div>
-    <div class="row contact-page__form">
+    <div class="row page__form">
       <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         {% form 'contact' 'role="form" class="contact-form"' %}
           <div class="form-group">
@@ -44,7 +43,7 @@
     </div>
   {% endif %}
   {% if settings.map_is_enabled %}
-    <div class="contact-page__gmaps">
+    <div class="page__gmaps">
       <div class="row">
         <div class="col-sm-12 text-center contact-page__map center-map">
           <div id="map" class="map"></div>
@@ -52,12 +51,12 @@
       </div>
     </div>
   {% endif %}
-  <div class="container contact-page__placeholder">
+  <div class="container page__placeholder">
     <div class="row">
       <div class="col-sm-12">
-        <div class="contact-page__placeholder-help">
-          <div class="contact-page__placeholder-helper">
-            <div class="contact-page__placeholder-info text-center">
+        <div class="page__placeholder-help">
+          <div class="page__placeholder-helper">
+            <div class="page__placeholder-info text-center">
               <p>Ocurrió un error con la configuración del mapa, por favor verifica la dirección o la llave de acceso.</p>
             </div>
           </div>
@@ -101,11 +100,11 @@
             title: '{{ store_name }}'
           });
          {% endif %}
-        $('.contact-page__gmaps').show();
-        $('.contact-page__placeholder').hide();
+        $('.page__gmaps').show();
+        $('.page__placeholder').hide();
        } else {
-        $('.contact-page__gmaps').hide();
-        $('.contact-page__placeholder').show();
+        $('.page__gmaps').hide();
+        $('.page__placeholder').show();
       }
     });
    }
@@ -116,7 +115,7 @@
   async defer></script>
 {% else %}
   <script type="text/javascript">
-  $('.contact-page__placeholder').hide();
+  $('.page__placeholder').hide();
   </script>
 {% endif %}
 

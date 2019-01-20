@@ -1,17 +1,17 @@
 {% extends 'layout.twig' %}
 
+{% block body_class %}reset-page{% endblock body_class %}
 {% block body %}
-<div class="container page reset-page">
+<div class="container page">
   <div class="row">
     <div class="col-xs-12">
-      <div class="reset-page__header block_title">
-        <h1 class="reset-page__title title">Restablecer Contraseña</h1>
-        <hr class="page__line">
+      <div class="page__header">
+        <h1 class="page__title">Restablecer Contraseña</h1>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12 reset-page__content">
+    <div class="col-sm-12 page__content">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         {% form 'customer_reset_password' 'role="form"' %}
