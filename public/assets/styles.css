@@ -4087,7 +4087,7 @@ nav.navigation {
     display: block;
     max-width: 100%;
     height: auto;
-    width: 42px; }
+    width: 40px; }
   .topbanner .flags__currency {
     display: table-cell;
     height: 100%;
@@ -5612,7 +5612,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
   background-color: #ddd59d; }
 
 .filter-frame.filter .type-color .color-morado {
-  background-color: "{{ settings.filter_color_morado; }
+  background-color: #6B4C81; }
 
 .filter-frame.filter .type-color .color-naranja {
   background-color: #DA970A; }
