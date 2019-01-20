@@ -2,69 +2,57 @@
 
 {% block body_class %}products-page search-page hasModal{% endblock body_class %}
 {% block body %}
-  {% if not performed %}
+  {% if results.products | length == 0 %}
   <div class="container page">
     <div class="row">
       <div class="col-xs-12">
         <div class="page__header">
-          <h1 class="page__title">Buscar</h1>
+          <h1 class="page__title">No hay resultados</h1>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <form role="search" action="/buscar" method="get" class="search-page__form">
+        <form role="search" action="/buscar" method="get" class="page__form">
           <input type="hidden" name="type" value="product"/>
           <div class="form-group">
-            <label class="search-page__label" for="q">Término de búsqueda</label>
-            <input type="text" placeholder="Término de búsqueda" class="form-control search-page__input" name="q">
-            <input type="submit" class="btn btn-primary search-page__btn" value="&nbsp; Buscar &nbsp;">
+            <label class="page__label" for="q">Término de búsqueda</label>
+            <input type="text" placeholder="Término de búsqueda" class="form-control page__input" name="q">
+            <input type="submit" class="btn btn-primary page__btn" value="&nbsp; Buscar &nbsp;">
           </div>
         </form>
       </div>
     </div>
   </div>
   {% else %}
-    {% if results.products | length == 0 %}
-    <div class="container page">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="page__header">
-            <h1 class="page__title">No hay resultados</h1>
+  {% include '_header-products.twig' with { 'title': 'Resultados', 'type': 'search','isCollection': false, 'useFilters': false } %}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <form role="search" action="/buscar" method="get" class="page__form">
+          <input type="hidden" name="type" value="product"/>
+          <div class="form-group">
+            <label class="page__label" for="q">Término de búsqueda</label>
+            <input type="text" placeholder="Término de búsqueda" class="form-control page__input" name="q">
+            <input type="submit" class="btn btn-primary page__btn" value="&nbsp; Buscar &nbsp;">
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-          <form role="search" action="/buscar" method="get" class="search-page__form">
-            <input type="hidden" name="type" value="product"/>
-            <div class="form-group">
-              <label class="search-page__label" for="q">Término de búsqueda</label>
-              <input type="text" placeholder="Término de búsqueda" class="form-control search-page__input" name="q">
-              <input type="submit" class="btn btn-primary search-page__btn" value="&nbsp; Buscar &nbsp;">
-            </div>
-          </form>
-        </div>
+        </form>
       </div>
-    </div>
-    {% else %}
-    {% include '_header-products.twig' with { 'title': 'Resultados', 'type': 'products','isCollection': false, 'useFilters': false } %}
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <script type="text/javascript">
-            var ProductsObj = [];
-          </script>
-          <div class="row symmetrical-container">
-          {% for product in results.products %}
-            <div class="col-xs-6 col-md-4 symmetrical">
-              {% include '_product-card.twig' %}
-            </div>
-          {% endfor %}
-            <div class="col-xs-12">
-              {% include '_pagination.twig' %}
-            </div>
+      <div class="col-xs-12">
+        <script type="text/javascript">
+          var ProductsObj = [];
+        </script>
+        <div class="row symmetrical-container">
+        {% for product in results.products %}
+          <div class="col-xs-6 col-md-4 symmetrical">
+            {% include '_product-card.twig' %}
+          </div>
+        {% endfor %}
+          <div class="col-xs-12">
+            {% include '_pagination.twig' %}
           </div>
         </div>
       </div>
     </div>
-    {% endif %}
+  </div>
   {% endif %}
 {% endblock %}
 {% block body_js %}
