@@ -50,9 +50,9 @@
 {% set options = { 'name':name,'title':title,'custom':custom,'maxcollections':maxcollections,'type_colors':type_colors,'type_sizes':type_sizes,'type_inseams':type_inseams,'type_silhouettes':type_silhouettes,'type_fits':type_fits,'type_rises':type_rises,'type_washs':type_washs,'type_pocket_flaps':type_pocket_flaps } %}
 
 {% if custom %}
-  {% include '_header-products.twig' with { 'title': title, 'type': 'collection','isCollection': true, 'options': options } %}
+  {% include '_header-products.twig' with { 'title': title, 'type': 'collection','isCollection': true, 'options': options, 'useFilters': true } %}
 {% else %}
-  {% include '_header-products.twig' with { 'title': title, 'type': 'collection','isCollection': true } %}
+  {% include '_header-products.twig' with { 'title': title, 'type': 'collection','isCollection': true, 'useFilters': true } %}
 {% endif %}
 
   <div class="container">

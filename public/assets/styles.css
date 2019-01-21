@@ -6985,3 +6985,17 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
   font-stretch: normal;
   line-height: 1.2;
   letter-spacing: .4px; }
+
+.search-page .page__content {
+  min-height: 200px; }
+
+.search-page .page__description {
+  margin-bottom: 40px;
+  text-align: center; }
+
+.search-page .page__not-found-title {
+  margin-bottom: 20px; }
+
+.search-page .page__input {
+  margin-bottom: 20px;
+  padding: 20px 15px; }

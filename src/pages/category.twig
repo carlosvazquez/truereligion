@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
 {% block body_class %}products-page hasModal{% endblock body_class %}
 {% block body %}
-  {% include '_header-products.twig' with { 'title': category.title, 'type': 'category','isCollection': false } %}
+  {% include '_header-products.twig' with { 'title': category.title, 'type': 'category','isCollection': false, 'useFilters': true } %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
