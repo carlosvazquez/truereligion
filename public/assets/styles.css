@@ -5279,7 +5279,8 @@ footer.footer {
   footer.footer .menu__newsletter {
     padding: 20px 0; }
     footer.footer .menu__newsletter .newsletter {
-      height: 42px; }
+      height: 42px;
+      width: 100%; }
       footer.footer .menu__newsletter .newsletter .row > .form-group {
         padding-right: 0; }
         @media (max-width: 799.98px) {
@@ -5290,7 +5291,12 @@ footer.footer {
       height: 42px;
       width: 100%; }
     footer.footer .menu__newsletter button.btn {
+      background-color: #bfbfbf;
+      border-color: #bfbfbf;
       height: 100%; }
+    footer.footer .menu__newsletter button.btn.active {
+      background-color: #000;
+      border-color: #000; }
   @media (max-width: 799.98px) {
     footer.footer .menu__item {
       display: block; } }
