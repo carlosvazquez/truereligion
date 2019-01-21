@@ -5543,7 +5543,7 @@ body.hasModal {
 
 .hasModal .product-slider {
   display: block;
-  margin-top: -40px;
+  margin-top: 0;
   overflow: hidden; }
   .hasModal .product-slider .slick-slide {
     display: inline-block !important; }
@@ -6714,6 +6714,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
   margin: 0; }
 
 .product-page .product-slider .images-item {
+  cursor: pointer;
   display: block;
   margin: 0;
   padding: 0; }
