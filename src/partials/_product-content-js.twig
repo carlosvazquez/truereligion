@@ -140,19 +140,27 @@
 
     var updateMainImage = function(url){
       var _newUrl = url;
-      $('.main-images-container .main-image.isDesktop .main-image__img').attr('src', _newUrl);
-      $('.main-images-container .main-image.isDesktop .main-image__img').data('zoom-image', _newUrl);
+      $('.main-images-container .main-image.isDesktop .main-image__img').attr('src', _newUrl+'&w=585&h=881&fit=crop');
+      $('.main-images-container .main-image.isDesktop .main-image__img').data('zoom-image', _newUrl+'&w=850&h=1280&fit=crop');
       return true;
     }
-    var zoomConfig = {cursor: 'crosshair', zoomType: "inner" };
+    var zoomConfig = {
+      cursor: 'crosshair',
+      zoomType: 'window',
+      lensSize: 100,
+      borderColour: '#cccccc',
+      lenszoom: true,
+      zoomWindowWidth: 430,
+      zoomWindowHeight: 600
+      };
 
     var initZoom = function(){
       $('.zoomContainer').remove();
       var zoomImage = $('img#mainzoom');
       zoomImage.removeData('elevateZoom');
-      $("#mainzoom").elevateZoom();
+      $("#mainzoom").elevateZoom(zoomConfig);
     }
-    $("#mainzoom").elevateZoom();
+    $("#mainzoom").elevateZoom(zoomConfig);
     var setThumbnailImageLinks = function(){
       $('.images-container.isDesktop .images-list.slider .images-item .images-img').on('click', function(){
         var _this = $(this);

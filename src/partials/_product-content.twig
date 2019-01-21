@@ -3,7 +3,7 @@
   <div class="row">
 
 
-    <div class="col-12 col-sm-12 col-md-8 col-lg-9 columnA">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-7 col-lg-offset-1 columnA">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Inicio</a></li>
@@ -40,12 +40,12 @@
           <div class="col-12 col-md-9 col-lg-10">
             <div class="main-images-container">
               <div class="main-image isDesktop">
-                <img id="mainzoom" class="main-image__img" src="{{ product.image_url }}" data-zoom-image="{{ product.image_url }}" alt="Imagen de producto">
+                <img id="mainzoom" class="main-image__img" src="{{ product.image_url }}&w=585&h=881&fit=crop" data-zoom-image="{{ product.image_url }}&w=850&h=1280&fit=crop" alt="Imagen de producto">
               </div>
               <div class="main-image isMobile">
               {% if product.images | length > 1 %}
                 {% for image in product.images if '_'~default_color in image.url |lower %}
-                <img class="main-image__img" src="{{ image.url }}&w=1200&h=1808&fit=crop" alt="Imagen de producto" alt="{{ product.name }}" title="{{ product.name }}">
+                <img class="main-image__img" src="{{ image.url }}&w=585&h=881&fit=crop" alt="Imagen de producto" alt="{{ product.name }}" title="{{ product.name }}">
                 {% endfor %}
               {% endif %}
               </div>

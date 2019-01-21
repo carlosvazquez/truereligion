@@ -82,6 +82,7 @@ footer.footer {
       padding: 20px 0;
       .newsletter {
         height: 42px;
+        width: 100%;
         .row > .form-group {
           padding-right: 0;
           @include media-breakpoint-down(sm) {
@@ -95,7 +96,13 @@ footer.footer {
         width: 100%;
       }
       button.btn {
+        background-color: #bfbfbf;
+        border-color: #bfbfbf;
         height: 100%;
+      }
+      button.btn.active {
+        background-color: $black;
+        border-color: $black;
       }
     }
     &__item {
