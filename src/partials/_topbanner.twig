@@ -1,7 +1,7 @@
 <div class="topbanner bgblack">
   <div class="container">
     <div class="row">
-      <div class="col-lg-2 col-xl-3 d-none d-lg-inline-block">
+      <div class="col-lg-2 col-xl-2 d-none d-lg-inline-block">
         <div class="flags d-none d-sm-table">
           <span class="flags__img"><img src="https://cdn.kometia-static.com/true-religion/images/mexicoflag.jpg?v=1545332635"></span> <span class="flags__currency">MEX ($MXN)</span>
         </div>
@@ -11,16 +11,26 @@
           <p class="message__text">Descuento de 30-70% + Envío Gratis - <a  class="message__link message--first" href="#">MENS</a> | <a class="message__link message--second" href="">WOMENS</a></p>
         </div>
       </div>
-      <div class="col-lg-2 col-xl-3 d-none d-lg-inline-block text-right">
+      <div class="col-lg-2 col-xl-4 d-none d-lg-inline-block text-right">
         <ul class="access d-none d-sm-inline-block">
-          <li class="access__item"><a class="access__link access--signin" href="#">Entrar</a><span class="access--separator">/</span><a class="access__link access--register" href="#">Registrar</a></li>
+        {% if store.customer_accounts_enabled_or_optional %}
+          {% if customer %}
+          <li class="access__item"><a class="access__link access--signin" href="/cuenta/logout">Salir</a></li>
+          {% else %}
+          <li class="access__item"><a class="access__link access--signin" href="/cuenta/login">Entrar</a><span class="access--separator">/</span><a class="access__link access--register" href="/cuenta/registro">Registrar</a></li>
+          {% endif %}
           <div class="login-window">
             <div class="login-window__container">
-              <a class="login-window__link login-window--my-account" href="#" title="Sign In">Mi Cuenta</a>
-              <a class="login-window__link login-window--order-status" href="#" title="Order Status">Estado de Orden</a>
-              <a class="btn login-window__link login-window--btn" href="#" title="Sign In">Salir</a>
+              <a class="login-window__link login-window--my-account" href="/cuenta" title="Sign In">Mi Cuenta</a>
+              <a class="login-window__link login-window--order-status" href="/cuenta" title="Order Status">Estado de Orden</a>
+              {% if customer %}
+              <a class="btn login-window__link login-window--btn" href="/cuenta/logout" title="Sign In">Salir</a>
+              {% else %}
+              <a class="btn login-window__link login-window--btn" href="/cuenta/login" title="Sign In">Entrar</a>
+              {% endif %}
             </div>
           </div>
+        {% endif %}
         </ul>
         <ul class="findstore d-none d-xl-inline-block">
           <li class="findstore__item"><a href="{{ settings.footer_menu_four_store_locator_url }}" class="findstore__link">Encontrar una tienda</a></li>
