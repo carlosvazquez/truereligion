@@ -373,7 +373,7 @@
       listcolors = [];
       object.skus.forEach(function(element){
         element.modifiers.forEach(function(color, i){
-          var _color = lowerCase(color);
+          var _color = lowerCase(color).replace(' ', '-');
           if(i === _index && listcolors.indexOf(_color) === -1) {
             listcolors.push(_color);
           }
@@ -440,7 +440,7 @@
       var skus = object.skus;
       skus.forEach(function(value, i){
         if(value.stock_policy === 'none' || value.is_backorderable || value.in_stock > 0){
-          var color_name = value.modifiers[color_index].toLowerCase();
+          var color_name = value.modifiers[color_index].toLowerCase().replace(' ', '-');
           var size_value = value.modifiers[size_index].toLowerCase();
           list[color_name].push(size_value);
         }
