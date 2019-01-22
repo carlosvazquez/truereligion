@@ -1,0 +1,97 @@
+.minicart {
+  background-color: $white;
+  border: 1px solid #e3e3e3;
+  display: none;
+  height: auto;
+  margin-top: 10px;
+  padding: 0 20px 10px 20px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 320px;
+  &.active {
+    display: block;
+  }
+  .minicart__product {
+    margin: 12px 0;
+  }
+  &__title {
+    border-bottom: 1px solid #e3e3e3;
+    color: $black;
+    display: block;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: 1;
+    margin: 0 0 8px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0;
+  }
+  &__container {
+    display: block;
+  }
+  &__image {
+    margin: 0;
+    padding: 0;
+  }
+  &__url {
+    background-color: $white;
+    display: block;
+    height: auto;
+    width: 54px;
+  }
+  &__data {
+    padding: 0;
+    text-align: left;
+  }
+  &__name {
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  &__variants {
+    list-style: none;
+    padding: 0;
+  }
+  &__variant {
+    color: #6e6e6e;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: .3px;
+    line-height: 1.5;
+  }
+  &__total-price {
+    float: right;
+  }
+  &__footer {
+    display: block;
+  }
+  &__subtotal {
+    border-top: 1px solid #e3e3e3;
+    padding: 12px 0;
+    text-align: left;
+  }
+  &__subtotal-money {
+    float: right;
+  }
+  &__btn-checkout {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    text-transform: capitalize;
+  }
+  &__message {
+    color: #b2292e;
+    font-family: "FrankRuhlLibre-Regular";
+    line-height: 1.83;
+    font-size: 12px;
+    letter-spacing: .3px;
+    margin: 0;
+    text-align: center;
+  }
+}

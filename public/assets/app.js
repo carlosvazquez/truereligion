@@ -33,6 +33,7 @@
         this.MobileMenu();
         this.setMegaMenu();
         this.footerMenu();
+        this.enableAjaxMiniCart();
       },
       LocalStorage: function() {
         if(window.localStorage.getItem("newsletter_discount") == null) {
@@ -147,6 +148,83 @@
         $('.toggle-icon').on('click', function(){
           $(this).toggleClass('plus minus');
           $(this).parent().next('.menu__list').slideToggle();
+        });
+      },
+      enableAjaxMiniCart: function() {
+        var miniCartFirstLoad = true;
+        var root = window.location.hostname;
+        var PROTOCOL = window.location.protocol;
+        var getAjaxStoteUrl = function(type) {
+          return PROTOCOL + '//' + root + '/' + type;
+        }
+        var ajaxConfig = {
+          getUrl:   getAjaxStoteUrl('cart.json'),
+          postUrl: getAjaxStoteUrl('cart/add.js')
+        }
+        var miniCartTemplate = function(item){
+          var _html = '<div class="col-12 minicart__product">';
+          _html    += '<div class="row">';
+          _html    += '<div class="col-3 minicart__image">';
+          _html    += '<img src="'+item.sku.image_url+'&w=54&h=81&fit=crop" alt="Miniatura" class="minicart__url">';
+          _html    += '</div>';
+          _html    += '<div class="col-9 minicart__data">';
+          _html    += '<h5 class="minicart__name">'+item.product.name+'</h5>';
+          _html    += '<ul class="minicart__variants">';
+          _html    += '<li class="minicart__variant">Color: <span class="minicart__tag">'+item.sku.modifiers[0]+'</span></li>';
+          _html    += '<li class="minicart__variant">Talla: <span class="minicart__tag">'+item.sku.modifiers[1]+'</span></li>';
+          _html    += '<li class="minicart__variant">Qty: <span class="minicart__tag">'+item.quantity+'</span> $<span class="minicart__total-price">$ '+(item.total/100)+'</span></li>';
+          _html    += '</ul>';
+          _html    += '</div>';
+          _html    += '</div>';
+          _html    += '</div>';
+
+          return _html;
+        }
+        var buildMiniAjaxCart = function(items) {
+          var total = 0;
+          var $container = $('.minicart__container .container .row');
+          var _html = '';
+          items.forEach(function(value){
+            total += value.total;
+            _html += miniCartTemplate(value);
+          });
+          $container.append(_html);
+          $('.minicart__subtotal-money').text('$ '+(total/100));
+          $('.minicart').slideDown();
+        }
+        var closeCartModal = function(){
+          $('.minicart').slideUp();
+        }
+        var getCartProductsByAjax = function() {
+          if(miniCartFirstLoad) {
+            $.ajax({
+              url:ajaxConfig.getUrl,
+              type:'GET',
+              success: function(data, textStatus, jqXHR) {
+                var AjaxCart = data.object || {};
+                buildMiniAjaxCart(AjaxCart.items);
+              },
+              error: function(data, textStatus, errorThrown) {
+                console.log('message=:'+data+', text status=:'+textStatus+', error thrown:='+errorThrown)
+              }})
+            .done(function(data){
+              setTimeout(function(){
+                closeCartModal();
+              }, 4000);
+            });
+          } else {
+            $('.minicart').slideDown();
+            setTimeout(function(){
+              closeCartModal();
+            }, 4000);
+          }
+          miniCartFirstLoad = false;
+        }
+        $(".icon-shopping-bag").mouseover(function() {
+          var _this = this;
+          if($(_this).hasClass('active')){
+            getCartProductsByAjax();
+          }
         });
       }
     },
@@ -277,6 +355,3 @@
     });
   });
 })(jQuery);
-
-
-
