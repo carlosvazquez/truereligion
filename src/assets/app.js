@@ -171,8 +171,8 @@
           _html    += '<h5 class="minicart__name">'+item.product.name+'</h5>';
           _html    += '<ul class="minicart__variants">';
           _html    += '<li class="minicart__variant">Color: <span class="minicart__tag">'+item.sku.modifiers[0]+'</span></li>';
-          _html    += '<li class="minicart__variant">Talla: <span class="minicart__tag">'+item.sku.modifiers[1]+'</span></li>';
-          _html    += '<li class="minicart__variant">Qty: <span class="minicart__tag">'+item.quantity+'</span> $<span class="minicart__total-price">$ '+(item.total/100)+'</span></li>';
+          _html    += '<li class="minicart__variant">Talla: <span class="minicart__tag">'+item.sku.modifiers[1].toUpperCase()+'</span></li>';
+          _html    += '<li class="minicart__variant">Cant: <span class="minicart__tag">'+item.quantity+'</span> <span class="minicart__total-price">$ '+(item.total/100)+'</span></li>';
           _html    += '</ul>';
           _html    += '</div>';
           _html    += '</div>';
@@ -216,7 +216,7 @@
             $('.minicart').slideDown();
             setTimeout(function(){
               closeCartModal();
-            }, 4000);
+            }, 3000);
           }
           miniCartFirstLoad = false;
         }
