@@ -6376,6 +6376,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
 .home-page .page__header,
 .maintenance-page .page__header,
 .contact-page .page__header,
+.contactus-page .page__header,
 .simple-page .page__header,
 .password-page .page__header,
 .post-page .page__header,
@@ -6401,6 +6402,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
 .home-page .page__title,
 .maintenance-page .page__title,
 .contact-page .page__title,
+.contactus-page .page__title,
 .simple-page .page__title,
 .password-page .page__title,
 .post-page .page__title,
@@ -6433,6 +6435,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
 .home-page .page__content,
 .maintenance-page .page__content,
 .contact-page .page__content,
+.contactus-page .page__content,
 .simple-page .page__content,
 .password-page .page__content,
 .post-page .page__content,
@@ -6456,6 +6459,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
 .home-page .page__description,
 .maintenance-page .page__description,
 .contact-page .page__description,
+.contactus-page .page__description,
 .simple-page .page__description,
 .password-page .page__description,
 .post-page .page__description,
@@ -7087,3 +7091,22 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
 .search-page .page__input {
   margin-bottom: 20px;
   padding: 20px 15px; }
+
+.contactus-page .icons-block {
+  border-top: 1px solid #eeeeee;
+  padding: 40px 0;
+  margin: 0 0 20px; }
+  .contactus-page .icons-block img {
+    margin: 0 0 20px; }
+
+.contactus-page .color-block {
+  text-align: center;
+  padding: 30px 0 20px;
+  background: #d1d9dd;
+  margin-bottom: 40px; }
+  .contactus-page .color-block h2 {
+    font-weight: 400;
+    font-family: "Avenir";
+    font-weight: bold; }
+  .contactus-page .color-block strong {
+    font-weight: bold; }
