@@ -4554,6 +4554,87 @@ nav.navigation {
     nav.navigation .cart-mobile .icon-shopping-bag.active .filled {
       display: inline-block; }
 
+.minicart {
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  display: none;
+  height: auto;
+  margin-top: 10px;
+  padding: 0 20px 10px 20px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 320px; }
+  .minicart.active {
+    display: block; }
+  .minicart .minicart__product {
+    margin: 12px 0; }
+  .minicart__title {
+    border-bottom: 1px solid #e3e3e3;
+    color: #000;
+    display: block;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: 1;
+    margin: 0 0 8px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0; }
+  .minicart__container {
+    display: block; }
+  .minicart__image {
+    margin: 0;
+    padding: 0; }
+  .minicart__url {
+    background-color: #fff;
+    display: block;
+    height: auto;
+    width: 54px; }
+  .minicart__data {
+    padding: 0;
+    text-align: left; }
+  .minicart__name {
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    text-transform: uppercase; }
+  .minicart__variants {
+    list-style: none;
+    padding: 0; }
+  .minicart__variant {
+    color: #6e6e6e;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: .3px;
+    line-height: 1.5; }
+  .minicart__total-price {
+    float: right; }
+  .minicart__footer {
+    display: block; }
+  .minicart__subtotal {
+    border-top: 1px solid #e3e3e3;
+    padding: 12px 0;
+    text-align: left; }
+  .minicart__subtotal-money {
+    float: right; }
+  .minicart__btn-checkout {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    text-transform: capitalize; }
+  .minicart__message {
+    color: #b2292e;
+    font-family: "FrankRuhlLibre-Regular";
+    line-height: 1.83;
+    font-size: 12px;
+    letter-spacing: .3px;
+    margin: 0;
+    text-align: center; }
+
 .topbanner {
   color: #fff;
   height: 40px;
