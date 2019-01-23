@@ -9,6 +9,7 @@
   right: 0;
   top: 100%;
   width: 320px;
+  z-index: 99;
   &.active {
     display: block;
   }
