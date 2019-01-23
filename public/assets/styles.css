@@ -4564,7 +4564,8 @@ nav.navigation {
   position: absolute;
   right: 0;
   top: 100%;
-  width: 320px; }
+  width: 320px;
+  z-index: 99; }
   .minicart.active {
     display: block; }
   .minicart .minicart__product {
