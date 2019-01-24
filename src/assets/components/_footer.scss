@@ -95,12 +95,14 @@ footer.footer {
         height: 42px;
         width: 100%;
       }
-      button.btn {
+      button.btn.disabled {
+        cursor: not-allowed;
         background-color: #bfbfbf;
         border-color: #bfbfbf;
         height: 100%;
       }
-      button.btn.active {
+      button.btn {
+        cursor: pointer;
         background-color: $black;
         border-color: $black;
       }

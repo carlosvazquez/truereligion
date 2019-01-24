@@ -5372,11 +5372,13 @@ footer.footer {
       border-radius: 0;
       height: 42px;
       width: 100%; }
-    footer.footer .menu__newsletter button.btn {
+    footer.footer .menu__newsletter button.btn.disabled {
+      cursor: not-allowed;
       background-color: #bfbfbf;
       border-color: #bfbfbf;
       height: 100%; }
-    footer.footer .menu__newsletter button.btn.active {
+    footer.footer .menu__newsletter button.btn {
+      cursor: pointer;
       background-color: #000;
       border-color: #000; }
   @media (max-width: 799.98px) {
