@@ -27,6 +27,7 @@
       $menu_botton: $('.mobile_nav_btn'),
       init: function() {
         this.LocalStorage();
+        this.emailValidator();
         this.signInMenu();
         this.setNavigation();
         this.newsletterDiscount();
@@ -42,6 +43,20 @@
         if(window.localStorage.getItem("newsletter_succeed") == null) {
           window.localStorage.setItem('newsletter_succeed', false);
         }
+      },
+      emailValidator: function(){
+        var isEmailValid = function(email){
+          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+        }
+        $('footer.footer .newsletter input#email').keyup(function() {
+          var _email = $('footer.footer .newsletter input#email').val();
+          if(isEmailValid(_email)) {
+            $('footer.footer .newsletter button.btn').removeClass('disabled');
+          } else {
+            $('footer.footer .newsletter button.btn').addClass('disabled');
+          }
+        });
       },
       setMegaMenu: function() {
         var _w = $(window).width();
