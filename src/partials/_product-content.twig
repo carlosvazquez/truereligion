@@ -87,11 +87,16 @@
       <div class="product-description">
         <div class="row">
           <div class="col-12">
-          {% set sections = product.description|split('@') %}
+
+          {% set sections = product.description|replace({'<div>':''}) %}
+          {% set sections = sections|replace({'</div>':'@'}) %}
+          {% set sections = sections|replace({'@@':'@'}) %}
+          {% set sections = sections|split('@') %}
           {% set section_one = sections[0]|replace({'<p>':'', '</p>':''})|trim %}
           {% set section_two = sections[1]|replace({'<p>':'', '</p>':''})|trim %}
           {% set section_three = section_two|split('-') %}
           {% set section_four = sections[2]|replace({'<p>':'', '</p>':''})|trim %}
+
             <div class="accordion" id="productDescriptionBox">
               <div class="card">
                 <div class="card-header" id="headingOne">
@@ -101,10 +106,10 @@
                     </button>
                   </h5>
                 </div>
-
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#productDescriptionBox">
                   <div class="card-body">
-                  {{ section_one }}
+                  {{ section_four }}
+                  <p>Estilo: {{ product.sku.code|split('_')[0] }}</p>
                   </div>
                 </div>
               </div>
@@ -118,10 +123,10 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#productDescriptionBox">
                   <div class="card-body">
-                  {{ section_two }}
-                  {% if section_three |length > 1 %}
+                  {% set section_fit = section_one|split('-') %}
+                  {% if section_fit |length > 1 %}
                     <ul class="card-list">
-                    {% for item in section_three %}
+                    {% for item in section_fit if item is not empty %}
                       <li class="card-list-item">{{ item|replace({'-':''}) }}</li>
                     {% endfor %}
                     </ul>
@@ -139,7 +144,13 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#productDescriptionBox">
                   <div class="card-body">
-                  {{ section_four }}
+                  {% if section_three |length > 1 %}
+                    <ul class="card-list">
+                    {% for item in section_three if item is not empty %}
+                      <li class="card-list-item">{{ item|replace({'-':''}) }}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
                   </div>
                 </div>
               </div>
