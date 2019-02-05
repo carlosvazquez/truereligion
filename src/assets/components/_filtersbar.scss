@@ -5,6 +5,7 @@
     height: 40px;
     max-height: 40px;
     position: relative;
+    width: 100%;
     .selector__title {
       border: 1px solid #e3e3e3;
       color: $black;
@@ -16,7 +17,8 @@
       height: 100%;
       letter-spacing: 1.1px;
       margin: 0;
-      min-width: 230px;
+      width: 100%;
+      min-width: 160px;
       padding: 12px 30px 12px 12px;
       position: relative;
       text-transform: uppercase;
