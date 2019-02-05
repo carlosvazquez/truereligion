@@ -6325,6 +6325,34 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
       .filter-frame.filter .filters-apply .text-link {
         display: none; } }
 
+.custom-pagination {
+  margin-top: 40px; }
+  .custom-pagination .pagination__item {
+    display: inline-block; }
+  .custom-pagination .pagination__link {
+    border: 1px solid #000;
+    display: inline-block;
+    float: none;
+    height: 100%;
+    padding: 12px 10px; }
+  .custom-pagination .pagination--disabled a {
+    display: none; }
+  .custom-pagination .pagination__selector {
+    color: #000;
+    background: url("https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1549392916") no-repeat right 8px center;
+    border-radius: 3px;
+    font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: 1.1px;
+    line-height: 2.36;
+    outline: none;
+    padding: 0 12px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 55px; }
+
 .simple-product-card .product-card {
   margin: 0 0 30px; }
   .simple-product-card .product-card__image {
