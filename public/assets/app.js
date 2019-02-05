@@ -35,6 +35,7 @@
         this.setMegaMenu();
         this.footerMenu();
         this.enableAjaxMiniCart();
+        this.enablePaginationBtn();
       },
       LocalStorage: function() {
         if(window.localStorage.getItem("newsletter_discount") == null) {
@@ -240,6 +241,13 @@
           if($(_this).hasClass('active')){
             getCartProductsByAjax();
           }
+        });
+      },
+      enablePaginationBtn: function() {
+        $('.custom-pagination .pagination__selector').on('change', function(){
+          var url = $(this)
+            .find(':selected').val();
+          window.location.replace(url);
         });
       }
     },

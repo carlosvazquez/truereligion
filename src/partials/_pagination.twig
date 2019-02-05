@@ -1,0 +1,29 @@
+{% if pagination.last > 1 %}
+<div class="custom-pagination">
+  <div class="pagination row">
+  {% if pagination.current <= 1 %}
+    <div class="pagination__item pagination--disabled col-3"><a class="pagination__link">AAA</a></div>
+  {% else %}
+    <div class="pagination__item col-3"><a class="pagination__link" href="{{ pagination.previous_link }}">Anterior</a></div>
+  {% endif %}
+  <div class="pagination__select col-6 text-center">
+    <span>Página: </span>
+    <select class="pagination__selector">
+      {% for index, link in pagination.links %}
+        {% if index == pagination.current %}
+        <option class="pagination__option selected" value="{{ index }}" selected>{{ index }}</option>
+        {% else %}
+        <option class="pagination__option" value="{{ link }}">{{ index }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <span>de {{ pagination.links | length }}</span>
+  </div>
+  {% if pagination.current == pagination.last %}
+    <div class="pagination__item pagination--disabled col-3 text-right"><a class="pagination__link">&raquo;</a></div>
+  {% else %}
+    <div class="pagination__item col-3 text-right"><a class="pagination__link" href="{{ pagination.next_link }}">Siguiente</a></div>
+  {% endif %}
+  </div>
+</div>
+{% endif %}

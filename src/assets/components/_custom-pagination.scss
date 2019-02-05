@@ -1,0 +1,36 @@
+.custom-pagination {
+  margin-top: 40px;
+  .pagination {
+    &__item {
+      display: inline-block;
+    }
+    &__link {
+      border: 1px solid $black;
+      display: inline-block;
+      float: none;
+      height: 100%;
+      padding: 12px 10px;
+    }
+    &--disabled {
+      a {
+        display: none;
+      }
+    }
+    &__selector {
+      color: #000;
+      background: url('https://cdn.kometia-static.com/true-religion/images/caret-down.png?v=1549392916') no-repeat right 8px center;
+      border-radius: 3px;
+      font-family: "Avenir Next Cyr W00 Medium", helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      height: 40px;
+      letter-spacing: 1.1px;
+      line-height: 2.36;
+      outline: none;
+      padding: 0 12px;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      width: 55px;
+    }
+  }
+}
