@@ -6334,7 +6334,13 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
     display: inline-block;
     float: none;
     height: 100%;
-    padding: 12px 10px; }
+    max-width: 100%;
+    padding: 12px 10px;
+    text-align: center; }
+    @media (max-width: 1149.98px) {
+      .custom-pagination .pagination__link {
+        padding: 12px 0;
+        width: 100%; } }
   .custom-pagination .pagination--disabled a {
     display: none; }
   .custom-pagination .pagination__selector {
