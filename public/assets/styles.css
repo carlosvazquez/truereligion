@@ -7149,3 +7149,6 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
     font-weight: bold; }
   .contactus-page .color-block strong {
     font-weight: bold; }
+
+.row:before, .row:after {
+  display: inline-block; }
