@@ -821,6 +821,11 @@
               "label": "Activado"
             },
             {
+              "type": "text",
+              "id": "home_collection_slider_title",
+              "label": "Título de sección"
+            },
+            {
               "type": "collection",
               "id": "home_collection_slider_collection",
               "label": "Colección"
