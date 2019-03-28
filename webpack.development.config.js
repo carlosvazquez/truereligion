@@ -5,8 +5,6 @@ var path = require('path');
 var WebpackShellPlugin = require('webpack-shell-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 
 module.exports = {
   entry: {
@@ -24,7 +22,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_module/,
         query: {
-          presets: ['es2015']
+          presets: ['babel-preset-env']
         }
       },
       {
