@@ -25,7 +25,7 @@
         <h4 class="menu__title">{{ settings.footer_menu_two_title }} <span class="toggle-icon plus"></span></h4>
         <ul class="menu__list">
         {% for item in menus[settings.footer_menu_two] %}
-          <li class="menu__item"><a class="menu__link" href="{{ item.link }}">{{ item.name }}</a></li>
+          <li class="menu__item"><a class="menu__link" href="{{ item.url }}">{{ item.name }}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -35,7 +35,7 @@
         <h4 class="menu__title">{{ settings.footer_menu_three_title }} <span class="toggle-icon plus"></span></h4>
         <ul class="menu__list">
         {% for item in menus[settings.footer_menu_three] %}
-          <li class="menu__item"><a class="menu__link" href="{{ item.link }}">{{ item.name }}</a></li>
+          <li class="menu__item"><a class="menu__link" href="{{ item.url }}">{{ item.name }}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -43,13 +43,12 @@
     <div class="col-12 col-md-3 col-lg-3 col-xl-3">
       <div class="menu menu--four">
         <h4 class="menu__title">{{ settings.footer_menu_four_title }} <span class="toggle-icon plus"></span></h4>
-        <div class="menu__list">
-          <p>{{ settings.footer_menu_four_text_one }}</p>
-          <p>{{ settings.footer_menu_four_text_two }}</p>
-          <p>{{ settings.footer_menu_four_text_three }}</p>
-        </div>
+        <ul class="menu__list">
+        {% for item in menus[settings.footer_menu_four] %}
+          <li class="menu__item"><a class="menu__link" href="{{ item.url }}">{{ item.name }}</a></li>
+        {% endfor %}
+        </ul>
       </div>
-      <p class="store-locator"><span class="store-image"><img alt="Ícono localizador de tiendas" src="https://cdn.kometia-static.com/true-religion/images/store-locator-footer.png?v=1545354709" title=""></span> <a href="{{ settings.footer_menu_four_store_locator_url }}">Localizador de tiendas</a></p>
     </div>
   </div>
 </div>
@@ -60,9 +59,9 @@
         <p class="legal__text">{{ "now"|date("Y") }} {{ settings.footer_menu_rights }}</p>
       </div>
       <div class="col-12 col-sm-6 col-md-6 legal__menu">
-        <ul class="legal__list">
+        <ul class="legal__list {{ settings.footer_menu_legal }}">
         {% for item in menus[settings.footer_menu_legal]%}
-          <li class="legal__item"><a class="legal__link" href="{{ item.link }}">{{ item.name }}</a></li>
+          <li class="legal__item"><a class="legal__link" href="{{ item.url }}">{{ item.name }}</a></li>
         {% endfor %}
         </ul>
       </div>
