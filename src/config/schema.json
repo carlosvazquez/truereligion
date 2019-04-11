@@ -172,6 +172,11 @@
           "settings": [
             {
               "type": "text",
+              "id": "footer_menu_four",
+              "label": "Identificador"
+            },
+            {
+              "type": "text",
               "id": "footer_menu_four_title",
               "label": "Título"
             },
@@ -820,7 +825,7 @@
               "id": "home_collection_slider",
               "label": "Activado"
             },
-            {
+           {
               "type": "text",
               "id": "home_collection_slider_title",
               "label": "Título de sección"
