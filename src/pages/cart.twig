@@ -67,36 +67,11 @@
         </div>
       </div><!-- .col-4.col-sm-3.col-md-2.cart-item__price -->
       {% endfor %}
-
       <div class="row cart-page__resume">
-        <div class="col-12 col-sm-6">
-          {% if 0 > 1 %}
-          <form action="/carrito" method="post">
-              <div class="cartgift__form">
-                <div class="checkbox">
-                  <label><input class="cartgift--checkbox" type="checkbox" name="is_gift" value="1" {{ cart.is_gift ? "checked='checked'" : '' }}>Es un regalo</label>
-                </div>
-                <div class="cartgift__form--content">
-                  <div class="form-group">
-                    <label class="sr-only" for="gift_message">{{ settings.gift_title_message }}</label>
-                    <textarea type="text" class="form-control" name="gift_message" value="{{ cart.gift_message }}" maxlength="150">{{ cart.gift_message }}</textarea>
-                  </div>
-                  <button type="submit" class="btn btn-xs btn-primary cartgift__btn">Guardar</button>
-                </div>
-              </div>
-            <hr>
-            <p>Agregar nota al pedido</p>
-            <div class="cartnote__form">
-              <div class="form-group">
-                <label class="sr-only" for="note">Agregar nota al pedido</label>
-                <textarea class="form-control cartnote__note" type="textarea" name="note" value="{{ cart.customer_note }}" maxlength="500">{{ cart.customer_note }}</textarea>
-              </div>
-              <button type="submit" class="btn btn-xs btn-primary cartnote__btn">Guardar</button>
-            </div>
-          </form>
-          {% endif %}
+        <div class="col-12 col-sm-6 col-md-8 col-lg-9">
+          {% include '_invoices.twig' with { 'title': category.title, 'type': 'category','isCollection': false, 'useFilters': true } %}
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="cart-page__payment__info text-right">
             <div class="row">
               <div class="col-12">
@@ -136,6 +111,43 @@
     $('form').submit(function(){
       $(this).find(':submit').prop('disabled', true);
     });
+    // Invoice toggle
+    var parseInputsValues = function() {
+      var fullname = $('input.invoices__input[name="fullname"]').val();
+      var rfc = $('input.invoices__input[name="rfc"]').val();
+      var calle = $('input.invoices__input[name="calle"]').val();
+      var ext_int = $('input.invoices__input[name="ext-int"]').val();
+      var location = $('input.invoices__input[name="location"]').val();
+      var state = $('input.invoices__input[name="state"]').val();
+      var cp = $('input.invoices__input[name="cp"]').val();
+      var county = $('input.invoices__input[name="county"]').val();
+      var comments = $('input.invoices__comments[name="comments"]').val();
+      $('input.invoices__hidden').val('Nombre completo: '+fullname+'|RFC: '+rfc+'|Calle: '+calle+'|No. Ext-Int: '+ext_int+'|Colonia: '+location+'|Estado: '+state+'|CP.: '+cp+'|Municipio/Delegación: '+county+'|Comentarios: '+comments);
+    }
+    $('input.invoices__input').keyup(function() {
+      var fullname = inputIsValid($('input.invoices__input[name="fullname"]'));
+      var rfc = inputIsValid($('input.invoices__input[name="rfc"]'));
+      var calle = inputIsValid($('input.invoices__input[name="calle"]'));
+      var location = inputIsValid($('input.invoices__input[name="location"]'));
+      var state = inputIsValid($('input.invoices__input[name="state"]'));
+      var cp = inputIsValid($('input.invoices__input[name="cp"]'));
+      var county = inputIsValid($('input.invoices__input[name="county"]'));
+      if(fullname && rfc && calle && location && state && cp && county) {
+        $('.invoices__group button.invoices--btn').removeClass('disabled');
+        parseInputsValues();
+      } else {
+        $('.invoices__group button.invoices--btn').addClass('disabled');
+      }
+    });
+    var inputIsValid = function(element) {
+      return element.val().length > 2 ? true : false;
+    }
+    $('input.invoices--input').on('click', function(){
+      var isSelected = $(this).prop('checked');
+      $('form#invoice .invoices__container').toggleClass('active');
+    });
+   // Invoice toggle
+
   });
   </script>
 {% endblock %}
