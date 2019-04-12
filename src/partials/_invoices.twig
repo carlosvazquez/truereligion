@@ -1,0 +1,116 @@
+{% set invoiceRequired = false %}
+{% set invoiceFields = [] %}
+{% if cart.customer_note is not empty %}
+  {% set invoiceFields = cart.customer_note|split('|') %}
+{% endif %}
+<form id="invoice" class="invoices" action="/carrito" method="post">
+  <div class="invoices__checkbox">
+    <label class="invoices__label"><input class="invoices--input" type="checkbox" name="invoiceRequired" value="1" {{ invoiceFields|length > 6 ? "checked='checked'" : '' }}><span class="label">Requiero factura</span></label>
+  </div>
+  <div class="invoices__container{% if cart.customer_note is not empty %} active{% endif %}">
+    <div class="invoices__group">
+      <input class="invoices__hidden" type="hidden" name="note" value="{{ cart.customer_note }}">
+      <input class="invoices__input" type="text" name="fullname" value="{{ invoiceFields[0]|replace({'Nombre completo:':''})|trim }}" placeholder="Nombre completo" required/>
+      <input class="invoices__input rfc" type="text" name="rfc" value="{{ invoiceFields[1]|replace({'RFC:':''})|trim }}" placeholder="RFC" required/>
+      <input class="invoices__input" type="text" name="calle" value="{{ invoiceFields[2]|replace({'Calle:':''})|trim }}" placeholder="calle" required/>
+      <input class="invoices__input" type="text" name="ext-int" value="{{ invoiceFields[3]|replace({'No. Ext-Int:':''})|trim }}" placeholder="No. ext/int"/>
+      <input class="invoices__input" type="text" name="location" value="{{ invoiceFields[4]|replace({'Colonia:':''})|trim }}" placeholder="Colonia" required/>
+      <input class="invoices__input" type="text" name="state" value="{{ invoiceFields[5]|replace({'Estado:':''})|trim }}" placeholder="Estado" required/>
+      <input class="invoices__input" type="text" name="cp" value="{{ invoiceFields[6]|replace({'CP.:':''})|trim }}" placeholder="C.P." required/>
+      <input class="invoices__input" type="text" name="county" value="{{ invoiceFields[7]|replace({'Municipio/Delegación:':''})|trim }}" placeholder="Municipio/Delegación" required/>
+      <input class="invoices__comments" name="comments" value="{{ invoiceFields[8]|replace({'Comentarios:':''})|trim }}" placeholder="Comentarios" title="Comentarios adicionales"/>
+    </div>
+    <div class="invoices__group">
+      <button class="btn invoices--btn disabled" type="submit">Guardar</button>
+    </div>
+  </div>
+</form>
+
+<style>
+form#invoice.invoices {
+  text-align: left;
+  border: none;
+  padding: 12px;
+  background-color: transparent !important;
+}
+.invoices {}
+.rfc {
+  text-transform: uppercase;
+}
+.invoices input {
+  border: 5px solid #f4f4f4;
+  border-radius: 0;
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 4px 0;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .invoices input {
+    width: 49.6666%;
+  }
+}
+.invoices__label {
+  display: inline-block;
+  width: 100%;
+}
+.invoices span.label {
+  margin-left: 4px;
+  color: #666666;
+}
+.invoices__container {
+  overflow: hidden;
+  display: none;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  padding: 12px;
+  margin-top: 12px;
+}
+.invoices__container.active {
+  display: block;
+}
+.invoices__group {
+  padding: 0;
+  display: inline-block;
+}
+.invoices__comments {
+  display: inline-block;
+  border: 1px solid #f4f4f4;
+  padding: 12px;
+  margin: 4px;
+  width: 100% !important;
+  float: left;
+}
+@media (min-width: 768px) {
+  .invoices__comments {
+    width: 46.6666%;
+  }
+}
+.invoices--btn {
+  border: 1px solid #66CDAA;
+  background-color: #20B2AA;
+  color: #ffffff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 12px;
+  margin: 4px;
+  width: auto;
+}
+.invoices--btn.disabled {
+  border: 1px solid #cccccc;
+  background-color: #B22222;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 12px;
+  margin: 4px;
+  width: auto;
+}
+.invoices--input {
+  display: inline-block;
+  margin-right: 20px;
+  width: auto !important;
+  max-width: 100% !important;
+}
+</style>
