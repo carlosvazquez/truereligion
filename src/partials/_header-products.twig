@@ -54,11 +54,7 @@
         <div class="col-12">
           <div class="products-page__header">
             <h1 class="products-page__title">{{ pageTitle }}</h1>
-            {% if isCollection %}
-              {% if collection.description is not empty %}
-              <div class="products-page__intro">{{ collection.description }}</div>
-              {% endif %}
-            {% else %}
+            {% if isCollection == false %}
               <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
             {% endif %}
           </div>
