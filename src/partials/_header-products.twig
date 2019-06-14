@@ -15,6 +15,44 @@
 {% else %}
   {% set parentTitle = 'Productos' %}
 {% endif %}
+{% set filtersBaseData = (collection.description|replace({'<p>':''})|split('</p>')) %}
+{% set filtersData = []%}
+
+{% for data in filtersBaseData %}
+  {% if data is not empty %}
+    {% set filtersData = filtersData|merge([data|trim]) %}
+  {% endif %}
+{% endfor %}
+
+{% set filterName = [] %}
+{% set filterValues = [] %}
+
+{% for name in filtersData %}
+  {% set newname = name|trim|split(':') %}
+  {% set values = newname[1] %}
+
+  {% if newname is not empty %}
+    {% set filterName = filterName|merge([newname[0]|trim]) %}
+  {% endif %}
+
+  {% if values is not empty %}
+    {% set filterValues = filterValues|merge([values|trim]) %}
+  {% endif %}
+
+{% endfor %}
+
+{{ filtersData|length }}
+{{ filterName|length }}
+{{ filterValues|length }}
+
+{% for fil in filterName %}
+  {{ fil }}
+{% endfor %}
+
+{% for fil in filterValues %}
+  {{ fil }}
+{% endfor %}
+
 
 <div class="products-header">
 {% if isCollection and collection.image_url is not empty %}
@@ -54,11 +92,7 @@
         <div class="col-12">
           <div class="products-page__header">
             <h1 class="products-page__title">{{ pageTitle }}</h1>
-            {% if isCollection %}
-              {% if collection.description is not empty %}
-              <div class="products-page__intro">{{ collection.description }}</div>
-              {% endif %}
-            {% else %}
+            {% if isCollection == false %}
               <div class="products-page__intro"><p>Inspiración en cada prenda.</p></div>
             {% endif %}
           </div>
@@ -143,6 +177,10 @@
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
+        {% for typeName in filterName %}
+          <h4 class="filter__type-title">{{ typeName|title }}</h4>
+        {% endfor %}
+
           <h4 class="filter__type-title">Talla</h4>
           <ul class="filter__options type-size">
           {% if options.type_sizes is empty %}
