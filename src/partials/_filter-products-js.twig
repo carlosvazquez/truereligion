@@ -87,7 +87,6 @@
           });
         }
         $('.filters-apply button.btn').removeClass('btn-disabled');
-        console.log(FilterState);
       });
       $('.filters-apply .text-link').on('click', function(){
         $('.filters-apply button.btn').addClass('btn-disabled');
@@ -109,10 +108,22 @@
       var _urlVars = _url.split('&');
       var _parameterName;
       var i;
+      var tag = _urlVars.filter(function(item){
+        var _item = item.toString();
+        console.log(/^tag:/gi.test(_item));
+        return /^tag:/gi.test(_item) ? _item.split(':') : [];
+      });
+      {# tags = tags.toString().split(":"); #}
+
+      console.log(tag);
+
       if (_url.length != 0) {
         $('.filters-apply button').removeClass('btn-disabled');
         for (i = 0; i < _urlVars.length; i++) {
           _parameterName = _urlVars[i].split('=');
+
+
+
           if (_parameterName[0] === 'options[color]') {
             _paramColor = _parameterName[1].split(',');
             _paramColor.forEach(function(value, key) {
@@ -160,8 +171,13 @@
               FilterState['orderBy'] = value;
             });
           }
+          if (_parameterName[0] === 'tag') {
+            _paramTag = _parameterName[1].split(',');
+            _paramTag.forEach(function(value, key) {
+              FilterState['orderBy'] = value;
+            });
+          }
         }
-        console.log(FilterState);
       }
       FilterState['pricerange'] = (FilterState['minprice'] != null ? FilterState['minprice'] : 0) + '-' + (FilterState['maxprice'] != null ? FilterState['maxprice'] : 20000);
       return true;
