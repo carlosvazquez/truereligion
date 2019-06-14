@@ -15,44 +15,6 @@
 {% else %}
   {% set parentTitle = 'Productos' %}
 {% endif %}
-{% set filtersBaseData = (collection.description|replace({'<p>':''})|split('</p>')) %}
-{% set filtersData = []%}
-
-{% for data in filtersBaseData %}
-  {% if data is not empty %}
-    {% set filtersData = filtersData|merge([data|trim]) %}
-  {% endif %}
-{% endfor %}
-
-{% set filterName = [] %}
-{% set filterValues = [] %}
-
-{% for name in filtersData %}
-  {% set newname = name|trim|split(':') %}
-  {% set values = newname[1] %}
-
-  {% if newname is not empty %}
-    {% set filterName = filterName|merge([newname[0]|trim]) %}
-  {% endif %}
-
-  {% if values is not empty %}
-    {% set filterValues = filterValues|merge([values|trim]) %}
-  {% endif %}
-
-{% endfor %}
-
-{{ filtersData|length }}
-{{ filterName|length }}
-{{ filterValues|length }}
-
-{% for fil in filterName %}
-  {{ fil }}
-{% endfor %}
-
-{% for fil in filterValues %}
-  {{ fil }}
-{% endfor %}
-
 
 <div class="products-header">
 {% if isCollection and collection.image_url is not empty %}
