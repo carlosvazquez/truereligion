@@ -15,6 +15,7 @@
         pricerange: null,
         orderBy: null
     }
+    var ColorsAvailable = ['azul','blanco','negro','multicolor','rojo','gris','verde','naranja','beige','morado','rosa','amarillo'];
 
     var $selector = $('.filtersbar .selector');
     var enableOrderBy = function() {
@@ -110,19 +111,20 @@
       var i;
       var tag = _urlVars.filter(function(item){
         var _item = item.toString();
-        console.log(/^tag:/gi.test(_item));
-        return /^tag:/gi.test(_item) ? _item.split(':') : [];
+        return /^tag:/gi.test(_item);
       });
-      {# tags = tags.toString().split(":"); #}
-
-      console.log(tag);
 
       if (_url.length != 0) {
         $('.filters-apply button').removeClass('btn-disabled');
+        var colorTags = tag.join().split(':')[1].split(',');
+        colorTags.forEach(function(color){
+          if (!FilterState['color'].includes(color) && ColorsAvailable.includes(color)) {
+            FilterState['color'].push(color);
+          }
+        });
+
         for (i = 0; i < _urlVars.length; i++) {
           _parameterName = _urlVars[i].split('=');
-
-
 
           if (_parameterName[0] === 'options[color]') {
             _paramColor = _parameterName[1].split(',');
@@ -243,7 +245,7 @@
     var fireFilterQuery = function() {
       updateFilterStateBeforeRequest();
       var _url = "?";
-         _url += FilterState.color.length >= 1 ? '&options[color]='+FilterState.color.join(',') : '';
+         _url += FilterState.color.length >= 1 ? '&tag:'+FilterState.color.join(',') : '';
          _url += FilterState.talla.length >= 1 ? '&options[talla]='+FilterState.talla.join(',') : '';
          _url += FilterState.tags.length >= 1 ? '&q='+FilterState.tags.join(',') : '';
          if(FilterState.minprice != null) {
