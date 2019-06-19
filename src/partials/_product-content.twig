@@ -124,7 +124,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#productDescriptionBox">
                   <div class="card-body">
                   {% set section_fit = section_one|split('-') %}
-                  {% if section_fit |length > 1 %}
+                  {% if section_fit |length > 0 %}
                     <ul class="card-list">
                     {% for item in section_fit if item is not empty %}
                       <li class="card-list-item">{{ item|replace({'-':''}) }}</li>

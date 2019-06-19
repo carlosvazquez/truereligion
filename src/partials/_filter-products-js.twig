@@ -80,8 +80,13 @@
         var _type = _this.data('type');
         var _value = _this.data('filter');
         _this.toggleClass('active');
+        console.log(FilterState[_type]);
         if ($(this).hasClass('active')) {
+          if (_type == 'pricerange') {
+          FilterState[_type] = _value.toString();
+          } else {
           FilterState[_type].push(_value.toString());
+          }
         } else {
           FilterState[_type] = FilterState[_type].filter(function(value){
             return _value != value;
@@ -120,6 +125,8 @@
         colorTags.forEach(function(color){
           if (!FilterState['color'].includes(color) && ColorsAvailable.includes(color)) {
             FilterState['color'].push(color);
+          } else {
+            FilterState['tags'].push(color);
           }
         });
 
@@ -140,15 +147,6 @@
             _paramSize.forEach(function(value, key) {
               if (!FilterState['talla'].includes(value)) {
                 FilterState['talla'].push(value);
-              }
-            });
-          }
-
-          if (_parameterName[0] === 'q') {
-            _paramTag = _parameterName[1].split(',');
-            _paramTag.forEach(function(value, key) {
-              if (!FilterState['tags'].includes(value)) {
-                FilterState['tags'].push(value);
               }
             });
           }
@@ -176,7 +174,7 @@
           if (_parameterName[0] === 'tag') {
             _paramTag = _parameterName[1].split(',');
             _paramTag.forEach(function(value, key) {
-              FilterState['orderBy'] = value;
+              FilterState['tags'] = value;
             });
           }
         }
@@ -204,6 +202,7 @@
           $('.filter__option[data-filter="'+value+'"]').addClass('active');
         });
       }
+      $('.filter__option[data-filter="'+FilterState.pricerange+'"]').addClass('active');
     }
     checkAlreadySelectedOptions();
 
@@ -244,10 +243,10 @@
     }
     var fireFilterQuery = function() {
       updateFilterStateBeforeRequest();
+      var tags = FilterState.color.concat(FilterState.tags);
       var _url = "?";
-         _url += FilterState.color.length >= 1 ? '&tag:'+FilterState.color.join(',') : '';
+         _url += tags.length >= 1 ? 'tag:'+tags.join(',') : '';
          _url += FilterState.talla.length >= 1 ? '&options[talla]='+FilterState.talla.join(',') : '';
-         _url += FilterState.tags.length >= 1 ? '&q='+FilterState.tags.join(',') : '';
          if(FilterState.minprice != null) {
          _url += (FilterState.minprice != null) ? '&price[min]='+FilterState.minprice : '';
          }

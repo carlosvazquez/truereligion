@@ -141,99 +141,57 @@
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Talla</h4>
           <ul class="filter__options type-size">
-          {% if options.type_sizes is empty %}
-            <li class="filter__option" data-type="talla" data-filter="0">0</li>
-            <li class="filter__option" data-type="talla" data-filter="3">3</li>
-            <li class="filter__option" data-type="talla" data-filter="5">5</li>
-            <li class="filter__option" data-type="talla" data-filter="7">7</li>
-            <li class="filter__option" data-type="talla" data-filter="9">9</li>
-            <li class="filter__option" data-type="talla" data-filter="11">11</li>
-            <li class="filter__option" data-type="talla" data-filter="13">13</li>
-          {% else %}
-            {% for size in options.type_sizes if size is not empty %}
-            <li class="filter__option" data-type="talla" data-filter="{{ size|trim }}">{{ size|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[0] %}
+            <li class="filter__option" data-type="talla" data-filter="{{ value }}">{{ value|upper }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Entrepierna</h4>
           <ul class="filter__options type-inseam">
-          {% if options.type_inseams is empty %}
-            <li class="filter__option" data-type="tags" data-filter="32L">32L</li>
-            <li class="filter__option" data-type="tags" data-filter="34L">34L</li>
-          {% else %}
-            {% for inseams in options.type_inseams if inseams is not empty %}
-            <li class="filter__option" data-type="tags" data-filter="{{ inseams|trim }}">{{ inseams|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[1] %}
+            <li class="filter__option" data-type="tags" data-filter="{{ value }}">{{ value }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Silueta</h4>
           <ul class="filter__options type-silhouette">
-          {% if options.type_silhouettes is empty %}
-            <li class="filter__option" data-type="tags" data-filter="skinny">Skinny</li>
-            <li class="filter__option" data-type="tags" data-filter="super-skinny">Super skinny</li>
-          {% else %}
-            {% for silhouettes in options.type_silhouettes if silhouettes is not empty %}
-            <li class="filter__option" data-type="tags" data-filter="{{ silhouettes|trim }}">{{ silhouettes|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[2] %}
+            <li class="filter__option" data-type="tags" data-filter="{{ value }}">{{ value }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Ajuste</h4>
           <ul class="filter__options type-fit">
-          {% if options.type_fits is empty %}
-            <li class="filter__option" data-type="tags" data-filter="m">Rocco</li>
-            <li class="filter__option" data-type="tags" data-filter="n">Jack</li>
-          {% else %}
-            {% for fits in options.type_fits if fits is not empty %}
-            <li class="filter__option" data-type="tags" data-filter="{{ fits|trim }}">{{ fits|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[3] %}
+            <li class="filter__option" data-type="tags" data-filter="{{ value }}">{{ value }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Altura</h4>
           <ul class="filter__options type-rise">
-          {% if options.type_rises is empty %}
-            <li class="filter__option" data-type="tags" data-filter="mid-rise">Mid Rise</li>
-            <li class="filter__option" data-type="tags" data-filter="low">Low</li>
-            <li class="filter__option" data-type="tags" data-filter="high">High</li>
-          {% else %}
-            {% for rises in options.type_rises if rises is not empty %}
-            <li class="filter__option" data-type="tags" data-filter="{{ rises|trim }}">{{ rises|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[4] %}
+            <li class="filter__option" data-type="tags" data-filter="{{ value }}">{{ value }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Lavado</h4>
           <ul class="filter__options type-wash">
-          {% if options.type_washs is empty %}
-            <li class="filter__option" data-type="tags" data-filter="light">Light</li>
-            <li class="filter__option" data-type="tags" data-filter="medium">Medium</li>
-            <li class="filter__option" data-type="tags" data-filter="dark">Dark</li>
-          {% else %}
-            {% for washs in options.type_washs if washs is not empty %}
-            <li class="filter__option" data-type="tags" data-filter="{{ washs|trim }}">{{ washs|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[5] %}
+            <li class="filter__option" data-type="tags" data-filter="{{ value }}">{{ value }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-1 filter-colum-js filterColumn">
           <h4 class="filter__type-title">Pocket Flap</h4>
           <ul class="filter__options type-pocket-flap">
-          {% if options.type_pocket_flaps is empty %}
-            <li class="filter__option" data-type="tags" data-filter="pocketflap-yes">Yes</li>
-            <li class="filter__option" data-type="tags" data-filter="pocketflap-no">No</li>
-          {% else %}
-            {% for pocket_flaps in options.type_pocket_flaps if pocket_flaps is not empty %}
-            <li class="filter__option" data-type="tags" data-filter="{{ pocket_flaps|trim }}">{{ pocket_flaps|trim }}</li>
-            {% endfor %}
-          {% endif %}
+          {% for value in valuesTags[6] %}
+            <li class="filter__option" data-type="tags" data-filter="{{ value == yes ? 'pocketflap-yes' : 'pocketflap-no' }}">{{ value }}</li>
+          {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-md-2 filter-colum-js filterColumnLast">
