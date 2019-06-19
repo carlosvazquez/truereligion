@@ -2,7 +2,6 @@
   "use strict";
 
   var TrueReligion = {
-    // All pages
     currency: $('script#app').data("currency"),
     $header: $('header.header'),
     formatMoney: function(price){
@@ -251,14 +250,10 @@
         });
       }
     },
-    // On Resize Events
     resizeEvents: function() {
-      // console.log('Fire resize events');
       this.setMegaMenu();
     },
-    // On Load Events
     onLoadEvents: function() {
-      // console.log('Fire on load events');
     },
     onScrollEvents: function() {
       var windowPos = $(window).scrollTop();
@@ -280,10 +275,8 @@
         this.resetNavigationPadding();
       }
     },
-    // Home page
     home_page: {
       init: function() {
-        // console.log('estas en el home');
         this.collection_slider();
       },
       collection_slider: function() {
@@ -358,22 +351,16 @@
 
   $(function() {
     var currentTime;
-    // Init App
-    // console.log('on ready');
     STORE.loadEvents();
 
-    // Windows events chained
     $(window).on('scroll', function() {
-      // console.log('on scroll');
       TrueReligion.onScrollEvents()
     })
     .on("resize", function() {
-      // console.log('on resize');
       clearTimeout(currentTime);
       currentTime = setTimeout(TrueReligion.resizeEvents(), 100);
     })
     .on("load", function () {
-      // console.log('on load');
       TrueReligion.onLoadEvents();
     });
   });

@@ -47,6 +47,22 @@
   {% endif %}
 {% endfor %}
 
+{% set namesTags = [] %}
+{% set valuesTags = [] %}
+{% set base = collection.description|replace({'<p>':''})|split('</p>') %}
+
+{% for tag in base %}
+  {% set name = tag|split(':')[0] %}
+  {% if name is not empty %}
+    {% set namesTags = namesTags|merge([name]) %}
+  {% endif %}
+
+  {% set value = tag|split(':')[1] %}
+  {% if value is not empty %}
+    {% set valuesTags = valuesTags|merge([value|split(',')]) %}
+  {% endif %}
+{% endfor %}
+
 {% set options = { 'name':name,'title':title,'custom':custom,'maxcollections':maxcollections,'type_colors':type_colors,'type_sizes':type_sizes,'type_inseams':type_inseams,'type_silhouettes':type_silhouettes,'type_fits':type_fits,'type_rises':type_rises,'type_washs':type_washs,'type_pocket_flaps':type_pocket_flaps } %}
 
 {% if custom %}
@@ -86,4 +102,5 @@
 {% block body_js %}
 {{ parent() }}
 {% include '_product-card-js.twig' %}
+{% include '_filter-products-js.twig' %}
 {% endblock %}
