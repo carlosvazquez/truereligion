@@ -14,7 +14,7 @@
 {% set type_rises = [] %}
 {% set type_washs = [] %}
 {% set type_pocket_flaps = [] %}
-´
+
 {% set notkeep = false %}
 {% for i in 1..maxcollections if notkeep == false %}
   {% if name == settings['collection_filter_'~i~'_name'] %}
@@ -44,6 +44,22 @@
       {% set type_pocket_flaps = type_pocket_flaps|merge( settings['collection_filter_'~i~'_pocket_flaps']|lower|split(',') ) %}
     {% endif %}
     {% set notkeep = true %}
+  {% endif %}
+{% endfor %}
+
+{% set namesTags = [] %}
+{% set valuesTags = [] %}
+{% set base = collection.description|replace({'<p>':''})|split('</p>') %}
+
+{% for tag in base %}
+  {% set name = tag|split('=')[0] %}
+  {% if name is not empty %}
+    {% set namesTags = namesTags|merge([name]) %}
+  {% endif %}
+
+  {% set value = tag|split('=')[1] %}
+  {% if value is not empty %}
+    {% set valuesTags = valuesTags|merge([value|split(',')]) %}
   {% endif %}
 {% endfor %}
 
@@ -86,4 +102,5 @@
 {% block body_js %}
 {{ parent() }}
 {% include '_product-card-js.twig' %}
+{% include '_collection-filters-js.twig' %}
 {% endblock %}

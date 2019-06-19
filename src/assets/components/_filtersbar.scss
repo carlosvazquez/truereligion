@@ -125,7 +125,7 @@
   }
   .filter-frame {
     display: none;
-    margin-top: 20px;
+    margin-top: 15px;
     .filterColumn {
       border-right: 1px solid #eeeeee;
       flex: 0 0 10.41665%;
@@ -139,7 +139,10 @@
         max-width: 100%;
       }
     }
-    .filerColumnLast {}
+    .filterColumnLast {
+      padding: 12px;
+      padding-right: 0;
+    }
   }
 }
 
@@ -149,7 +152,7 @@
     display: block;
     height: auto;
     max-height: initial;
-    padding: 10px 14px;
+    padding: 0 14px 14px;
   }
 }
 

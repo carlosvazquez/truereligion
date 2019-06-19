@@ -6111,7 +6111,7 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
         background: url("https://cdn.kometia-static.com/true-religion/images/caret-up-inverse.png?v=1547188446") no-repeat center center; }
   .filtersbar .filter-frame {
     display: none;
-    margin-top: 20px; }
+    margin-top: 15px; }
     .filtersbar .filter-frame .filterColumn {
       border-right: 1px solid #eeeeee;
       flex: 0 0 10.41665%;
@@ -6124,13 +6124,16 @@ body.products-page.hasModal.modal-open .minicart-ajax--link:hover, body.product-
           border-bottom: 1px solid #cccccc;
           flex: 0 0 100%;
           max-width: 100%; } }
+    .filtersbar .filter-frame .filterColumnLast {
+      padding: 12px;
+      padding-right: 0; }
 
 .filtersbar.active .filter-frame {
   border: 1px solid #eeeeee;
   display: block;
   height: auto;
   max-height: initial;
-  padding: 10px 14px; }
+  padding: 0 14px 14px; }
 
 .filter-frame.filter .filter__type-title {
   margin: 0;
